@@ -371,7 +371,7 @@ input[type="password"]:focus {
 .passagem {
   background-color: #34495e;
   margin-top: 100%;
-  color: black;
+  color: white;
   text-decoration: none;
   font-family: initial;
   font-size: 1.5rem;
@@ -383,8 +383,8 @@ input[type="password"]:focus {
 }
 
 .passagem:hover {
-  color: white;
-  background-color: #e2cd13;
+  color: black;
+  background-color: #ffde59;
   transition: background-color 0.2s ease-out;  
 }
 /* Adiciona um novo estilo para o item de desconectar */

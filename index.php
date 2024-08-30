@@ -27,7 +27,6 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
-            padding: 3em;
             text-align: center;
         }
         .card {
@@ -59,13 +58,8 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
             margin: 20px auto;
             padding: 10px 20px;
             font-size: 1.2rem;
-            color: #fff;
-            background-color: #007bff;
             border-radius: 0.5rem;
             text-decoration: none;
-        }
-        .passagem:hover {
-            background-color: #0056b3;
         }
     </style>
 </head>
@@ -79,17 +73,17 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="3000">
-      <img class="img-fluid" src="Imagens/Faça sua Viagem conosco.png" class="d-block w-100" alt="...">
+      <img src="Imagens/Faça sua Viagem conosco.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="3000">
-      <img class="img-fluid" src="Imagens/Se hospede nos melhores HOTÉIS da região, com as melhores avaliações e os melhores preços..png" class="d-block w-100" alt="...">
+      <img src="Imagens/Se hospede nos melhores HOTÉIS da região, com as melhores avaliações e os melhores preços.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
     <div class="carousel-item">
-      <img class="img-fluid" src="Imagens/Visite pontos turísticos e se aventure com sua família por preços acessíveis e pacotes completos..png" class="d-block w-100" alt="...">
+      <img  src="Imagens/Visite pontos turísticos e se aventure com sua família por preços acessíveis e pacotes completos..png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
