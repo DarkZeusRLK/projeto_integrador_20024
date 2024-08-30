@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 02-Jul-2024 às 13:10
+-- Tempo de geração: 30-Ago-2024 às 13:32
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -51,6 +51,34 @@ INSERT INTO `cadastro` (`id_usuario`, `nome`, `email`, `senha`, `telefone`) VALU
 (5, 'JoÃ£o Pedro', 'clever@gmail.com', '$2y$10$mnBGvX.KjIFKJKQehw7xT.gjd9/k4r5M.ABapD7lSlYvNDr/F0N2K', '43996157712'),
 (6, 'Cleverson ', 'zere01011@gmail.com', '$2y$10$6kqOtl3Nv3b5XO8DbQuLAuip0IDDpRh5TMsVOstM7JePwvV7ao5QS', '43996157712'),
 (7, 'Matheus', 'joaquim@gmail.com', '$2y$10$5M0EF.ZWfElk4S3DRd6SeOBwFq0wLUuExCROEFGUGwkKohP4DgFKe', '43996157712');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cadastro_hoteis`
+--
+
+DROP TABLE IF EXISTS `cadastro_hoteis`;
+CREATE TABLE IF NOT EXISTS `cadastro_hoteis` (
+  `id_hotel` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `descricao` varchar(200) NOT NULL,
+  `valor_diaria` varchar(200) NOT NULL,
+  `arquivo_caminho` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_hotel`)
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf32;
+
+--
+-- Extraindo dados da tabela `cadastro_hoteis`
+--
+
+INSERT INTO `cadastro_hoteis` (`id_hotel`, `nome`, `descricao`, `valor_diaria`, `arquivo_caminho`) VALUES
+(10, 'Hotel Foz do IguaÃ§u', 'Um hotel avaliado em 5 estrelas, pelos melhores crÃ­ticos do estado.', 'R$ 1.200,00 a diÃ¡ria', 'recebidos/66b6315f9b656.jpg'),
+(11, 'Hotel Foz do IguaÃ§u', 'Um hotel avaliado em 5 estrelas, pelos melhores crÃ­ticos do estado.', 'R$ 1.200,00 a diÃ¡ria', 'recebidos/66b631f7410ad.jpg'),
+(12, 'Matheus', 'Um hotel avaliado em 5 estrelas, pelos melhores crÃ­ticos do estado.', 'R$ 1.230,00 a DiÃ¡ria', 'recebidos/66bddb7cb6fae.png'),
+(13, 'jose da silva', 'O elegante conhaque frances esta na nossa loja.', 'R$ 1.200,00 a DiÃ¡ria', 'recebidos/66bddc2d2409d.png'),
+(14, 'matheus zanoni bittencourt de oliveira', 'Um hotel avaliado em 5 estrelas, pelos melhores crÃ­ticos do estado.', 'R$ 1.200,00 a DiÃ¡ria', 'recebidos/66bddc4de3279.jpg'),
+(15, 'matheus zanoni bittencourt de oliveira', 'Um hotel avaliado em 5 estrelas, pelos melhores crÃ­ticos do estado.', 'R$ 1.200,00 a DiÃ¡ria', 'recebidos/66bdddbeaf63c.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
