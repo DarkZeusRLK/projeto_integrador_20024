@@ -72,18 +72,18 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="3000">
-      <img src="Imagens/Faça sua Viagem conosco.png" class="d-block w-100" alt="...">
+    <div class="carousel-item active" data-bs-interval="300">
+      <img class="img-fluid" src="Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
-    <div class="carousel-item" data-bs-interval="3000">
-      <img src="Imagens/Se hospede nos melhores HOTÉIS da região, com as melhores avaliações e os melhores preços.png" class="d-block w-100" alt="...">
+    <div class="carousel-item" data-bs-interval="300">
+      <img class="img-fluid" src="Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuroo.png" class="d-block w-100" alt="..." >
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
-    <div class="carousel-item">
-      <img  src="Imagens/Visite pontos turísticos e se aventure com sua família por preços acessíveis e pacotes completos..png" class="d-block w-100" alt="...">
+    <div class="carousel-item" data-bs-interval="300">
+      <img class="img-fluid" src="Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro (1).png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
