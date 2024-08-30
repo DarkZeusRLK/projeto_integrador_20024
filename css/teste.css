@@ -1,0 +1,16 @@
+:root{
+    --cor_fundo1: #2f95d9;
+    --cor_fundo2: #3083bb;
+
+    --letra1: 12px;
+    --titulo: 18px;
+
+}
+
+
+p{
+    font-size: var(--letra1);
+    color: var(--cor_fundo2);
+
+    
+}
