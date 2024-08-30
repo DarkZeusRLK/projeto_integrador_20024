@@ -1,0 +1,30 @@
+.card img {
+    height: 200px; /* Define a altura fixa para as imagens */
+    object-fit: cover; /* Mantém a proporção da imagem, cortando o excesso */
+}
+
+.card {
+    height: 100%; /* Garante que o card ocupe toda a altura disponível */
+}
+
+.carousel-item {
+    height: 200px; /* A mesma altura definida para as imagens */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.my-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
