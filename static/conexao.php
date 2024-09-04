@@ -1,5 +1,4 @@
 <?php
-        
         $hostname = "localhost";
         $bancodedados = "projeto_integrador";
         $usuario = "root";

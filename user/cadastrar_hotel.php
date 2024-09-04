@@ -59,6 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../javascript/script_navbar.js"></script>
     <title>Cadastro de Hotel</title>
+
+    <style>
+        .btn{
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -70,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h1 class="text-title">IvaíTour</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#home"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
                 <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
                 <li><a href="#clients"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
@@ -85,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ?>
             </ul>
         </nav>
-        <div class="container">
+        <div class="container-fluid">
             <h1>Cadastro de Hotéis - IvaíTour</h1>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="mb-3">

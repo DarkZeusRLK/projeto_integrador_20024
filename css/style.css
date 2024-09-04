@@ -630,3 +630,9 @@ input[type="password"]:focus {
     align-items:end;
     margin-left: 10%;
   }
+.img-fluid{
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+}

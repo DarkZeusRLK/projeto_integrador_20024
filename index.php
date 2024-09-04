@@ -26,7 +26,8 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
             background-image: url("Imagens/Vegetação2.gif");
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover;
+            background-size: 100%;
+            background-position-y: -40%;
             text-align: center;
         }
         .card {

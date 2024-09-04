@@ -22,8 +22,17 @@ if (isset($_POST['bt_login'])) {
                 session_start();
                 $_SESSION['nome'] = $usuario['nome'];
                 $_SESSION['email'] = $usuario['email'];
-                echo "success";
-                // Redirecionar ou realizar outras ações necessárias
+                $_SESSION['tipo_usuario'] = $usuario['tipo_usuario']; // Salva o tipo de usuário na sessão
+                
+                if ($usuario['tipo_usuario'] == 'admin') {
+                    echo "success_admin";
+                    // Redirecionar ou realizar outras ações específicas para administradores
+                    header("Location: ../admin/dashboard.php"); // Exemplo de redirecionamento
+                } else {
+                    echo "success_cliente";
+                    // Redirecionar ou realizar outras ações específicas para clientes
+                    header("Location: ../cliente/home.php"); // Exemplo de redirecionamento
+                }
             } else {
                 // Senha incorreta
                 echo "error_invalid_password";
