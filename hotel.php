@@ -65,14 +65,6 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
                                 <img src="<?php echo $hoteis['arquivo_caminho']; ?>" class="d-block w-100" alt="Imagem do hotel">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?php echo $index; ?>" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel<?php echo $index; ?>" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                     <div class="card-body d-flex flex-column justify-content-between">
                         <h5 class="card-title"><?php echo $hoteis['nome']; ?></h5>
