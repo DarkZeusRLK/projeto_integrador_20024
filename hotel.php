@@ -4,6 +4,31 @@ include('static/conexao.php');
 if (!isset($_SESSION)) {
     session_start();
 }
+// Capturar os filtros enviados pelo formulário (GET)
+$cidade_filtro = isset($_GET['cidade']) ? $_GET['cidade'] : '';
+$preco_filtro = isset($_GET['preco']) ? $_GET['preco'] : '';
+
+// Base da consulta SQL
+$consultar_banco = "SELECT * FROM cadastro_hoteis WHERE 1=1";
+
+// Adicionar filtro por cidade, se aplicável
+if ($cidade_filtro != '') {
+    $consultar_banco .= " AND cidade = '$cidade_filtro'";
+}
+
+// Adicionar filtro por preço, se aplicável
+if ($preco_filtro != '') {
+    if ($preco_filtro == 1) {
+        $consultar_banco .= " AND valor_diaria <= 200";
+    } elseif ($preco_filtro == 2) {
+        $consultar_banco .= " AND valor_diaria > 200 AND valor_diaria <= 400";
+    } elseif ($preco_filtro == 3) {
+        $consultar_banco .= " AND valor_diaria > 400";
+    }
+}
+
+// Executar a consulta com filtros
+$retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
 
 $consultar_banco = "SELECT * FROM cadastro_hoteis";
 $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
@@ -28,29 +53,36 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
 <!-- Filtros de Busca -->
 <div class="container">
     <div class="row mb-4">
-        <div class="col-md-4">
-            <select class="form-select" aria-label="Filtrar por cidade">
-                <option selected>Filtrar por cidade</option>
-                <option value="1">Ivaiporã</option>
-                <option value="2">São Pedro do Ivaí</option>
-                <option value="3">Apucarana</option>
-            </select>
-        </div>
-        <div class="col-md-4">
-            <select class="form-select" aria-label="Filtrar por preço">
-                <option selected>Filtrar por preço</option>
-                <option value="1">Até R$ 200</option>
-                <option value="2">R$ 200 a R$ 400</option>
-                <option value="3">Acima de R$ 400</option>
-            </select>
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn-primary w-100">Filtrar</button>
-        </div>
+        <form method="GET" action="">
+
+            <div class="col-md-4">
+                <select class="form-select" name="cidade" aria-label="Filtrar por cidade">
+                    <option value="">Filtrar por cidade</option>
+                    <option value="Ivaiporã" <?php echo ($cidade_filtro == 'Ivaiporã') ? 'selected' : ''; ?>>Ivaiporã</option>
+                    <option value="São Pedro do Ivaí" <?php echo ($cidade_filtro == 'São Pedro do Ivaí') ? 'selected' : ''; ?>>São Pedro do Ivaí</option>
+                    <option value="Apucarana" <?php echo ($cidade_filtro == 'Apucarana') ? 'selected' : ''; ?>>Apucarana</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <select class="form-select" name="preco" aria-label="Filtrar por preço">
+                    <option value="">Filtrar por preço</option>
+                    <option value="1" <?php echo ($preco_filtro == '1') ? 'selected' : ''; ?>>Até R$ 200</option>
+                    <option value="2" <?php echo ($preco_filtro == '2') ? 'selected' : ''; ?>>R$ 200 a R$ 400</option>
+                    <option value="3" <?php echo ($preco_filtro == '3') ? 'selected' : ''; ?>>Acima de R$ 400</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+            </div>
+
+        </form>
     </div>
 </div>
 
 
+<!-- Cards de Hotéis -->
 <!-- Cards de Hotéis -->
 <div class="container">
     <div class="row"> <!-- Row para agrupar os cards -->

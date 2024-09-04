@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS `cadastro_hoteis` (
   PRIMARY KEY (`id_hotel`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf32;
 
+
 --
 -- Extraindo dados da tabela `cadastro_hoteis`
 --
