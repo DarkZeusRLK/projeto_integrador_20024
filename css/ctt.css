@@ -134,46 +134,8 @@
   /* FIM DESIGN CONTATO */
   
   
-  /*Início CSS Navbar*/
-  .navbar{
-    background-color: var(--corlaranja);
-    margin-bottom: 30px;
-  }
-  .logo-img{
-    width: 100px;
-  }
-  #texto-logo{
-    text-decoration: none;
-    color: var(--corletrabranca);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: var(--fonttit);
-  }
-  .nav-link{
-    color: var(--corletrabranca);
-    font-size: var(--fontlet);
-  }
-  .dropdown-menu{
-    background-color: var(--corlaranja);
-    width: 220px;
-  }
-  .nav-item{
-    margin-left: 30px;
-  }
-  /*Fim CSS Navbar*/
   
   
-  
-  /*INÍCIO DESIGN RODAPÉ*/
-  .footer{
-    background-color: var(--corlaranja);
-    padding: 5px;
-    margin-top: 30px;
-  }
-  .text-footer{
-    color: var(--corletrabranca);
-    margin-bottom: 0px;
-  }
-  /*FIM DESIGN RODAPÉ*/
   
   
   /*INÍCIO COR DE FUNDO FORMULÁRIO CONTATO*/
