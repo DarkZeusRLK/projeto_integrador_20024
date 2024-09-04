@@ -1,0 +1,300 @@
+:root{
+    /*Cor título sistema*/
+    --corletra: #0093FF;
+  
+    /*Cor azul secundário*/
+    --corsecundaria: #0F4D86;
+  
+    /*Cor laranja*/
+    --corlaranja: #EFA34A;
+  
+    /*Cor branca*/
+    --corletrabranca: #FFFFF0;
+  
+    /*Cor preta*/
+    --corletrapreta: #000000;
+  
+    /*Tamanho fonte titulo*/
+    --fonttit: 30px;
+  
+    /*Fonte letras*/
+    --fontlet: 20px;
+  }
+  
+  #tit{
+    color: var(--corletra);
+    font-size: var(--fonttit);
+  }
+  
+  
+  /*INÍCIO DESIGN CONTATO*/
+  
+  .orange {
+    color: #ff7a01;
+  }
+  
+  .form-container {
+    max-width: 700px;
+    margin-left: 22%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background-color: #001925;
+    padding: 30px;
+    border-left: 5px solid #ff7a01;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  
+  .heading {
+    margin-left: 265px;
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  
+  .form-container .form .input {
+    color: #87a4b6;
+    width: 100%;
+    background-color: #002733;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    border-left: 1px solid transparent;
+  }
+  
+  .form-container .form .input:focus {
+    border-left: 5px solid #ff7a01;
+  }
+  
+  .form-container .form .textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #013747;
+    color: #ff7a01;
+    font-weight: bold;
+    resize: none;
+    max-height: 150px;
+    margin-bottom: 20px;
+    border-left: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-container .form .textarea:focus {
+    border-left: 5px solid #ff7a01;
+  }
+  
+  .form-container .form .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-container .form .button-container .send-button {
+    flex-basis: 70%;
+    background: #ff7a01;
+    padding: 10px;
+    color: #001925;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-container .form .button-container .send-button:hover {
+    background: transparent;
+    border: 1px solid #ff7a01;
+    color: #ff7a01;
+  }
+  
+  .form-container .form .button-container .reset-button-container {
+    filter: drop-shadow(1px 1px 0px #ff7a01);
+    flex-basis: 30%;
+  }
+  
+  .form-container .form .button-container .reset-button-container .reset-button {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    color: #ff7a01;
+    font-weight: bold;
+    background: #001925;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-container .form .button-container .reset-button-container .reset-button:hover {
+    background: #ff7a01;
+    color: #001925;
+  }
+  /* FIM DESIGN CONTATO */
+  
+  
+  /*Início CSS Navbar*/
+  .navbar{
+    background-color: var(--corlaranja);
+    margin-bottom: 30px;
+  }
+  .logo-img{
+    width: 100px;
+  }
+  #texto-logo{
+    text-decoration: none;
+    color: var(--corletrabranca);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: var(--fonttit);
+  }
+  .nav-link{
+    color: var(--corletrabranca);
+    font-size: var(--fontlet);
+  }
+  .dropdown-menu{
+    background-color: var(--corlaranja);
+    width: 220px;
+  }
+  .nav-item{
+    margin-left: 30px;
+  }
+  /*Fim CSS Navbar*/
+  
+  
+  
+  /*INÍCIO DESIGN RODAPÉ*/
+  .footer{
+    background-color: var(--corlaranja);
+    padding: 5px;
+    margin-top: 30px;
+  }
+  .text-footer{
+    color: var(--corletrabranca);
+    margin-bottom: 0px;
+  }
+  /*FIM DESIGN RODAPÉ*/
+  
+  
+  /*INÍCIO COR DE FUNDO FORMULÁRIO CONTATO*/
+  .contact-form{
+    background-color: var(--corlaranja);
+  }
+  /*FIM COR DE FUNDO FORMULÁRIO CONTATO*/
+  
+  
+  
+  
+  
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .text-content p {
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .libras-doll {
+    margin-top: 20px;
+  }
+  
+  .libras-doll img {
+    width: 100px;
+    height: auto;
+  }
+  
+  
+  /*CSS Novidades*/
+  #h1-novid {
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 50px;
+  }
+  
+  .h1-card-novid {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .span-novid {
+  font-weight: bolder;
+  }
+  .date{
+  color: var(--corlaranja);
+  font-size: var(--fontlet);
+  }
+  .text-novidades{
+  font-size: var(--fontlet);
+  }
+  /*Fim CSS Novidades*/
+  
+  /*Início CSS Passagens*/
+  #h1-passagens{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  }
+  .card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 37%;
+  margin-top: 70px;
+  }
+  
+  #form-passagem {
+  display: flex;
+  flex-direction: column;
+  }
+  
+  label {
+  margin: 10px 0 5px;
+  color: #333;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  }
+  
+  #button-passagens {
+  background-color: var(--corletra);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  }
+  /*Fim CSS Passagens*/
+  
+  
+  /*Início CSS Cidades*/
+  .h1-cidades{
+    color: #ff7a01;
+    margin-left: 45%;
+    margin-bottom: -50px;
+  }
+  #container-cidades{
+    margin-right: 465px;
+  }
+  /*Fim CSS Cidades*/
