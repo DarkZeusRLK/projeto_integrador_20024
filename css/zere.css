@@ -1,0 +1,140 @@
+/*Variáveis de cores do site----------------------------------------------*/
+:root{
+    /*Cor título sistema*/
+    --corletra: #ffffff;
+  
+    /*Cor azul secundário*/
+    --corsecundaria: #34495e;
+  
+    /*Cor amarela*/
+    --coramarela: #ffde59;
+  
+    /*Cor branca*/
+    --corletrabranca: #FFFFF0;
+  
+    /*Cor preta*/
+    --corletrapreta: #000000;
+  
+    /*Tamanho fonte titulo*/
+    --titulo: 30px;
+  
+    /*tamanho letras*/
+    --textin: 20px;
+  }
+/*FIM DE VARIAVEIS-------^-----DE---^-----CORES------------^--------------*/
+.divo{
+    background-color: #fae797;
+   max-width: 700px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+   
+}
+h2{
+    color: var(--corsecundaria);
+}
+h1{
+    color: var(--corsecundaria);
+}
+h4{
+    color: var(--coramarela);
+}
+p{
+    color: var(--corsecundaria);
+}
+.profile-picture{
+    border-radius: 100px;
+}
+.profile-picture-container {
+    position: relative;
+    display: inline-block;  
+}
+.profile-picture {
+    cursor: pointer;
+    width: 200px;
+    height: auto;
+}
+#foto {
+    display: none;
+}
+.edit-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+.edit-icon i {
+    font-size: 20px;
+    color: var(--corletrapreta);
+}
+#but1{  
+    color: var(--corletra);
+    border: #34495e;
+    border-radius: 30px;
+    background-color: var(--corsecundaria);
+    transition:0.3s;
+}
+#but1:hover{  
+    background-color: #6992bb;
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+.escuro{
+    color: var(--coramarela);
+    background-color: var(--corsecundaria);
+    opacity: 0.4;
+    border-radius: 20px;
+    padding: 10px;
+}
+.dive {
+
+    padding: 20px;
+    margin-top: 3px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    border: 1px solid rgb(0, 0, 0);
+  
+    /* Borda sólida de 2px na cor azul */
+  
+    width: 100%;
+    /* Largura em relação ao elemento pai */
+    max-width: 600px;
+    /* Largura máxima */
+    margin: 0 auto;
+    /* Centralizar horizontalmente */
+  
+    background-color: #f2f2f2;
+  
+    /* Inclui preenchimento e borda na largura total */
+  }
+  
+  @media (max-width: 600px) {
+    .dive {
+      width: 100%;
+      /* Reduz a largura em telas menores */
+      font-size: 16px;
+      /* Ajusta o tamanho da fonte */
+      position: relative;
+      /* Posicionamento relativo */
+      top: 25px;
+      /* Move 20px para baixo */
+    }
+  }
+  
+  .dive:hover {
+  
+    background-color: rgb(226, 221, 221);
+  }
+  
+  /*FIM*/
+  /*CSS DA PAGINA CARTAO PHP*/
+  .cad_cart {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
