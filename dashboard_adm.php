@@ -25,10 +25,11 @@
                     <h3 class="titulo-dashboard-adm">Usuários Cadastrados</h3>
                     <table>
                         <thead>
-                            <tr>
+                            <tr id="tr-funcao">
                                 <th>ID</th>
                                 <th>Nome</th>
                                 <th>Email</th>
+                                <th>Imagem</th>
                                 <th>Função</th>
                                 <th>Ações</th>
                             </tr>
@@ -38,6 +39,7 @@
                                 <td>1</td>
                                 <td>João Silva</td>
                                 <td>joao@email.com</td>
+                                <td><img src="Imagens/avatar.png" alt="Imagem do usuário" class="imagem-dashboard-adm"></td>
                                 <td>Usuário</td>
                                 <td>
                                     <button>Editar</button>
@@ -48,6 +50,7 @@
                                 <td>2</td>
                                 <td>Maria Souza</td>
                                 <td>maria@email.com</td>
+                                <td><img src="Imagens/avatar.png" alt="Imagem do usuário" class="imagem-dashboard-adm"></td>>
                                 <td>Usuário</td>
                                 <td>
                                     <button>Editar</button>
@@ -67,6 +70,7 @@
                                 <th>ID</th>
                                 <th>Nome</th>
                                 <th>Email</th>
+                                <th>Imagem</th>
                                 <th>Função</th>
                                 <th>Ações</th>
                             </tr>
@@ -76,6 +80,7 @@
                                 <td>1</td>
                                 <td>Hotel Ivaí</td>
                                 <td>contato@hotelivai.com</td>
+                                <td><img src="Imagens/avatar.png" alt="Imagem do hotel" class="imagem-dashboard-adm"></td>
                                 <td>Hotel</td>
                                 <td>
                                     <button>Editar</button>
@@ -86,6 +91,7 @@
                                 <td>2</td>
                                 <td>Hotel Central</td>
                                 <td>contato@hotelcentral.com</td>
+                                <td><img src="Imagens/avatar.png" alt="Imagem do hotel" class="imagem-dashboard-adm"></td>
                                 <td>Hotel</td>
                                 <td>
                                     <button>Editar</button>
