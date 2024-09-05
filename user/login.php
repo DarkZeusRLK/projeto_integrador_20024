@@ -87,7 +87,7 @@ $conexao->close();
             <nav class="col-md-3 col-lg-2 sidebar">
                 <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
                 <div class="profile">
-                    <img id="logo" src="Imagens/logo (1).png" alt="Logo">
+                    <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
                     <h1 class="text-title">IvaíTour</h1>
                 </div>
                 <ul class="nav-links">
