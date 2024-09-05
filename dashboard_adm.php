@@ -20,12 +20,12 @@
                     <button id="btnHoteis" onclick="showHotels()">Hotéis</button>
                 </div>
 
-                <!-- Tabela de Usuários -->
+                
                 <div id="usuariosTable" class="table-container">
-                    <h3 class="titulo-dashboard-adm">Usuários Cadastrados</h3>
+                <h3 class="titulo-dashboard-adm">Usuários Cadastrados</h3>
                     <table>
                         <thead>
-                            <tr id="tr-funcao">
+                            <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
                                 <th>Email</th>
@@ -50,7 +50,7 @@
                                 <td>2</td>
                                 <td>Maria Souza</td>
                                 <td>maria@email.com</td>
-                                <td><img src="Imagens/avatar.png" alt="Imagem do usuário" class="imagem-dashboard-adm"></td>>
+                                <td><img src="Imagens/avatar.png" alt="Imagem do usuário" class="imagem-dashboard-adm"></td>
                                 <td>Usuário</td>
                                 <td>
                                     <button>Editar</button>
