@@ -116,6 +116,14 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($mysqli->error);
             <?php endif; ?>
                 <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
                 <?php
+                if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador') {
+                ?>
+                  <li><a href="admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
+
+                <?php
+                }
+                ?>
+                <?php
                 if (isset($_SESSION['nome'])) {
                 ?>
                     <li class="nav-item logout">

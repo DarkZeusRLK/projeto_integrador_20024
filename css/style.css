@@ -634,3 +634,66 @@ input[type="password"]:focus {
   flex-wrap: wrap;
 
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead {
+  background-color: #34495e;
+  color: white;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.table-container {
+  display: none;
+}
+
+#usuariosTable, #hoteisTable {
+  display: block;
+}
+.titulo-dashboard-adm{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+}
+.imagem-dashboard-adm{
+  width: 50px;
+}
+.options {
+  margin-bottom: 2%;
+  margin-left: 0%;
+}
+.dashboard-content {
+  background-color: #34495e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+}
+.custom-btn2{
+  background-color: #ffde59;
+  color: black;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 12%;
+}
+.custom-btn2:hover{
+  background-color: #217093;
+  color: white;
+  transition: 0.5s;
+  font-size: 1rem;
+  border: none;
+}
