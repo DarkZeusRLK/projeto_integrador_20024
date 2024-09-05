@@ -1,48 +1,71 @@
 <?php
-include('../static/conexao.php'); // Certifique-se de que esse caminho está correto
+include('../static/conexao.php'); // Certifique-se de que o caminho está correto
 
 $mensagem = ''; // Inicializa a variável de mensagem
 
-if (isset($_POST['submit'])) {
-    $email = $_POST['bt_email'];
-    $senha = password_hash($_POST['bt_senha'], PASSWORD_DEFAULT);
-    $nome = $_POST['bt_nome'];
-    $telefone = $_POST['bt_telefone'];
-    $cpf = $_POST['bt_cpf'];
-    $endereco = $_POST['bt_endereco'];
-    $genero = $_POST['bt_genero'];
+// Função para sanitizar dados
+function sanitize_input($data) {
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = sanitize_input($_POST['bt_email']);
+    $senha = sanitize_input($_POST['bt_senha']);
+    $nome = sanitize_input($_POST['bt_nome']);
+    $telefone = sanitize_input($_POST['bt_telefone']);
+    $cpf = sanitize_input($_POST['bt_cpf']);
+    $genero = sanitize_input($_POST['bt_genero']);
+    
     $caminho_imagem = "Imagens/foto_padrao.png";
+    $tipo_usuario = "cliente"; // Definindo o tipo de usuário como "cliente"
 
-    // Verifique se o email já está cadastrado
-    $verificar_email = "SELECT * FROM cadastro WHERE email = ?";
-    $stmt_verificar = $conexao->prepare($verificar_email);
-    $stmt_verificar->bind_param("s", $email);
-    $stmt_verificar->execute();
-    $result = $stmt_verificar->get_result();
-
-    if ($result->num_rows > 0) {
-        // Email já cadastrado, retorne uma mensagem de erro específica
-        echo "error_email_exists";
-        exit; // Certifique-se de que nenhum conteúdo adicional seja enviado
-    } else {
-        // Insira os dados no banco de dados
-        $query = "INSERT INTO cadastro (email, senha, nome, telefone, cpf, endereco, genero, foto_perfil_caminho) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $conexao->prepare($query);
-        $stmt->bind_param("ssssssss", $email, $senha, $nome, $telefone, $cpf, $endereco, $genero, $caminho_imagem);
-
-        if ($stmt->execute()) {
-            // Cadastro bem-sucedido, retorne uma mensagem de sucesso
-            echo "success";
-            exit; // Certifique-se de que nenhum conteúdo adicional seja enviado
-        } else {
-            // Cadastro falhou, retorne uma mensagem de erro
-            echo "error";
-            exit; // Certifique-se de que nenhum conteúdo adicional seja enviado
+    // Verifique se a variável $conexao está definida
+    if (isset($conexao)) {
+        // Verifique se o email já está cadastrado
+        $verificar_email = "SELECT * FROM cadastro WHERE email = ?";
+        $stmt_verificar = $conexao->prepare($verificar_email);
+        
+        // Verifica se a preparação foi bem-sucedida
+        if ($stmt_verificar === false) {
+            die('Erro ao preparar consulta: ' . $conexao->error); // Exibe o erro do MySQL
         }
+
+        $stmt_verificar->bind_param("s", $email);
+        $stmt_verificar->execute();
+        $result = $stmt_verificar->get_result();
+
+        if ($result->num_rows > 0) {
+            // Email já cadastrado, retorne uma mensagem de erro específica
+            $mensagem = "Email já cadastrado!";
+        } else {
+            // Criptografa a senha
+            $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
+
+            // Insira os dados no banco de dados
+            $query = "INSERT INTO cadastro (nome, email, senha, telefone, cpf, genero, tipo_usuario, arquivo_caminho) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conexao->prepare($query);
+
+            // Verifica se a preparação foi bem-sucedida
+            if ($stmt === false) {
+                die('Erro ao preparar consulta: ' . $conexao->error); // Exibe o erro do MySQL
+            }
+
+            $stmt->bind_param("ssssssss", $nome, $email, $senha_hashed, $telefone, $cpf, $genero, $tipo_usuario, $caminho_imagem);
+
+            if ($stmt->execute()) {
+                // Cadastro bem-sucedido, retorne uma mensagem de sucesso
+                $mensagem = "Cadastro realizado com sucesso!";
+            } else {
+                // Cadastro falhou, retorne uma mensagem de erro
+                $mensagem = "Erro ao realizar o cadastro. Tente novamente.";
+            }
+        }
+    } else {
+        $mensagem = "Erro de conexão com o banco de dados.";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -84,7 +107,7 @@ if (isset($_POST['submit'])) {
                 <h1 class="text-title">IvaíTour</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="../index2.php"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
                 <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
                 <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
@@ -100,7 +123,7 @@ if (isset($_POST['submit'])) {
             </ul>
         </nav>
         <div class="container d-flex justify-content-center">
-            <form class="form" action="processa_cadastro.php" method="post">
+            <form class="form" action="" method="post">
                 <div class="flex-column">
                     <label>Email </label>
                 </div>
@@ -145,36 +168,23 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="flex-column">
-                    <label>Cidade </label>
-                </div>
-                <div class="inputForm">
-                    <svg height="20" viewBox="0 0 1024 1024" width="20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 511.68a32 32 0 0 0 32 32h32v319.936a128 128 0 0 0 128 128h640a128 128 0 0 0 128-128V543.68h32a32 32 0 0 0 0-64h-54.4L536.768 36.608a64 64 0 0 0 -49.504-22.4h-2.368a64 64 0 0 0 -49.6 22.464L54.4 447.68H0a32 32 0 0 0 -32 32zM512 94.08L854.528 479.68h-84.8V703.68a32 32 0 0 1 -32 32h-128a32 32 0 0 1 -32-32v-160h-128v160a32 32 0 0 1 -32 32h-128a32 32 0 0 1 -32-32V479.68h-84.8zM160 831.68V511.68h128v192a96 96 0 0 0 96 96h128a96 96 0 0 0 96-96v-192h128v320a64 64 0 0 1 -64 64H192a64 64 0 0 1 -64-64z"></path>
-                    </svg>
-                    <input type="text" name="bt_cidade" class="input" placeholder="Insira sua Cidade">
-                </div>
-
-                <div class="flex-column">
-                    <label>Estado </label>
+                    <label>CPF</label>
                 </div>
                 <div class="inputForm">
                     <svg height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 16.52a2.15 2.15 0 0 1 -1.3-.46l-2.36-1.86a2.07 2.07 0 0 0 -2.74.16l-1.31 1.33A15.39 15.39 0 0 1 6.31 8.34l1.32-1.32a2.09 2.09 0 0 0 .15-2.74l-1.86-2.36a2.14 2.14 0 0 1 -.47-1.3A2.22 2.22 0 0 1 4.69 0 4.7 4.7 0 0 0 2.6.35 2.32 2.32 0 0 0 1 1.53C.35 2.84-.73 8.85 4.62 14.2S21.17 23.65 22.48 23a2.31 2.31 0 0 0 1.18-1.56A4.63 4.63 0 0 0 24 19.31a2.24 2.24 0 0 1 -2.22-2.79z"></path>
                     </svg>
-                    <input type="text" name="bt_estado" class="input" placeholder="Insira seu Estado">
+                    <input type="text" name="bt_cpf" class="input" placeholder="Insira seu CPF">
+                </div>
+                <div class="mb-3">
+                    <label for="bt_genero" class="form-label">Gênero</label>
+                    <select name="bt_genero" id="bt_genero" class="form-control" required>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
                 </div>
 
-                <div class="flex-column">
-                    <label>CEP </label>
-                </div>
-                <div class="inputForm">
-                    <svg height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.485 2 2 6.485 2 12s4.485 10 10 10 10-4.485 10-10S17.515 2 12 2zm0 16a1 1 0 1 1 0-2 1 1 0 1 1 0 2zm2-6h-2V8a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0h2a1 1 0 1 0 0-2z" />
-                    </svg>
-                    <input type="text" name="bt_cep" class="input" placeholder="Insira seu CEP">
-                </div>
-
-                <input class="login-button" type="submit" value="Cadastrar">
+                <input class="btn btn-warning" type="submit" value="Cadastrar">
             </form>
         </div>
             <br>

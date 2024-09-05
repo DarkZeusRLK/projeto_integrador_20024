@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 }
 
 $consultar_banco = "SELECT * FROM cadastro_hoteis";
-$retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
+$retorno_consulta = $conexao->query($consultar_banco) or die($mysqli->error);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -108,13 +108,18 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
             <ul class="nav-links">
                 <li><a href="#home"><i class="fas fa-home"></i><span>Home</span></a></li>
                 <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                <?php if (isset($_SESSION['nome'])) : ?>
+                    <li><a href="user/minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+            <?php endif; ?>
+            <?php if (!isset($_SESSION['nome'])) : ?>
+                    <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+            <?php endif; ?>
                 <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
                 <?php
-                if (isset($_SESSION['id_login'])) {
+                if (isset($_SESSION['nome'])) {
                 ?>
                     <li class="nav-item logout">
-                        <a href="#logout" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+                        <a href="static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
                     </li>
                 <?php
                 }
@@ -122,9 +127,6 @@ $retorno_consulta = $mysqli->query($consultar_banco) or die($mysqli->error);
             </ul>
         </nav>
         <main class="col-md-10 col-lg-10     main-content">
-            <?php if (isset($_SESSION['nome'])) : ?>
-                <h2 class="text-center mb-4">Bem-Vindo à Taverna de Valhalla <?php echo $_SESSION['nome']; ?></h2>
-            <?php endif; ?>
 
             <a class="passagem" href="passagem.php">Reserve sua Passagem</a>
     

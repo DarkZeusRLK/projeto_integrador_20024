@@ -1,6 +1,8 @@
 <?php
 include('../static/conexao.php');
 
+require('protect_adm.php');
+
 if (!isset($_SESSION)) {
     session_start();
 }

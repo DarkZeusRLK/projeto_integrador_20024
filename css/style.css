@@ -194,7 +194,7 @@ input[type="password"] {
   box-sizing: border-box;
   width: 30em;
   height: 4.3em;
-  font-size: 0.60em;
+  font-size: 0.90em;
   color: #353538;
   font-weight: 600;
   font-family: inherit;
@@ -579,8 +579,6 @@ input[type="password"]:focus {
   align-items: center;
   font-weight: 500;
   gap: 10px;
-  border: 1px solid #ededef;
-  background-color: white;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
