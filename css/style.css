@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -91,7 +92,7 @@ main {
 
 .sidebar.expanded .text-title {
   display: block; /* Mostra o título quando expandido */
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #fff;
 }
 
@@ -194,7 +195,7 @@ input[type="password"] {
   box-sizing: border-box;
   width: 30em;
   height: 4.3em;
-  font-size: 0.90em;
+  font-size: 0.9em;
   color: #353538;
   font-weight: 600;
   font-family: inherit;
@@ -236,7 +237,8 @@ input[type="password"]:focus {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .form, #contactForm {
+  .form,
+  #contactForm {
     width: 90%;
     max-width: 90%;
     margin-top: 10%;
@@ -303,12 +305,12 @@ input[type="password"]:focus {
 
 .text-quadrado {
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .text2-quadrado {
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 23px;
   word-spacing: 2px;
   width: 35%;
@@ -355,7 +357,7 @@ input[type="password"]:focus {
 
 .text2-quadrado2 {
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 23px;
   word-spacing: 2px;
   width: 35%;
@@ -385,7 +387,7 @@ input[type="password"]:focus {
 .passagem:hover {
   color: black;
   background-color: #ffde59;
-  transition: background-color 0.2s ease-out;  
+  transition: background-color 0.2s ease-out;
 }
 /* Adiciona um novo estilo para o item de desconectar */
 .logout {
@@ -411,7 +413,7 @@ input[type="password"]:focus {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 .card img {
@@ -442,37 +444,37 @@ input[type="password"]:focus {
 /* Responsividade */
 @media (max-width: 768px) {
   .sidebar {
-      width: 60px;
+    width: 60px;
   }
   .sidebar.expanded {
-      width: 200px;
+    width: 200px;
   }
   .content {
-      margin-left: 60px;
+    margin-left: 60px;
   }
   .sidebar.expanded ~ .content {
-      margin-left: 200px;
+    margin-left: 200px;
   }
   .card {
-      margin-bottom: 15px;
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 576px) {
   .card {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
   .passagem {
-      font-size: 1.2rem;
-      width: 12rem;
+    font-size: 1.2rem;
+    width: 12rem;
   }
 }
 
-#cards{
+#cards {
   margin-top: 3rem;
   margin-left: 2rem;
   padding: 10 px;
 }
-/* From Uiverse.io by micaelgomestavares */ 
+/* From Uiverse.io by micaelgomestavares */
 .form {
   display: flex;
   flex-direction: column;
@@ -481,11 +483,13 @@ input[type="password"]:focus {
   padding: 30px;
   width: 450px;
   border-radius: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 ::placeholder {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .form button {
@@ -585,9 +589,8 @@ input[type="password"]:focus {
 
 .btn:hover {
   border: 1px solid #34495e;
-  ;
 }
-.footer{ 
+.footer {
   justify-content: center;
   background-color: #34495e;
   padding: 20px 0;
@@ -597,42 +600,40 @@ input[type="password"]:focus {
   width: 100%;
   position: relative;
   left: 2%;
-
 }
-.footer a{
+.footer a {
   text-decoration: none;
   color: #e2cd13;
 }
-  main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  #text-index2{
-    margin: 0;
-    padding: 0.5rem;
-  }
-  .container-fluid{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center
-  }
-  .logos{
-    width: 10rem;
-    height: 10rem;
-    display: flex;
-    flex-direction: initial;
-    align-items:end;
-    margin-left: 10%;
-  }
-.img-fluid{
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#text-index2 {
+  margin: 0;
+  padding: 0.5rem;
+}
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.logos {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: initial;
+  align-items: end;
+  margin-left: 10%;
+}
+.img-fluid {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
-
 }
 table {
   width: 100%;
@@ -644,7 +645,8 @@ table thead {
   color: white;
 }
 
-table th, table td {
+table th,
+table td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -653,17 +655,18 @@ table th, table td {
   display: none;
 }
 
-#usuariosTable, #hoteisTable {
+#usuariosTable,
+#hoteisTable {
   display: block;
 }
-.titulo-dashboard-adm{
+.titulo-dashboard-adm {
   margin-top: 30px;
   margin-bottom: 30px;
   color: white;
   text-align: center;
   justify-content: center;
 }
-.imagem-dashboard-adm{
+.imagem-dashboard-adm {
   width: 50px;
 }
 .options {
@@ -677,7 +680,7 @@ table th, table td {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 90%;
 }
-.custom-btn2{
+.custom-btn2 {
   background-color: #ffde59;
   color: black;
   border: none;
@@ -687,13 +690,135 @@ table th, table td {
   text-decoration: none;
   display: inline-block;
   font-size: 1rem;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: 12%;
 }
-.custom-btn2:hover{
+.custom-btn2:hover {
   background-color: #217093;
   color: white;
   transition: 0.5s;
   font-size: 1rem;
   border: none;
+}
+/* Estilos para o Modo Noite */
+body.night-mode {
+  background-color: #121212; /* Fundo escuro */
+  color: #e0e0e0; /* Texto claro */
+}
+
+body.night-mode footer {
+  background-color: unset !important; /* Remove o fundo do rodapé no modo noite */
+}
+
+body.night-mode .navbar,
+body.night-mode nav.sidebar {
+  background-color: #1e1e1e !important; /* Fundo escuro para navbar e sidebar */
+  color: #e0e0e0; /* Texto claro */
+}
+
+body.night-mode .navbar a,
+body.night-mode nav.sidebar a {
+  color: #e0e0e0; /* Links com cor clara */
+}
+
+body.night-mode .navbar a:hover,
+body.night-mode nav.sidebar a:hover {
+  color: #ffcc00; /* Links com cor de destaque ao passar o mouse */
+}
+
+body.night-mode .card {
+  background-color: #1e1e1e; /* Fundo escuro para os cards */
+  color: #e0e0e0; /* Texto claro nos cards */
+  border: 1px solid #333; /* Bordas escuras */
+}
+
+body.night-mode .carousel-caption {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Fundo translúcido escuro no carousel */
+  color: #e0e0e0; /* Texto claro */
+}
+
+body.night-mode .custom-btn {
+  background-color: #333; /* Botões com fundo escuro */
+  color: #fff; /* Texto claro nos botões */
+}
+
+body.night-mode .custom-btn:hover {
+  background-color: #555; /* Botões escurecem ao passar o mouse */
+}
+
+/* Outras seções */
+body.night-mode h1,
+body.night-mode h3,
+body.night-mode p {
+  color: #e0e0e0; /* Texto claro em todos os títulos e parágrafos */
+}
+
+/* Ocultar o botão de alternância inicialmente */
+.theme-toggle-container {
+  display: none;
+}
+
+/* Mostrar o botão de alternância após clicar na navbar */
+.navbar-open .theme-toggle-container {
+  display: flex;
+}
+
+/* Estilos do botão de alternância (switch) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px; /* Arredonda o botão */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%; /* Mantém o círculo arredondado */
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Animação de deslizar */
+}
+
+/* Modo Noite para o botão de alternância */
+body.night-mode .slider {
+  background-color: #555 !important;
+}
+
+body.night-mode input:checked + .slider {
+  background-color: #ffcc00; /* Cor de destaque no modo noite */
 }
