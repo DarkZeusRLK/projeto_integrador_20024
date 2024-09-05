@@ -25,7 +25,7 @@
                 <h1 class="text-title">IvaíTour</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#home"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
                 <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
                 <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
