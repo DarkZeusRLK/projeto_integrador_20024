@@ -20,6 +20,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="javascript/script_navbar.js"></script>
     <script defer src="javascript/alternar_modos.js"></script>
+    <link rel="shortcut icon" href="Imagens/logo (1).png">
     <title>Início - IvaíTour</title>
     <style>
         body {
