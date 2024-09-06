@@ -4,6 +4,14 @@ include('../static/conexao.php');
 if (!isset($_SESSION)) {
   session_start();
 }
+
+// Verifique se as variáveis de sessão estão definidas
+$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
+$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+$foto = isset($_SESSION['arquivo_caminho']) ? $_SESSION['arquivo_caminho'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
+
+$consultar_banco = "SELECT * FROM cadastro_hoteis";
+$retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,6 +43,7 @@ if (!isset($_SESSION)) {
 
 <body>
   <div class="container-fluid">
+    
     <nav class="col-md-3 col-lg-2 sidebar">
       <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
       <div class="profile">
@@ -45,10 +54,10 @@ if (!isset($_SESSION)) {
         <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
         <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
         <?php if (isset($_SESSION['nome'])): ?>
-          <li><a href="user/minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+          <li><a href="minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
         <?php endif; ?>
         <?php if (!isset($_SESSION['nome'])): ?>
-          <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+          <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
         <?php endif; ?>
         <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
         <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
@@ -60,7 +69,7 @@ if (!isset($_SESSION)) {
           </li>
         <?php endif; ?>
         <li class="nav-item">
-          <a href="user/configuracoes.php" class="nav-link" id="settings-icon">
+          <a href="configuracoes.php" class="nav-link" id="settings-icon">
             <i class="fas fa-cog"></i><span>Configurações</span>
           </a>
         </li>
@@ -70,6 +79,21 @@ if (!isset($_SESSION)) {
     <!-- Conteúdo da Página -->
     <div class="container-fluid">
       <h1><b>Configurações do Site</b></h1>
+      <?php
+                if(isset($_SESSION['nome'])){
+
+            ?>
+        <div class="user-profile">
+  <span class="username"><b><?php echo $_SESSION['nome'];?></b></span>
+  <?php if ($tipo_usuario === 'administrador'): ?>
+  <span id="admin-badge">ADM</span>
+  <?php endif; ?>
+  <a href="minha_conta.php" class="user-avatar-link">
+  <img src="../<?php echo $foto['arquivo_caminho']; ?>" alt="Avatar" class="avatar">
+</div>
+<?php
+                }
+?>
 
       <!-- Alternar modo dia/noite -->
       <div class="mt-4">
@@ -97,7 +121,8 @@ if (!isset($_SESSION)) {
               <option value="Imagens/Cidade.jpg">Cidade</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary mt-3">Salvar Alterações</button>
+          <br>
+          <button type="submit" class="custom-btn">Salvar Alterações</button>
         </form>
       </div>
 
@@ -113,25 +138,11 @@ if (!isset($_SESSION)) {
             <option value="22px">Extra Grande (22px)</option>
           </select>
         </div>
-        <button id="save-font-size" class="btn btn-primary mt-3">Salvar Tamanho da Fonte</button>
-
-
-        <div class="teste">
-          <div class="theme-toggle-container">
-            <span id="day-icon" class="fas fa-sun"></span>
-            <label class="switch">
-              <input type="checkbox" id="theme-toggle">
-              <span class="slider round"></span>
-            </label>
-            <span id="night-icon" class="fas fa-moon"></span>
-          </div>
-        </div>
+        <br>
+        <button id="save-font-size" class="custom-btn">Salvar Tamanho da Fonte</button>
       </div>
     </div>
   </div>
-
-
-
 </body>
 
 </html>

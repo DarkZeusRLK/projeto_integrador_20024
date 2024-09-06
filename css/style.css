@@ -1,4 +1,10 @@
-html,
+/* Define o tamanho da fonte baseado no valor salvo */
+
+
+html {
+  font-size: var(--font-size, 16px); /* 16px é o valor padrão */
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -696,100 +702,44 @@ table td {
   font-size: 1rem;
   border: none;
 }
-/* Estilos para o Modo Noite */
-body.night-mode {
-  background-color: #121212; /* Fundo escuro */
-  color: #e0e0e0; /* Texto claro */
-}
-
-body.night-mode footer {
-  background-color: unset !important; /* Remove o fundo do rodapé no modo noite */
-}
-
-body.night-mode .navbar,
-body.night-mode nav.sidebar {
-  background-color: #1e1e1e !important; /* Fundo escuro para navbar e sidebar */
-  color: #e0e0e0; /* Texto claro */
-}
-
-body.night-mode .navbar a,
-body.night-mode nav.sidebar a {
-  color: #e0e0e0; /* Links com cor clara */
-}
-
-body.night-mode .navbar a:hover,
-body.night-mode nav.sidebar a:hover {
-  color: #ffcc00; /* Links com cor de destaque ao passar o mouse */
-}
-
-body.night-mode .card {
-  background-color: #1e1e1e; /* Fundo escuro para os cards */
-  color: #e0e0e0; /* Texto claro nos cards */
-  border: 1px solid #333; /* Bordas escuras */
-}
-
-body.night-mode .carousel-caption {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.7
-  ); /* Fundo translúcido escuro no carousel */
-  color: #e0e0e0; /* Texto claro */
-}
-
-body.night-mode .custom-btn {
-  background-color: #333; /* Botões com fundo escuro */
-  color: #fff; /* Texto claro nos botões */
-}
-
-body.night-mode .custom-btn:hover {
-  background-color: #555; /* Botões escurecem ao passar o mouse */
-}
-
-/* Outras seções */
-body.night-mode h1,
-body.night-mode h3,
-body.night-mode p {
-  color: #e0e0e0; /* Texto claro em todos os títulos e parágrafos */
-}
-
-/* Ocultar o botão de alternância inicialmente */
 .theme-toggle-container {
-  display: none;
-}
-
-/* Mostrar o botão de alternância após clicar na navbar */
-.navbar-open .theme-toggle-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
-
-/* Estilos do botão de alternância (switch) */
+.theme-toggle-container span {
+  font-size: 24px;
+  margin: 0 10px;
+}
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
 }
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
-  left: 0;
+  left: -0.6rem;
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px; /* Arredonda o botão */
+  transition: .4s;
+  width: 100%;
 }
-
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
 .slider:before {
   position: absolute;
   content: "";
@@ -798,31 +748,210 @@ body.night-mode p {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: 0.4s;
-  border-radius: 50%; /* Mantém o círculo arredondado */
+  transition: .4s;
 }
-
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #2196F3;
 }
-
 input:checked + .slider:before {
-  transform: translateX(26px); /* Animação de deslizar */
-}
-
-/* Modo Noite para o botão de alternância */
-body.night-mode .slider {
-  background-color: #555 !important;
-}
-
-body.night-mode input:checked + .slider {
-  background-color: #ffcc00; /* Cor de destaque no modo noite */
+  transform: translateX(26px);
 }
 #settings-icon {
   display: flex;
   align-items: center;
   color: #e0e0e0; /* Cor do ícone */
   font-size: 1rem; /* Tamanho do ícone */
-  padding: 0.3rem;
   text-decoration: none;
+}
+/* Estilos para o modo escuro */
+body.dark-mode {
+  background-color: #34495e;
+  color: #ffffff;
+}
+
+.sidebar.dark-mode {
+  background-color: #ffde59;
+}
+
+.nav-links li a.dark-mode {
+  color: #ffffff;
+}
+
+.container-fluid.dark-mode {
+  background-color: #34495e;
+}
+
+input[type="text"].dark-mode, input[type="email"].dark-mode, select.dark-mode {
+  background-color: #34495e;
+  color: white;
+  border: 1px solid #ffffff;
+}
+
+h1.dark-mode, h3.dark-mode {
+  color: black;
+}
+
+/* Estilo para o modo escuro */
+body.dark-mode .sidebar {
+  background-color: #e0d64a; /* Cor da navbar no modo escuro */
+  color: black; /* Cor do texto no modo escuro */
+}
+
+/* Outros itens como bordas ou efeitos na navbar */
+body.dark-mode .navbar {
+  border-bottom: 1px solid #444; /* Borda sutil no modo escuro */
+}
+body.dark-mode .custom-btn{
+  background-color: #e0d64a;
+  color: black;
+}
+body.dark-mode .custom-btn:hover{
+  background-color: #e4ee58;
+  color: black;
+  transition: 0.7s;
+  animation:backwards;
+}
+/* Estilos para ícones no modo escuro */
+body.dark-mode .sidebar i {
+  color: black; /* Cor dos ícones no modo escuro */
+}
+body.dark-mode .sidebar span{
+  color: black;
+}
+body.dark-mode .sidebar .text-title{
+  color: black;
+}
+body.dark-mode .sidebar .menu-btn{
+  color: black;
+}
+/* CSS para o perfil do usuário */
+.user-profile {
+  position: fixed;
+  top: 10px; /* Ajuste conforme necessário */
+  right: 10px; /* Ajuste conforme necessário */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o nome e o avatar */
+  z-index: 1000; /* Garante que o perfil do usuário fique sobre outros conteúdos */
+}
+
+.username {
+  font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+  color: #333; /* Cor do texto do nome do usuário, ajuste conforme o tema */
+}
+
+.avatar {
+  width: 40px; /* Ajuste o tamanho conforme necessário */
+  height: 40px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%; /* Faz com que o avatar seja redondo */
+  object-fit: cover; /* Garante que a imagem do avatar se ajuste corretamente */
+}
+#admin-badge {
+  background-color: #ffde59;
+  color: #34495e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.hidden {
+  display: none;
+}
+.user-avatar-link {
+  display: inline-block; /* Garante que o link envolva o avatar de forma adequada */
+  text-decoration: none; /* Remove sublinhado padrão de links */
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+/* Estilos da mensagem de cookies */
+.card-cookie {
+  width: 300px;
+  height: 220px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  gap: 13px;
+  position: fixed; /* Mudar para fixed para ficar visível o tempo todo */
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+  display: none; /* Inicialmente escondido */
+}
+
+#cookieSvg {
+  width: 50px;
+}
+
+#cookieSvg g path {
+  fill: rgb(97, 81, 81);
+}
+
+.cookieHeading {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: rgb(26, 26, 26);
+}
+
+.cookieDescription {
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgb(99, 99, 99);
+}
+
+.cookieDescription a {
+  color: rgb(59, 130, 246);
+}
+
+.cookieDescription a:hover {
+  text-decoration: underline;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.acceptButton {
+  width: 80px;
+  height: 30px;
+  background-color: #7b57ff;
+  transition-duration: .2s;
+  border: none;
+  color: rgb(241, 241, 241);
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
+}
+
+.declineButton {
+  width: 80px;
+  height: 30px;
+  background-color: #dadada;
+  transition-duration: .2s;
+  color: rgb(46, 46, 46);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px #bebdbd, 0 2px 4px -1px #bebdbd;
+}
+
+.declineButton:hover {
+  background-color: #ebebeb;
+}
+
+.acceptButton:hover {
+  background-color: #9173ff;
 }

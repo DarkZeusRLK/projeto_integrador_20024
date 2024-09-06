@@ -59,6 +59,7 @@ $conexao->close();
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../javascript/script_navbar.js"></script>
+    <script defer src="../javascript/alternar_modos.js"></script>
     <script defer src="https://apis.google.com/js/platform.js" async defer></script>
     <script defer src="../javascript/google.js"></script>
     <style>
@@ -83,50 +84,38 @@ $conexao->close();
 <body>
 
     <body>
-        <div class="container-fluid">
-            <nav class="col-md-3 col-lg-2 sidebar">
-                <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-                <div class="profile">
-                    <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-                    <h1 class="text-title">IvaíTour</h1>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                    <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                    <?php if (isset($_SESSION['nome'])): ?>
-                        <li><a href="user/minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                    <?php endif; ?>
-                    <?php if (!isset($_SESSION['nome'])): ?>
-                        <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                    <?php endif; ?>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-                    <?php
-                    if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador') {
-                        ?>
-                        <li><a href="admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
-
-                        <?php
-                    }
-                    ?>
-                    <?php
-                    if (isset($_SESSION['nome'])) {
-                        ?>
-                        <li class="nav-item logout">
-                            <a href="static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                        </li>
-                        <?php
-                    }
-                    ?>
-                    <div class="theme-toggle-container">
-                        <span id="day-icon" class="fas fa-sun"></span>
-                        <label class="switch">
-                            <input type="checkbox" id="theme-toggle">
-                            <span class="slider round"></span>
-                        </label>
-                        <span id="night-icon" class="fas fa-moon"></span>
-                    </div>
-                </ul>
-            </nav>
+    <div class="container-fluid">
+        <nav class="col-md-3 col-lg-2 sidebar">
+            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+            <div class="profile">
+                <img id="logo" src="Imagens/logo (1).png" alt="Logo">
+                <h1 class="text-title">IvaíTour</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
+                <?php if (isset($_SESSION['nome'])): ?>
+                    <li><a href="../user/minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                <?php endif; ?>
+                <?php if (!isset($_SESSION['nome'])): ?>
+                    <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                <?php endif; ?>
+                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
+                <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
+                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['nome'])): ?>
+                    <li class="nav-item logout">
+                        <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+                    </li>
+                <?php endif; ?>
+                <li class="nav-item">
+                    <a href="../user/configuracoes.php" class="nav-link" id="settings-icon">
+                        <i class="fas fa-cog"></i><span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
             <div class="container d-flex justify-content-center">
                 <form class="form" method="POST">
                     <div class="flex-column">
