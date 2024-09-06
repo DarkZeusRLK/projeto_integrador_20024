@@ -46,6 +46,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
     <script defer src="javascript/script_navbar.js"></script>
     <script defer src="javascript/alternar_modos.js"></script>
     <script defer src="javascript/cookie.js"></script>
+    <script src="javascript/configuracoes.js"></script>
     <link rel="shortcut icon" href="Imagens/logo (1).png">
     <title>Início - IvaíTour</title>
     <style>
@@ -167,14 +168,14 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             </div>
             <ul class="nav-links">
                 <li><a href="index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
+                <li><a href="#"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
                 <?php if (isset($_SESSION['nome'])): ?>
                     <li><a href="user/minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
                 <?php if (!isset($_SESSION['nome'])): ?>
                     <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
-                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
+                <li><a href="page/contato.php"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
                 <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
                     <li><a href="admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
                 <?php endif; ?>
