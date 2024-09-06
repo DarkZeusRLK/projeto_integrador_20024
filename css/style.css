@@ -562,12 +562,7 @@ input[type="password"]:focus {
   background-color: #252727;
 }
 
-.p {
-  text-align: center;
-  color: black;
-  font-size: 14px;
-  margin: 5px 0;
-}
+
 
 .btn {
   margin-top: 10px;

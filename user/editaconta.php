@@ -44,51 +44,51 @@
         <div class="container">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
-                <div class="profile-picture-container">
-<label for="foto">
-    <img class='profile-picture' src='../Imagens/avatar2.png' alt='Foto de perfil'>
-    <div class="edit-icon">
-        <i class="fas fa-pencil-alt"></i>
-    </div>
-</label>
-</div>
-<h1 class="mt-3">Olá</h1>
-</div>
+                    <div class="profile-picture-container">
+                        <label for="foto">
+                            <img class='profile-picture' src='../Imagens/avatar2.png' alt='Foto de perfil'>
+                            <div class="edit-icon">
+                                <i class="fas fa-pencil-alt"></i>
+                            </div>
+                        </label>
+                    </div>
+                    <h1 class="mt-3">Olá</h1>
+                </div>
 
-<form action="upload_imagem.php" method="post" enctype="multipart/form-data" class="mb-4" id="uploadForm">
-<input type="file" name="foto" id="foto" class="form-control" placeholder="Mudar foto de perfil" required>
-<div class="button-group">
-<input id="but1" type="submit" value="Envie a sua foto" class="btn btn-primary">
-</div>
-</form>
-                        <span class="heading">Usuário</span>
+                <form action="upload_imagem.php" method="post" enctype="multipart/form-data" class="mb-4" id="uploadForm">
+                    <input type="file" name="foto" id="foto" class="form-control" placeholder="Mudar foto de perfil" required>
+                    <div class="button-group">
+                        <input id="but1" type="submit" value="Envie a sua foto" class="btn btn-primary">
                     </div>
-                    <input placeholder="Nome" type="text" class="input">
-                    <input placeholder="Email" id="mail" type="email" class="input">
-                    <input placeholder="CPF" id="mail" type="text" class="input">
-                    <input placeholder="Endereço" id="mail" type="text" class="input">
-                    <div class="button-container">
-                        <div class="reset-button-container">
-                            <a href="editaconta.php" id="reset-btn" class="reset-button">Editar conta</a>
-                        </div>
-                    </div>
+                </form>
+                <span class="heading">Usuário</span>
+                <input placeholder="Nome" type="text" class="input">
+            <input placeholder="Email" id="mail" type="email" class="input">
+            <input placeholder="CPF" id="mail" type="text" class="input">
+            <input placeholder="Endereço" id="mail" type="text" class="input">
+            <div class="button-container">
+                <div class="reset-button-container">
+                    <a href="editaconta.php" id="reset-btn" class="reset-button">Salvar</a>
                 </div>
             </div>
-
-            <div vw class="enabled">
-                <div vw-access-button class="active"></div>
-                <div vw-plugin-wrapper>
-                    <div class="vw-plugin-top-wrapper"></div>
-                </div>
             </div>
         </div>
-        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-        <script>
-            new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
+    </div>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
 
-        </section>
+    </section>
     </div>
     <?php
     include('../static/footer.php');

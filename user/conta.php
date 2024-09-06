@@ -50,10 +50,10 @@
                         </div>
                         <span class="heading">Usuário</span>
                     </div>
-                    <input placeholder="Nome" type="text" class="input">
-                    <input placeholder="Email" id="mail" type="email" class="input">
-                    <input placeholder="CPF" id="mail" type="text" class="input">
-                    <input placeholder="Endereço" id="mail" type="text" class="input">
+                    <input placeholder="Nome" type="text" class="input" readonly>
+                    <input placeholder="Email" id="mail" type="email" class="input" readonly>
+                    <input placeholder="CPF" id="mail" type="text" class="input" readonly>
+                    <input placeholder="Endereço" id="mail" type="text" class="input" readonly>
                     <div class="button-container">
                         <div class="reset-button-container">
                             <a href="editaconta.php" id="reset-btn" class="reset-button">Editar conta</a>
