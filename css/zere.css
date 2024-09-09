@@ -321,6 +321,16 @@ h4 {
     color: #001925;
 }
 
+.save-button-container {
+    width: 100%;
+}
+
+.save-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: 100%;
+}
+
 .form-container .button-container .save-button-container {
     filter: drop-shadow(1px 1px 0px #e2cd13);
     flex-basis: 100%;
@@ -346,4 +356,81 @@ text-decoration: none;
     color: #e2cd13;
   }
   
+/*RESPONSIVIDADE----------DA--------PÁGINA---------------EDITACONTA*/
+ /* Responsividade para a div class="container" */
+
+/* Ajustes para telas menores que 768px */
+@media (max-width: 768px) {
+    /* Ajusta o layout do formulário e da imagem de perfil */
+    #form-ctt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-picture-container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    /* Ajusta o botão de enviar para ficar abaixo da imagem */
+    .button-send {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .send-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    /* Campos de texto mais largos */
+    .input {
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 1rem;
+    }
+
+    /* Ajusta o botão de salvar para ocupar toda a largura */
+    .save-button-container {
+        width: 100%;
+    }
+
+    .save-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+
+/* Para telas menores que 576px */
+@media (max-width: 576px) {
+    /* Tamanhos menores para imagem de perfil */
+    .profile-picture-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Ícone de edição menor */
+    .edit-icon {
+        font-size: 1rem;
+        bottom: -10px;
+        right: -10px;
+    }
+
+    /* Botão de enviar ajustado */
+    .send-button {
+        margin-top: 20px;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    /* Botão de salvar ajustado */
+    .save-button {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
 /* FIM DESIGN EDITACONTA*/

@@ -12,95 +12,6 @@
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<style>
-    @media (max-width: 768px) {
-        .profile-picture-container {
-            width: 120px;
-            /* Ajuste para telas menores */
-            height: 120px;
-        }
-
-        .edit-icon {
-            font-size: 1.2rem;
-            /* Reduz o tamanho do ícone em telas menores */
-            bottom: -20px;
-            /* Ajusta a posição do ícone */
-            right: -10px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .profile-picture-container {
-            width: 100px;
-            /* Ajuste para telas muito pequenas */
-            height: 100px;
-        }
-
-        .edit-icon {
-            font-size: 1rem;
-            /* Menor ícone para telas pequenas */
-            bottom: -40px;
-            /* Ajusta a posição do ícone */
-            right: -20px;
-        }
-    }
-
-
-    /* Estilos para telas maiores */
-
-
-    /* Estilos para telas menores que 768px */
-    @media (max-width: 768px) {
-
-        /* Organiza a imagem de perfil e o botão lado a lado */
-        #form-ctt {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .profile-picture-container {
-            width: 120px;
-            /* Ajusta o tamanho da imagem para telas menores */
-            height: 120px;
-            margin: 0;
-        }
-
-        .button-send {
-            margin-left: 20px;
-            /* Espaçamento entre a imagem e o botão */
-            margin-top: 0;
-        }
-
-        .send-button {
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            /* Ajusta o tamanho do botão para telas menores */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .save-button {
-            padding: 8px 18px;
-            /* Ajuste para tamanhos menores */
-            font-size: 0.9rem;
-            /* Fonte um pouco menor */
-            width: 100%;
-            /* Ocupa toda a largura disponível */
-        }
-    }
-
-    /* Responsividade para telas menores que 576px */
-    @media (max-width: 576px) {
-        .save-button {
-            padding: 6px 16px;
-            font-size: 0.8rem;
-            /* Fonte ainda menor */
-            width: 100%;
-        }
-    }
-</style>
-
 <body>
     <!------------------------------------------------->
     <div class="container-fluid">
@@ -149,9 +60,10 @@
                             <button type="submit" class="send-button">Enviar foto</button>
                         </div>
                     </form>
+                    <form action="conta.php">
                     <span class="heading">Usuário</span>
                     <input placeholder="Nome" type="text" class="input">
-                    <input placeholder="Email" id="mail" type="email" class="input">
+                    <input placeholder="Email" id="mail" type="email" class="input" required>
                     <input placeholder="CPF" id="mail" type="text" class="input">
                     <input placeholder="Endereço" id="mail" type="text" class="input">
                     <div class="button-container">
@@ -159,6 +71,8 @@
                             <button type="submit" class="save-button">Salvar</button>
                         </div>
                     </div>
+                    </form>
+                   
                 </div>
             </div>
         </div>
