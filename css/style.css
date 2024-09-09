@@ -710,7 +710,7 @@ input[type="password"]:focus {
   
   .form-container .button-container .reset-button-container {
     filter: drop-shadow(1px 1px 0px #e2cd13);
-    flex-basis: 30%;
+    flex-basis: 100%;
   }
   
   .form-container .button-container .reset-button-container .reset-button {
@@ -722,7 +722,6 @@ input[type="password"]:focus {
     background: #e2cd13;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
     transition: all 0.2s ease-in-out;
-    width: 40rem;
     display: flex;
     justify-content: center;
 text-decoration: none;

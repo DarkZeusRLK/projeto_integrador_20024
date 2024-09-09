@@ -1,59 +1,69 @@
 /*Variáveis de cores do site----------------------------------------------*/
-:root{
+:root {
     /*Cor título sistema*/
     --corletra: #ffffff;
-  
+
     /*Cor azul secundário*/
     --corsecundaria: #34495e;
-  
+
     /*Cor amarela*/
     --coramarela: #ffde59;
-  
+
     /*Cor branca*/
     --corletrabranca: #FFFFF0;
-  
+
     /*Cor preta*/
     --corletrapreta: #000000;
-  
+
     /*Tamanho fonte titulo*/
     --titulo: 30px;
-  
+
     /*tamanho letras*/
     --textin: 20px;
-  }
+}
+
 /*FIM DE VARIAVEIS-------^-----DE---^-----CORES------------^--------------*/
-.divo{
+.divo {
     background-color: #fae797;
-   max-width: 700px;
+    max-width: 700px;
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-   
+
 }
-h2{
+
+h2 {
     color: var(--corsecundaria);
 }
-h1{
+
+h1 {
     color: var(--corsecundaria);
 }
-h4{
+
+h4 {
     color: var(--coramarela);
 }
-.profile-picture{
+
+.profile-picture {
     border-radius: 100px;
 }
+
 .profile-picture-container {
     position: relative;
-    display: inline-block;  
+    display: inline-block;
 }
+
 .profile-picture {
     cursor: pointer;
     width: 200px;
     height: auto;
 }
+
 #foto {
     display: none;
 }
+
 .edit-icon {
+    font-size: 1rem;
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -62,29 +72,34 @@ h4{
     padding: 5px;
     cursor: pointer;
 }
+
 .edit-icon i {
     font-size: 22px;
     color: var(--corletrapreta);
 }
-#but1{  
+
+#but1 {
     color: var(--corletra);
     border: #34495e;
     border-radius: 30px;
     background-color: var(--corsecundaria);
-    transition:0.3s;
+    transition: 0.3s;
 }
-#but1:hover{  
+
+#but1:hover {
     background-color: #6992bb;
     transition: 0.3s;
     transform: scale(1.05);
 }
-.escuro{
+
+.escuro {
     color: var(--coramarela);
     background-color: var(--corsecundaria);
     opacity: 0.4;
     border-radius: 20px;
     padding: 10px;
 }
+
 .dive {
 
     padding: 20px;
@@ -92,67 +107,50 @@ h4{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border-radius: 2px;
     border: 1px solid rgb(0, 0, 0);
-  
+
     /* Borda sólida de 2px na cor azul */
-  
+
     width: 100%;
     /* Largura em relação ao elemento pai */
     max-width: 600px;
     /* Largura máxima */
     margin: 0 auto;
     /* Centralizar horizontalmente */
-  
+
     background-color: #f2f2f2;
-  
+
     /* Inclui preenchimento e borda na largura total */
-  }
-  
-  @media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
     .dive {
-      width: 100%;
-      /* Reduz a largura em telas menores */
-      font-size: 16px;
-      /* Ajusta o tamanho da fonte */
-      position: relative;
-      /* Posicionamento relativo */
-      top: 25px;
-      /* Move 20px para baixo */
+        width: 100%;
+        /* Reduz a largura em telas menores */
+        font-size: 16px;
+        /* Ajusta o tamanho da fonte */
+        position: relative;
+        /* Posicionamento relativo */
+        top: 25px;
+        /* Move 20px para baixo */
     }
-  }
-  
-  .dive:hover {
-  
+}
+
+.dive:hover {
+
     background-color: rgb(226, 221, 221);
-  }
-  
-  /*FIM*/
-  /*CSS DA PAGINA CARTAO PHP*/
-  .cad_cart {
+}
+
+/*FIM*/
+/*CSS DA PAGINA CARTAO PHP*/
+.cad_cart {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-
-  .profile-picture {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-@media (max-width: 768px) {
-.divo {
-    width: 100%;
-    padding: 30px;
 }
 
-.profile-picture-container {
-    display: flex;
-    justify-content: center;
-}
 
 .profile-picture {
     width: 150px;
@@ -161,39 +159,191 @@ h4{
     border-radius: 50%;
 }
 
-.button-group {
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
+@media (max-width: 768px) {
+    .divo {
+        width: 100%;
+        padding: 30px;
+    }
 
-.form-control {
-    width: 100%;
-}
+    .profile-picture-container {
+        display: flex;
+        justify-content: center;
+    }
 
-main {
-    padding: 10px;
-}
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
 
-.info-title {
-    display: inline-block;
-    font-weight: bold;
-}
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .info-title {
+        display: inline-block;
+        font-weight: bold;
+    }
 }
 
 /* Ajustes para telas maiores */
 @media (min-width: 769px) {
-.profile-picture {
-    width: 200px;
-    height: 200px;
+    .profile-picture {
+        width: 200px;
+        height: 200px;
+    }
+
+    .button-group {
+        flex-direction: row;
+    }
+
+    main {
+        padding: 20px;
+    }
 }
 
-.button-group {
-    flex-direction: row;
+/*INÍCIO DESIGN EDITACONTA*/
+
+.form-container {
+    max-width: 700px;
+    margin-left: 22%;
+    margin-top: 100px;
+    background-color: #34495e;
+    padding: 30px;
+    border-left: 5px solid #e2cd13;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
-main {
-    padding: 20px;
-}
+.heading {
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
+.form-container .input {
+    color: #87a4b6;
+    width: 100%;
+    background-color: #002733;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    transition: all 0.2s ease-in-out;
+    border-left: 1px solid transparent;
+}
+
+.form-container .input:focus {
+    border-left: 5px solid #e2cd13;
+}
+
+.form-container .textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #013747;
+    color: #e2cd13;
+    font-weight: bold;
+    resize: none;
+    max-height: 150px;
+    margin-bottom: 20px;
+    border-left: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-container .textarea:focus {
+    border-left: 5px solid #e2cd13;
+}
+
+.send-button {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -10px; /* Ajuste este valor conforme necessário */
+}
+
+.button-send .send-button{
+    flex-basis: 20%;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    background: #001925;
+    padding: 10px;
+    color: #e2cd13;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+.form-container .button-send .send-button:hover {
+    background: #e2cd13;
+    border: 2px solid #001925;
+    color: #001925;
+}
+
+.form-container .button-send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px; 
+}
+
+.form-container .button-container .send-button {
+
+    flex-basis: 20%;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    background: #001925;
+    padding: 10px;
+    color: #e2cd13;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-container .button-container .send-button:hover {
+    background: #e2cd13;
+    border: 1px solid #001925;
+    color: #001925;
+}
+
+.form-container .button-container .save-button-container {
+    filter: drop-shadow(1px 1px 0px #e2cd13);
+    flex-basis: 100%;
+  }
+  
+  .form-container .button-container .save-button-container .save-button {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    color: #001925;
+    font-weight: bold;
+    background: #e2cd13;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+text-decoration: none;
+
+  }
+  
+  .form-container .button-container .save-button-container .save-button:hover {
+    background: #001925;
+    color: #e2cd13;
+  }
+  
+/* FIM DESIGN EDITACONTA*/

@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="icon" href="Imagens/icon.png">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/zere.css">
+    <link rel="stylesheet" href="../css/zere.css">  
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -56,7 +56,7 @@
                     <input placeholder="Endereço" id="mail" type="text" class="input" readonly>
                     <div class="button-container">
                         <div class="reset-button-container">
-                            <a href="editaconta.php" id="reset-btn" class="reset-button">Editar conta</a>
+                            <a href="editaconta.php"  class="reset-button">Editar conta</a>
                         </div>
                     </div>
                 </div>
