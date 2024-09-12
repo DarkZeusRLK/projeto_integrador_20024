@@ -422,4 +422,29 @@ header {
     border-radius: 10px;
 }
 
+
+.escrita-botao-hotel{
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.hotel-info {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 500px;
+  margin-left: 670px;
+  margin-top: 50px;
+}
+.hotel-info h1 {
+  margin: 0 0 10px;
+}
+.hotel-info p {
+  margin: 5px 0;
+}
+
 /*Fim CSS Reservas*/

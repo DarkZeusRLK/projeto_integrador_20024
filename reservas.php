@@ -44,8 +44,8 @@
             <label for="city-filter">Filtrar por cidade:</label>
             <select id="city-filter">
                 <option value="todas">Todas</option>
-                <option value="cidade1">Cidade 1</option>
-                <option value="cidade2">Cidade 2</option>
+                <option value="cidade1">Ivaiporã</option>
+                <option value="cidade2">Jardim Alegre</option>
             </select>
 
             <label for="price-filter">Filtrar por preço:</label>
@@ -79,7 +79,7 @@
         
         <!-- Botão personalizado -->
         <button class="location-btn">
-            <i class="fas fa-map-marker-alt"></i> DESCUBRA JÁ
+            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="reservado.php">Reservar</a></i>
         </button>
     </div>
 </div>
@@ -96,7 +96,7 @@
         
         <!-- Botão personalizado -->
         <button class="location-btn">
-            <i class="fas fa-map-marker-alt"></i> DESCUBRA JÁ
+            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
         </button>
     </div>
 </div>
@@ -113,7 +113,7 @@
         
         <!-- Botão personalizado -->
         <button class="location-btn">
-            <i class="fas fa-map-marker-alt"></i> DESCUBRA JÁ
+            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
         </button>
     </div>
 </div>
@@ -132,7 +132,7 @@
         
         <!-- Botão personalizado -->
         <button class="location-btn">
-            <i class="fas fa-map-marker-alt"></i> DESCUBRA JÁ
+            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
         </button>
     </div>
 </div>
@@ -149,7 +149,7 @@
         
         <!-- Botão personalizado -->
         <button class="location-btn">
-            <i class="fas fa-map-marker-alt"></i> DESCUBRA JÁ
+            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
         </button>
     </div>
 </div>
@@ -166,7 +166,7 @@
         
         <!-- Botão personalizado -->
         <button class="location-btn">
-            <i class="fas fa-map-marker-alt"></i> DESCUBRA JÁ
+            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
         </button>
     </div>
 </div>
