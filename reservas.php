@@ -40,15 +40,16 @@
         
     
         <header>
-        <div class="filters">
-            <label class="city-filter" for="city-filter">Filtrar por cidade:</label>
-            <select>
-                <option value="todas">Todas</option>
-                <option value="cidade1">Ivaiporã</option>
-                <option value="cidade2">Jardim Alegre</option>
-            </select>
-        </div>
-    </header>
+    <div class="filters">
+        <label class="city-filter" for="city-filter">Filtrar por cidade:</label>
+        <select id="city-filter">
+            <option value="todas">Todas</option>
+            <option value="ivaipora">Ivaiporã</option>
+            <option value="jardim-alegre">Jardim Alegre</option>
+        </select>
+    </div>
+</header>
+
 
     <div class="espaco-reservas"></div>
 
@@ -151,6 +152,18 @@
 </div>
         </section>
     </main>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
 
 
