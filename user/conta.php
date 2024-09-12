@@ -1,3 +1,12 @@
+<?php
+include('../static/conexao.php');
+
+require('../static/protect.php');
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

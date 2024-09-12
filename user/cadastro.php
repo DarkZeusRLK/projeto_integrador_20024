@@ -183,6 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <select name="bt_genero" id="bt_genero" class="form-control" required>
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
+                        <option value="Feminino">Não Binário</option>
                     </select>
                 </div>
 

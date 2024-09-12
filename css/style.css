@@ -747,11 +747,11 @@ table td {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: #ffde59;
   transition: .4s;
 }
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #002733;
 }
 input:checked + .slider:before {
   transform: translateX(26px);
@@ -765,12 +765,12 @@ input:checked + .slider:before {
 }
 /* Estilos para o modo escuro */
 body.dark-mode {
-  background-color: #34495e;
+  background-color: #002733;
   color: #ffffff;
 }
 
 .sidebar.dark-mode {
-  background-color: #ffde59;
+  background-color: #e2cd13;
 }
 
 .nav-links li a.dark-mode {
@@ -793,7 +793,7 @@ h1.dark-mode, h3.dark-mode {
 
 /* Estilo para o modo escuro */
 body.dark-mode .sidebar {
-  background-color: #e0d64a; /* Cor da navbar no modo escuro */
+  background-color: #ffde59; /* Cor da navbar no modo escuro */
   color: black; /* Cor do texto no modo escuro */
 }
 
@@ -802,11 +802,11 @@ body.dark-mode .navbar {
   border-bottom: 1px solid #444; /* Borda sutil no modo escuro */
 }
 body.dark-mode .custom-btn{
-  background-color: #e0d64a;
+  background-color: #ffde59;
   color: black;
 }
 body.dark-mode .custom-btn:hover{
-  background-color: #e4ee58;
+  background-color: #ffde59;
   color: black;
   transition: 0.7s;
   animation:backwards;
@@ -814,6 +814,30 @@ body.dark-mode .custom-btn:hover{
 /* Estilos para ícones no modo escuro */
 body.dark-mode .sidebar i {
   color: black; /* Cor dos ícones no modo escuro */
+}
+#day-icon{
+  color: #ffde59;
+}
+#night-icon{
+  color: black;
+}
+body.dark-mode #day-icon{
+  color: black;
+}
+body.dark-mode #night-icon{
+  color: white;
+}
+body.dark-mode #form-container-ctt{
+  background-color: #013747;
+}
+body.dark-mode #form-container-ctt .textarea{
+  background-color: #002733;
+}
+body.dark-mode .heading{
+  color: #ffde59;
+}
+body.dark-mode #message{
+  color: white;
 }
 body.dark-mode .sidebar span{
   color: black;
