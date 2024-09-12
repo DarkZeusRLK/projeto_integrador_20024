@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/logo2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="icon" href="Imagens/icon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/zere.css">  
+    <title>Minha Conta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="../javascript/script_navbar.js"></script>
+</head>
+
+<body>
+    <!------------------------------------------------->
+    <div class="container-fluid">
+        <nav class="col-md-3 col-lg-2 sidebar">
+            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+            <div class="profile">
+                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
+                <h1 class="text-title">IvaíTour</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
+                <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                <li><a href="../page/contato.php"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
+                <?php
+                if (isset($_SESSION['id_login'])) {
+                ?>
+                    <li class="nav-item logout">
+                        <a href="#logout" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+                    </li>
+                <?php
+                }
+                ?>
+            </ul>
+        </nav>
+
+
+
+        <div class="container">
+            <div id="form-container-ctt" class="form-container">
+                <div id="form-ctt">
+                    <div class="text-center mb-4">
+                        <div class="profile-picture-container">
+                            <img class='profile-picture' src='../Imagens/avatar2.png' alt='Foto de perfil'>
+                        </div>
+                        <span class="heading">Usuário</span>
+                    </div>
+                    <input placeholder="Nome" type="text" class="input" readonly>
+                    <input placeholder="Email" id="mail" type="email" class="input" readonly>
+                    <input placeholder="CPF" id="mail" type="text" class="input" readonly>
+                    <input placeholder="Endereço" id="mail" type="text" class="input" readonly>
+                    <div class="button-container">
+                        <div class="reset-button-container">
+                            <a href="editaconta.php"  class="reset-button">Editar conta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div vw class="enabled">
+                <div vw-access-button class="active"></div>
+                <div vw-plugin-wrapper>
+                    <div class="vw-plugin-top-wrapper"></div>
+                </div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+
+
+        </section>
+    </div>
+    <?php
+    include('../static/footer.php');
+    ?>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</html>

@@ -982,10 +982,10 @@ body.dark-mode .sidebar .menu-btn{
   background-color: #002733;
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 20px;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 18px;
   transition: all 0.2s ease-in-out;
   border-left: 1px solid transparent;
 }
@@ -1037,23 +1037,20 @@ body.dark-mode .sidebar .menu-btn{
 
 .form-container #form-ctt .button-container .reset-button-container {
   filter: drop-shadow(1px 1px 0px #e2cd13);
-  flex-basis: 30%;
 }
 
 .form-container #form-ctt .button-container .reset-button-container .reset-button {
   position: relative;
   text-align: center;
   padding: 10px;
-  color: #e2cd13;
   font-weight: bold;
-  background: #001925;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
   transition: all 0.2s ease-in-out;
 }
 
 .form-container #form-ctt .button-container .reset-button-container .reset-button:hover {
-  background: #e2cd13;
-  color: #001925;
+  background: #001925;
+  color: #e2cd13;
 }
 /* FIM DESIGN CONTATO */
 #link_adm_table:hover {
@@ -1068,3 +1065,505 @@ body.dark-mode .sidebar .menu-btn{
   padding: 10px;
   width: 40%;
 }
+.profile-picture {
+  border-radius: 100px;
+}
+
+.profile-picture-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-picture {
+  cursor: pointer;
+  width: 200px;
+  height: auto;
+}
+
+#foto {
+  display: none;
+}
+edit-icon {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.edit-icon i {
+  font-size: 22px;
+  color: var(--corletrapreta);
+}
+
+#but1 {
+  color: var(--corletra);
+  border: #34495e;
+  border-radius: 30px;
+  background-color: var(--corsecundaria);
+  transition: 0.3s;
+}
+
+#but1:hover {
+  background-color: #6992bb;
+  transition: 0.3s;
+  transform: scale(1.05);
+}
+
+.escuro {
+  color: var(--coramarela);
+  background-color: var(--corsecundaria);
+  opacity: 0.4;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.dive {
+
+  padding: 20px;
+  margin-top: 3px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  border: 1px solid rgb(0, 0, 0);
+
+  /* Borda sólida de 2px na cor azul */
+
+  width: 100%;
+  /* Largura em relação ao elemento pai */
+  max-width: 600px;
+  /* Largura máxima */
+  margin: 0 auto;
+  /* Centralizar horizontalmente */
+
+  background-color: #f2f2f2;
+
+  /* Inclui preenchimento e borda na largura total */
+}
+
+@media (max-width: 600px) {
+  .dive {
+      width: 100%;
+      /* Reduz a largura em telas menores */
+      font-size: 16px;
+      /* Ajusta o tamanho da fonte */
+      position: relative;
+      /* Posicionamento relativo */
+      top: 25px;
+      /* Move 20px para baixo */
+  }
+}
+
+.dive:hover {
+
+  background-color: rgb(226, 221, 221);
+}
+
+/*FIM*/
+/*CSS DA PAGINA CARTAO PHP*/
+.cad_cart {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .divo {
+      width: 100%;
+      padding: 30px;
+  }
+
+  .profile-picture-container {
+      display: flex;
+      justify-content: center;
+  }
+
+  .profile-picture {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+  }
+
+  .button-group {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+  }
+
+  .form-control {
+      width: 100%;
+  }
+
+  main {
+      padding: 10px;
+  }
+
+  .info-title {
+      display: inline-block;
+      font-weight: bold;
+  }
+}
+
+/* Ajustes para telas maiores */
+@media (min-width: 769px) {
+  .profile-picture {
+      width: 200px;
+      height: 200px;
+  }
+
+  .button-group {
+      flex-direction: row;
+  }
+
+  main {
+      padding: 20px;
+  }
+}
+
+/*INÍCIO DESIGN EDITACONTA*/
+
+.form-container {
+  max-width: 700px;
+  margin-left: 22%;
+  margin-top: 100px;
+  background-color: #34495e;
+  padding: 30px;
+  border-left: 5px solid #e2cd13;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.heading {
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.form-container .input {
+  color: #87a4b6;
+  width: 100%;
+  background-color: #002733;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid transparent;
+}
+
+.form-container .input:focus {
+  border-left: 5px solid #e2cd13;
+}
+
+.form-container .textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #013747;
+  color: #e2cd13;
+  font-weight: bold;
+  resize: none;
+  max-height: 150px;
+  margin-bottom: 20px;
+  border-left: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .textarea:focus {
+  border-left: 5px solid #e2cd13;
+}
+
+.send-button {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: -10px; /* Ajuste este valor conforme necessário */
+}
+
+.button-send .send-button{
+  flex-basis: 20%;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  background: #001925;
+  padding: 10px;
+  color: #e2cd13;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+.form-container .button-send .send-button:hover {
+  background: #e2cd13;
+  border: 2px solid #001925;
+  color: #001925;
+}
+
+.form-container .button-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px; 
+}
+
+.form-container .button-container .send-button {
+
+  flex-basis: 20%;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  background: #001925;
+  padding: 10px;
+  color: #e2cd13;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .button-container .send-button:hover {
+  background: #e2cd13;
+  border: 1px solid #001925;
+  color: #001925;
+}
+
+.save-button-container {
+  width: 100%;
+}
+
+.save-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.form-container .button-container .save-button-container {
+  filter: drop-shadow(1px 1px 0px #e2cd13);
+  flex-basis: 100%;
+}
+
+.form-container .button-container .save-button-container .save-button {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  color: #001925;
+  font-weight: bold;
+  background: #e2cd13;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+text-decoration: none;
+
+}
+
+.form-container .button-container .save-button-container .save-button:hover {
+  background: #001925;
+  color: #e2cd13;
+}
+
+/*RESPONSIVIDADE----------DA--------PÁGINA---------------EDITACONTA*/
+/* Responsividade para a div class="container" */
+
+/* Ajustes para telas menores que 768px */
+@media (max-width: 768px) {
+  /* Ajusta o layout do formulário e da imagem de perfil */
+  #form-ctt {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .profile-picture-container {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+  }
+
+  /* Ajusta o botão de enviar para ficar abaixo da imagem */
+  .button-send {
+      margin-left: 0;
+      margin-top: 10px;
+  }
+
+  .send-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      width: 100%;
+  }
+
+  /* Campos de texto mais largos */
+  .input {
+      width: 100%;
+      margin-bottom: 15px;
+      font-size: 1rem;
+  }
+
+  /* Ajusta o botão de salvar para ocupar toda a largura */
+  .save-button-container {
+      width: 100%;
+  }
+
+  .save-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      width: 100%;
+  }
+}
+
+/* Para telas menores que 576px */
+@media (max-width: 576px) {
+  /* Tamanhos menores para imagem de perfil */
+  .profile-picture-container {
+      width: 100px;
+      height: 100px;
+  }
+
+  /* Ícone de edição menor */
+  .edit-icon {
+      font-size: 1rem;
+      bottom: -10px;
+      right: -10px;
+  }
+
+  /* Botão de enviar ajustado */
+  .send-button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+  }
+
+  /* Botão de salvar ajustado */
+  .save-button {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+  }
+}
+/* FIM DESIGN EDITACONTA*/
+.divo {
+  background-color: #fae797;
+  max-width: 700px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+  /*INÍCIO DESIGN CONTATO*/
+  
+  .form-container {
+    max-width: 700px;
+    margin-left: 22%;
+    margin-top: 150px;
+    background-color: #34495e;
+    padding: 30px;
+    border-left: 5px solid #e2cd13;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  
+  .heading {
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  
+  .form-container .input {
+    color: #87a4b6;
+    width: 100%;
+    background-color: #002733;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+    border-left: 1px solid transparent;
+  }
+  
+  .form-container .input:focus {
+    border-left: 5px solid #e2cd13;
+  }
+  
+  .form-container .textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #013747;
+    color: #e2cd13;
+    font-weight: bold;
+    resize: none;
+    max-height: 150px;
+    margin-bottom: 20px;
+    border-left: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-container .textarea:focus {
+    border-left: 5px solid #e2cd13;
+  }
+  
+  .form-container .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-container .button-container .send-button {
+    flex-basis: 70%;
+    background: #e2cd13;
+    padding: 10px;
+    color: #001925;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-container .button-container .send-button:hover {
+    background: transparent;
+    border: 1px solid #e2cd13;
+    color: #e2cd13;
+  }
+  
+  .form-container .button-container .reset-button-container {
+    filter: drop-shadow(1px 1px 0px #e2cd13);
+    flex-basis: 100%;
+  }
+  
+  .form-container .button-container .reset-button-container .reset-button {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    color: #001925;
+    font-weight: bold;
+    background: #e2cd13;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+text-decoration: none;
+
+  }
+  
+  .form-container .button-container .reset-button-container .reset-button:hover {
+    background: #001925;
+    color: #e2cd13;
+  }
+  
+  /* FIM DESIGN CONTATO */

@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpf = sanitize_input($_POST['bt_cpf']);
     $genero = sanitize_input($_POST['bt_genero']);
     
-    $caminho_imagem = "Imagens/foto_padrao.png";
+    $caminho_imagem = "Imagens/avatar2.png";
     $tipo_usuario = "cliente"; // Definindo o tipo de usuário como "cliente"
 
     // Verifique se a variável $conexao está definida
