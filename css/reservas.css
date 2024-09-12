@@ -308,7 +308,6 @@ header {
 
 .filters {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -322,6 +321,9 @@ header {
     padding: 5px;
     border: 1px solid;
     border-radius: 10px;
+}
+.city-filter{
+  margin-left: 450px;
 }
 
 .card-container {
@@ -423,14 +425,8 @@ header {
 }
 
 
-.escrita-botao-hotel{
-  font-family: 'Times New Roman', Times, serif;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  margin-left: 10px;
-  font-size: 20px;
-}
+
+
 .hotel-info {
   background-color: #fff;
   border-radius: 10px;

@@ -41,24 +41,11 @@
     
         <header>
         <div class="filters">
-            <label for="city-filter">Filtrar por cidade:</label>
-            <select id="city-filter">
+            <label class="city-filter" for="city-filter">Filtrar por cidade:</label>
+            <select>
                 <option value="todas">Todas</option>
                 <option value="cidade1">Ivaiporã</option>
                 <option value="cidade2">Jardim Alegre</option>
-            </select>
-
-            <label for="price-filter">Filtrar por preço:</label>
-            <select id="price-filter">
-                <option value="todas">Todas</option>
-                <option value="baixo">Preço baixo</option>
-                <option value="alto">Preço alto</option>
-            </select>
-
-            <label for="alpha-filter">Ordem alfabética:</label>
-            <select id="alpha-filter">
-                <option value="ascendente">A-Z</option>
-                <option value="descendente">Z-A</option>
             </select>
         </div>
     </header>
@@ -70,51 +57,46 @@
         <div class="card">
     <div class="image-container">
         <img src="Imagens/senhor.jpg" alt="Imagem 2">
-        <i class="fas fa-check-circle select-icon"></i>
+        <a href="reservado.php">
+            <i class="fas fa-check-circle select-icon"></i>
+        </a>
     </div>
     <div class="card-info">
         <h3>Nome do Hotel</h3>
         <p>Cidade do Hotel</p>
         <p>Valor do Hotel</p>
-        
-        <!-- Botão personalizado -->
-        <button class="location-btn">
-            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="reservado.php">Reservar</a></i>
-        </button>
     </div>
 </div>
 
             <div class="card">
     <div class="image-container">
         <img src="Imagens/senhor.jpg" alt="Imagem 2">
-        <i class="fas fa-check-circle select-icon"></i>
+        <a href="reservado.php">
+            <i class="fas fa-check-circle select-icon"></i>
+        </a>
     </div>
     <div class="card-info">
         <h3>Nome do Hotel</h3>
         <p>Cidade do Hotel</p>
         <p>Valor do Hotel</p>
         
-        <!-- Botão personalizado -->
-        <button class="location-btn">
-            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
-        </button>
+        
     </div>
 </div>
 
 <div class="card">
     <div class="image-container">
         <img src="Imagens/senhor.jpg" alt="Imagem 2">
-        <i class="fas fa-check-circle select-icon"></i>
+        <a href="reservado.php">
+            <i class="fas fa-check-circle select-icon"></i>
+        </a>
     </div>
     <div class="card-info">
         <h3>Nome do Hotel</h3>
         <p>Cidade do Hotel</p>
         <p>Valor do Hotel</p>
         
-        <!-- Botão personalizado -->
-        <button class="location-btn">
-            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
-        </button>
+        
     </div>
 </div>
 
@@ -123,51 +105,48 @@
 <div class="card">
     <div class="image-container">
         <img src="Imagens/senhor.jpg" alt="Imagem 2">
-        <i class="fas fa-check-circle select-icon"></i>
+        <a href="reservado.php">
+            <i class="fas fa-check-circle select-icon"></i>
+        </a>
     </div>
     <div class="card-info">
         <h3>Nome do Hotel</h3>
         <p>Cidade do Hotel</p>
         <p>Valor do Hotel</p>
         
-        <!-- Botão personalizado -->
-        <button class="location-btn">
-            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
-        </button>
+        
     </div>
 </div>
 
 <div class="card">
     <div class="image-container">
         <img src="Imagens/senhor.jpg" alt="Imagem 2">
-        <i class="fas fa-check-circle select-icon"></i>
+        <a href="reservado.php">
+            <i class="fas fa-check-circle select-icon"></i>
+        </a>
     </div>
     <div class="card-info">
         <h3>Nome do Hotel</h3>
         <p>Cidade do Hotel</p>
         <p>Valor do Hotel</p>
         
-        <!-- Botão personalizado -->
-        <button class="location-btn">
-            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
-        </button>
+        
     </div>
 </div>
 
 <div class="card">
     <div class="image-container">
         <img src="Imagens/senhor.jpg" alt="Imagem 2">
-        <i class="fas fa-check-circle select-icon"></i>
+        <a href="reservado.php">
+            <i class="fas fa-check-circle select-icon"></i>
+        </a>
     </div>
     <div class="card-info">
         <h3>Nome do Hotel</h3>
         <p>Cidade do Hotel</p>
         <p>Valor do Hotel</p>
         
-        <!-- Botão personalizado -->
-        <button class="location-btn">
-            <i class="fas fa-map-marker-alt"><a class="escrita-botao-hotel" href="#">Reservar</a></i>
-        </button>
+        
     </div>
 </div>
         </section>
