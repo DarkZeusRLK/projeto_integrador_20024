@@ -68,29 +68,23 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                                 <th>Email</th>
                                 <th>Imagem</th>
                                 <th>Função</th>
-                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php while ($user = $retorno_consulta->fetch_assoc()) : ?>
-                                <tr>
-                                    <td><?php echo $user['id_usuario']; ?></td>
-                                    <td><?php echo $user['nome']; ?></td>
-                                    <td><?php echo $user['email']; ?></td>
-                                    <td>
-                                        <?php
-                                       $imagem = !empty($user['arquivo_caminho']) ? $user['arquivo_caminho'] : 'Imagens/foto_padrao.png';
-
-                                        ?>
-                                        <img src="<?php echo $imagem; ?>" class="card-img-top imagem-dashboard-adm" alt="Imagem do usuário">
-                                    </td>
-                                    <td><?php echo $user['tipo_usuario']; ?></td>
-                                    <td>
-                                        <a class="custom-btn" href="#">Editar</a>
-                                        <a class="custom-btn" href="#">Deletar</a>
-                                    </td>
-                                </tr>
-                            <?php endwhile; ?>
+                        <?php while ($user = $retorno_consulta->fetch_assoc()) : ?>
+        <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php'" style="cursor: pointer;">
+            <td><?php echo $user['id_usuario']; ?></td>
+            <td><?php echo $user['nome']; ?></td>
+            <td><?php echo $user['email']; ?></td>
+            <td>
+                <?php
+                $imagem = !empty($user['arquivo_caminho']) ? $user['arquivo_caminho'] : 'Imagens/foto_padrao.png';
+                ?>
+                <img src="<?php echo $imagem; ?>" class="card-img-top imagem-dashboard-adm" alt="Imagem do usuário">
+            </td>
+            <td><?php echo $user['tipo_usuario']; ?></td>
+        </tr>
+    <?php endwhile; ?>
                         </tbody>
                     </table>
                 </div>
@@ -109,7 +103,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                        <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php'" style="cursor: pointer;">
                                 <td>1</td>
                                 <td>Hotel Ivaí</td>
                                 <td>contato@hotelivai.com</td>
@@ -125,8 +119,6 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 </div>
             </section>
         </main>
-        <br>
-        <a class="custom-btn" href="alterar_tipo_usuario.php">Cadastrar Administrador</a>
     </div>
 
     <script src="../javascript/script.js"></script>
