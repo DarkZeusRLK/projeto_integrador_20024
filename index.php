@@ -54,9 +54,9 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             background-color: #fff;
             background-image: url("Imagens/Vegetação2.gif");
             background-repeat: no-repeat;
-            background-position: center center;
+            background-position: center;
             background-size: 100%;
-            background-position-y: -40%;
+            background-position-y: 90%;
             text-align: center;
         }
 

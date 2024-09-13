@@ -10,7 +10,7 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : n
 $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
 $foto = isset($_SESSION['arquivo_caminho']) ? $_SESSION['arquivo_caminho'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
 
-$consultar_banco = "SELECT * FROM cadastro_hoteis";
+$consultar_banco = "SELECT * FROM cadastro";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 ?>
 <!DOCTYPE html>
@@ -83,13 +83,11 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 if(isset($_SESSION['nome'])){
 
             ?>
-        <div class="user-profile">
+     <div class="user-profile">
   <span class="username"><b><?php echo $_SESSION['nome'];?></b></span>
   <?php if ($tipo_usuario === 'administrador'): ?>
   <span id="admin-badge">ADM</span>
   <?php endif; ?>
-  <a href="minha_conta.php" class="user-avatar-link">
-  <img src="../<?php echo $foto['arquivo_caminho']; ?>" alt="Avatar" class="avatar">
 </div>
 <?php
                 }
@@ -118,7 +116,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
               <option value="Imagens/Vegetação2.gif">Avião GIF</option>
               <option value="Imagens/a733d129bf370f5085507c89b6f3272c.gif">Praia GIF</option>
               <option value="Imagens/pngtree-8-best-free-mountain-background-images-4k-wallpapers-image_2670051.jpg">Montanha</option>
-              <option value="Imagens/Cidade.jpg">Cidade</option>
+              <option value="Imagens/penhasco.gif">Penhasco GIF</option>
             </select>
           </div>
           <br>

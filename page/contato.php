@@ -35,7 +35,7 @@
                 <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
                 <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
                 <?php if (isset($_SESSION['nome'])): ?>
-                    <li><a href="../user/minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                    <li><a href="../user/conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
                 <?php if (!isset($_SESSION['nome'])): ?>
                     <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>

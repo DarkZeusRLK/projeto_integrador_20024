@@ -1,11 +1,30 @@
 <?php
 include('../static/conexao.php');
 
-require('../static/protect.php');
-
 if (!isset($_SESSION)) {
     session_start();
 }
+
+// Verificar se o usuário está logado
+if (!isset($_SESSION['nome'])) {
+    // Se a sessão do usuário não estiver ativa, redireciona para a página de login
+    header("Location: login.php");
+    exit();
+}
+
+// Verificar o tipo de usuário e incluir o arquivo de proteção correto
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'administrador') {
+        require('../static/protect_adm.php'); // Proteção para administradores
+    } elseif ($_SESSION['tipo_usuario'] === 'cliente') {
+        require('../static/protect.php'); // Proteção para clientes
+    }
+}
+
+// Impedir cache do navegador
+header("Cache-Control: no-cache, no-store, must-revalidate"); // Não permitir o cache
+header("Pragma: no-cache"); // Compatibilidade com navegadores antigos
+header("Expires: 0"); // Expirar imediatamente a página
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,29 +45,38 @@ if (!isset($_SESSION)) {
 <body>
     <!------------------------------------------------->
     <div class="container-fluid">
-        <nav class="col-md-3 col-lg-2 sidebar">
-            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-            <div class="profile">
-                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-                <h1 class="text-title">IvaíTour</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <li><a href="../page/contato.php"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-                <?php
-                if (isset($_SESSION['id_login'])) {
-                ?>
-                    <li class="nav-item logout">
-                        <a href="#logout" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                    </li>
-                <?php
-                }
-                ?>
-            </ul>
-        </nav>
-
+    
+    <nav class="col-md-3 col-lg-2 sidebar">
+      <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+      <div class="profile">
+        <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
+        <h1 class="text-title">IvaíTour</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
+        <?php if (isset($_SESSION['nome'])): ?>
+          <li><a href="conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+        <?php endif; ?>
+        <?php if (!isset($_SESSION['nome'])): ?>
+          <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+        <?php endif; ?>
+        <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
+        <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
+          <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['nome'])): ?>
+          <li class="nav-item logout">
+            <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+          </li>
+        <?php endif; ?>
+        <li class="nav-item">
+          <a href="configuracoes.php" class="nav-link" id="settings-icon">
+            <i class="fas fa-cog"></i><span>Configurações</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
 
         <div class="container">

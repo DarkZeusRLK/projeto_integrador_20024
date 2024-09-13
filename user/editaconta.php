@@ -1,3 +1,19 @@
+<?php
+include('../static/conexao.php');
+
+// Verificar o tipo de usuário e incluir o arquivo de proteção correto
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'administrador') {
+        require('../static/protect_adm.php'); // Proteção para administradores
+    } elseif ($_SESSION['tipo_usuario'] === 'cliente') {
+        require('../static/protect.php'); // Proteção para clientes
+    }
+} 
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

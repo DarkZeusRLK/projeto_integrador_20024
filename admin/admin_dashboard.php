@@ -49,6 +49,11 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                         <a href="static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
                     </li>
                 <?php endif; ?>
+                <li class="nav-item">
+                    <a href="../user/configuracoes.php" class="nav-link" id="settings-icon">
+                        <i class="fas fa-cog"></i><span>Configurações</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <main class="col-md-10 col-lg-10 main-content">
@@ -78,9 +83,10 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <td><?php echo $user['email']; ?></td>
             <td>
                 <?php
-                $imagem = !empty($user['arquivo_caminho']) ? $user['arquivo_caminho'] : 'Imagens/foto_padrao.png';
+                // Verifica se a variável $user['arquivo_foto'] existe e não está vazia, senão exibe a imagem padrão
+                $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '../Imagens/foto_padrao.png';
                 ?>
-                <img src="<?php echo $imagem; ?>" class="card-img-top imagem-dashboard-adm" alt="Imagem do usuário">
+                <img src="../<?php echo $foto; ?>" class="card-img-top imagem-dashboard-adm" alt="Imagem do usuário">
             </td>
             <td><?php echo $user['tipo_usuario']; ?></td>
         </tr>
