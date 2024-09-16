@@ -73,8 +73,8 @@
                     <div class="input_container">
                         <label for="password_field" class="input_label">Data de vencimento/ CVV</label>
                         <div class="split">
-                            <input id="password_field" class="input" type="text" name="input-name" title="Expiry Date" placeholder="01/23">
-                            <input id="password_field" class="input" type="text" name="cvv" title="CVV" placeholder="CVV">
+                            <input id="password_field" class="input" type="text" name="input-name" title="Expiry Date" placeholder="01/23" maxlength="5">
+                            <input id="password_field" class="input" type="text" name="cvv" title="CVV" placeholder="CVV" maxlength="3">
                         </div>
                     </div>
                 </div>
@@ -87,5 +87,5 @@
         </div>
     </div>
 </body>
-
+<script src="javascript/zere.js"></script>
 </html>

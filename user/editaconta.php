@@ -62,10 +62,10 @@
                     </form>
                     <form action="conta.php">
                     <span class="heading">Usuário</span>
-                    <input placeholder="Nome" type="text" class="input">
+                    <input placeholder="Nome" type="text" class="input" maxlength="85" required>
                     <input placeholder="Email" id="mail" type="email" class="input" required>
-                    <input placeholder="CPF" id="mail" type="text" class="input">
-                    <input placeholder="Endereço" id="mail" type="text" class="input">
+                    <input type="text" id="cpfInput" class="input" name="bt_cpf" placeholder="CPF" maxlength="14" oninput="formatarCPF()" required>
+                    <input placeholder="Endereço" id="cpfInput" type="text" class="input" required>
                     <div class="button-container">
                         <div class="save-button-container">
                             <button type="submit" class="save-button">Salvar</button>
@@ -89,13 +89,12 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
-
-
     </section>
     </div>
     <?php
     include('../static/footer.php');
     ?>
+      <script src="../javascript/zere.js"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

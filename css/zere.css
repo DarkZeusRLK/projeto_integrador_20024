@@ -213,14 +213,14 @@ h4 {
     }
 }
 
-/*INÍCIO DESIGN EDITACONTA*/
+/*INÍCIO DESIGN EDITACONTA.PHP E DESIGN DA CONTA.PHP*/
 
 .form-container {
-    max-width: 700px;
-    margin-left: 22%;
+    max-width: 1000px;
+    margin-left: 15%;
     margin-top: 100px;
     background-color: #34495e;
-    padding: 30px;
+    padding: 50px;
     border-left: 5px solid #e2cd13;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
