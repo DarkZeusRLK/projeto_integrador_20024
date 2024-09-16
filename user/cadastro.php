@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
 
             // Insira os dados no banco de dados
-            $query = "INSERT INTO cadastro (nome, email, senha, telefone, cpf, genero, tipo_usuario, arquivo_caminho) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO cadastro (nome, email, senha, telefone, cpf, genero, tipo_usuario,    _foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conexao->prepare($query);
 
             // Verifica se a preparação foi bem-sucedida
@@ -122,6 +122,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php
                 }
                 ?>
+                 <li class="nav-item">
+                    <a href="configuracoes.php" class="nav-link" id="settings-icon">
+                        <i class="fas fa-cog"></i><span>Configurações</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <div class="container d-flex justify-content-center">
@@ -166,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <svg height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 16.52a2.15 2.15 0 0 1 -1.3-.46l-2.36-1.86a2.07 2.07 0 0 0 -2.74.16l-1.31 1.33A15.39 15.39 0 0 1 6.31 8.34l1.32-1.32a2.09 2.09 0 0 0 .15-2.74l-1.86-2.36a2.14 2.14 0 0 1 -.47-1.3A2.22 2.22 0 0 1 4.69 0 4.7 4.7 0 0 0 2.6.35 2.32 2.32 0 0 0 1 1.53C.35 2.84-.73 8.85 4.62 14.2S21.17 23.65 22.48 23a2.31 2.31 0 0 0 1.18-1.56A4.63 4.63 0 0 0 24 19.31a2.24 2.24 0 0 1 -2.22-2.79z"></path>
                     </svg>
-                    <input type="text" name="bt_telefone" class="input" placeholder="Insira seu Telefone">
+                    <input type="text" id="telefoneInput" name="bt_telefone" class="input" placeholder="Insira seu Telefone" maxlength="15" oninput="formatarTelefone()" required>
                 </div>
 
                 <div class="flex-column">
@@ -176,19 +181,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <svg height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 16.52a2.15 2.15 0 0 1 -1.3-.46l-2.36-1.86a2.07 2.07 0 0 0 -2.74.16l-1.31 1.33A15.39 15.39 0 0 1 6.31 8.34l1.32-1.32a2.09 2.09 0 0 0 .15-2.74l-1.86-2.36a2.14 2.14 0 0 1 -.47-1.3A2.22 2.22 0 0 1 4.69 0 4.7 4.7 0 0 0 2.6.35 2.32 2.32 0 0 0 1 1.53C.35 2.84-.73 8.85 4.62 14.2S21.17 23.65 22.48 23a2.31 2.31 0 0 0 1.18-1.56A4.63 4.63 0 0 0 24 19.31a2.24 2.24 0 0 1 -2.22-2.79z"></path>
                     </svg>
-                    <input type="text" name="bt_cpf" class="input" placeholder="Insira seu CPF">
+                    <input type="text" id="cpfInput" name="bt_cpf" class="input" placeholder="Insira seu CPF" maxlength="14" oninput="formatarCPF()" required>
                 </div>
                 <div class="mb-3">
                     <label for="bt_genero" class="form-label">Gênero</label>
                     <select name="bt_genero" id="bt_genero" class="form-control" required>
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
-                        <option value="Feminino">Não Binário</option>
+                        <option value="Não binario">Não Binário</option>
                     </select>
                 </div>
 
                 <input class="btn btn-warning" type="submit" value="Cadastrar">
             </form>
+            <script>
+          // Manipule o evento de envio do formulário
+$('#cadastro').on('submit', function (e) {
+    e.preventDefault(); // Impede o envio padrão do formulário
+
+    // Coleta os dados do formulário
+    var formData = $(this).serialize();
+
+    // Faça uma solicitação AJAX para enviar os dados ao servidor
+    $.ajax({
+        type: 'POST',
+        url: 'cadastro.php',
+        data: formData,
+        success: function (response) {
+            if (response.trim() === 'success') { // Use trim para remover espaços em branco adicionais
+                // Redirecione para a página de login após o cadastro bem-sucedido
+                Swal.fire({
+                    title: 'Sucesso',
+                    text: 'Cadastro criado com sucesso!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'login.php';
+                    }
+                });
+            } else if (response.trim() === 'error_email_exists') {
+                // Exiba uma notificação de erro específica para e-mail duplicado
+                Swal.fire({
+                    title: 'Erro',
+                    text: 'E-mail já cadastrado. Por favor, use outro e-mail.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            } else {
+                // Exiba uma notificação de erro padrão
+                Swal.fire({
+                    title: 'Erro',
+                    text: 'Erro no cadastro!',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        },
+        error: function () {
+            Swal.fire({
+                title: 'Erro',
+                text: 'Erro na comunicação com o servidor.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
+    });
+});
+            </script>
+              <div id="notification" class="notification">
+                <?php echo $mensagem; ?>
+            </div>
         </div>
             <br>
             <br>
@@ -199,6 +262,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             include("../static/footer.php");
             ?>
     </body>
+    <script src="../javascript/zere.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </html>

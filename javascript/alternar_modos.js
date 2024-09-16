@@ -35,24 +35,25 @@ document.addEventListener("DOMContentLoaded", () => {
     body.style.backgroundImage = `url(${savedBackground})`;
   }
 
-// Salvar e aplicar tamanho da fonte
-const fontSizeSelect = document.getElementById("font-size-select");
-const saveFontSizeButton = document.getElementById("save-font-size");
 
-if (localStorage.getItem("fontSize")) {
-  document.documentElement.style.fontSize = localStorage.getItem("fontSize");
-  if (fontSizeSelect) {
-    fontSizeSelect.value = localStorage.getItem("fontSize");
+  // Salvar e aplicar tamanho da fonte
+  const fontSizeSelect = document.getElementById("font-size-select");
+  const saveFontSizeButton = document.getElementById("save-font-size");
+
+  if (localStorage.getItem("fontSize")) {
+    document.documentElement.style.fontSize = localStorage.getItem("fontSize");
+    if (fontSizeSelect) {
+      fontSizeSelect.value = localStorage.getItem("fontSize");
+    }
   }
-}
 
-if (saveFontSizeButton) {
-  saveFontSizeButton.addEventListener("click", () => {
-    const selectedFontSize = fontSizeSelect.value;
-    document.documentElement.style.fontSize = selectedFontSize;
-    localStorage.setItem("fontSize", selectedFontSize);
-  });
-}
+  if (saveFontSizeButton) {
+    saveFontSizeButton.addEventListener("click", () => {
+      const selectedFontSize = fontSizeSelect.value;
+      document.documentElement.style.fontSize = selectedFontSize;
+      localStorage.setItem("fontSize", selectedFontSize);
+    });
+  }
 });
 
 // Função para aplicar o modo escuro

@@ -77,7 +77,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                         </thead>
                         <tbody>
                         <?php while ($user = $retorno_consulta->fetch_assoc()) : ?>
-        <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php'" style="cursor: pointer;">
+        <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php?codigo_cadastro=<?php echo $user['id_usuario'];?>'" style="cursor: pointer;">
             <td><?php echo $user['id_usuario']; ?></td>
             <td><?php echo $user['nome']; ?></td>
             <td><?php echo $user['email']; ?></td>

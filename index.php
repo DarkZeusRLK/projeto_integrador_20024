@@ -105,6 +105,14 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 document.body.style.backgroundImage = `url(${backgroundImage})`;
             }
         });
+        document.addEventListener("DOMContentLoaded", () => {
+    // Verificar se um tamanho de fonte foi salvo no localStorage
+    const savedFontSize = localStorage.getItem("fontSize");
+    if (savedFontSize) {
+      // Aplicar o tamanho da fonte salvo
+      document.documentElement.style.fontSize = savedFontSize;
+    }
+  });
     </script>
 </head>
 
