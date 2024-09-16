@@ -26,7 +26,7 @@ $stmt->close();
 
 // Verificar se o usuário está logado e definir o cookie de primeiro login se não estiver presente
 if (isset($_SESSION['nome']) && !isset($_COOKIE['firstLogin'])) {
-    setcookie('firstLogin', 'true', time() + (60 * 60 * 24 * 365), "/"); // Define o cookie por 1 ano
+    setcookie('firstLogin', 'true', time() + (2 * 60), "/"); // Define o cookie para expirar em 2 minutos
 }
 
 // Conecte-se ao banco de dados de hotéis para exibir as informações

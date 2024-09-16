@@ -27,13 +27,31 @@ header("Cache-Control: no-cache, no-store, must-revalidate"); // Não permitir o
 header("Pragma: no-cache"); // Compatibilidade com navegadores antigos
 header("Expires: 0"); // Expirar imediatamente a página
 
-// Definir variáveis usando os índices da sessão, se existirem
-$user = [
-    'nome' => isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Nome não disponível',
-    'email' => isset($_SESSION['email']) ? $_SESSION['email'] : 'Email não disponível',
-    'cpf' => isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'CPF não disponível',
-    'telefone' => isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Telefone não disponível'
-];
+
+// Verifique se as variáveis de sessão estão definidas
+$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
+$cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
+$telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
+$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : ''; // Caminho para a foto do usuário
+
+// Conecte-se ao banco de dados normal para obter informações do usuário
+$sql_user = "SELECT arquivo_foto FROM cadastro WHERE nome = ?";
+$stmt = $conexao->prepare($sql_user);
+$stmt->bind_param('s', $nome_usuario);
+$stmt->execute();
+$result_user = $stmt->get_result();
+if ($result_user->num_rows > 0) {
+    $row_user = $result_user->fetch_assoc();
+    if (!empty($row_user['arquivo_foto'])) {
+        $foto = $row_user['arquivo_foto'];
+    } 
+}
+$stmt->close();
+
+// Conecte-se ao banco de dados de hotéis para exibir as informações
+$consultar_banco = "SELECT * FROM cadastro_hoteis";
+$retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -48,6 +66,7 @@ $user = [
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="../javascript/script_navbar.js"></script>
+    <link rel="shortcut icon" href="../Imagens/logo (1).png">
 </head>
 
 <body>
@@ -88,14 +107,13 @@ $user = [
                 <div id="form-ctt">
                     <div class="text-center mb-4">
                         <div class="profile-picture-container">
-                            <img class='profile-picture' src='../Imagens/avatar2.png' alt='Foto de perfil'>
+                            <img class='profile-picture' src='../<?php echo $foto;?>' alt='Foto de perfil'>
                         </div>
-                        <span class="heading"><?php echo htmlspecialchars($user['nome']); ?></span>
                     </div>
-                    <input placeholder=" Nome: <?php echo htmlspecialchars($user['nome']); ?>" type="text" class="input" readonly>
-                    <input placeholder="Email: <?php echo htmlspecialchars($user['email']); ?>" id="mail" type="email" class="input" readonly>
-                    <input placeholder="CPF: <?php echo htmlspecialchars($user['cpf']); ?>" id="mail" type="text" class="input" readonly>
-                    <input placeholder="Telefone: <?php echo htmlspecialchars($user['telefone']); ?>" id="mail" type="text" class="input" readonly>
+                    <input placeholder=" Nome: <?php echo $_SESSION['nome']; ?>" type="text" class="input" readonly>
+                    <input placeholder="Email: <?php echo $_SESSION['email']; ?>" id="mail" type="email" class="input" readonly>
+                    <input placeholder="CPF: <?php echo $_SESSION['cpf']; ?>" id="mail" type="text" class="input" readonly>
+                    <input placeholder="Telefone: <?php echo $_SESSION['telefone']; ?>" id="mail" type="text" class="input" readonly>
                     <div class="button-container">
                         <div class="reset-button-container">
                             <a href="editaconta.php" class="reset-button">Editar conta</a>
