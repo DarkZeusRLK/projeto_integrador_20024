@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="depay.css">
+    <link rel="stylesheet" href="depay.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/zere.css">
 </head>
@@ -13,13 +13,14 @@
 <body>
     <div class="container">
         <div id="form-container-ctt" class="form-container">
-            <form action="">
-            <div class="separator">
+            <form action="opcao_escolhida.php">
+                <div class="separator">
                     <hr class="line">
                     <p>Use essas formas de metodo de pagamento</p>
                     <hr class="line">
                 </div>
                 <div class="payment--options">
+
                     <button name="paypal" type="button">
                         <svg xml:space="preserve" viewBox="0 0 124 33" height="33px" width="124px" y="0px" x="0px" id="Layer_1" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                             <path d="M46.211,6.749h-6.839c-0.468,0-0.866,0.34-0.939,0.802l-2.766,17.537c-0.055,0.346,0.213,0.658,0.564,0.658  h3.265c0.468,0,0.866-0.34,0.939-0.803l0.746-4.73c0.072-0.463,0.471-0.803,0.938-0.803h2.165c4.505,0,7.105-2.18,7.784-6.5  c0.306-1.89,0.013-3.375-0.872-4.415C50.224,7.353,48.5,6.749,46.211,6.749z M47,13.154c-0.374,2.454-2.249,2.454-4.062,2.454  h-1.032l0.724-4.583c0.043-0.277,0.283-0.481,0.563-0.481h0.473c1.235,0,2.4,0,3.002,0.704C47.027,11.668,47.137,12.292,47,13.154z" fill="#253B80"></path>
@@ -34,10 +35,14 @@
                             <path d="M9.614,7.699c0.061-0.393,0.313-0.714,0.652-0.876c0.155-0.074,0.326-0.115,0.507-0.115h7.352  c0.871,0,1.684,0.057,2.426,0.177c0.212,0.034,0.418,0.073,0.619,0.117c0.2,0.045,0.395,0.095,0.584,0.15  c0.094,0.028,0.187,0.057,0.278,0.086c0.365,0.121,0.704,0.264,1.017,0.429c0.368-2.347-0.003-3.945-1.272-5.392  C20.378,0.682,17.853,0,14.622,0h-9.38c-0.66,0-1.223,0.48-1.325,1.133L0.01,25.898c-0.077,0.49,0.301,0.932,0.795,0.932h5.791  l1.454-9.225L9.614,7.699z" fill="#253B80"></path>
                         </svg>
                     </button>
+                    </a>
+
                     <button name="pix" type="button">
-                     <img src="Imagens/iconepix.png" alt="" width="25px">
+                        <img src="Imagens/iconepix.png" alt="" width="25px">
                     </button>
-                    <button name="google-pay" type="button">
+
+
+                    <button  name="google-pay" type="button">
                         <svg fill="none" viewBox="0 0 80 39" height="39" width="80" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_134_34)">
                                 <path fill="#5F6368" d="M37.8 19.7V29H34.8V6H42.6C44.5 6 46.3001 6.7 47.7001 8C49.1001 9.2 49.8 11 49.8 12.9C49.8 14.8 49.1001 16.5 47.7001 17.8C46.3001 19.1 44.6 19.8 42.6 19.8L37.8 19.7ZM37.8 8.8V16.8H42.8C43.9 16.8 45.0001 16.4 45.7001 15.6C47.3001 14.1 47.3 11.6 45.8 10.1L45.7001 10C44.9001 9.2 43.9 8.7 42.8 8.8H37.8Z"></path>
@@ -55,6 +60,8 @@
                             </defs>
                         </svg>
                     </button>
+
+
                 </div>
                 <div class="separator">
                     <hr class="line">
@@ -64,28 +71,29 @@
                 <div class="credit-card-info--form">
                     <div class="input_container">
                         <label for="password_field" class="input_label">Nome completo do Titular</label>
-                        <input id="password_field" class="input" type="text" name="input-name" title="Inpit title" placeholder="Nome Completo">
+                        <input id="password_field" class="input" type="text" name="input-name" title="Inpit title" placeholder="Nome Completo" maxlength="70">
                     </div>
                     <div class="input_container">
                         <label for="password_field" class="input_label">Número do Cartão</label>
-                        <input id="password_field" class="input" type="text" name="input-name" title="Inpit title" placeholder="0000 0000 0000 0000">
+                        <input id="cartaoInput" oninput="formatarCartao()" class="input" type="text" name="input-name" title="Inpit title" placeholder="0000 0000 0000 0000" maxlength="19">
                     </div>
                     <div class="input_container">
                         <label for="password_field" class="input_label">Data de vencimento/ CVV</label>
                         <div class="split">
-                            <input id="password_field" class="input" type="text" name="input-name" title="Expiry Date" placeholder="01/23" maxlength="5">
-                            <input id="password_field" class="input" type="text" name="cvv" title="CVV" placeholder="CVV" maxlength="3">
+                            <input id="valInput" class="input" oninput="formatarVAL()" type="text" name="input-name" title="Expiry Date" placeholder="01/23" maxlength="5">
+                            <input id="cvvInput" oninput="formatarCVV() " class="input" type="text" name="cvv" title="CVV" placeholder="CVV" maxlength="3">
                         </div>
                     </div>
                 </div>
                 <div class="button-container">
-                        <div class="save-button-container">
-                            <button type="submit" class="save-button">Salvar</button>
-                        </div>
+                    <div class="save-button-container">
+                        <button type="submit" class="save-button">Salvar</button>
                     </div>
+                </div>
             </form>
         </div>
     </div>
 </body>
 <script src="javascript/zere.js"></script>
+
 </html>

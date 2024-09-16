@@ -28,3 +28,10 @@ function formatarTelefone() {
   telefone = telefone.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3"); // Formata o número com DDD entre parênteses e hífen
   input.value = telefone;
 }
+
+function formatarCartao() {
+  var input = document.getElementById("cartaoInput");
+  var cartao = input.value.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
+  cartao = cartao.replace(/(\d{4})(?=\d)/g, "$1 ");
+  input.value = cartao;
+}

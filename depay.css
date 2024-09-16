@@ -6,7 +6,7 @@
     padding: 20px;
   }
   
-  .payment--options {
+  .payment--options  {
     width: calc(100% - 40px);
     display: grid;
     grid-template-columns: 33% 34% 33%;
@@ -14,20 +14,31 @@
     padding: 10px;
   }
   
-  .payment--options button {
+  .payment--options  a, button {
     height: 55px;
     background: #F2F2F2;
     border-radius: 11px;
     padding: 0;
     border: 0;
     outline: none;
+    transition: 0.3s;
+  }
+  .payment--options  a, button:hover{
+    height: 55px;
+    background: #F2F2F2;
+    border-radius: 11px;
+    padding: 0;
+    border: 0;
+    outline: none;
+    transition: 0.3s;
+    transform: scale(1.05);
   }
   
-  .payment--options button svg {
+  .payment--options  button svg {
     height: 18px;
   }
   
-  .payment--options button:last-child svg {
+  .payment--options  button:last-child svg {
     height: 22px;
   }
   
@@ -45,7 +56,7 @@
     display: block;
     text-align: center;
     font-weight: 600;
-    font-size: 11px;
+    font-size: 12px;
     margin: auto;
   }
   
