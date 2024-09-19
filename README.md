@@ -24,9 +24,8 @@ Visual Studio Code (editor do código fonte)
 Bootstrap
 
 🎯 Objetivos
-Promover Publicidade para empresas (tema pode ser alterado)
-Vender produtos e/ou serviços
-Melhor facilidade para clientes
+Viagens e Turismo pelo Vale do Ivaí
+
 
 🛠️ Instalação
 Pré-Requisitos
@@ -53,7 +52,7 @@ Todos os direitos estão reservados ao Grupo Alfa do Projeto Integrador de 2024,
 Estamos agradecidos com os seguintes membros por suas contribuições com o projeto.
 
 
-📞 Contact
+📞 Contate
 Membros do Projeto:
 
 João Pedro Fernandes --> Github: https://github.com/DarkZeusRLK
@@ -65,6 +64,7 @@ Matheus Vital --> https://github.com/ZERE029
 Instrutor:
 
 Dieimes Nunes de Souza
+
 Fique a vontade para tirar quaisquer dúvidas...
 
 Obrigado por dar uma olhada em nosso projeto, fique a vontade para desfrutar dele e aproveitar. 🌍
