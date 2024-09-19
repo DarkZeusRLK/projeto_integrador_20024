@@ -1,284 +1,217 @@
-.reservation-form {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.reservation-form h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.8rem;
-    color: #0056b3;
-}
-
-.reservation-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-.reservation-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.reservation-form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #0056b3;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 4px;
-}
-.texto-reservas{
-    font-size: 15px;
-}
-/*Fim CSS Reservas*/
-
-
-
-
-.footer{ 
-    justify-content: center;
-    background-color: #34495e;
-    padding: 20px 0;
-    color: white;
-    text-decoration: none;
-    margin-top: 10rem;
-    width: 100%;
-    position: relative;
-    left: 2%;
-  
-  }
-  .footer a{
-    text-decoration: none;
-    color: #e2cd13;
-  }
-
-
-
-  
-  /* Estilos da Sidebar */
+/* Estilos da Sidebar */
 .sidebar {
-    width: 80px;
-    height: 100vh;
-    background-color: #34495e;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: width 0.3s;
-    z-index: 1000;
-  }
-  
-  .sidebar.expanded {
-    width: 250px;
-  }
-  
-  /* Botão de Menu */
-  .menu-btn {
-    font-size: 30px;
-    color: #ecf0f1;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: transform 0.3s;
-    align-self: flex-start;
-    margin-left: 15px;
-  }
-  
-  .menu-btn:hover {
-    transform: rotate(90deg);
-  }
-  
-  /* Foto de perfil */
-  .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    transition: opacity 0.3s;
-  }
-  
-  .profile img {
-    border-radius: 9px;
-    height: 7rem;
-    display: none; /* Oculta a imagem por padrão */
-  }
-  
-  .profile .text-logo {
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    display: none; /* Oculta o texto por padrão */
-  }
-  
-  .sidebar.expanded .profile img,
-  .sidebar.expanded .profile .text-logo {
-    display: block; /* Mostra a imagem e o texto quando expandido */
-  }
-  
-  /* Título */
-  .text-title {
-    font-family: "Inknut Antiqua", Helvetica;
-    text-decoration: none;
-    color: black;
-    display: none; /* Oculta o título por padrão */
-  }
-  
-  .sidebar.expanded .text-title {
-    display: block; /* Mostra o título quando expandido */
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #fff;
-  }
-  
-  /* Links de navegação */
-  .nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-  
-  .nav-links li {
-    width: 10em;
-    text-align: left;
-    transition: background-color 0.3s, transform 0.3s;
-    position: relative;
-  }
-  
-  .nav-links li:hover {
-    transform: scale(1.05);
-    width: 70%;
-    z-index: 1;
-  }
-  
-  .nav-links li a {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    text-decoration: none;
-    color: #ecf0f1;
-    font-size: 16px;
-    transition: opacity 0.3s;
-  }
-  
-  .nav-links li a i {
-    font-size: 24px;
-    margin-right: 10px;
-    transition: transform 0.3s;
-  }
-  
-  .nav-links li a span {
-    opacity: 0;
-    white-space: nowrap;
-    transition: opacity 0.3s;
-  }
-  
-  .sidebar.expanded .nav-links li a span {
-    opacity: 1;
-  }
-  
-  .sidebar.expanded .nav-links li a i {
-    transform: rotate(360deg);
-  }
-  
-  /* Estilos do conteúdo principal */
-  .content {
-    margin-left: 80px;
-    padding: 20px;
-    flex-grow: 1;
-    transition: margin-left 0.3s;
-  }
-  
-  .sidebar.expanded ~ .content {
-    margin-left: 250px;
-  }
-  
-  /* Outras Estilizações */
-  .hidden {
-    display: none;
-  }
-  
-  /* Formulários */
-  .inputGroup {
-    margin: 0 0 2em;
-    padding: 0;
-    position: relative;
-  }
-  
-  .inputGroup:last-of-type {
-    margin-bottom: 0;
-  }
-  
-  label {
-    margin: 0 0 12px;
-    font-size: 1.25em;
-    font-weight: 700;
-    font-family: inherit;
-  }
-  
-  input[type="email"],
-  input[type="text"],
-  input[type="number"],
-  input[type="url"],
-  input[type="search"],
-  input[type="password"] {
-    display: block;
-    margin: 0;
-    padding: 0.875em 1em 0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    width: 30em;
-    height: 4.3em;
-    font-size: 0.60em;
-    color: #353538;
-    font-weight: 600;
-    font-family: inherit;
-    transition: box-shadow 0.2s linear, border-color 0.25s ease-out;
-  }
-  
-  input[type="email"]:focus,
-  input[type="text"]:focus,
-  input[type="number"]:focus,
-  input[type="url"]:focus,
-  input[type="search"]:focus,
-  input[type="password"]:focus {
-    outline: none;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .aboutMe {
-    display: block;
-    margin: 0;
-    padding: 0.65em 1em 1em;
-    background-color: #4eb8dd;
-    border: none;
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    height: 65px;
-    font-size: 1.55em;
-    color: #fff;
-    font-weight: 600;
-    font-family: inherit;
-    transition: background-color 0.2s ease-out;
-  }
-  
-  .aboutMe:hover,
-  .aboutMe:active {
-    background-color: #217093;
-  }
+  width: 80px;
+  height: 100vh;
+  background-color: #34495e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s;
+  z-index: 1000;
+}
+
+.sidebar.expanded {
+  width: 250px;
+}
+
+/* Botão de Menu */
+.menu-btn {
+  font-size: 30px;
+  color: #ecf0f1;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.3s;
+  align-self: flex-start;
+  margin-left: 15px;
+}
+
+.menu-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Foto de perfil */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: opacity 0.3s;
+}
+
+.profile img {
+  border-radius: 9px;
+  height: 7rem;
+  display: none; /* Oculta a imagem por padrão */
+}
+
+.profile .text-logo {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  display: none; /* Oculta o texto por padrão */
+}
+
+.sidebar.expanded .profile img,
+.sidebar.expanded .profile .text-logo {
+  display: block; /* Mostra a imagem e o texto quando expandido */
+}
+
+/* Título */
+.text-title {
+  font-family: "Inknut Antiqua", Helvetica;
+  text-decoration: none;
+  color: black;
+  display: none; /* Oculta o título por padrão */
+}
+
+.sidebar.expanded .text-title {
+  display: block; /* Mostra o título quando expandido */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #fff;
+}
+
+/* Links de navegação */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-links li {
+  width: 10em;
+  text-align: left;
+  transition: background-color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.nav-links li:hover {
+  transform: scale(1.05);
+  width: 70%;
+  z-index: 1;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 16px;
+  transition: opacity 0.3s;
+}
+
+.nav-links li a i {
+  font-size: 24px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.nav-links li a span {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+.sidebar.expanded .nav-links li a span {
+  opacity: 1;
+}
+
+.sidebar.expanded .nav-links li a i {
+  transform: rotate(360deg);
+}
+
+/* Estilos do conteúdo principal */
+.content {
+  margin-left: 80px;
+  padding: 20px;
+  flex-grow: 1;
+  transition: margin-left 0.3s;
+}
+
+.sidebar.expanded ~ .content {
+  margin-left: 250px;
+}
+
+/* Outras Estilizações */
+.hidden {
+  display: none;
+}
+
+/* Formulários */
+.inputGroup {
+  margin: 0 0 2em;
+  padding: 0;
+  position: relative;
+}
+
+.inputGroup:last-of-type {
+  margin-bottom: 0;
+}
+
+label {
+  margin: 0 0 12px;
+  font-size: 1.25em;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input[type="password"] {
+  display: block;
+  margin: 0;
+  padding: 0.875em 1em 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 30em;
+  height: 4.3em;
+  font-size: 0.60em;
+  color: #353538;
+  font-weight: 600;
+  font-family: inherit;
+  transition: box-shadow 0.2s linear, border-color 0.25s ease-out;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.aboutMe {
+  display: block;
+  margin: 0;
+  padding: 0.65em 1em 1em;
+  background-color: #4eb8dd;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: none;
+  width: 100%;
+  height: 65px;
+  font-size: 1.55em;
+  color: #fff;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background-color 0.2s ease-out;
+}
+
+.aboutMe:hover,
+.aboutMe:active {
+  background-color: #217093;
+}
 
 
 
@@ -288,159 +221,154 @@
 
 /*Início CSS Reservas*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
 }
 
 header {
-    padding: 20px;
-    background-color: #34495e;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    color: #ffffff;
+  padding: 20px;
+  background-color: #34495e;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .filters {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .filters label {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .filters select {
-    padding: 5px;
-    border: 1px solid;
-    border-radius: 10px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 10px;
 }
 .city-filter{
-  margin-left: 450px;
+margin-left: 450px;
 }
 
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Força 3 colunas */
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Força 3 colunas */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .card-info {
-    padding: 15px;
-    background-color: #34495e;
+  padding: 15px;
+  background-color: #34495e;
 }
 
 .card-info h3 {
-    margin-bottom: 10px;
-    font-size: 1.1em; /* Reduzido o tamanho do título */
-    color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.1em; /* Reduzido o tamanho do título */
+  color: #ffffff;
 }
 
 .card-info p {
-    font-size: 0.85em; /* Reduzido o tamanho da descrição */
-    color: #ffffff;
+  font-size: 0.85em; /* Reduzido o tamanho da descrição */
+  color: #ffffff;
 }
 
 /* Responsividade para telas menores */
 @media (max-width: 900px) {
-    .card-container {
-        grid-template-columns: repeat(2, 1fr); /* Ajusta para 2 colunas em telas menores */
-    }
+  .card-container {
+      grid-template-columns: repeat(2, 1fr); /* Ajusta para 2 colunas em telas menores */
+  }
 }
 
 @media (max-width: 600px) {
-    .card-container {
-        grid-template-columns: 1fr; /* Ajusta para 1 coluna em telas pequenas */
-    }
+  .card-container {
+      grid-template-columns: 1fr; /* Ajusta para 1 coluna em telas pequenas */
+  }
 }
 
 .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .image-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* Proporção 16:9 */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Proporção 16:9 */
+  overflow: hidden;
 }
 
 .image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Estilo para o ícone de seleção */
 .select-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px; /* Posicionado no canto superior direito */
-    font-size: 24px;
-    color: #34495e;
-    cursor: pointer;
-    transition: color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Posicionado no canto superior direito */
+  font-size: 24px;
+  color: #34495e;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .select-icon:hover {
-    color: #e2cd13;
+  color: #e2cd13;
 }
-
-.espaco-reservas{
-    margin-top: 64px;
-}
-
 
 
 
 
 .location-btn{
-    padding: 5px;
-    margin-left: 100px;
-    margin-top: 10px;
-    background-color: #e2cd13;
-    border: solid 3px #e2cd13;
-    border-radius: 10px;
+  padding: 5px;
+  margin-left: 100px;
+  margin-top: 10px;
+  background-color: #e2cd13;
+  border: solid 3px #e2cd13;
+  border-radius: 10px;
 }
 
 
 
 
 .hotel-info {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 500px;
-  margin-left: 670px;
-  margin-top: 50px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 20px;
+width: 500px;
+margin-left: 670px;
+margin-top: 50px;
 }
 .hotel-info h1 {
-  margin: 0 0 10px;
+margin: 0 0 10px;
 }
 .hotel-info p {
-  margin: 5px 0;
+margin: 5px 0;
 }
 
 /*Fim CSS Reservas*/
