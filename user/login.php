@@ -149,7 +149,7 @@ $conexao->close();
                             <input type="checkbox">
                             <label>Lembre-me </label>
                         </div>
-                        <span class="span">Esqueceu a Senha?</span>
+                        <span class="span"><a href="esqueci_senha.php">Esqueceu a Senha?</a></span>
                     </div>
                     <button class="button-submit">Logar</button>
                     <p class="p">Não possui uma conta? <a href="cadastro.php">Cadastre-se</a>
