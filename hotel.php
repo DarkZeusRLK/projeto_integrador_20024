@@ -1,7 +1,8 @@
 <?php
 include('static/conexao.php'); // Inclui a conexão com o banco de dados
 
-if (!isset($_SESSION)) {
+// Iniciar a sessão, se ainda não estiver iniciada
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
@@ -30,6 +31,9 @@ if (!empty($preco_filtro)) {
         case '3':
             $consultar_banco .= " AND valor_diaria > 400";
             break;
+        default:
+            // Opção inválida
+            break;
     }
 }
 
@@ -39,7 +43,11 @@ $retorno_consulta = $mysqli->query($consultar_banco);
 if (!$retorno_consulta) {
     die('Erro na consulta: ' . $mysqli->error);
 }
+
+// Fechar a conexão (opcional, mas recomendado)
+$mysqli->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
