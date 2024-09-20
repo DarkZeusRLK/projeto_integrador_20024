@@ -213,9 +213,8 @@ input[type="password"]:focus {
   background-color: #217093;
 }
 
-
-/*Início CSS Footer*/
-.footer{ 
+/* Início CSS Footer */
+.footer { 
   justify-content: center;
   background-color: #34495e;
   padding: 20px 0;
@@ -225,19 +224,15 @@ input[type="password"]:focus {
   width: 100%;
   position: relative;
   left: 2%;
-
 }
-.footer a{
+
+.footer a {
   text-decoration: none;
   color: #e2cd13;
 }
-/*Fim CSS Footer*/
+/* Fim CSS Footer */
 
-
-
-
-/*Início CSS Reservas*/
-
+/* Início CSS Reservas */
 header {
   padding: 20px;
   background-color: #34495e;
@@ -262,14 +257,15 @@ header {
   border: 1px solid;
   border-radius: 10px;
 }
-.city-filter{
-margin-left: 450px;
+
+.city-filter {
+  margin-left: 450px;
 }
 
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Força 3 colunas */
-  gap: 20px;
+  display: flex; /* Mudei de grid para flex */
+  flex-wrap: wrap; /* Permite que os cartões se movam para a próxima linha */
+  gap: 20px; /* Espaço entre os cartões */
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -302,13 +298,14 @@ margin-left: 450px;
 /* Responsividade para telas menores */
 @media (max-width: 900px) {
   .card-container {
-      grid-template-columns: repeat(2, 1fr); /* Ajusta para 2 colunas em telas menores */
+      flex-wrap: wrap; /* Permite que os cartões se movam para a próxima linha */
+      gap: 20px; /* Espaço entre os cartões */
   }
 }
 
 @media (max-width: 600px) {
   .card-container {
-      grid-template-columns: 1fr; /* Ajusta para 1 coluna em telas pequenas */
+      flex-direction: column; /* Ajusta para 1 coluna em telas pequenas */
   }
 }
 
@@ -347,10 +344,7 @@ margin-left: 450px;
   color: #e2cd13;
 }
 
-
-
-
-.location-btn{
+.location-btn {
   padding: 5px;
   margin-left: 100px;
   margin-top: 10px;
@@ -359,23 +353,22 @@ margin-left: 450px;
   border-radius: 10px;
 }
 
-
-
-
 .hotel-info {
-background-color: #fff;
-border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-padding: 20px;
-width: 500px;
-margin-left: 670px;
-margin-top: 50px;
-}
-.hotel-info h1 {
-margin: 0 0 10px;
-}
-.hotel-info p {
-margin: 5px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 500px;
+  margin-left: 670px;
+  margin-top: 50px;
 }
 
-/*Fim CSS Reservas*/
+.hotel-info h1 {
+  margin: 0 0 10px;
+}
+
+.hotel-info p {
+  margin: 5px 0;
+}
+
+/* Fim CSS Reservas */

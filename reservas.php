@@ -45,109 +45,112 @@
 
 
         <header>
-            <div class="filters">
-                <label class="city-filter" for="city-filter">Filtrar por cidade:</label>
-                <select id="city-filter">
-                    <option value="todas">Todas</option>
-                    <option value="ivaipora">Ivaiporã</option>
-                    <option value="jardim-alegre">Jardim Alegre</option>
-                </select>
+    <div class="filters">
+        <label class="city-filter" for="city-filter">Filtrar por cidade:</label>
+        <select id="city-filter" onchange="filterCities()">
+            <option value="todas">Todas</option>
+            <option value="ivaipora">Ivaiporã</option>
+            <option value="jardim-alegre">Jardim Alegre</option>
+        </select>
+    </div>
+</header>
+
+<div class="espaco-reservas"></div>
+
+<main>
+    <section class="card-container">
+        <a href="reservado.php" style="text-decoration: none;">
+            <div class="card" data-city="ivaipora">
+                <div class="image-container">
+                    <img src="Imagens/senhor.jpg" alt="Imagem 2">
+                    <i class="fas fa-check-circle select-icon"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Vilhar Palace Hotel</h3>
+                    <p>Ivaiporã</p>
+                    <p>A partir de R$ 200,00</p>
+                </div>
             </div>
-        </header>
+        </a>
 
+        <div class="card" data-city="jardim-alegre">
+            <div class="image-container">
+                <img src="Imagens/senhor.jpg" alt="Imagem 2">
+                <i class="fas fa-check-circle select-icon"></i>
+            </div>
+            <div class="card-info">
+                <h3>Nome do Hotel</h3>
+                <p>Jardim Alegre</p>
+                <p>Valor do Hotel</p>
+            </div>
+        </div>
 
-        <div class="espaco-reservas"></div>
+        <div class="card" data-city="ivaipora">
+            <div class="image-container">
+                <img src="Imagens/senhor.jpg" alt="Imagem 2">
+                <i class="fas fa-check-circle select-icon"></i>
+            </div>
+            <div class="card-info">
+                <h3>Nome do Hotel</h3>
+                <p>Ivaiporã</p>
+                <p>Valor do Hotel</p>
+            </div>
+        </div>
 
-        <main>
-            <section class="card-container">
-                <a href="reservado.php" style="text-decoration: none;">
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="Imagens/senhor.jpg" alt="Imagem 2">
-                            <i class="fas fa-check-circle select-icon"></i>
-                        </div>
-                        <div class="card-info">
-                            <h3>Vilhar Palace Hotel</h3>
-                            <p>Ivaiporã</p>
-                            <p>A partir de R$ 200,00</p>
-                        </div>
-                    </div>
-                </a>
+        <div class="card" data-city="jardim-alegre">
+            <div class="image-container">
+                <img src="Imagens/senhor.jpg" alt="Imagem 2">
+                <i class="fas fa-check-circle select-icon"></i>
+            </div>
+            <div class="card-info">
+                <h3>Nome do Hotel</h3>
+                <p>Jardim Alegre</p>
+                <p>Valor do Hotel</p>
+            </div>
+        </div>
 
-                
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="Imagens/senhor.jpg" alt="Imagem 2">
-                            <i class="fas fa-check-circle select-icon"></i>
-                        </div>
-                        <div class="card-info">
-                            <h3>Nome do Hotel</h3>
-                            <p>Cidade do Hotel</p>
-                            <p>Valor do Hotel</p>
-                        </div>
-                    </div>
-                
+        <div class="card" data-city="ivaipora">
+            <div class="image-container">
+                <img src="Imagens/senhor.jpg" alt="Imagem 2">
+                <i class="fas fa-check-circle select-icon"></i>
+            </div>
+            <div class="card-info">
+                <h3>Nome do Hotel</h3>
+                <p>Ivaiporã</p>
+                <p>Valor do Hotel</p>
+            </div>
+        </div>
 
-                
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="Imagens/senhor.jpg" alt="Imagem 2">
-                            <i class="fas fa-check-circle select-icon"></i>
-                        </div>
-                        <div class="card-info">
-                            <h3>Nome do Hotel</h3>
-                            <p>Cidade do Hotel</p>
-                            <p>Valor do Hotel</p>
-                        </div>
-                    </div>
-                
+        <div class="card" data-city="jardim-alegre">
+            <div class="image-container">
+                <img src="Imagens/senhor.jpg" alt="Imagem 2">
+                <i class="fas fa-check-circle select-icon"></i>
+            </div>
+            <div class="card-info">
+                <h3>Nome do Hotel</h3>
+                <p>Jardim Alegre</p>
+                <p>Valor do Hotel</p>
+            </div>
+        </div>
 
-                
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="Imagens/senhor.jpg" alt="Imagem 2">
-                            <i class="fas fa-check-circle select-icon"></i>
-                        </div>
-                        <div class="card-info">
-                            <h3>Nome do Hotel</h3>
-                            <p>Cidade do Hotel</p>
-                            <p>Valor do Hotel</p>
-                        </div>
-                    </div>
-                
+    </section>
+</main>
 
-                
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="Imagens/senhor.jpg" alt="Imagem 2">
-                            <i class="fas fa-check-circle select-icon"></i>
-                        </div>
-                        <div class="card-info">
-                            <h3>Nome do Hotel</h3>
-                            <p>Cidade do Hotel</p>
-                            <p>Valor do Hotel</p>
-                        </div>
-                    </div>
-                
+<script>
+function filterCities() {
+    const filterValue = document.getElementById('city-filter').value;
+    const cards = document.querySelectorAll('.card');
 
-
-                
-                    <div class="card">
-                        <div class="image-container">
-                            <img src="Imagens/senhor.jpg" alt="Imagem 2">
-                            <i class="fas fa-check-circle select-icon"></i>
-                        </div>
-                        <div class="card-info">
-                            <h3>Nome do Hotel</h3>
-                            <p>Cidade do Hotel</p>
-                            <p>Valor do Hotel</p>
-                        </div>
-                    </div>
-                
-
-                    
-            </section>
-        </main>
+    cards.forEach(card => {
+        const city = card.getAttribute('data-city');
+        if (filterValue === 'todas' || city === filterValue) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+}
+</script>
 
         <div vw class="enabled">
             <div vw-access-button class="active"></div>
