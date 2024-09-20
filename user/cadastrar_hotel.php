@@ -95,6 +95,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ?>
             </ul>
         </nav>
+        <?php
+                if(isset($_SESSION['nome'])){
+
+            ?>
+        <div class="user-profile">
+  <span class="username"><b><?php echo $_SESSION['nome'];?></b></span>
+  <?php if ($tipo_usuario === 'administrador'): ?>
+  <span id="admin-badge">ADM</span>
+  <?php endif; ?>
+  <a href="user/conta.php" class="user-avatar-link">
+  <img src="<?php echo $foto; ?>" alt="Avatar" class="avatar">
+</div>
+<?php
+                }
+?>
         <div class="container-fluid">
             <h1>Cadastro de Hotéis - IvaíTour</h1>
             <form action="" method="post" enctype="multipart/form-data">

@@ -6,6 +6,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+
 // Verificar se o usuário está logado
 if (!isset($_SESSION['nome'])) {
     // Se a sessão do usuário não estiver ativa, redireciona para a página de login
@@ -35,17 +36,15 @@ $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não
 $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
 $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : ''; // Caminho para a foto do usuário
 
-// Conecte-se ao banco de dados normal para obter informações do usuário
-$sql_user = "SELECT arquivo_foto FROM cadastro WHERE nome = ?";
+// Conecte-se ao banco de dados normal para obter o id_usuario e outras informações do usuário
+$sql_user = "SELECT id_usuario, arquivo_foto FROM cadastro WHERE nome = ?";
 $stmt = $conexao->prepare($sql_user);
 $stmt->bind_param('s', $nome_usuario);
 $stmt->execute();
 $result_user = $stmt->get_result();
 if ($result_user->num_rows > 0) {
-    $row_user = $result_user->fetch_assoc();
-    if (!empty($row_user['arquivo_foto'])) {
-        $foto = $row_user['arquivo_foto'];
-    } 
+    $user = $result_user->fetch_assoc(); // Armazena as informações do usuário
+    $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : ''; // Verifica a foto do usuário
 }
 $stmt->close();
 
@@ -107,16 +106,17 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 <div id="form-ctt">
                     <div class="text-center mb-4">
                         <div class="profile-picture-container">
-                            <img class='profile-picture' src='../<?php echo $foto;?>' alt='Foto de perfil'>
+                            <img class='profile-picture' src='../<?php echo $foto; ?>' alt='Foto de perfil'>
                         </div>
                     </div>
                     <input placeholder=" Nome: <?php echo $_SESSION['nome']; ?>" type="text" class="input" readonly>
                     <input placeholder="Email: <?php echo $_SESSION['email']; ?>" id="mail" type="email" class="input" readonly>
-                    <input placeholder="CPF: <?php echo $_SESSION['cpf']; ?>" id="mail" type="text" class="input" readonly>
-                    <input placeholder="Telefone: <?php echo $_SESSION['telefone']; ?>" id="mail" type="text" class="input" readonly>
+                    <input placeholder="CPF: <?php echo $cpf_usuario; ?>" id="cpf" type="text" class="input" readonly>
+                    <input placeholder="Telefone: <?php echo $telefone_usuario; ?>" id="telefone" type="text" class="input" readonly>
+
                     <div class="button-container">
                         <div class="reset-button-container">
-                            <a href="editaconta.php" class="reset-button">Editar conta</a>
+                            <a href="editaconta.php?codigo_cadastro=<?php echo $user['id_usuario'];?>" class="reset-button">Editar conta</a>
                         </div>
                     </div>
                 </div>
@@ -141,4 +141,5 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
+
 </html>

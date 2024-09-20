@@ -28,7 +28,7 @@ $stmt->close();
 if (isset($_SESSION['nome']) && !isset($_COOKIE['firstLogin'])) {
     setcookie('firstLogin', 'true', time() + (2 * 60), "/"); // Define o cookie para expirar em 2 minutos
 }
-
+ 
 // Conecte-se ao banco de dados de hotéis para exibir as informações
 $consultar_banco = "SELECT * FROM cadastro_hoteis";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);

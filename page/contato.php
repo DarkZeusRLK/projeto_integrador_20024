@@ -4,6 +4,25 @@
     if(!isset($_SESSION)){
         session_start();
     }
+
+    // Verifique se as variáveis de sessão estão definidas
+$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
+$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : ''; // Caminho para a foto do usuário
+
+// Conecte-se ao banco de dados normal para obter informações do usuário
+$sql_user = "SELECT arquivo_foto FROM cadastro WHERE nome = ?";
+$stmt = $conexao->prepare($sql_user);
+$stmt->bind_param('s', $nome_usuario);
+$stmt->execute();
+$result_user = $stmt->get_result();
+if ($result_user->num_rows > 0) {
+    $row_user = $result_user->fetch_assoc();
+    if (!empty($row_user['arquivo_foto'])) {
+        $foto = $row_user['arquivo_foto'];
+    } 
+}
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +44,21 @@
 <body>
 
 <div class="container-fluid">
+<?php
+                if(isset($_SESSION['nome'])){
+
+            ?>
+        <div class="user-profile">
+  <span class="username"><b><?php echo $_SESSION['nome'];?></b></span>
+  <?php if ($tipo_usuario === 'administrador'): ?>
+  <span id="admin-badge">ADM</span>
+  <?php endif; ?>
+  <a href="../user/conta.php" class="user-avatar-link">
+  <img src="../<?php echo $foto; ?>" alt="Avatar" class="avatar">
+</div>
+<?php
+                }
+?>
 <nav class="col-md-3 col-lg-2 sidebar">
             <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
             <div class="profile">
