@@ -415,12 +415,12 @@ input[type="password"]:focus {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  height: 100%; /* Garante que o card ocupe toda a altura disponível */
 }
 .card img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Defina a altura desejada */
+  object-fit: cover; /* Isso vai manter a proporção da imagem e cortá-la se necessário */
 }
 .card-body {
   padding: 1.25rem;
@@ -834,7 +834,7 @@ body.dark-mode #form-container-ctt .textarea{
   background-color: #002733;
 }
 body.dark-mode .heading{
-  color: #ffde59;
+  color: #ffde59  ;
 }
 body.dark-mode #message{
   color: white;

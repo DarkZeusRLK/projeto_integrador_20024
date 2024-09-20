@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 06-Set-2024 às 14:55
+-- Tempo de geração: 20-Set-2024 às 14:35
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `tipo_usuario` varchar(200) NOT NULL,
   `arquivo_foto` varchar(200) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
 
 --
 -- Extraindo dados da tabela `cadastro`
@@ -50,7 +50,8 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
 INSERT INTO `cadastro` (`id_usuario`, `nome`, `email`, `senha`, `telefone`, `cpf`, `genero`, `tipo_usuario`, `arquivo_foto`) VALUES
 (8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', 'Imagens/foto_padrao.png'),
 (9, 'Matheus', 'zeres@gmail.com', '$2y$10$2tM8cxPmTW79Z3ObuGIRUO99p.V74cBJmIJILTd9zR2ZS38PNPh.6', '(43)99433432542352', '123.123.123-12', 'Feminino', 'cliente', 'Imagens/a733d129bf370f5085507c89b6f3272c.gif'),
-(10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', 'Imagens/foto_padrao.png');
+(10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', 'Imagens/foto_padrao.png'),
+(11, 'Zere', 'teste@gmail.com', '$2y$10$B3fwmIJGlnNyVrAKC/wwSORL//SAtfz4wGZYz1U5zLpWjQrPfTG4m', '43999745207', '141414341242141', 'Feminino', 'cliente', 'Imagens/avatar2.png');
 
 -- --------------------------------------------------------
 
@@ -63,17 +64,40 @@ CREATE TABLE IF NOT EXISTS `cadastro_hoteis` (
   `id_hotel` int(200) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
   `descricao` varchar(200) NOT NULL,
+  `cidades` varchar(200) NOT NULL,
   `valor_diaria` varchar(200) NOT NULL,
   `arquivo_caminho` varchar(200) NOT NULL,
   PRIMARY KEY (`id_hotel`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf32;
 
 --
 -- Extraindo dados da tabela `cadastro_hoteis`
 --
 
-INSERT INTO `cadastro_hoteis` (`id_hotel`, `nome`, `descricao`, `valor_diaria`, `arquivo_caminho`) VALUES
-(19, 'Hotel Vilhar Palace', 'O melhor hotel de IvaiporÃ£, com excelentes avaliaÃ§oes e um atendimento impecÃ¡vel, todos os hospÃ©des jÃ¡ elogiaram o hotel vilhar.', 'R$ 800.00', 'recebidos/66d8703e88331.jpg');
+INSERT INTO `cadastro_hoteis` (`id_hotel`, `nome`, `descricao`, `cidades`, `valor_diaria`, `arquivo_caminho`) VALUES
+(29, 'ChalÃ©s RÃºsticos e RomÃ¢nticos - Na terra das Cachoeiras - Chalet', 'ChalÃ©s RÃºticos situados em Faxinal, na terra das cachoeiras.', 'Faxinal', '200,00', 'recebidos/66d8760cb5f07.jpg'),
+(28, 'Hotel Fazenda Luar de Agosto', 'Situado em uma fazenda cercada pelas montanhas, florestas e cachoeiras do Vale do IvaÃ­, este resort descontraÃ­do estÃ¡ a 5 km do centro da cidade e a 7 km da rodovia PRC-272.', 'Faxinal', '400,00', 'recebidos/66d8751cebf16.jpg'),
+(25, 'Vilhar Palace Hotel', 'Hotel casual com quartos e suites simples, alem de cafe da manha incluso.', 'Ivaiporã', '285,00', 'recebidos/66d871cc1be1c.jpg'),
+(26, 'Hotel do Vale', 'Um hotel aconchegante para toda familia, temos Ã³timos serviÃ§os e quartos e os melhores preÃ§os.', 'São João do Ivaí', '150,00', 'recebidos/66d8731a2cece.jpg'),
+(27, 'Braz Hotel e Restaurante', 'O hotel oferece medidas de saÃºde e seguranÃ§a. Para mais detalhes, entre em contato com o hotel.', 'São Pedro do Ivaí', '175,00', 'recebidos/66d874733b479.jpeg'),
+(30, 'Recanto da Serra', 'Dispondo de banheira de hidromassagem, o RECANTO DA SERRA estÃ¡ localizado em MauÃ¡ da Serra.', 'Mauá da Serra', '454,00', 'recebidos/66d8774aa686a.jpg'),
+(31, 'Hotel Apucarana Palace', 'Procurando por um Hotel em Apucarana, o Apucarana Palace Ã© a sua melhor opÃ§Ã£o em conforto com valor acessÃ­vel, bem no coraÃ§Ã£o da cidade.', 'Apucarana', '300,00', 'recebidos/66d877e219efb.jpg'),
+(32, 'Hotel Fazenda Ãgua Azul', 'Hotel Fazenda rodeado por 280 hectares de mata nativa, rico em fauna e flora, permitindo o verdadeiro contato com a natureza exuberante da regiÃ£o.', 'São do Pedro do Ivaí', '485,00', 'recebidos/66d878a76c390.jpg'),
+(33, 'Hotel Pires', 'Um Ã³timo hotel para quem vai ficar em Faxinal, fica localizado bem no centro da cidade, com estacionamento prÃ³prio e bons quartos. ', 'Faxinal', '200,00', 'recebidos/66d879dfc4ebf.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `senha_reset`
+--
+
+DROP TABLE IF EXISTS `senha_reset`;
+CREATE TABLE IF NOT EXISTS `senha_reset` (
+  `id_token` int(11) NOT NULL AUTO_INCREMENT,
+  `email` int(11) NOT NULL,
+  `token` int(11) NOT NULL,
+  PRIMARY KEY (`id_token`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
