@@ -74,7 +74,7 @@
                     </div>
                 </a>
 
-                <a href="reservado.php" style="text-decoration: none;">
+                
                     <div class="card">
                         <div class="image-container">
                             <img src="Imagens/senhor.jpg" alt="Imagem 2">
@@ -86,9 +86,9 @@
                             <p>Valor do Hotel</p>
                         </div>
                     </div>
-                </a>
+                
 
-                <a href="reservado.php" style="text-decoration: none;">
+                
                     <div class="card">
                         <div class="image-container">
                             <img src="Imagens/senhor.jpg" alt="Imagem 2">
@@ -100,9 +100,9 @@
                             <p>Valor do Hotel</p>
                         </div>
                     </div>
-                </a>
+                
 
-                <a href="reservado.php" style="text-decoration: none;">
+                
                     <div class="card">
                         <div class="image-container">
                             <img src="Imagens/senhor.jpg" alt="Imagem 2">
@@ -114,9 +114,9 @@
                             <p>Valor do Hotel</p>
                         </div>
                     </div>
-                </a>
+                
 
-                <a href="reservado.php" style="text-decoration: none;">
+                
                     <div class="card">
                         <div class="image-container">
                             <img src="Imagens/senhor.jpg" alt="Imagem 2">
@@ -128,8 +128,10 @@
                             <p>Valor do Hotel</p>
                         </div>
                     </div>
-                </a>
-                <a href="reservado.php" style="text-decoration: none;">
+                
+
+
+                
                     <div class="card">
                         <div class="image-container">
                             <img src="Imagens/senhor.jpg" alt="Imagem 2">
@@ -141,7 +143,9 @@
                             <p>Valor do Hotel</p>
                         </div>
                     </div>
-                </a>
+                
+
+                    
             </section>
         </main>
 
