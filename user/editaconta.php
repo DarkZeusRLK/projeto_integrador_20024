@@ -94,6 +94,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Image
                                 <i class="fas fa-pencil-alt"></i>
                             </div>
                         </label>
+                        
                     </div>
 
                     <!-- Formulário de atualização -->
