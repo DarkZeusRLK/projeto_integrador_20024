@@ -228,7 +228,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $hoteis['nome']; ?></h5>
                                 <p class="card-text"><?php echo $hoteis['descricao']; ?></p>
-                                <h5 class="card-text"><?php echo $hoteis['valor_diaria']; ?></h5>
+                                <h5 class="card-text">R$    <?php echo $hoteis['valor_diaria']; ?></h5>
                                 <div class="text-center mt-4">
                                     <a href="user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>" class="btn custom-btn">Reservar Agora</a>
                                 </div>
