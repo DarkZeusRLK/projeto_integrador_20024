@@ -403,6 +403,7 @@ input[type="password"]:focus {
   border-radius: 0.5rem;
   overflow: hidden;
   height: 100%; /* Garante que o card ocupe toda a altura disponível */
+  
 }
 #cards {
   display: flex;

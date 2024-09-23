@@ -56,7 +56,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
-            background-position-y: 90%;
+            background-position-y: 40%;
             text-align: center;
         }
 
