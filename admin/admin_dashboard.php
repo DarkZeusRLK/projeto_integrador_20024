@@ -86,7 +86,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 // Verifica se a variável $user['arquivo_foto'] existe e não está vazia, senão exibe a imagem padrão
                 $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '../Imagens/foto_padrao.png';
                 ?>
-                <img src="../<?php echo $foto; ?>" class="card-img-top imagem-dashboard-adm" alt="Imagem do usuário">
+                <img src="../<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
             </td>
             <td><?php echo $user['tipo_usuario']; ?></td>
         </tr>
@@ -122,6 +122,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                             </tr>
                         </tbody>
                     </table>
+                  <a class="custom-btn2" href="../user/cadastrar_hoteis_rj.php">Cadastrar Hotéis RJ</a>
                 </div>
             </section>
         </main>
