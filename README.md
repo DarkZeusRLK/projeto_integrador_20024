@@ -57,7 +57,7 @@ Membros do Projeto:
 
 João Pedro Fernandes --> Github: https://github.com/DarkZeusRLK
 João Rafael --> Github: https://github.com/Jraffis
-Joaquim Sagioneti --> Github: https://github.com/Joaquim666
+Joaquim Sagioneti --> [Github: https://github.com/joaquim22br
 Luiz Eduardo --> https://github.com/luizeduardo2022
 Matheus Vital --> https://github.com/ZERE029
 
