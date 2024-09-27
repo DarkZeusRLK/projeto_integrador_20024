@@ -70,24 +70,6 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             width: 100%;
             height: auto;
         }
-
-        .custom-btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 0.25rem;
-            padding: 0.75rem 1.25rem;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1rem;
-        }
-
-        .custom-btn:hover {
-            background-color: #0056b3;
-            text-decoration: none;
-        }
-
         .passagem {
             display: block;
             margin: 20px auto;
@@ -230,7 +212,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                                 <p class="card-text"><?php echo $hoteis['descricao']; ?></p>
                                 <h5 class="card-text">R$    <?php echo $hoteis['valor_diaria']; ?></h5>
                                 <div class="text-center mt-4">
-                                    <a href="user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>" class="btn custom-btn">Reservar Agora</a>
+                                    <a href="user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>" class="custom-btn">Reservar Agora</a>
                                 </div>
                             </div>
                         </div>
