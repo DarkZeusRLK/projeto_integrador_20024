@@ -141,21 +141,7 @@
             </section>
         </main>
 
-        <script>
-            function filterCities() {
-                const filterValue = document.getElementById('city-filter').value;
-                const cards = document.querySelectorAll('.card');
-
-                cards.forEach(card => {
-                    const city = card.getAttribute('data-city');
-                    if (filterValue === 'todas' || city === filterValue) {
-                        card.parentElement.style.display = 'block';
-                    } else {
-                        card.parentElement.style.display = 'none';
-                    }
-                });
-            }
-        </script>
+        
 
         <div vw class="enabled">
             <div vw-access-button class="active"></div>
