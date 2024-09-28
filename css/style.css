@@ -1419,7 +1419,7 @@ text-decoration: none;
   .profile-picture-container {
       width: 120px;
       height: 120px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
   }
 
   /* Ajusta o botão de enviar para ficar abaixo da imagem */
@@ -1461,15 +1461,21 @@ text-decoration: none;
       height: 100px;
   }
 
+  .form-container #form-ctt .input {
+    padding: 6px;
+    font-size: 17px;
+  }
+
   /* Ícone de edição menor */
   .edit-icon {
       font-size: 1rem;
-      bottom: -10px;
+      bottom: -50px;
       right: -10px;
   }
 
   /* Botão de enviar ajustado */
   .send-button {
+    width: 500px;
       margin-top: 20px;
       padding: 8px 16px;
       font-size: 0.85rem;
