@@ -109,6 +109,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                             <img class='profile-picture' src='../<?php echo $foto; ?>' alt='Foto de perfil'>
                         </div>
                     </div>
+                    <span class="heading">Usuário</span>
                     <input placeholder=" Nome: <?php echo $_SESSION['nome']; ?>" type="text" class="input" readonly>
                     <input placeholder="Email: <?php echo $_SESSION['email']; ?>" id="mail" type="email" class="input" readonly>
                     <input placeholder="CPF: <?php echo $cpf_usuario; ?>" id="cpf" type="text" class="input" readonly>
