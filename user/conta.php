@@ -48,8 +48,8 @@
                         <div class="profile-picture-container">
                             <img class='profile-picture' src='../Imagens/avatar2.png' alt='Foto de perfil'>
                         </div>
-                        <span class="heading">Usuário</span>
                     </div>
+                    <span class="heading">Usuário</span>
                     <input placeholder="Nome" type="text" class="input" readonly>
                     <input placeholder="Email" id="mail" type="email" class="input" readonly>
                     <input placeholder="CPF" id="mail" type="text" class="input" readonly>
