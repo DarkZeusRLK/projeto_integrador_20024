@@ -6,7 +6,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-
 // Verificar se o usuário está logado
 if (!isset($_SESSION['nome'])) {
     // Se a sessão do usuário não estiver ativa, redireciona para a página de login
@@ -23,41 +22,61 @@ if (isset($_SESSION['tipo_usuario'])) {
     }
 }
 
-// Impedir cache do navegador
-header("Cache-Control: no-cache, no-store, must-revalidate"); // Não permitir o cache
-header("Pragma: no-cache"); // Compatibilidade com navegadores antigos
-header("Expires: 0"); // Expirar imediatamente a página
-
-
-// Verifique se as variáveis de sessão estão definidas
-$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
+// Definir variáveis com os valores da sessão
+$id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
+$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+$email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
-$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
-$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : ''; // Caminho para a foto do usuário
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Imagens/avatar2.png'; // Definir uma imagem padrão se não tiver
 
-// Conecte-se ao banco de dados normal para obter o id_usuario e outras informações do usuário
-$sql_user = "SELECT id_usuario, arquivo_foto FROM cadastro WHERE nome = ?";
-$stmt = $conexao->prepare($sql_user);
-$stmt->bind_param('s', $nome_usuario);
-$stmt->execute();
-$result_user = $stmt->get_result();
-if ($result_user->num_rows > 0) {
-    $user = $result_user->fetch_assoc(); // Armazena as informações do usuário
-    $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : ''; // Verifica a foto do usuário
+// Atualizar informações do usuário
+if (isset($_POST['bt_email'])) {
+    $email = $_POST['bt_email'];
+    $senha = $_POST['bt_senha']; // Certifique-se de que a senha é tratada adequadamente
+    $nome = $_POST['bt_nome'];
+    $telefone = $_POST['bt_telefone'];
+    $cpf = $_POST['bt_cpf'];
+
+    // Usar prepared statements para atualizar os dados do usuário
+    $stmt = $mysqli->prepare("UPDATE cadastro SET email = ?, senha = ?, nome = ?, cpf = ?, telefone = ? WHERE id_usuario = ?");
+    if ($stmt) {
+        $stmt->bind_param("sssssi", $email, $senha, $nome, $cpf, $telefone, $id_usuario);
+        $stmt->execute();
+        $stmt->close();
+    } else {
+        die("Erro na preparação da consulta: " . $mysqli->error);
+    }
 }
-$stmt->close();
 
-// Conecte-se ao banco de dados de hotéis para exibir as informações
-$consultar_banco = "SELECT * FROM cadastro_hoteis";
-$retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
+// Consultar informações do usuário
+if ($id_usuario) {
+    $stmt = $mysqli->prepare("SELECT * FROM cadastro WHERE id_usuario = ?");
+    if ($stmt) {
+        $stmt->bind_param("i", $id_usuario);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $consultar = $resultado->fetch_assoc();
+        // Atualizando variáveis com os dados do usuário consultado
+        if ($consultar) {
+            $nome_usuario = $consultar['nome'];
+            $email_usuario = $consultar['email'];
+            $cpf_usuario = $consultar['cpf'];
+            $telefone_usuario = $consultar['telefone'];
+            $foto = $consultar['foto_perfil_caminho'] ? $consultar['foto_perfil_caminho'] : '../Imagens/avatar2.png';
+        }
+        $stmt->close();
+    } else {
+        die("Erro na preparação da consulta: " . $mysqli->error);
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="Imagens/icon.png">
+    <link rel="icon" href="../Imagens/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
@@ -106,18 +125,18 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 <div id="form-ctt">
                     <div class="text-center mb-4">
                         <div class="profile-picture-container">
-                            <img class='profile-picture' src='../<?php echo $foto; ?>' alt='Foto de perfil'>
+                            <img class='profile-picture' src='../recebidos/<?php echo $foto; ?>' alt='Foto de perfil'>
                         </div>
                     </div>
-                    <span class="heading">Usuário</span>
-                    <input placeholder=" Nome: <?php echo $_SESSION['nome']; ?>" type="text" class="input" readonly>
-                    <input placeholder="Email: <?php echo $_SESSION['email']; ?>" id="mail" type="email" class="input" readonly>
+                    <span class="heading"><?php echo $nome_usuario; ?></span>
+                    <input placeholder=" Nome: <?php echo $nome_usuario; ?>" type="text" class="input" readonly>
+                    <input placeholder="Email: <?php echo $email_usuario; ?>" id="mail" type="email" class="input" readonly>
                     <input placeholder="CPF: <?php echo $cpf_usuario; ?>" id="cpf" type="text" class="input" readonly>
                     <input placeholder="Telefone: <?php echo $telefone_usuario; ?>" id="telefone" type="text" class="input" readonly>
 
                     <div class="button-container">
                         <div class="reset-button-container">
-                            <a href="editaconta.php?codigo_cadastro=<?php echo $user['id_usuario'];?>" class="reset-button">Editar conta</a>
+                        <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="reset-button">Editar conta</a>
                         </div>
                     </div>
                 </div>

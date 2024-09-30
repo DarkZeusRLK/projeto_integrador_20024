@@ -27,10 +27,10 @@ if (isset($_POST['bt_email'])) {
                 // Verifica se o usuário é administrador
                 if ($usuario['tipo_usuario'] == 'administrador') {
                     $_SESSION['is_admin'] = true; // Define uma sessão para administrador
-                    header("Location: ../index.php"); // Redireciona para o painel do administrador
+                    header("Location: ../admin/protect_adm.php"); // Redireciona para a página de proteção do administrador
                 } else {
                     $_SESSION['is_admin'] = false; // Define como falso se não for administrador
-                    header("Location: ../index.php"); // Redireciona para a página padrão
+                    header("Location: ../cliente/protect.php"); // Redireciona para a página de proteção do cliente
                 }
                 exit(); // Certifique-se de chamar exit após redirecionamento
             } else {

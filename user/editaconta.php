@@ -20,6 +20,37 @@ if (isset($_SESSION['tipo_usuario'])) {
     } elseif ($_SESSION['tipo_usuario'] === 'cliente') {
         require('../static/protect.php'); // Proteção para clientes
     }
+
+    // Atualização dos dados do usuário
+    if (isset($_POST['bt_email'])) {
+        $id_cadastro_alterar = $_POST['bt_id_alterar'];
+        $email = $_POST['bt_email'];
+        $senha = $_POST['bt_senha'];
+        $nome = $_POST['bt_nome'];
+        $telefone = $_POST['bt_telefone'];
+        $cpf = $_POST['bt_cpf'];
+
+        // Usar prepared statements para evitar SQL Injection
+        $stmt = $mysqli->prepare("UPDATE cadastro SET email = ?, senha = ?, nome = ?, cpf = ?, telefone = ? WHERE id_usuario = ?");
+        $stmt->bind_param("sssssi", $email, $senha, $nome, $cpf, $telefone, $id_cadastro_alterar);
+        $stmt->execute();
+
+        // Fechar a declaração
+        $stmt->close();
+    }
+
+    // Consultar os dados do usuário
+    if (isset($_POST['bt_id'])) {
+        $id_cadastro = $_POST['bt_id'];
+        $stmt = $mysqli->prepare("SELECT * FROM cadastro WHERE id_usuario = ?");
+        $stmt->bind_param("i", $id_cadastro);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $consultar = $resultado->fetch_assoc();
+
+        // Fechar a declaração
+        $stmt->close();
+    }
 }
 
 // Definir variáveis com os valores da sessão
@@ -29,6 +60,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
 $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Imagens/avatar2.png'; // Definir uma imagem padrão se não tiver
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +71,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Image
     <link rel="icon" href="img/logo2.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="icon" href="Imagens/icon.png">
+    <link rel="icon" href="../Imagens/icon.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/zere.css">
     <title>Minha Conta</title>
@@ -51,40 +83,37 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Image
     <div class="container-fluid">
 
         <nav class="col-md-3 col-lg-2 sidebar">
-        <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-        <div class="profile">
-            <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-            <h1 class="text-title">IvaíTour</h1>
-        </div>
-        <ul class="nav-links">
-            <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-            <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-            <?php if (isset($_SESSION['nome'])): ?>
-                <li><a href="conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-            <?php else: ?>
-                <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-            <?php endif; ?>
-            <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-            <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-                <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
-            <?php endif; ?>
-            <?php if (isset($_SESSION['nome'])): ?>
-                <li class="nav-item logout">
-                    <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+            <div class="profile">
+                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
+                <h1 class="text-title">IvaíTour</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
+                <?php if (isset($_SESSION['nome'])): ?>
+                    <li><a href="conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                <?php else: ?>
+                    <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                <?php endif; ?>
+                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
+                <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
+                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['nome'])): ?>
+                    <li class="nav-item logout">
+                        <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+                    </li>
+                <?php endif; ?>
+                <li class="nav-item">
+                    <a href="configuracoes.php" class="nav-link" id="settings-icon">
+                        <i class="fas fa-cog"></i><span>Configurações</span>
+                    </a>
                 </li>
-            <?php endif; ?>
-            <li class="nav-item">
-                <a href="configuracoes.php" class="nav-link" id="settings-icon">
-                    <i class="fas fa-cog"></i><span>Configurações</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
 
-
-
-
-    <div class="container">
+        <div class="container">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
                     <div class="profile-picture-container">
@@ -94,7 +123,6 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Image
                                 <i class="fas fa-pencil-alt"></i>
                             </div>
                         </label>
-                        
                     </div>
 
                     <!-- Formulário de atualização -->
