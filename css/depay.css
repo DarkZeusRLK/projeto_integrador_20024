@@ -1,0 +1,85 @@
+/* From Uiverse.io by zanina-yassine */
+#form-container-ctt {
+  margin-left: 22%;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.payment--options a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment--options {
+  display: flex;
+  gap: 60px;
+  /* Espaçamento entre as imagens, ajuste conforme necessário */
+  max-width: 30rem;
+  display: grid;
+  grid-template-columns: 33% 33%;
+  padding: 10px;
+}
+
+.payment--options img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.botoes {
+  align-items: center;
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  transition: 0.2s;
+}
+
+.botoes:hover {
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+
+
+
+.input_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 15px;
+}
+
+
+.input_label {
+  font-size: 13px;
+  color: #8B8E98;
+  font-weight: 600;
+}
+
+.aviso {
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #8B8E98;
+}
