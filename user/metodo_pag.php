@@ -50,16 +50,16 @@
                 <p class="aviso">Use essas formas de metodo de pagamento</p>
                 <div class="payment--options">
                     <a class="botoes" name="boleto" href="boleto.php">
-                        <center>
+                        
                             <img src="../Imagens/boleto.png" alt="" width="150rem">
-                            </svg>
-                        </center>
+                          
+                   
                     </a>
 
                     <a class="botoes" name="pix" href="pix.php">
-                        <center>
+                
                             <img src="../Imagens/pix.svg" alt="" width="120rem">
-                        </center>
+                   
                     </a>
 
 
