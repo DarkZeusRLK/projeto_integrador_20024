@@ -122,7 +122,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                             </tr>
                         </tbody>
                     </table>
-                  <a class="custom-btn2" href="../user/cadastrar_hoteis_rj.php">Cadastrar Hotéis RJ</a>
+                  <a class="custom-btn2" href="../user/cadastrar_hoteis_aracaju.php">Cadastrar Hotéis Aracaju</a>
                 </div>
             </section>
         </main>
