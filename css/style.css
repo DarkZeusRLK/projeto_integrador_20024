@@ -1,6 +1,15 @@
+/*VARIÁVEIS------DE------CORES------DO-------SISTEMA*/
+:root{
+  /*Cor azul Principal*/
+  --azul: #34495e;
+
+  /*Cor amarela Secundária*/
+  --amarelo: #ffde59;
+}
+/*FIM DE VARIAVEIS-------^-----DE---^-----CORES------------^--------------*/
+
+
 /* Define o tamanho da fonte baseado no valor salvo */
-
-
 html {
   font-size: var(--font-size, 16px); /* 16px é o valor padrão */
 }
