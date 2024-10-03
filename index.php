@@ -195,7 +195,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 
             ?>
                 <div class="user-profile">
-                    <span class="username"><b><?php echo $_SESSION['nome']; ?></b></span>
+                    <span class="username"><b><?php echo $nome_usuario; ?></b></span>
                     <?php if ($tipo_usuario === 'administrador'): ?>
                         <span id="admin-badge">ADM</span>
                     <?php endif; ?>

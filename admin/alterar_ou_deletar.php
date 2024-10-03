@@ -50,7 +50,7 @@ require('../static/protect_adm.php');
             <div class="row">
                 <!-- Card 1 -->
                 <div id="cards2" class="col-md-3 mb-2">
-                    <div id="link_adm_table" onclick="window.location.href='alterar_tipo_usuario.php'" style="cursor: pointer;" class="card h-100">
+                    <div id="link_adm_table" onclick="window.location.href='../user/editaconta.php'" style="cursor: pointer;" class="card h-100">
                         <img src="../Imagens/images.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Alterar Usuário</h5>

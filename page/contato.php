@@ -30,6 +30,24 @@ if (isset($_POST['nome'])) {
         $stmt->close(); // Feche a instrução preparada
     }
 }
+
+// Verificar o tipo de usuário e incluir o arquivo de proteção correto
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'administrador') {
+        require('../static/protect_adm.php'); // Proteção para administradores
+    } elseif ($_SESSION['tipo_usuario'] === 'cliente') {
+        require('../static/protect.php'); // Proteção para clientes
+    }
+}
+
+// Definir variáveis com os valores da sessão
+$id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
+$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+$email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+$cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
+$telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
+$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
+$foto = $_SESSION['arquivo_foto'];
 ?>
 
 <!DOCTYPE html>

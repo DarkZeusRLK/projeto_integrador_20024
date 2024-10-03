@@ -25,7 +25,6 @@ if (isset($_SESSION['tipo_usuario'])) {
     if (isset($_POST['bt_email'])) {
         $id_cadastro_alterar = $_POST['bt_id_alterar'];
         $email = $_POST['bt_email'];
-        $senha = $_POST['bt_senha'];
         $nome = $_POST['bt_nome'];
         $telefone = $_POST['bt_telefone'];
         $cpf = $_POST['bt_cpf'];
@@ -35,9 +34,16 @@ if (isset($_SESSION['tipo_usuario'])) {
 
 
         // Usar prepared statements para evitar SQL Injection
-        $stmt = $mysqli->prepare("UPDATE cadastro SET email = ?, senha = ?, nome = ?, cpf = ?, telefone = ? WHERE id_usuario = ?");
-        $stmt->bind_param("sssssi", $email, $senha, $nome, $cpf, $telefone, $id_cadastro_alterar);
+        $stmt = $conexao->prepare("UPDATE cadastro SET email = ?, nome = ?, cpf = ?, telefone = ? WHERE id_usuario = ?");
+        $stmt->bind_param("sssss", $email, $nome, $cpf, $telefone, $id_cadastro_alterar);
         $stmt->execute();
+
+        $sql_alterar = "UPDATE cadastro
+        SET email = '$email',
+        nome = '$nome',
+        cpf = '$cpf'
+        telefone = '$telefone'
+        WHERE id_usuario = '$id_cadastro_alterar'";
 
         // Fechar a declaração
         $stmt->close();
@@ -85,7 +91,6 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Image
 
 <body>
     <div class="container-fluid">
-
         <nav class="col-md-3 col-lg-2 sidebar">
             <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
             <div class="profile">
@@ -137,12 +142,12 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Image
                         </div>
                     </form>
 
-                    <form action="conta.php" method="POST">
+                    <form action="editaconta.php" method="POST">
                         <!-- Campo hidden com o id do usuário -->
-                        <input type="hidden" name="bt_id" value="<?php echo $id_usuario; ?>">
+                        <input type="hidden" name="bt_id_alterar" value="<?php echo $id_usuario; ?>">
 
                         <!-- Preenchendo os campos diretamente com as variáveis da sessão -->
-                        <span class="heading">Usuário</span>
+                        <span class="heading"><?php echo $nome_usuario;?></span>
                         <input type="text" name="bt_nome" class="input" value="<?php echo $nome_usuario; ?>" placeholder="Nome" required>
                         <input type="email" name="bt_email" class="input" value="<?php echo $email_usuario; ?>" placeholder="Email" required>
                         <input type="text" name="bt_cpf" class="input" value="<?php echo $_SESSION['cpf']; ?>" placeholder="CPF" required>
