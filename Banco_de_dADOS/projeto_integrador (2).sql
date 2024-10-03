@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 27-Set-2024 às 14:28
+-- Tempo de geração: 03-Out-2024 às 10:56
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `cadastro_hoteis` (
   `valor_diaria` varchar(200) NOT NULL,
   `arquivo_caminho` varchar(200) NOT NULL,
   PRIMARY KEY (`id_hotel`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf32;
 
 --
 -- Extraindo dados da tabela `cadastro_hoteis`
@@ -76,6 +76,7 @@ CREATE TABLE IF NOT EXISTS `cadastro_hoteis` (
 
 INSERT INTO `cadastro_hoteis` (`id_hotel`, `nome`, `descricao`, `cidades`, `valor_diaria`, `arquivo_caminho`) VALUES
 (29, 'Chale na Terra das Cachoeiras', 'ChalÃ©s RÃºticos situados em Faxinal, na terra das cachoeiras.', 'Faxinal', '200,00', 'recebidos/66d8760cb5f07.jpg'),
+(34, 'Copacabana Palace', 'O Copacabana Palace foi Inaugurado em 1923.', 'Rio de Janeiro', '4.150,00', 'recebidos/66f6ab3d971f8.jpg'),
 (28, 'Hotel Fazenda Luar de Agosto', 'Situado em uma fazenda cercada pelas montanhas e cachoeiras do Vale do Ivai.', 'Faxinal', '400,00', 'recebidos/66d8751cebf16.jpg'),
 (25, 'Vilhar Palace Hotel', 'Hotel casual com quartos e suites simples, alem de cafe da manha incluso.', 'Ivaiporã', '285,00', 'recebidos/66d871cc1be1c.jpg'),
 (26, 'Hotel do Vale', 'Um hotel aconchegante para toda familia, temos Ã³timos serviÃ§os e quartos e os melhores preÃ§os.', 'São João do Ivaí', '150,00', 'recebidos/66d8731a2cece.jpg'),
@@ -83,7 +84,9 @@ INSERT INTO `cadastro_hoteis` (`id_hotel`, `nome`, `descricao`, `cidades`, `valo
 (30, 'Recanto da Serra', 'Dispondo de banheira de hidromassagem, o RECANTO DA SERRA estÃ¡ localizado em MauÃ¡ da Serra.', 'Mauá da Serra', '454,00', 'recebidos/66d8774aa686a.jpg'),
 (31, 'Hotel Apucarana Palace', 'Procurando por um Hotel em Apucarana, o Apucarana Palace Ã© a sua melhor opÃ§Ã£o em conforto com valor acessÃ­vel, bem no coraÃ§Ã£o da cidade.', 'Apucarana', '300,00', 'recebidos/66d877e219efb.jpg'),
 (32, 'Hotel Fazenda Ãgua Azul', 'Hotel Fazenda rodeado por 280 hectares de mata nativa, rico em fauna e flora, permitindo o verdadeiro contato com a natureza exuberante da regiÃ£o.', 'São do Pedro do Ivaí', '485,00', 'recebidos/66d878a76c390.jpg'),
-(33, 'Hotel Pires', 'Um Ã³timo hotel para quem vai ficar em Faxinal, fica localizado bem no centro da cidade, com estacionamento prÃ³prio e bons quartos. ', 'Faxinal', '200,00', 'recebidos/66d879dfc4ebf.jpg');
+(33, 'Hotel Pires', 'Um Ã³timo hotel para quem vai ficar em Faxinal, fica localizado bem no centro da cidade, com estacionamento prÃ³prio e bons quartos. ', 'Faxinal', '200,00', 'recebidos/66d879dfc4ebf.jpg'),
+(35, 'Grand Hyatt', 'Com piscina ao ar livre e spa, o Grand Hyatt Rio de Janeiro está localizado no centro da Barra da Tijuca', 'Rio de Janeiro', '1.120,00', 'recebidos/66f6ac925c7ef.jpg'),
+(36, 'Wyndham Rio Barra', 'O Wyndham Barra é um hotel moderno localizado na Barra da Tijuca', 'Rio de Janeiro', '450,00', 'recebidos/66f6abeba104b.jpg');
 
 -- --------------------------------------------------------
 
@@ -134,6 +137,21 @@ INSERT INTO `hoteis_rj` (`id_hotel`, `nome`, `valor_diaria`, `descricao`, `arqui
 (15, 'La ChimÃ¨re', 'R$ 523,00', ' O La ChimÃ¨re Ã© um hotel encantador prÃ³ximo Ã  praia, com acomodaÃ§Ãµes confortÃ¡veis e piscina, ideal para relaxar.', 'recebidos/66f6b4db7c920.jpg'),
 (13, 'A Concept Hotel & Spa', 'R$ 2.688,00', 'Um refÃºgio de luxo e sofisticaÃ§Ã£o, ideal para quem busca exclusividade Ã  beira-mar.', 'recebidos/66f6b2efb851b.jpg'),
 (16, 'Abracadabra Pousada', 'R$ 1.230,00 ', ' A  Abracadabra Pousada, em BÃºzios, oferece um ambiente acolhedor, com quartos confortÃ¡veis e piscina, ideal para relaxar perto das praias.', 'recebidos/66f6b5a17699b.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `mensagem_contato`
+--
+
+DROP TABLE IF EXISTS `mensagem_contato`;
+CREATE TABLE IF NOT EXISTS `mensagem_contato` (
+  `id_mensagem` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `mensagem` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_mensagem`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
 
