@@ -51,7 +51,6 @@ if (isset($_POST['bt_email'])) {
 
 // Consultar informações do usuário
 
-var_dump($_SESSION);
 if ($id_usuario) {
     $stmt = $conexao->prepare("SELECT * FROM cadastro WHERE id_usuario = ?");
     if ($stmt) {
@@ -66,7 +65,6 @@ if ($id_usuario) {
             $cpf_usuario = $consultar['cpf'];
             $telefone_usuario = $consultar['telefone'];
             $foto = $_SESSION['arquivo_foto'];
-            var_dump($consultar);
         }
         $stmt->close();
     } else {

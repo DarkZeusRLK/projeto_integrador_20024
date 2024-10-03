@@ -30,6 +30,10 @@ if (isset($_SESSION['tipo_usuario'])) {
         $telefone = $_POST['bt_telefone'];
         $cpf = $_POST['bt_cpf'];
 
+        // Atualizar informações do usuário
+
+
+
         // Usar prepared statements para evitar SQL Injection
         $stmt = $mysqli->prepare("UPDATE cadastro SET email = ?, senha = ?, nome = ?, cpf = ?, telefone = ? WHERE id_usuario = ?");
         $stmt->bind_param("sssssi", $email, $senha, $nome, $cpf, $telefone, $id_cadastro_alterar);
@@ -117,7 +121,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Image
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
                     <div class="profile-picture-container">
-                        <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
+                        <img class='profile-picture' src='../<?php echo $_SESSION['arquivo_foto']; ?>' alt='Foto de perfil'>
                         <label for="foto">
                             <div class="edit-icon">
                                 <i class="fas fa-pencil-alt"></i>
@@ -141,8 +145,8 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Image
                         <span class="heading">Usuário</span>
                         <input type="text" name="bt_nome" class="input" value="<?php echo $nome_usuario; ?>" placeholder="Nome" required>
                         <input type="email" name="bt_email" class="input" value="<?php echo $email_usuario; ?>" placeholder="Email" required>
-                        <input type="text" name="bt_cpf" class="input" value="<?php echo $cpf_usuario; ?>" placeholder="CPF" required>
-                        <input type="text" name="bt_telefone" class="input" value="<?php echo $telefone_usuario; ?>" placeholder="Telefone" required>
+                        <input type="text" name="bt_cpf" class="input" value="<?php echo $_SESSION['cpf']; ?>" placeholder="CPF" required>
+                        <input type="text" name="bt_telefone" class="input" value="<?php echo $_SESSION['telefone']; ?>" placeholder="Telefone" required>
 
                         <div class="button-container">
                             <div class="save-button-container">
