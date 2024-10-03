@@ -1,4 +1,4 @@
-<?php
+A<?php
 include('../static/conexao.php');
 
 if (!isset($_SESSION)) {
