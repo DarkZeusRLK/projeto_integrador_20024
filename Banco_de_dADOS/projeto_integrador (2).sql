@@ -1,0 +1,173 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 03-Out-2024 às 10:56
+-- Versão do servidor: 5.7.36
+-- versão do PHP: 7.4.26
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `projeto_integrador`
+--
+CREATE DATABASE IF NOT EXISTS `projeto_integrador` DEFAULT CHARACTER SET utf32 COLLATE utf32_general_ci;
+USE `projeto_integrador`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cadastro`
+--
+
+DROP TABLE IF EXISTS `cadastro`;
+CREATE TABLE IF NOT EXISTS `cadastro` (
+  `id_usuario` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `senha` varchar(200) NOT NULL,
+  `telefone` varchar(200) NOT NULL,
+  `cpf` varchar(200) NOT NULL,
+  `genero` varchar(200) NOT NULL,
+  `tipo_usuario` varchar(200) NOT NULL,
+  `arquivo_foto` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
+
+--
+-- Extraindo dados da tabela `cadastro`
+--
+
+INSERT INTO `cadastro` (`id_usuario`, `nome`, `email`, `senha`, `telefone`, `cpf`, `genero`, `tipo_usuario`, `arquivo_foto`) VALUES
+(8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', 'Imagens/foto_padrao.png'),
+(9, 'Matheus', 'zeres@gmail.com', '$2y$10$2tM8cxPmTW79Z3ObuGIRUO99p.V74cBJmIJILTd9zR2ZS38PNPh.6', '(43)99433432542352', '123.123.123-12', 'Feminino', 'cliente', 'Imagens/a733d129bf370f5085507c89b6f3272c.gif'),
+(10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', 'Imagens/foto_padrao.png'),
+(11, 'Zere', 'teste@gmail.com', '$2y$10$B3fwmIJGlnNyVrAKC/wwSORL//SAtfz4wGZYz1U5zLpWjQrPfTG4m', '43999745207', '141414341242141', 'Feminino', 'cliente', 'Imagens/avatar2.png');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cadastro_hoteis`
+--
+
+DROP TABLE IF EXISTS `cadastro_hoteis`;
+CREATE TABLE IF NOT EXISTS `cadastro_hoteis` (
+  `id_hotel` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `descricao` varchar(200) NOT NULL,
+  `cidades` varchar(200) NOT NULL,
+  `valor_diaria` varchar(200) NOT NULL,
+  `arquivo_caminho` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_hotel`)
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf32;
+
+--
+-- Extraindo dados da tabela `cadastro_hoteis`
+--
+
+INSERT INTO `cadastro_hoteis` (`id_hotel`, `nome`, `descricao`, `cidades`, `valor_diaria`, `arquivo_caminho`) VALUES
+(29, 'Chale na Terra das Cachoeiras', 'ChalÃ©s RÃºticos situados em Faxinal, na terra das cachoeiras.', 'Faxinal', '200,00', 'recebidos/66d8760cb5f07.jpg'),
+(34, 'Copacabana Palace', 'O Copacabana Palace foi Inaugurado em 1923.', 'Rio de Janeiro', '4.150,00', 'recebidos/66f6ab3d971f8.jpg'),
+(28, 'Hotel Fazenda Luar de Agosto', 'Situado em uma fazenda cercada pelas montanhas e cachoeiras do Vale do Ivai.', 'Faxinal', '400,00', 'recebidos/66d8751cebf16.jpg'),
+(25, 'Vilhar Palace Hotel', 'Hotel casual com quartos e suites simples, alem de cafe da manha incluso.', 'Ivaiporã', '285,00', 'recebidos/66d871cc1be1c.jpg'),
+(26, 'Hotel do Vale', 'Um hotel aconchegante para toda familia, temos Ã³timos serviÃ§os e quartos e os melhores preÃ§os.', 'São João do Ivaí', '150,00', 'recebidos/66d8731a2cece.jpg'),
+(27, 'Braz Hotel e Restaurante', 'O hotel oferece medidas de saÃºde e seguranÃ§a. Para mais detalhes, entre em contato com o hotel.', 'São Pedro do Ivaí', '175,00', 'recebidos/66d874733b479.jpeg'),
+(30, 'Recanto da Serra', 'Dispondo de banheira de hidromassagem, o RECANTO DA SERRA estÃ¡ localizado em MauÃ¡ da Serra.', 'Mauá da Serra', '454,00', 'recebidos/66d8774aa686a.jpg'),
+(31, 'Hotel Apucarana Palace', 'Procurando por um Hotel em Apucarana, o Apucarana Palace Ã© a sua melhor opÃ§Ã£o em conforto com valor acessÃ­vel, bem no coraÃ§Ã£o da cidade.', 'Apucarana', '300,00', 'recebidos/66d877e219efb.jpg'),
+(32, 'Hotel Fazenda Ãgua Azul', 'Hotel Fazenda rodeado por 280 hectares de mata nativa, rico em fauna e flora, permitindo o verdadeiro contato com a natureza exuberante da regiÃ£o.', 'São do Pedro do Ivaí', '485,00', 'recebidos/66d878a76c390.jpg'),
+(33, 'Hotel Pires', 'Um Ã³timo hotel para quem vai ficar em Faxinal, fica localizado bem no centro da cidade, com estacionamento prÃ³prio e bons quartos. ', 'Faxinal', '200,00', 'recebidos/66d879dfc4ebf.jpg'),
+(35, 'Grand Hyatt', 'Com piscina ao ar livre e spa, o Grand Hyatt Rio de Janeiro está localizado no centro da Barra da Tijuca', 'Rio de Janeiro', '1.120,00', 'recebidos/66f6ac925c7ef.jpg'),
+(36, 'Wyndham Rio Barra', 'O Wyndham Barra é um hotel moderno localizado na Barra da Tijuca', 'Rio de Janeiro', '450,00', 'recebidos/66f6abeba104b.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `hoteis_aracaju`
+--
+
+DROP TABLE IF EXISTS `hoteis_aracaju`;
+CREATE TABLE IF NOT EXISTS `hoteis_aracaju` (
+  `id_hotel` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `valor_diaria` varchar(200) NOT NULL,
+  `descricao` varchar(200) NOT NULL,
+  `arquivo_caminho` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_hotel`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf32;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `hoteis_rj`
+--
+
+DROP TABLE IF EXISTS `hoteis_rj`;
+CREATE TABLE IF NOT EXISTS `hoteis_rj` (
+  `id_hotel` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `valor_diaria` varchar(200) NOT NULL,
+  `descricao` varchar(200) NOT NULL,
+  `arquivo_caminho` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_hotel`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf32;
+
+--
+-- Extraindo dados da tabela `hoteis_rj`
+--
+
+INSERT INTO `hoteis_rj` (`id_hotel`, `nome`, `valor_diaria`, `descricao`, `arquivo_caminho`) VALUES
+(4, 'Copacabana Palace', '4.150,00', 'O Copacabana Palace Ã© um dos hotÃ©is mais icÃ´nicos do Brasil, localizado na famosa Praia de Copacabana, no Rio de Janeiro. Inaugurado em 1923.', 'recebidos/66f6ab3d971f8.jpg'),
+(5, 'Wyndham Rio Barra', '450,00', 'O Wyndham Barra Ã© um hotel moderno localizado na Barra da Tijuca, uma das zonas mais conhecidas do Rio de Janeiro. Inaugurado em 2016.', 'recebidos/66f6abeba104b.jpg'),
+(6, 'Grand Hyatt', '1.120,00', 'Com piscina ao ar livre e spa, o Grand Hyatt Rio de Janeiro estÃ¡ localizado no centro da Barra da Tijuca, entre o mar, a lagoa e as montanhas, do outro lado da rua da Praia da Reserva.', 'recebidos/66f6ac925c7ef.jpg'),
+(7, 'Laghetto Stilo Barra', '470,00', 'Com uma piscina ao ar livre aberta o ano inteiro, uma academia e um business center, o Laghetto Stilo Barra Ã© um hotel Ã  beira-mar localizado na Barra da Tijuca, no Rio de Janeiro.', 'recebidos/66f6ad337c7c0.png'),
+(8, 'Windsor Marapendi', '580,00', 'O Windsor Marapendi Hotel oferece acomodaÃ§Ãµes no animado bairro da Barra da Tijuca, no Rio de Janeiro. Este hotel 5 estrelas dispÃµe de localizaÃ§Ã£o ideal Ã  beira-mar.', 'recebidos/66f6ada7d893b.jpg'),
+(9, 'Hotel Fazenda Santa Barbara', '350,00', 'Localizado no municÃ­pio Engenheiro Paulo de Frontin, no estado do Rio de Janeiro, a menos de 100km da capital estÃ¡ o Hotel Fazenda Santa BÃ¡rbara.', 'recebidos/66f6aec507a16.jpg'),
+(10, 'Hotel Shangrila', 'R$ 490,00', 'O Hotel ShangrilÃ¡ estÃ¡ localizado em Nova Friburgo, uma das Ã¡reas mais bonitas da RegiÃ£o Serrana do Estado do Rio de Janeiro e do Brasil.', 'recebidos/66f6b09112c24.jpg'),
+(11, 'Hotel Vila Verde', 'R$ 818,00', ' O Hotel Vila Verde, em Nova Friburgo, Ã© um refÃºgio na natureza, com acomodaÃ§Ãµes confortÃ¡veis, piscina e restaurante. Ideal para relaxar na serra.', 'recebidos/66f6b15928fd3.jpg'),
+(14, 'Hotel Bucsky', 'R$ 265,00', ' O Hotel Nativa BÃºzios oferece conforto prÃ³ximo Ã s praias, com piscina e cafÃ© da manhÃ£, ideal para relaxar.', 'recebidos/66f6b43608a64.jpg'),
+(15, 'La ChimÃ¨re', 'R$ 523,00', ' O La ChimÃ¨re Ã© um hotel encantador prÃ³ximo Ã  praia, com acomodaÃ§Ãµes confortÃ¡veis e piscina, ideal para relaxar.', 'recebidos/66f6b4db7c920.jpg'),
+(13, 'A Concept Hotel & Spa', 'R$ 2.688,00', 'Um refÃºgio de luxo e sofisticaÃ§Ã£o, ideal para quem busca exclusividade Ã  beira-mar.', 'recebidos/66f6b2efb851b.jpg'),
+(16, 'Abracadabra Pousada', 'R$ 1.230,00 ', ' A  Abracadabra Pousada, em BÃºzios, oferece um ambiente acolhedor, com quartos confortÃ¡veis e piscina, ideal para relaxar perto das praias.', 'recebidos/66f6b5a17699b.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `mensagem_contato`
+--
+
+DROP TABLE IF EXISTS `mensagem_contato`;
+CREATE TABLE IF NOT EXISTS `mensagem_contato` (
+  `id_mensagem` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `mensagem` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_mensagem`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf32;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `senha_reset`
+--
+
+DROP TABLE IF EXISTS `senha_reset`;
+CREATE TABLE IF NOT EXISTS `senha_reset` (
+  `id_token` int(11) NOT NULL AUTO_INCREMENT,
+  `email` int(11) NOT NULL,
+  `token` int(11) NOT NULL,
+  PRIMARY KEY (`id_token`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf32;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
