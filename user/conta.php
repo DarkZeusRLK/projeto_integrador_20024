@@ -28,7 +28,7 @@ $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
 $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
-$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : '../Imagens/avatar2.png'; // Definir uma imagem padrão se não tiver
+$foto = $_SESSION['arquivo_foto'];
 
 // Atualizar informações do usuário
 if (isset($_POST['bt_email'])) {
@@ -50,8 +50,10 @@ if (isset($_POST['bt_email'])) {
 }
 
 // Consultar informações do usuário
+
+var_dump($_SESSION);
 if ($id_usuario) {
-    $stmt = $mysqli->prepare("SELECT * FROM cadastro WHERE id_usuario = ?");
+    $stmt = $conexao->prepare("SELECT * FROM cadastro WHERE id_usuario = ?");
     if ($stmt) {
         $stmt->bind_param("i", $id_usuario);
         $stmt->execute();
@@ -63,7 +65,8 @@ if ($id_usuario) {
             $email_usuario = $consultar['email'];
             $cpf_usuario = $consultar['cpf'];
             $telefone_usuario = $consultar['telefone'];
-            $foto = $consultar['foto_perfil_caminho'] ? $consultar['foto_perfil_caminho'] : '../Imagens/avatar2.png';
+            $foto = $_SESSION['arquivo_foto'];
+            var_dump($consultar);
         }
         $stmt->close();
     } else {
@@ -80,7 +83,6 @@ if ($id_usuario) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/zere.css">
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="../javascript/script_navbar.js"></script>
@@ -125,7 +127,7 @@ if ($id_usuario) {
                 <div id="form-ctt">
                     <div class="text-center mb-4">
                         <div class="profile-picture-container">
-                            <img class='profile-picture' src='../recebidos/<?php echo $foto; ?>' alt='Foto de perfil'>
+                            <img class='profile-picture' src='../<?php echo $foto; ?>' alt='Foto de perfil'>
                         </div>
                     </div>
                     <span class="heading"><?php echo $nome_usuario; ?></span>

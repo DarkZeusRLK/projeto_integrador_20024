@@ -20,9 +20,13 @@ if (isset($_POST['bt_email'])) {
             if (password_verify($senha, $usuario['senha'])) {
                 // Senha correta, login bem-sucedido
                 session_start();
+                $_SESSION['id_usuario'] = $usuario['id_usuario'];
                 $_SESSION['nome'] = $usuario['nome'];
                 $_SESSION['email'] = $usuario['email'];
                 $_SESSION['tipo_usuario'] = $usuario['tipo_usuario']; // Salva o tipo de usuário na sessão
+                $_SESSION['telefone'] = $usuario['telefone'];
+                $_SESSION['cpf'] = $usuario['cpf'];
+                $_SESSION['arquivo_foto'] = $usuario['arquivo_foto'];
 
                 // Verifica se o usuário é administrador
                 if ($usuario['tipo_usuario'] == 'administrador') {
