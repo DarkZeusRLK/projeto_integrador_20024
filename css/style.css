@@ -441,8 +441,12 @@ input[type="password"]:focus {
   width: 100%;
 }
 .custom-btn:hover {
-  background-color: #34495e;
+  background-color: #ffde59;
   text-decoration: none;
+  animation: both;
+  transition: 0.5s;
+  color: black;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .text-center {
   text-align: center;

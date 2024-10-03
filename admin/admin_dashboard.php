@@ -40,13 +40,13 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 <?php if (!isset($_SESSION['nome'])) : ?>
                     <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
-                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
+                <li><a href="../page/contato.php"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
                 <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador') : ?>
                     <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['nome'])) : ?>
                     <li class="nav-item logout">
-                        <a href="static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+                        <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
                     </li>
                 <?php endif; ?>
                 <li class="nav-item">

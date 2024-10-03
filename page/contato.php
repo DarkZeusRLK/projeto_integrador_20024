@@ -1,28 +1,35 @@
 <?php
-    include('../static/conexao.php');
+include('../static/conexao.php');
 
-    if(!isset($_SESSION)){
-        session_start();
-    }
-
-    // Verifique se as variáveis de sessão estão definidas
-$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
-$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
-$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : ''; // Caminho para a foto do usuário
-
-// Conecte-se ao banco de dados normal para obter informações do usuário
-$sql_user = "SELECT arquivo_foto FROM cadastro WHERE nome = ?";
-$stmt = $conexao->prepare($sql_user);
-$stmt->bind_param('s', $nome_usuario);
-$stmt->execute();
-$result_user = $stmt->get_result();
-if ($result_user->num_rows > 0) {
-    $row_user = $result_user->fetch_assoc();
-    if (!empty($row_user['arquivo_foto'])) {
-        $foto = $row_user['arquivo_foto'];
-    } 
+if (!isset($_SESSION)) {
+    session_start();
 }
-$stmt->close();
+
+// Inicialize a variável para armazenar o status da mensagem
+$status = '';
+
+if (isset($_POST['nome'])) {
+    $email = $_POST['email'];
+    $nome = $_POST['nome'];
+    $mensagem = $_POST['mensagem'];
+
+    $query = "INSERT INTO mensagem_contato (nome, email, mensagem) VALUES (?, ?, ?)";
+    $stmt = $mysqli->prepare($query);
+
+    if ($stmt) {
+        $stmt->bind_param("sss", $nome, $email, $mensagem);
+
+        if ($stmt->execute()) {
+            // A inserção no banco de dados foi bem-sucedida
+            $status = 'success';
+        } else {
+            // Ocorreu um erro ao inserir no banco de dados
+            $status = 'error';
+        }
+
+        $stmt->close(); // Feche a instrução preparada
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -94,20 +101,20 @@ $stmt->close();
             
 
     <div class="container">
-    <div id="form-container-ctt" class="form-container">
+    <form id="form-container-ctt" method="POST" class="form-container">
     <div id="form-ctt">
         <span class="heading">Contato</span>
-        <input placeholder="Nome" type="text" class="input">
-        <input placeholder="Email" id="mail" type="email" class="input">
-        <textarea placeholder="Escreva sua mensagem..." rows="10" cols="30" id="message" name="message" class="textarea"></textarea>
+        <input name="nome" placeholder="Nome" type="text" class="input">
+        <input  name="email" placeholder="Email" id="mail" type="email" class="input">
+        <textarea placeholder="Escreva sua mensagem..." rows="10" cols="30" id="message" name="mensagem" class="textarea"></textarea>
         <div class="button-container">
-        <div class="send-button">Enviar</div>
+        <div class="send-button" type="submit">Enviar</div>
         <div class="reset-button-container">
             <div id="reset-btn" class="reset-button">Resetar</div>
         </div>
     </div>
 </div>
-</div>
+</form>
 
 <div vw class="enabled">
         <div vw-access-button class="active"></div>
