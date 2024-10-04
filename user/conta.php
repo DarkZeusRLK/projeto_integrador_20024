@@ -13,6 +13,7 @@ if (!isset($_SESSION['nome'])) {
     exit();
 }
 
+
 // Verificar o tipo de usuário e incluir o arquivo de proteção correto
 if (isset($_SESSION['tipo_usuario'])) {
     if ($_SESSION['tipo_usuario'] === 'administrador') {
@@ -28,7 +29,6 @@ $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
 $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
-$foto = $_SESSION['arquivo_foto'];
 
 // Atualizar informações do usuário
 if (isset($_POST['bt_email'])) {
@@ -64,7 +64,7 @@ if ($id_usuario) {
             $email_usuario = $consultar['email'];
             $cpf_usuario = $consultar['cpf'];
             $telefone_usuario = $consultar['telefone'];
-            $foto = $_SESSION['arquivo_foto'];
+            $foto = $consultar['arquivo_foto'];
         }
         $stmt->close();
     } else {
@@ -84,6 +84,8 @@ if ($id_usuario) {
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="../javascript/script_navbar.js"></script>
+    <script defer src="../javascript/alternar_modos.js"></script>
+    <script defer src="../javascript/cookie.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png">
 </head>
 
@@ -125,7 +127,7 @@ if ($id_usuario) {
                 <div id="form-ctt">
                     <div class="text-center mb-4">
                         <div class="profile-picture-container">
-                            <img class='profile-picture' src='../<?php echo $foto; ?>' alt='Foto de perfil'>
+                            <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
                         </div>
                     </div>
                     <span class="heading"><?php echo $nome_usuario; ?></span>
