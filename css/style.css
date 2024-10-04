@@ -3,12 +3,16 @@
     /*Cor azul Principal*/
     --azul: #34495e;
   
+  --azule:  #2f4255;
+
     /*Cor amarela Secundária*/
     --amarelo: #ffde59;
 
 
     /*Cor amarela Secundária*/
-    --azulescuro: #002733;
+    --azulescuro: #07323e;
+
+    
 
   }
   /*FIM DE VARIAVEIS-------^-----DE---^-----CORES------------^--------------*/
@@ -19,6 +23,12 @@
     font-size: var(--font-size, 16px); /* 16px é o valor padrão */
   }
   
+  .custom-bg {
+    background-color: #ffcc00; /* Cor de fundo amarela personalizada */
+  }
+  
+
+
   body {
     font-size: var(--font-size, 16px);
     font-family: "Source Sans Pro", sans-serif;
@@ -669,10 +679,16 @@
   }
   
   table th,
-  table td {
+  table td{
+    --bs-table-bg: var(--azule); /* Cor de fundo da tabela */
+    --bs-table-color:var(--amarelo); /* Cor do texto */
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+  }
+
+  #imagem{
+    border-radius: 100%;
   }
   .table-container {
     display: none;
@@ -717,7 +733,7 @@
     width: 12%;
   }
   .custom-btn2:hover {
-    background-color: #217093;
+    background-color: var(--azulescuro);
     color: white;
     transition: 0.5s;
     font-size: 1rem;

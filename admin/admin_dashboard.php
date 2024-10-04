@@ -13,10 +13,13 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../javascript/dashboard_adm.js"></script>
     <script defer src="../javascript/script_navbar.js"></script>
     <title>Dashboard Admin</title>
@@ -63,10 +66,10 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                     <button class="custom-btn2" onclick="showHotels()">Hotéis</button>
                 </div>
 
-                <div id="usuariosTable" class="table-container">
+                <div id="usuariosTable" class="my-custom-table">
                     <h3 class="titulo-dashboard-adm">Usuários Cadastrados</h3>
-                    <table class="table">
-                        <thead>
+                    <table class="table custom-bg">
+                        <thead class="my-custom-bg">
                             <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
@@ -86,7 +89,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 // Verifica se a variável $user['arquivo_foto'] existe e não está vazia, senão exibe a imagem padrão
                 $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '../Imagens/foto_padrao.png';
                 ?>
-                <img src="../<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
+                <img id="imagem" src="../<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
             </td>
             <td><?php echo $user['tipo_usuario']; ?></td>
         </tr>
