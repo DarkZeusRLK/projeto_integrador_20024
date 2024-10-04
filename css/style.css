@@ -5,6 +5,11 @@
   
     /*Cor amarela Secundária*/
     --amarelo: #ffde59;
+
+
+    /*Cor amarela Secundária*/
+    --azulescuro: #002733;
+
   }
   /*FIM DE VARIAVEIS-------^-----DE---^-----CORES------------^--------------*/
   
@@ -37,7 +42,7 @@
   .sidebar {
     width: 80px;
     height: 100vh;
-    background-color: #34495e;
+    background-color: var(--azul);
     position: fixed;
     top: 0;
     left: 0;
@@ -369,7 +374,7 @@
   }
   
   .passagem {
-    background-color: #34495e;
+    background-color: var(--azul);
     margin-top: 100%;
     color: white;
     text-decoration: none;
@@ -384,7 +389,7 @@
   
   .passagem:hover {
     color: black;
-    background-color: #ffde59;
+    background-color: var(--amarelo);
     transition: background-color 0.2s ease-out;
   }
   /* Adiciona um novo estilo para o item de desconectar */
@@ -429,7 +434,7 @@
   }
   
   .custom-btn {
-    background-color: #34495e;
+    background-color: var(--azul);
     color: white;
     border: none;
     border-radius: 0.25rem;
@@ -441,7 +446,7 @@
     width: 100%;
   }
   .custom-btn:hover {
-    background-color: #ffde59;
+    background-color: var(--amarelo);
     text-decoration: none;
     animation: both;
     transition: 0.5s;
@@ -534,7 +539,7 @@
   }
   
   .inputForm:focus-within {
-    border: 1.5px solid #34495e;
+    border: 1.5px solid var(--azul);
   }
   
   .flex-row {
@@ -554,7 +559,7 @@
   .span {
     font-size: 14px;
     margin-left: 5px;
-    color: #34495e;
+    color: var(--azul);
     font-weight: 500;
     cursor: pointer;
   }
@@ -598,11 +603,11 @@
   }
   
   .btn:hover {
-    border: 1px solid #34495e;
+    border: 1px solid var(--azul);
   }
   .footer {
     justify-content: center;
-    background-color: #34495e;
+    background-color: var(--azul);
     padding: 20px 0;
     color: white;
     text-decoration: none;
@@ -613,7 +618,7 @@
   }
   .footer a {
     text-decoration: none;
-    color: #e2cd13;
+    color: var(--amarelo);
   }
   main {
     display: flex;
@@ -659,7 +664,7 @@
   }
   
   table thead {
-    background-color: #34495e;
+    background-color: var(--azul);
     color: white;
   }
   
@@ -692,14 +697,14 @@
     margin-left: 0%;
   }
   .dashboard-content {
-    background-color: #34495e;
+    background-color: var(--azul);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 90%;
   }
   .custom-btn2 {
-    background-color: #ffde59;
+    background-color: var(--amarelo);
     color: black;
     border: none;
     border-radius: 0.25rem;
@@ -763,11 +768,11 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: #ffde59;
+    background-color: var(--amarelo);
     transition: .4s;
   }
   input:checked + .slider {
-    background-color: #002733;
+    background-color: var(--azulescuro);
   }
   input:checked + .slider:before {
     transform: translateX(26px);
@@ -781,12 +786,12 @@
   }
   /* Estilos para o modo escuro */
   body.dark-mode {
-    background-color: #002733;
+    background-color: var(--azulescuro);
     color: #ffffff;
   }
   
   .sidebar.dark-mode {
-    background-color: #e2cd13;
+    background-color: var(--amarelo);
   }
   
   .nav-links li a.dark-mode {
@@ -794,11 +799,11 @@
   }
   
   .container-fluid.dark-mode {
-    background-color: #34495e;
+    background-color: var(--azul);
   }
   
   input[type="text"].dark-mode, input[type="email"].dark-mode, select.dark-mode {
-    background-color: #34495e;
+    background-color: var(--azul);
     color: white;
     border: 1px solid #ffffff;
   }
@@ -809,7 +814,7 @@
   
   /* Estilo para o modo escuro */
   body.dark-mode .sidebar {
-    background-color: #ffde59; /* Cor da navbar no modo escuro */
+    background-color: var(--amarelo); /* Cor da navbar no modo escuro */
     color: black; /* Cor do texto no modo escuro */
   }
   
@@ -818,11 +823,11 @@
     border-bottom: 1px solid #444; /* Borda sutil no modo escuro */
   }
   body.dark-mode .custom-btn{
-    background-color: #ffde59;
+    background-color: var(--amarelo);
     color: black;
   }
   body.dark-mode .custom-btn:hover{
-    background-color: #ffde59;
+    background-color: var(--amarelo);
     color: black;
     transition: 0.7s;
     animation:backwards;
@@ -832,7 +837,7 @@
     color: black; /* Cor dos ícones no modo escuro */
   }
   #day-icon{
-    color: #ffde59;
+    color: var(--amarelo);
   }
   #night-icon{
     color: black;
@@ -847,10 +852,10 @@
     background-color: #013747;
   }
   body.dark-mode #form-container-ctt .textarea{
-    background-color: #002733;
+    background-color: var(--azulescuro);
   }
   body.dark-mode .heading{
-    color: #ffde59  ;
+    color: var(--amarelo)  ;
   }
   body.dark-mode #message{
     color: white;
@@ -887,8 +892,8 @@
     object-fit: cover; /* Garante que a imagem do avatar se ajuste corretamente */
   }
   #admin-badge {
-    background-color: #ffde59;
-    color: #34495e;
+    background-color: var(--amarelo);
+    color: var(--azul);
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: bold;
@@ -1002,9 +1007,9 @@
     max-width: 700px;
     margin-left: 22%;
     margin-top: 150px;
-    background-color: #34495e;
+    background-color: var(--azul);
     padding: 30px;
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--amarelo);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
   }
   
@@ -1019,7 +1024,7 @@
   .form-container #form-ctt .input {
     color: #87a4b6;
     width: 100%;
-    background-color: #002733;
+    background-color: var(--azulescuro);
     border: none;
     outline: none;
     padding: 12px;
@@ -1031,7 +1036,7 @@
   }
   
   .form-container #form-ctt .input:focus {
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--amarelo);
   }
   
   .form-container #form-ctt .textarea {
@@ -1040,7 +1045,7 @@
     border: none;
     outline: none;
     background-color: #013747;
-    color: #e2cd13;
+    color: var(--amarelo);
     font-weight: bold;
     resize: none;
     max-height: 150px;
@@ -1050,7 +1055,7 @@
   }
   
   .form-container #form-ctt .textarea:focus {
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--amarelo);
   }
   
   .form-container #form-ctt .button-container {
@@ -1060,9 +1065,9 @@
   
   .form-container #form-ctt .button-container .send-button {
     flex-basis: 70%;
-    background: #e2cd13;
+    background: var(--amarelo);
     padding: 10px;
-    color: #001925;
+    color: var(--azulescuro);
     text-align: center;
     font-weight: bold;
     border: 1px solid transparent;
@@ -1071,12 +1076,12 @@
   
   .form-container #form-ctt .button-container .send-button:hover {
     background: transparent;
-    border: 1px solid #e2cd13;
-    color: #e2cd13;
+    border: 1px solid var(--amarelo);
+    color: var(--amarelo);
   }
   
   .form-container #form-ctt .button-container .reset-button-container {
-    filter: drop-shadow(1px 1px 0px #e2cd13);
+    filter: drop-shadow(1px 1px 0px var(--amarelo));
   }
   
   .form-container #form-ctt .button-container .reset-button-container .reset-button {
@@ -1089,8 +1094,8 @@
   }
   
   .form-container #form-ctt .button-container .reset-button-container .reset-button:hover {
-    background: #001925;
-    color: #e2cd13;
+    background: var(--azulescuro);
+    color: var(--amarelo);
   }
   /* FIM DESIGN CONTATO */
   #link_adm_table:hover {
@@ -1132,7 +1137,7 @@
   
   #but1 {
     color: var(--corletra);
-    border: #34495e;
+    border: var(--azul);
     border-radius: 30px;
     background-color: var(--corsecundaria);
     transition: 0.3s;
@@ -1271,9 +1276,9 @@
     max-width: 700px;
     margin-left: 22%;
     margin-top: 100px;
-    background-color: #34495e;
+    background-color: var(--azul);
     padding: 30px;
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--amarelo);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
   }
   
@@ -1288,7 +1293,7 @@
   .form-container .input {
     color: #87a4b6;
     width: 100%;
-    background-color: #002733;
+    background-color: var(--azulescuro);
     border: none;
     outline: none;
     padding: 10px;
@@ -1300,7 +1305,7 @@
   }
   
   .form-container .input:focus {
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--amarelo);
   }
   
   .form-container .textarea {
@@ -1309,7 +1314,7 @@
     border: none;
     outline: none;
     background-color: #013747;
-    color: #e2cd13;
+    color: var(--amarelo);
     font-weight: bold;
     resize: none;
     max-height: 150px;
@@ -1319,7 +1324,7 @@
   }
   
   .form-container .textarea:focus {
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--amarelo);
   }
   
   .send-button {
@@ -1332,18 +1337,18 @@
   .button-send .send-button{
     flex-basis: 20%;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-    background: #001925;
+    background: var(--azulescuro);
     padding: 10px;
-    color: #e2cd13;
+    color: var(--amarelo);
     text-align: center;
     font-weight: bold;
     border: 2px solid transparent;
     transition: all 0.2s ease-in-out;
   }
   .form-container .button-send .send-button:hover {
-    background: #e2cd13;
-    border: 2px solid #001925;
-    color: #001925;
+    background: var(--amarelo);
+    border: 2px solid var(--azulescuro);
+    color: var(--azulescuro);
   }
   
   .form-container .button-send {
@@ -1358,9 +1363,9 @@
   
     flex-basis: 20%;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-    background: #001925;
+    background: var(--azulescuro);
     padding: 10px;
-    color: #e2cd13;
+    color: var(--amarelo);
     text-align: center;
     font-weight: bold;
     border: 2px solid transparent;
@@ -1368,9 +1373,9 @@
   }
   
   .form-container .button-container .send-button:hover {
-    background: #e2cd13;
-    border: 1px solid #001925;
-    color: #001925;
+    background: var(--amarelo);
+    border: 1px solid var(--azulescuro);
+    color: var(--azulescuro);
   }
   
   .save-button-container {
@@ -1384,7 +1389,7 @@
   }
   
   .form-container .button-container .save-button-container {
-    filter: drop-shadow(1px 1px 0px #e2cd13);
+    filter: drop-shadow(1px 1px 0px var(--amarelo));
     flex-basis: 100%;
   }
   
@@ -1392,9 +1397,9 @@
     position: relative;
     text-align: center;
     padding: 10px;
-    color: #001925;
+    color: var(--azulescuro);
     font-weight: bold;
-    background: #e2cd13;
+    background: var(--amarelo);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
     transition: all 0.2s ease-in-out;
     display: flex;
@@ -1404,8 +1409,8 @@
   }
   
   .form-container .button-container .save-button-container .save-button:hover {
-    background: #001925;
-    color: #e2cd13;
+    background: var(--azulescuro);
+    color: var(--amarelo);
   }
   
   /*RESPONSIVIDADE----------DA--------PÁGINA---------------EDITACONTA*/
@@ -1503,9 +1508,9 @@
       max-width: 1000px;
       margin-left: 15%;
       margin-top: 150px;
-      background-color: #34495e;
+      background-color: var(--azul);
       padding: 50px;
-      border-left: 5px solid #e2cd13;
+      border-left: 5px solid var(--amarelo);
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
     }
     
@@ -1520,7 +1525,7 @@
     .form-container .input {
       color: #87a4b6;
       width: 100%;
-      background-color: #002733;
+      background-color: var(--azulescuro);
       border: none;
       outline: none;
       padding: 10px;
@@ -1532,7 +1537,7 @@
     }
     
     .form-container .input:focus {
-      border-left: 5px solid #e2cd13;
+      border-left: 5px solid var(--amarelo);
     }
     
     .form-container .textarea {
@@ -1541,7 +1546,7 @@
       border: none;
       outline: none;
       background-color: #013747;
-      color: #e2cd13;
+      color: var(--amarelo);
       font-weight: bold;
       resize: none;
       max-height: 150px;
@@ -1551,7 +1556,7 @@
     }
     
     .form-container .textarea:focus {
-      border-left: 5px solid #e2cd13;
+      border-left: 5px solid var(--amarelo);
     }
     
     .form-container .button-container {
@@ -1561,9 +1566,9 @@
     
     .form-container .button-container .send-button {
       flex-basis: 70%;
-      background: #e2cd13;
+      background: var(--amarelo);
       padding: 10px;
-      color: #001925;
+      color: var(--azulescuro);
       text-align: center;
       font-weight: bold;
       border: 1px solid transparent;
@@ -1572,12 +1577,12 @@
     
     .form-container .button-container .send-button:hover {
       background: transparent;
-      border: 1px solid #e2cd13;
-      color: #e2cd13;
+      border: 1px solid var(--amarelo);
+      color: var(--amarelo);
     }
     
     .form-container .button-container .reset-button-container {
-      filter: drop-shadow(1px 1px 0px #e2cd13);
+      filter: drop-shadow(1px 1px 0px var(--amarelo));
       flex-basis: 100%;
     }
     
@@ -1585,9 +1590,9 @@
       position: relative;
       text-align: center;
       padding: 10px;
-      color: #001925;
+      color: var(--azulescuro);
       font-weight: bold;
-      background: #e2cd13;
+      background: var(--amarelo);
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
       transition: all 0.2s ease-in-out;
       display: flex;
@@ -1597,8 +1602,8 @@
     }
     
     .form-container .button-container .reset-button-container .reset-button:hover {
-      background: #001925;
-      color: #e2cd13;
+      background: var(--azulescuro);
+      color: var(--amarelo);
     }
   
     /* FIM DESIGN CONTATO */
