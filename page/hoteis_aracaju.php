@@ -140,6 +140,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 
                 <h1 id="text-index2">Hotéis Aracaju</h1>
                 <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
+                    
                     <div id="cards" class="col-md-3 mb-2">
                         <div class="card h-100">
                             <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">

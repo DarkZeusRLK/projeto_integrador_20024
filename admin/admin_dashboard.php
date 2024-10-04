@@ -19,6 +19,8 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="../javascript/dashboard_adm.js"></script>
     <script defer src="../javascript/script_navbar.js"></script>
+    <script defer src="../javascript/alternar_modos.js"></script>
+    <script defer src="../javascript/cookie.js"></script>
     <title>Dashboard Admin</title>
 </head>
 

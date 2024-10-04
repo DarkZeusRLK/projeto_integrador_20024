@@ -1602,3 +1602,206 @@ text-decoration: none;
   }
 
   /* FIM DESIGN CONTATO */
+
+ /* Estilização do card de sucesso */
+
+ /* Estilização da sobreposição escura */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+  z-index: 999; /* Fica abaixo do card mas acima do restante do conteúdo */
+}
+.card1 {
+  position: fixed;
+  top: 20rem;
+  left: 50%;
+  transform: translateX(-40%);
+  background-color: white; /* Cor de fundo verde para sucesso */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Garante que o card fique sobre os outros elementos */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+.card1 .header {
+  display: flex;
+  align-items: center;
+}
+
+.card1 .image svg {
+  width: 40px;
+  height: 40px;
+}
+
+.card1 .content .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card1 .content .message {
+  font-size: 14px;
+}
+
+.header {
+  padding: 1.25rem 1rem 1rem 1rem;
+  background-color: #ffffff;
+}
+
+.image {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FEE2E2;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+}
+
+.image svg {
+  color: #DC2626;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.content {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.title {
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.message {
+  margin-top: 0.5rem;
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.actions {
+  margin: 0.75rem 1rem;
+  background-color: #F9FAFB;
+}
+
+.desactivate {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  background-color: #DC2626;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
+  width: 100%;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  border-color: transparent;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.cancel {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #D1D5DB;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.card2 {
+  width: 330px; /* Largura do cartão */
+  height: auto; /* Mude para auto para que o cartão ajuste sua altura com o conteúdo */
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 20px 15px; /* Aumente o padding para mais espaço interno */
+  background-color: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Mude para flex-start para alinhar o conteúdo à esquerda */
+  gap: 15px;
+  margin: 20px auto; /* Centralize o cartão com margem automática */
+  z-index: 999;
+}
+
+.wave {
+  position: absolute;
+  transform: rotate(90deg);
+  left: -31px;
+  top: 32px;
+  width: 80px;
+  fill: #04e4003a;
+}
+
+.icon-container {
+  width: 40px; /* Aumente um pouco para dar mais espaço */
+  height: 40px; /* Aumente a altura para melhor proporção */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #04e40048;
+  border-radius: 50%;
+  margin-right: 15px; /* Mude para margin-right para espaçar o ícone do texto */
+}
+
+.icon {
+  width: 20px; /* Aumente o tamanho do ícone */
+  height: 20px; /* Aumente o tamanho do ícone */
+  color: #269b24;
+}
+
+.message-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.message-text,
+.sub-text {
+  margin: 0;
+  cursor: default;
+}
+
+.message-text {
+  color: #269b24;
+  font-size: 18px; /* Aumente a fonte do texto principal */
+  font-weight: 700;
+}
+
+.sub-text {
+  font-size: 15px; /* Aumente a fonte do texto secundário */
+  color: #555;
+}
+
+.cross-icon {
+  width: 20px; /* Aumente o tamanho do ícone de fechamento */
+  height: 20px; /* Aumente o tamanho do ícone de fechamento */
+  color: #555;
+  cursor: pointer;
+}

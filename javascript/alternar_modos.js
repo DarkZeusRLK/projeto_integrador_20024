@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     body.style.backgroundImage = `url(${savedBackground})`;
   }
 
-
   // Salvar e aplicar tamanho da fonte
   const fontSizeSelect = document.getElementById("font-size-select");
   const saveFontSizeButton = document.getElementById("save-font-size");
@@ -59,11 +58,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // Função para aplicar o modo escuro
 function enableDarkMode() {
   document.body.classList.add('dark-mode');
+  document.body.style.backgroundImage = 'none'; // Remove a imagem de fundo
   localStorage.setItem('theme', 'dark'); // Salva a preferência do usuário
 }
 
 // Função para aplicar o modo claro
 function disableDarkMode() {
   document.body.classList.remove('dark-mode');
+  const savedBackground = localStorage.getItem("backgroundImage");
+  if (savedBackground) {
+    document.body.style.backgroundImage = `url(${savedBackground})`; // Restaura a imagem de fundo
+  } else {
+    document.body.style.backgroundImage = 'none'; // Caso não haja imagem salva
+  }
   localStorage.setItem('theme', 'light'); // Salva a preferência do usuário
 }
