@@ -37,7 +37,7 @@ main {
 .sidebar {
   width: 80px;
   height: 100vh;
-  background-color: #34495e;
+  background-color: var(--azul);
   position: fixed;
   top: 0;
   left: 0;
@@ -369,7 +369,7 @@ input[type="password"]:focus {
 }
 
 .passagem {
-  background-color: #34495e;
+  background-color: var(--azul);
   margin-top: 100%;
   color: white;
   text-decoration: none;
@@ -384,7 +384,7 @@ input[type="password"]:focus {
 
 .passagem:hover {
   color: black;
-  background-color: #ffde59;
+  background-color: var(--amarelo);
   transition: background-color 0.2s ease-out;
 }
 /* Adiciona um novo estilo para o item de desconectar */
@@ -432,7 +432,7 @@ input[type="password"]:focus {
 }
 
 .custom-btn {
-  background-color: #34495e;
+  background-color: var(--azul);
   color: white;
   border: none;
   border-radius: 0.25rem;
@@ -444,7 +444,7 @@ input[type="password"]:focus {
   width: 100%;
 }
 .custom-btn:hover {
-  background-color: #ffde59;
+  background-color: var(--amarelo);
   text-decoration: none;
   animation: both;
   transition: 0.5s;
@@ -531,7 +531,7 @@ input[type="password"]:focus {
 }
 
 .inputForm:focus-within {
-  border: 1.5px solid #34495e;
+  border: 1.5px solid var(--azul);
 }
 
 .flex-row {
@@ -551,7 +551,7 @@ input[type="password"]:focus {
 .span {
   font-size: 14px;
   margin-left: 5px;
-  color: #34495e;
+  color: var(--azul);
   font-weight: 500;
   cursor: pointer;
 }
@@ -595,11 +595,11 @@ input[type="password"]:focus {
 }
 
 .btn:hover {
-  border: 1px solid #34495e;
+  border: 1px solid var(--azul);
 }
 .footer {
   justify-content: center;
-  background-color: #34495e;
+  background-color: var(--azul);
   padding: 20px 0;
   color: white;
   text-decoration: none;
@@ -654,7 +654,7 @@ table {
 }
 
 table thead {
-  background-color: #34495e;
+  background-color: var(--azul);
   color: white;
 }
 
@@ -693,7 +693,7 @@ table td {
   width: 90%;
 }
 .custom-btn2 {
-  background-color: #ffde59;
+  background-color: var(--amarelo);
   color: black;
   border: none;
   border-radius: 0.25rem;
@@ -757,7 +757,7 @@ table td {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: #ffde59;
+  background-color: var(--amarelo);
   transition: .4s;
 }
 input:checked + .slider {
@@ -788,11 +788,11 @@ body.dark-mode {
 }
 
 .container-fluid.dark-mode {
-  background-color: #34495e;
+  background-color: var(--azul);
 }
 
 input[type="text"].dark-mode, input[type="email"].dark-mode, select.dark-mode {
-  background-color: #34495e;
+  background-color: var(--azul);
   color: white;
   border: 1px solid #ffffff;
 }
@@ -803,7 +803,7 @@ h1.dark-mode, h3.dark-mode {
 
 /* Estilo para o modo escuro */
 body.dark-mode .sidebar {
-  background-color: #ffde59; /* Cor da navbar no modo escuro */
+  background-color: var(--amarelo); /* Cor da navbar no modo escuro */
   color: black; /* Cor do texto no modo escuro */
 }
 
@@ -812,11 +812,11 @@ body.dark-mode .navbar {
   border-bottom: 1px solid #444; /* Borda sutil no modo escuro */
 }
 body.dark-mode .custom-btn{
-  background-color: #ffde59;
+  background-color: var(--amarelo);
   color: black;
 }
 body.dark-mode .custom-btn:hover{
-  background-color: #ffde59;
+  background-color: var(--amarelo);
   color: black;
   transition: 0.7s;
   animation:backwards;
@@ -826,7 +826,7 @@ body.dark-mode .sidebar i {
   color: black; /* Cor dos ícones no modo escuro */
 }
 #day-icon{
-  color: #ffde59;
+  color: var(--amarelo);
 }
 #night-icon{
   color: black;
@@ -844,7 +844,7 @@ body.dark-mode #form-container-ctt .textarea{
   background-color: #002733;
 }
 body.dark-mode .heading{
-  color: #ffde59  ;
+  color: var(--amarelo)  ;
 }
 body.dark-mode #message{
   color: white;
@@ -881,8 +881,8 @@ body.dark-mode .sidebar .menu-btn{
   object-fit: cover; /* Garante que a imagem do avatar se ajuste corretamente */
 }
 #admin-badge {
-  background-color: #ffde59;
-  color: #34495e;
+  background-color: var(--amarelo);
+  color: var(--azul);
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: bold;
@@ -996,7 +996,7 @@ body.dark-mode .sidebar .menu-btn{
   max-width: 700px;
   margin-left: 22%;
   margin-top: 150px;
-  background-color: #34495e;
+  background-color: var(--azul);
   padding: 30px;
   border-left: 5px solid #e2cd13;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
@@ -1127,7 +1127,7 @@ body.dark-mode .sidebar .menu-btn{
 
 #but1 {
   color: var(--corletra);
-  border: #34495e;
+  border: var(--azul);
   border-radius: 30px;
   background-color: var(--corsecundaria);
   transition: 0.3s;
@@ -1266,7 +1266,7 @@ body.dark-mode .sidebar .menu-btn{
   max-width: 700px;
   margin-left: 22%;
   margin-top: 100px;
-  background-color: #34495e;
+  background-color: var(--azul);
   padding: 30px;
   border-left: 5px solid #e2cd13;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
@@ -1498,7 +1498,7 @@ text-decoration: none;
     max-width: 1000px;
     margin-left: 15%;
     margin-top: 150px;
-    background-color: #34495e;
+    background-color: var(--azul);
     padding: 50px;
     border-left: 5px solid #e2cd13;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
