@@ -417,6 +417,9 @@ input[type="password"]:focus {
 #cards {
   display: flex;
   flex-direction: column;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  padding: 10 px;
 }
 
 .card-img-top {
@@ -477,12 +480,6 @@ input[type="password"]:focus {
     font-size: 1.2rem;
     width: 12rem;
   }
-}
-
-#cards {
-  margin-top: 3rem;
-  margin-left: 2rem;
-  padding: 10 px;
 }
 /* From Uiverse.io by micaelgomestavares */
 .form {
@@ -625,7 +622,7 @@ main {
   padding: 0.5rem;
 }
 .container-fluid {
-    flex-direction: column;
+  flex-direction:row;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -636,7 +633,7 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: -80%;
+  margin-left: 7rem;
 }
 .logos {
   width: 10rem;
@@ -652,7 +649,7 @@ main {
   flex-wrap: wrap;
 }
 table {
-  width: 100%;
+  width: 100em;
   border-collapse: collapse;
 }
 

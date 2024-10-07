@@ -42,7 +42,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid2">
     
     <nav class="col-md-3 col-lg-2 sidebar">
       <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>

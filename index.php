@@ -54,7 +54,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             background-color: #fff;
             background-image: url("Imagens/Vegetação2.gif");
             background-repeat: no-repeat;
-            background-position: center;
+        
             background-size: 100%;
             background-position-y: 40%;
             text-align: center;
@@ -134,7 +134,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <span class="visually-hidden">Próximo</span>
         </button>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid2">
         <!-- Mensagem de cookies -->
         <div id="cookie-message" class="card-cookie">
             <svg xml:space="preserve" viewBox="0 0 122.88 122.25" y="0px" x="0px" id="cookieSvg" version="1.1">
