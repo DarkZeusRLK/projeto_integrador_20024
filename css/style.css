@@ -3,7 +3,7 @@
     /*Cor azul Principal*/
     --azul: #34495e;
   
-  --azule:  #2b3c4d;
+  --azule:  #ffffff;
 
     /*Cor amarela Secundária*/
     --amarelo: #ffde59;
@@ -638,8 +638,7 @@
     margin: 0;
     padding: 0.5rem;
   }
-  .container-fluid {
-    display: flex;
+  .container-fluid {  
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -679,7 +678,7 @@
   table th,
   table td{
     --bs-table-bg: var(--azule); /* Cor de fundo da tabela */
-    --bs-table-color:var(--amarelo); /* Cor do texto */
+    --bs-table-color: black; /* Cor do texto */
     padding: 12px;
     text-align: left;
  

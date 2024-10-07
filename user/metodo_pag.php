@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/depay.css">
-    <link rel="stylesheet" href="../css/zere.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -52,8 +51,6 @@
                     <a class="botoes" name="boleto" href="boleto.php">
                         
                             <img src="../Imagens/boleto.png" alt="" width="150rem">
-                          
-                   
                     </a>
 
                     <a class="botoes" name="pix" href="pix.php">
