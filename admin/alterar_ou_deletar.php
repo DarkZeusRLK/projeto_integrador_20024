@@ -1,6 +1,26 @@
 <?php
 include('../static/conexao.php');
 require('../static/protect_adm.php');
+
+// Verificar o tipo de usuário e incluir o arquivo de proteção correto
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'administrador') {
+        require('../static/protect_adm.php'); // Proteção para administradores
+    } elseif ($_SESSION['tipo_usuario'] === 'cliente') {
+        require('../static/protect.php'); // Proteção para clientes
+    }
+}
+
+// Definir variáveis com os valores da sessão
+$id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
+$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+$email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+$cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
+$telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
+
+// Consultar todos os usuários
+$consultar_banco = "SELECT * FROM cadastro";
+$retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,7 +70,7 @@ require('../static/protect_adm.php');
             <div class="row">
                 <!-- Card 1 -->
                 <div id="cards2" class="col-md-3 mb-2">
-                    <div id="link_adm_table" onclick="window.location.href='../user/editaconta.php'" style="cursor: pointer;" class="card h-100">
+                    <div id="link_adm_table" onclick="window.location.href='../user/editaconta.php?id=<?php echo $id_usuario;?>'" style="cursor: pointer;" class="card h-100">
                         <img src="../Imagens/images.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Alterar Usuário</h5>

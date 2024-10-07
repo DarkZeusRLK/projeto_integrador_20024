@@ -46,7 +46,7 @@
                         <span id="admin-badge">ADM</span>
                     <?php endif; ?>
                     <a href="conta.php" class="user-avatar-link">
-                        <img src="Imagens/<?php echo $foto; ?>" alt="Avatar" class="avatar">
+                        <img src="../Imagens/<?php echo $foto; ?>" alt="Avatar" class="avatar">
                 </div>
             <?php
             }

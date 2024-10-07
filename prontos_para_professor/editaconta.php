@@ -16,9 +16,9 @@ if (!isset($_SESSION['nome'])) {
 // Verificar o tipo de usuário e incluir o arquivo de proteção correto
 if (isset($_SESSION['tipo_usuario'])) {
     if ($_SESSION['tipo_usuario'] === 'administrador') {
-        require('protect_adm.php'); // Proteção para administradores
+        require('../static/protect_adm.php'); // Proteção para administradores
     } elseif ($_SESSION['tipo_usuario'] === 'cliente') {
-        require('protect.php'); // Proteção para clientes
+        require('../static/protect.php'); // Proteção para clientes
     }
 
     // Atualização dos dados do usuário
@@ -102,19 +102,47 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="icon" href="../Imagens/icon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/zere.css">
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script defer src="javascript/script_navbar.js"></script>
-    <script defer src="javascript/alternar_modos.js"></script>
-    <script defer src="javascript/cookie.js"></script>
+    <script defer src="../javascript/script_navbar.js"></script>
+    <script defer src="../javascript/alternar_modos.js"></script>
+    <script defer src="../javascript/cookie.js"></script>
 </head>
 
 <body>
     <div class="container-fluid">
-    <?php
-        include('menu.php');
-      ?>
+        <nav class="col-md-3 col-lg-2 sidebar">
+            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+            <div class="profile">
+                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
+                <h1 class="text-title">IvaíTour</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
+                <?php if (isset($_SESSION['nome'])): ?>
+                    <li><a href="conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                <?php else: ?>
+                    <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                <?php endif; ?>
+                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
+                <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
+                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['nome'])): ?>
+                    <li class="nav-item logout">
+                        <a href="logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+                    </li>
+                <?php endif; ?>
+                <li class="nav-item">
+                    <a href="configuracoes.php" class="nav-link" id="settings-icon">
+                        <i class="fas fa-cog"></i><span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
         <div class="container">
             <div id="form-container-ctt" class="form-container">
@@ -191,7 +219,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <?php include('footer.php'); ?>
+    <?php include('../static/footer.php'); ?>
 </body>
 
 </html>

@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
 
             // Insira os dados no banco de dados
-            $query = "INSERT INTO cadastro (nome, email, senha, telefone, cpf, genero, tipo_usuario,    _foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO cadastro (nome, email, senha, telefone, cpf, genero, tipo_usuario,  arquivo_foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conexao->prepare($query);
 
             // Verifica se a preparação foi bem-sucedida
@@ -76,9 +76,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script defer src="javascript/script_navbar.js"></script>
-  <script defer src="javascript/configuracoes.js"></script>
-  <script defer src="javascript/alternar_modos.js"></script>
+    <script defer src="script_navbar.js"></script>
+  <script defer src="configuracoes.js"></script>
+  <script defer src="alternar_modos.js"></script>
     <style>
         /* Estilo para a notificação */
         .notification {
@@ -105,6 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php
         include('menu.php');
       ?>
+      <h1>Crie sua Conta - IvaíTour</h1>
         <div class="container d-flex justify-content-center">
             <form class="form" action="" method="post">
                 <div class="flex-column">
@@ -169,6 +170,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <input class="btn btn-warning" type="submit" value="Cadastrar">
+                <p class="p">Já Possui uma conta? <a href="login.php">Faça Login</a>
+
             </form>
             <script>
           // Manipule o evento de envio do formulário
@@ -235,7 +238,7 @@ $('#cadastro').on('submit', function (e) {
 
             </div>
             <?php
-            include("../static/footer.php");
+            include("footer.php");
             ?>
     </body>
     <script src="../javascript/zere.js"></script>

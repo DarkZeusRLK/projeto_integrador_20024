@@ -13,8 +13,6 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="../javascript/dashboard_adm.js"></script>
@@ -75,6 +73,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                                 <th>Email</th>
                                 <th>Imagem</th>
                                 <th>Função</th>
+                                <th>Config. Adicional</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,9 +87,10 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 // Verifica se a variável $user['arquivo_foto'] existe e não está vazia, senão exibe a imagem padrão
                 $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '../Imagens/foto_padrao.png';
                 ?>
-                <img src="../<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
+                <img id="imagem" src="../<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
             </td>
-            <td><?php echo $user['tipo_usuario']; ?></td>
+            <td><?php echo $user['tipo_usuario']; ?> 
+            <td><i class="fas fa-cog"> </i><span> Editar</span></td>   </td>
         </tr>
     <?php endwhile; ?>
                         </tbody>
@@ -107,7 +107,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                                 <th>Email</th>
                                 <th>Imagem</th>
                                 <th>Função</th>
-                                <th>Ações</th>
+                                <th>Config. Adicional</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -118,8 +118,8 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                                 <td><img src="Imagens/avatar.png" alt="Imagem do hotel" class="imagem-dashboard-adm"></td>
                                 <td>Hotel</td>
                                 <td>
-                                    <button>Editar</button>
-                                    <button>Deletar</button>
+                                <td><i class="fas fa-cog"> </i><span> Editar</span></td>   </td>
+
                                 </td>
                             </tr>
                         </tbody>
@@ -129,6 +129,9 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             </section>
         </main>
     </div>
+    <?php
+        include('../static/footer.php');
+    ?>
 
     <script src="../javascript/script.js"></script>
 </body>
