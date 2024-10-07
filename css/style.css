@@ -3,7 +3,7 @@
     /*Cor azul Principal*/
     --azul: #34495e;
   
-  --azule:  #2f4255;
+  --azule:  #2b3c4d;
 
     /*Cor amarela Secundária*/
     --amarelo: #ffde59;
@@ -23,9 +23,7 @@
     font-size: var(--font-size, 16px); /* 16px é o valor padrão */
   }
   
-  .custom-bg {
-    background-color: #ffcc00; /* Cor de fundo amarela personalizada */
-  }
+
   
 
 
@@ -684,7 +682,7 @@
     --bs-table-color:var(--amarelo); /* Cor do texto */
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+ 
   }
 
   #imagem{
