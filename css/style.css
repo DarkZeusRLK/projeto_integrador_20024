@@ -193,7 +193,6 @@ label {
   font-size: 1.25em;
   font-weight: 700;
   font-family: inherit;
-  color: black;
 }
 
 input[type="email"],
@@ -779,16 +778,7 @@ body.dark-mode {
   background-color: #002733;
   color: #ffffff;
 }
-body.dark-mode label{
-  color: var(--amarelo);
-}
 
-body.dark-mode h3{
-  color: var(--amarelo);
-}
-body.dark-mode .dashboard-content {
-  background-color: #013747;
-}
 .sidebar.dark-mode {
   background-color: #e2cd13;
 }
@@ -883,9 +873,7 @@ body.dark-mode .sidebar .menu-btn{
   font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
   color: #333; /* Cor do texto do nome do usuário, ajuste conforme o tema */
 }
-h3{
-  color: black;
-}
+
 .avatar {
   width: 40px; /* Ajuste o tamanho conforme necessário */
   height: 40px; /* Ajuste o tamanho conforme necessário */
@@ -1064,16 +1052,6 @@ h3{
   gap: 10px;
 }
 
-.form-container #form-ctt .button-container .send-button {
-  flex-basis: 70%;
-  background: #e2cd13;
-  padding: 10px;
-  color: #001925;
-  text-align: center;
-  font-weight: bold;
-  border: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
-}
 
 .form-container #form-ctt .button-container .send-button:hover {
   background: transparent;
@@ -1360,10 +1338,20 @@ h3{
   gap: 10px;
   margin-top: 20px; 
 }
-
+/*-----------BOTÃO---------------------DE---------RESETAR----------------------*/
+.form-container .button-container .reset-button {
+  flex-basis: 70%;
+  background: #001925;
+  padding: 10px;
+  color: #e2cd13;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+/*--------------------------------------------------------------------------------------*/
 .form-container .button-container .send-button {
-
-  flex-basis: 20%;
+  flex-basis: 70%;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
   background: #001925;
   padding: 10px;
@@ -1566,27 +1554,6 @@ text-decoration: none;
     gap: 10px;
   }
   
-  .form-container .button-container .send-button {
-    flex-basis: 70%;
-    background: #001925;
-    padding: 10px;
-    color: #001925;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid transparent;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .form-container .button-container .send-button:hover {
-    background: transparent;
-    border: 1px solid #e2cd13;
-    color: #e2cd13;
-  }
-  
-  .form-container .button-container .reset-button-container {
-    filter: drop-shadow(1px 1px 0px #e2cd13);
-    flex-basis: 100%;
-  }
   
   .form-container .button-container .reset-button-container .reset-button {
     position: relative;
