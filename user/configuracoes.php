@@ -8,7 +8,7 @@ if (!isset($_SESSION)) {
 // Verifique se as variáveis de sessão estão definidas
 $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
 $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
-$foto = isset($_SESSION['arquivo_caminho']) ? $_SESSION['arquivo_caminho'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
 
 $consultar_banco = "SELECT * FROM cadastro";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
@@ -88,7 +88,9 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
   <?php if ($tipo_usuario === 'administrador'): ?>
   <span id="admin-badge">ADM</span>
   <?php endif; ?>
-</div>
+  <a href="user/conta.php" class="user-avatar-link">
+                        <img src="../ Imagens/<?php echo $foto; ?>" alt="Avatar" class="avatar">
+                </div>
 <?php
                 }
 ?>

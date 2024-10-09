@@ -5,6 +5,7 @@ require('../static/protect_adm.php');
 // Consultar todos os usuários
 $consultar_banco = "SELECT * FROM cadastro";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
+
 ?>
 
 <!DOCTYPE html>

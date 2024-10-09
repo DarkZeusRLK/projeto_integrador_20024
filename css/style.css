@@ -193,6 +193,7 @@ label {
   font-size: 1.25em;
   font-weight: 700;
   font-family: inherit;
+  color: black;
 }
 
 input[type="email"],
@@ -778,7 +779,16 @@ body.dark-mode {
   background-color: #002733;
   color: #ffffff;
 }
+body.dark-mode label{
+  color: var(--amarelo);
+}
 
+body.dark-mode h3{
+  color: var(--amarelo);
+}
+body.dark-mode .dashboard-content {
+  background-color: #013747;
+}
 .sidebar.dark-mode {
   background-color: #e2cd13;
 }
@@ -873,7 +883,9 @@ body.dark-mode .sidebar .menu-btn{
   font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
   color: #333; /* Cor do texto do nome do usuário, ajuste conforme o tema */
 }
-
+h3{
+  color: black;
+}
 .avatar {
   width: 40px; /* Ajuste o tamanho conforme necessário */
   height: 40px; /* Ajuste o tamanho conforme necessário */
