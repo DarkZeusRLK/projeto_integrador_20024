@@ -28,6 +28,8 @@ if (isset($_POST['bt_email'])) {
                 $_SESSION['cpf'] = $usuario['cpf'];
                 $_SESSION['arquivo_foto'] = $usuario['arquivo_foto'];
 
+                
+
                 // Verifica se o usuário é administrador
                 if ($usuario['tipo_usuario'] == 'administrador') {
                     $_SESSION['is_admin'] = true; // Define uma sessão para administrador

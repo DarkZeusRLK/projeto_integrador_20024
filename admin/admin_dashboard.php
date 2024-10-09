@@ -6,6 +6,10 @@ require('../static/protect_adm.php');
 $consultar_banco = "SELECT * FROM cadastro";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 
+$consultar_banco2 = "SELECT * FROM cadastro_hoteis";
+$retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -106,27 +110,29 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                             <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
-                                <th>Email</th>
+                                <th>Descrição</th>
                                 <th>Imagem</th>
                                 <th>Função</th>
                                 <th>Config. Adicional</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php'" style="cursor: pointer;">
-                                <td>1</td>
-                                <td>Hotel Ivaí</td>
-                                <td>contato@hotelivai.com</td>
-                                <td><img src="Imagens/avatar.png" alt="Imagem do hotel" class="imagem-dashboard-adm"></td>
+                        <?php while ($hotel = $retorno_consulta2->fetch_assoc()) : ?>
+                            <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php?codigo_cadastro=<?php echo $hotel['id_hotel'];?>'" style="cursor: pointer;">
+                                <td><?php echo $hotel['id_hotel'];?></td>
+                                <td><?php echo $hotel['nome'];?></td>
+                                <td><?php echo $hotel['descricao'];?></td>
+                                <td><img src="../<?php echo $hotel['arquivo_caminho'];?>" alt="Imagem do hotel" class="imagem-dashboard-adm"></td>
                                 <td>Hotel</td>
-                                <td>
                                 <td><i class="fas fa-cog"> </i><span> Editar</span></td>   </td>
 
                                 </td>
                             </tr>
+                            <?php endwhile; ?>
+
                         </tbody>
                     </table>
-                  <a class="custom-btn2" href="../user/cadastrar_hoteis_aracaju.php">Cadastrar Hotéis Aracaju</a>
+                  <a class="custom-btn2" href="../user/cadastrar_hoteis_aracaju.php">Cadastrar Hotéis Gramado</a>
                 </div>
             </section>
         </main>
