@@ -603,9 +603,6 @@ input[type="password"]:focus {
   color: white;
   text-decoration: none;
   margin-top: 16rem;
-  width: 100%;
-  position: relative;
-  left: 0;
 }
 .footer a {
   text-decoration: none;
@@ -1495,9 +1492,8 @@ text-decoration: none;
   /*INÍCIO DESIGN CONTATO*/
   
   .form-container {
-    max-width: 1000px;
-    margin-left: 15%;
-    margin-top: 150px;
+    max-width: 70rem;
+    margin-left: 22%;
     background-color: var(--azul);
     padding: 50px;
     border-left: 5px solid #e2cd13;
