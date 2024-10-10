@@ -539,7 +539,6 @@
     border-radius: 10px;
     border: none;
     width: 85%;
-    height: 100%;
   }
   
   .input:focus {
@@ -642,7 +641,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
   }
   .container-fluid2{
     display: flex;
