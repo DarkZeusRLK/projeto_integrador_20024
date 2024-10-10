@@ -11,7 +11,7 @@
 
     <script defer src="../javascript/cookie.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
-    <title>Contato</title>
+    <title>Desenvolvedores - IvaíTour</title>
 </head>
 <body>
     <style>
@@ -22,8 +22,6 @@
     }
 
     body {
-        background-color: transparent; /* Remova a cor de fundo branca */
-        background-image: url("../Imagens/Visite%20pontos%20turísticos%20e%20se%20aventure%20com%20sua%20família%20por%20preços%20acessíveis%20e%20pacotes%20completos.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover; /* Mude para 'cover' para cobrir a área do corpo */
@@ -154,6 +152,12 @@
                     </li>
                 <?php endif; ?>
                 <li class="nav-item">
+                    <a href="page/desenvolvedores.php" class="nav-link" id="settings-icon">
+                        <i class="fas fa-code"></i> <!-- Ícone de desenvolvedor -->
+                        <span>Desenvolvedores</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="../user/configuracoes.php" class="nav-link" id="settings-icon">
                         <i class="fas fa-cog"></i><span>Configurações</span>
                     </a>
@@ -176,32 +180,33 @@
             <h1>Créditos dos Desenvolvedores</h1>
             <p>Agradecimentos especiais a todos que contribuíram para este projeto!</p>
         </header>
+        <img id="imagem_do_grupo_todo" src="../Imagens/Grupo Todo.jpg.jpg" alt="">
         <main>
             <div class="developer">
                 <div class="photo-container">
-                    <img src="developer1.jpg" alt="Desenvolvedor 1" class="photo">
+                    <img src="../Imagens/JP.jpg.jpg" alt="Desenvolvedor 1" class="photo">
                 </div>
                 <div class="info">
-                    <h2>Nome do Desenvolvedor 1</h2>
-                    <p>Breve descrição sobre o desenvolvedor 1. Destaque suas habilidades ou contribuições ao projeto.</p>
+                    <h2>João Pedro Fernandes de Almeida</h2>
+                    <p>Líder e Programador Full-Stack do Projeto, responsável pelo PHP e funcionalidades do sistema.</p>
                 </div>
             </div>
             <div class="developer">
                 <div class="photo-container">
-                    <img src="../Imagens/apucarana1.jpg" alt="Desenvolvedor 2" class="photo">
+                    <img src="../Imagens/Luiz1.jpg.jpg" alt="Desenvolvedor 2" class="photo">
                 </div>
                 <div class="info">
-                    <h2>Nome do Desenvolvedor 2</h2>
-                    <p>Breve descrição sobre o desenvolvedor 2. Destaque suas habilidades ou contribuições ao projeto.</p>
+                    <h2>Luiz Eduardo Rosaeski Bonfim</h2>
+                    <p>Programador Front-End, Resp.design slides e responsável por pesquisar conteúdo das páginas.</p>
                 </div>
             </div>
             <div class="developer">
                 <div class="photo-container">
-                    <img src="developer3.jpg" alt="Desenvolvedor 3" class="photo">
+                    <img src="../Imagens/Zere1.jpg.jpg" alt="Desenvolvedor 3" class="photo">
                 </div>
                 <div class="info">
-                    <h2>Nome do Desenvolvedor 3</h2>
-                    <p>Breve descrição sobre o desenvolvedor 3. Destaque suas habilidades ou contribuições ao projeto.</p>
+                    <h2>Matheus Henrique Vital</h2>
+                    <p>Responsável por Design do projeto,um dos maiores colaboradores por tornar o projeto responsivel.</p>
                 </div>
             </div>
             <div class="developer">
@@ -209,23 +214,23 @@
                     <img src="developer4.jpg" alt="Desenvolvedor 4" class="photo">
                 </div>
                 <div class="info">
-                    <h2>Nome do Desenvolvedor 4</h2>
+                    <h2>João Rafael de Carvalho Bissoloti</h2>
                     <p>Breve descrição sobre o desenvolvedor 4. Destaque suas habilidades ou contribuições ao projeto.</p>
                 </div>
             </div>
             <div class="developer">
                 <div class="photo-container">
-                    <img src="developer5.jpg" alt="Desenvolvedor 5" class="photo">
+                    <img src="../Imagens/Joaquim2.jpg.jpg" alt="Desenvolvedor 5" class="photo">
                 </div>
                 <div class="info">
-                    <h2>Nome do Desenvolvedor 5</h2>
-                    <p>Breve descrição sobre o desenvolvedor 5. Destaque suas habilidades ou contribuições ao projeto.</p>
+                    <h2>Joaquim Pedro Klima Sagioneti</h2>
+                    <p>Maior pesquisador do projeto, ficou responsável por maior parte do conteúdo dos slides e das páginas.</p>
                 </div>
             </div>
         </main>
-        <footer>
-            <p>Desenvolvedores: Nome do Desenvolvedor 1, Nome do Desenvolvedor 2, Nome do Desenvolvedor 3</p>
-        </footer>
+       <?php
+        include('../static/footer.php');
+       ?>
     </div>
 </body>
 </html>

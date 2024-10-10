@@ -35,8 +35,8 @@ main {
 
 /* Estilos da Sidebar */
 .sidebar {
-  width: 80px;
-  height: 100vh;
+  width: 10vh;
+  height: 100rem;
   background-color: var(--azul);
   position: fixed;
   top: 0;
@@ -411,7 +411,7 @@ input[type="password"]:focus {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   overflow: hidden;
-  height: 100%; /* Garante que o card ocupe toda a altura disponível */
+  height: 100rem; /* Garante que o card ocupe toda a altura disponível */
   
 }
 #cards {
@@ -419,12 +419,12 @@ input[type="password"]:focus {
   flex-direction: column;
   margin-top: 3rem;
   margin-left: 2rem;
-  padding: 10 px;
+  padding: 1rem;
 }
 
 .card-img-top {
-  width: 100%;
-  height: 200px; /* Define uma altura fixa para todas as imagens */
+  width: 100rem;
+  height: 200rem; /* Define uma altura fixa para todas as imagens */
   object-fit: cover; /* Assegura que as imagens mantenham a proporção sem distorcer */
 }
 .card-body {
@@ -600,13 +600,13 @@ input[type="password"]:focus {
 .footer {
   justify-content: center;
   background-color: var(--azul);
-  padding: 20px 0;
+  padding: 1.5rem 0;
   color: white;
   text-decoration: none;
   margin-top: 10rem;
-  width: 98%;
+  width: 100%;
   position: relative;
-  left: 2%;
+  left: 0;
 }
 .footer a {
   text-decoration: none;
@@ -1781,4 +1781,8 @@ text-decoration: none;
 }
 #imagem{
   border-radius: 100%;
+}
+#imagem_do_grupo_todo{
+  height: 53rem;
+  width: 55rem;
 }
