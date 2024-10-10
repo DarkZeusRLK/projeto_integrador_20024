@@ -47,7 +47,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
 $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
-$foto = $_SESSION['arquivo_foto'];
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
 ?>
 
 <!DOCTYPE html>
