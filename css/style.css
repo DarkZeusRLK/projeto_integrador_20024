@@ -418,7 +418,6 @@ input[type="password"]:focus {
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
-  margin-left: 2rem;
   padding: 1rem;
 }
 
