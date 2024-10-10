@@ -228,9 +228,9 @@
                 </div>
             </div>
         </main>
-       <?php
+    </div>
+    <?php
         include('../static/footer.php');
        ?>
-    </div>
 </body>
 </html>
