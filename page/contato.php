@@ -47,7 +47,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
 $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
-$foto = $_SESSION['arquivo_foto'];
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
 ?>
 
 <!DOCTYPE html>
@@ -87,37 +87,9 @@ $foto = $_SESSION['arquivo_foto'];
             <button id="decline-cookies" class="declineButton">Rejeitar</button>
         </div>
     </div>
-        <nav class="col-md-3 col-lg-2 sidebar">
-            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-            <div class="profile">
-                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-                <h1 class="text-title">IvaíTour</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li><a href="../user/conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php endif; ?>
-                <?php if (!isset($_SESSION['nome'])): ?>
-                    <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php endif; ?>
-                <li><a href="../page/contato.php"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-                <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li class="nav-item logout">
-                        <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                    </li>
-                <?php endif; ?>
-                <li class="nav-item">
-                    <a href="../user/configuracoes.php" class="nav-link" id="settings-icon">
-                        <i class="fas fa-cog"></i><span>Configurações</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <?php
+        include('../static/menu.php');
+       ?>
     <?php if(isset($_SESSION['nome'])): ?>
         <div class="user-profile">
             <span class="username"><b><?php echo $_SESSION['nome'];?></b></span>
@@ -141,8 +113,8 @@ $foto = $_SESSION['arquivo_foto'];
                 
                 <!-- Botão de enviar como 'button' -->
                 <div class="button-container">
-                    <button type="submit" class="send-button">Enviar</button>
-                    <button type="reset" id="reset-btn" class="send-button">Resetar</button>
+                    <button type="reset" class="reset-button">Resetar</button>
+                    <button type="submit" id="reset-btn" class="send-button">Enviar</button>
                 </div>
             </div>
         </form>

@@ -1,5 +1,5 @@
 <?php
-include('static/conexao.php');
+include('../static/conexao.php');
 
 if (!isset($_SESSION)) {
     session_start();
@@ -8,7 +8,7 @@ if (!isset($_SESSION)) {
 // Verifique se as variáveis de sessão estão definidas
 $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
 $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
-$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : ''; // Caminho para a foto do usuário
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
 
 // Conecte-se ao banco de dados normal para obter informações do usuário
 $sql_user = "SELECT * FROM cadastro WHERE nome = ?";
@@ -41,18 +41,18 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script defer src="javascript/script_navbar.js"></script>
-    <script defer src="javascript/alternar_modos.js"></script>
-    <script defer src="javascript/cookie.js"></script>
-    <script src="javascript/configuracoes.js"></script>
-    <link rel="shortcut icon" href="Imagens/logo (1).png">
+    <script defer src="../javascript/script_navbar.js"></script>
+    <script defer src="../javascript/alternar_modos.js"></script>
+    <script defer src="../javascript/cookie.js"></script>
+    <script src="../javascript/configuracoes.js"></script>
+    <link rel="shortcut icon" href="../Imagens/logo (1).png">
     <title>Início - IvaíTour</title>
     <style>
         body {
             background-color: #fff;
-            background-image: url("Imagens/Vegetação2.gif");
+            background-image: url("../Imagens/Vegetação2.gif");
             background-repeat: no-repeat;
         
             background-size: 100%;
@@ -110,17 +110,17 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="300">
-                <img class="img-fluid" src="Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro.png" class="d-block w-100" alt="...">
+                <img class="img-fluid" src="../Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="300">
-                <img class="img-fluid" src="Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuroo.png" class="d-block w-100" alt="...">
+                <img class="img-fluid" src="../Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuroo.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="300">
-                <img class="img-fluid" src="Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro (1).png" class="d-block w-100" alt="...">
+                <img class="img-fluid" src="../Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro (1).png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
@@ -154,36 +154,36 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
         <nav class="col-md-3 col-lg-2 sidebar">
             <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
             <div class="profile">
-                <img id="logo" src="Imagens/logo (1).png" alt="Logo">
+                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
                 <h1 class="text-title">IvaíTour</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
                 <li><a href="#"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
                 <?php if (isset($_SESSION['nome'])): ?>
-                    <li><a href="user/conta.php?id=<?php echo $_SESSION['id_usuario'];?>"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                    <li><a href="../user/conta.php?id=<?php echo $_SESSION['id_usuario'];?>"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
                 <?php if (!isset($_SESSION['nome'])): ?>
-                    <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                    <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
-                <li><a href="page/contato.php"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
+                <li><a href="../page/contato.php"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
                 <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-                    <li><a href="admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
+                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['nome'])): ?>
                     <li class="nav-item logout">
-                        <a href="static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+                        <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
                     </li>
                 <?php endif; ?>
                 <li class="nav-item">
-                    <a href="page/desenvolvedores.php" class="nav-link" id="settings-icon">
+                    <a href="../page/desenvolvedores.php" class="nav-link" id="settings-icon">
                         <i class="fas fa-code"></i> <!-- Ícone de desenvolvedor -->
                         <span>Desenvolvedores</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="user/configuracoes.php" class="nav-link" id="settings-icon">
+                    <a href="../user/configuracoes.php" class="nav-link" id="settings-icon">
                         <i class="fas fa-cog"></i><span>Configurações</span>
                     </a>
                 </li>
@@ -199,14 +199,14 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                     <?php if ($tipo_usuario === 'administrador'): ?>
                         <span id="admin-badge">ADM</span>
                     <?php endif; ?>
-                    <a href="user/conta.php" class="user-avatar-link">
-                        <img src="Imagens/<?php echo $foto; ?>" alt="Avatar" class="avatar">
+                    <a href="../user/conta.php" class="user-avatar-link">
+                        <img src="../<?php echo $foto; ?>" alt="Avatar" class="avatar">
                 </div>
             <?php
             }
             ?>
 
-            <a class="passagem" href="passagem.php">Reserve sua Passagem</a>
+            <a class="passagem" href="../passagem.php">Reserve sua Passagem</a>
 
             <div class="row mt-4">
 
@@ -214,13 +214,13 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
                     <div id="cards" class="col-md-3 mb-2">
                         <div class="card h-100">
-                            <img src="<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
+                            <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $hoteis['nome']; ?></h5>
                                 <p class="card-text"><?php echo $hoteis['descricao']; ?></p>
                                 <h5 class="card-text">R$ <?php echo $hoteis['valor_diaria']; ?></h5>
                                 <div class="text-center mt-4">
-                                    <a href="user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>" class="custom-btn">Reservar Agora</a>
+                                    <a href="../user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>" class="custom-btn">Reservar Agora</a>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +233,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
     </div>
 
     <?php
-    include('static/footer.php');
+    include('../static/footer.php');
     ?>
 </body>
 

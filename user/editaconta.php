@@ -113,42 +113,15 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
 
 <body>
     <div class="container-fluid">
-        <nav class="col-md-3 col-lg-2 sidebar">
-            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-            <div class="profile">
-                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-                <h1 class="text-title">IvaíTour</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li><a href="conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php else: ?>
-                    <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php endif; ?>
-                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-                <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li class="nav-item logout">
-                        <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                    </li>
-                <?php endif; ?>
-                <li class="nav-item">
-                    <a href="configuracoes.php" class="nav-link" id="settings-icon">
-                        <i class="fas fa-cog"></i><span>Configurações</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+     <?php
+        include('../static/menu.php');
+     ?>
 
         <div class="container">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
                     <div class="profile-picture-container">
-                    <img class='profile-picture' src='<?php echo $_SESSION['arquivo_foto']; ?>' alt='Foto de perfil'>
+                    <img class='profile-picture' src='../<?php echo $foto; ?>' alt='Foto de perfil'>
                         <label for="foto">
                             <div class="edit-icon">
                                 <i class="fas fa-pencil-alt"></i>

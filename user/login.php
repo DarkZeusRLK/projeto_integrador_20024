@@ -34,11 +34,11 @@ if (isset($_POST['bt_email'])) {
                 if ($usuario['tipo_usuario'] == 'administrador') {
                     $_SESSION['is_admin'] = true; // Define uma sessão para administrador
                     include("../static/protect_adm.php"); // Redireciona para a página de proteção do administrador
-                    header('Location: ../index.php');
+                    header('Location: ../index/index.php');
                 } else {
                     $_SESSION['is_admin'] = false; // Define como falso se não for administrador
                     include("../static/protect.php"); // Redireciona para a página de proteção do cliente
-                    header('Location: ../index.php');
+                    header('Location: ../index/index.php');
                 }
                 exit(); // Certifique-se de chamar exit após redirecionamento
             } else {
@@ -93,37 +93,9 @@ $conexao->close();
 
     <body>
     <div class="container-fluid">
-        <nav class="col-md-3 col-lg-2 sidebar">
-            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-            <div class="profile">
-                <img id="logo" src="Imagens/logo (1).png" alt="Logo">
-                <h1 class="text-title">IvaíTour</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li><a href="../user/minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php endif; ?>
-                <?php if (!isset($_SESSION['nome'])): ?>
-                    <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php endif; ?>
-                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-                <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li class="nav-item logout">
-                        <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                    </li>
-                <?php endif; ?>
-                <li class="nav-item">
-                    <a href="../user/configuracoes.php" class="nav-link" id="settings-icon">
-                        <i class="fas fa-cog"></i><span>Configurações</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+       <?php
+        include('../static/menu.php');
+       ?>
             <div class="container d-flex justify-content-center">
                 <form class="form" method="POST">
                     <div class="flex-column">

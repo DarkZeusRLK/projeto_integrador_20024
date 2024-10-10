@@ -35,8 +35,8 @@ main {
 
 /* Estilos da Sidebar */
 .sidebar {
-  width: 80px;
-  height: 100vh;
+  width: 10vh;
+  height: 100rem;
   background-color: var(--azul);
   position: fixed;
   top: 0;
@@ -411,20 +411,19 @@ input[type="password"]:focus {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   overflow: hidden;
-  height: 100%; /* Garante que o card ocupe toda a altura disponível */
+  height: 100rem; /* Garante que o card ocupe toda a altura disponível */
   
 }
 #cards {
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
-  margin-left: 2rem;
-  padding: 10 px;
+  padding: 1rem;
 }
 
 .card-img-top {
-  width: 100%;
-  height: 200px; /* Define uma altura fixa para todas as imagens */
+  width: 100rem;
+  height: 200rem; /* Define uma altura fixa para todas as imagens */
   object-fit: cover; /* Assegura que as imagens mantenham a proporção sem distorcer */
 }
 .card-body {
@@ -600,13 +599,13 @@ input[type="password"]:focus {
 .footer {
   justify-content: center;
   background-color: var(--azul);
-  padding: 20px 0;
+  padding: 1.5rem 0;
   color: white;
   text-decoration: none;
-  margin-top: 10rem;
-  width: 98%;
+  margin-top: 16rem;
+  width: 100%;
   position: relative;
-  left: 2%;
+  left: 0;
 }
 .footer a {
   text-decoration: none;
@@ -1054,7 +1053,7 @@ body.dark-mode .sidebar .menu-btn{
 
 
 .form-container #form-ctt .button-container .send-button:hover {
-  background: transparent;
+  background: #001925;
   border: 1px solid #e2cd13;
   color: #e2cd13;
 }
@@ -1307,12 +1306,7 @@ body.dark-mode .sidebar .menu-btn{
   border-left: 5px solid #e2cd13;
 }
 
-.send-button {
-  display: inline-block;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: -10px; /* Ajuste este valor conforme necessário */
-}
+
 
 .button-send .send-button{
   flex-basis: 20%;
@@ -1340,22 +1334,28 @@ body.dark-mode .sidebar .menu-btn{
 }
 /*-----------BOTÃO---------------------DE---------RESETAR----------------------*/
 .form-container .button-container .reset-button {
-  flex-basis: 70%;
-  background: #e2cd13;
+  flex-basis: 40%;
+  background: #001925;
   padding: 10px;
-  color: #001925;
+  color: #e2cd13;
   text-align: center;
   font-weight: bold;
   border: 2px solid transparent;
   transition: all 0.2s ease-in-out;
+
+  
+}
+.form-container .button-container .reset-button:hover {
+  background: #001925;
+  border: 1px solid #e2cd13;
+  color: #e2cd13;
 }
 /*--------FIM-------------DO-----------------BOTÃO--------RESETAR------------------*/
 .form-container .button-container .send-button {
   flex-basis: 70%;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-  background: #001925;
-  padding: 10px;
-  color: #e2cd13;
+  background: #e2cd13;
+  color: #001925;
   text-align: center;
   font-weight: bold;
   border: 2px solid transparent;
@@ -1781,4 +1781,8 @@ text-decoration: none;
 }
 #imagem{
   border-radius: 100%;
+}
+#imagem_do_grupo_todo{
+  height: 53rem;
+  width: 55rem;
 }
