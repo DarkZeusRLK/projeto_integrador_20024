@@ -996,13 +996,13 @@ body.dark-mode .sidebar .menu-btn{
 /*INÍCIO DESIGN CONTATO*/
   
 .form-container {
-  max-width: 700px;
-  margin-left: 22%;
+  margin-left: 7rem;
   margin-top: 150px;
   background-color: var(--azul);
-  padding: 30px;
   border-left: 5px solid var(--yellow);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  max-width: 70rem;
+  padding: 50px;
 }
 
 .heading {
@@ -1473,15 +1473,6 @@ text-decoration: none;
 
 }
   /*INÍCIO DESIGN CONTATO*/
-  
-  .form-container {
-    max-width: 70rem;
-    margin-left: 22%;
-    background-color: var(--azul);
-    padding: 50px;
-    border-left: 5px solid var(--yellow);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-  }
   
   .heading {
     display: block;
