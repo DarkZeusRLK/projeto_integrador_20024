@@ -104,7 +104,7 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
 
                         </tbody>
                     </table>
-                  <a class="custom-btn2" href="../user/cadastrar_hoteis_aracaju.php">Cadastrar Hotéis Gramado</a>
+                  <a class="custom-btn2" href="../user/cadastrar_hoteis_gramado.php">Cadastrar Hotéis Gramado</a>
                 </div>
             </section>
         </main>
