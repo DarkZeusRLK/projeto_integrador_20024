@@ -1,0 +1,433 @@
+/* Importa a fonte 'Poppins' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estilo para o corpo da página */
+body{
+    margin: 0;
+    background-color: #000;
+    color: #eee;
+    font-family: Poppins;
+    font-size: 12px;
+}
+
+/* Remove a decoração de links */
+a{
+    text-decoration: none;
+}
+
+/* Estilo para o cabeçalho */
+header{
+    width: 1140px;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+/* Estilo para links dentro do cabeçalho */
+header a{
+    color: #eee;
+    margin-right: 40px;
+}
+
+/* Estilo para o carrossel */
+.carousel{
+    height: 100vh;
+    margin-top: -50px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilo para cada item da lista do carrossel */
+.carousel .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+/* Estilo para as imagens dos itens do carrossel */
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilo para o conteúdo de cada item do carrossel */
+.carousel .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+
+/* Estilo para o autor do conteúdo */
+.carousel .list .item .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+/* Estilo para o título e o tópico do conteúdo */
+.carousel .list .item .title,
+.carousel .list .item .topic{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+/* Estilo específico para o tópico do conteúdo */
+.carousel .list .item .topic{
+    color: #f1683a;
+}
+
+/* Estilo para os botões do carrossel */
+.carousel .list .item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+/* Estilo para os botões individuais */
+.carousel .list .item .buttons button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+/* Estilo específico para o segundo botão */
+.carousel .list .item .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+
+/* Estilo para a miniatura (thumbnail) */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 46%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilo para cada item da miniatura */
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* Estilo para as imagens das miniaturas */
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Estilo para o conteúdo das miniaturas */
+.thumbnail .item .content{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+/* Estilo para o título do conteúdo das miniaturas */
+.thumbnail .item .content .title{
+    font-weight: 500;
+}
+
+/* Estilo para a descrição do conteúdo das miniaturas */
+.thumbnail .item .content .description{
+    font-weight: 300;
+}
+
+/* Estilo para as setas de navegação do carrossel */
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Estilo para os botões das setas */
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+}
+
+/* Estilo para os botões das setas quando em hover */
+.arrows button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+/* Animação para o primeiro item do carrossel */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* Animação para o texto do primeiro item do carrossel */
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+
+/* Definição da animação showContent */
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/* Delays para animações específicas */
+.carousel .list .item:nth-child(1) .content .title{
+    animation-delay: 1.2s!important;
+}
+.carousel .list .item:nth-child(1) .content .topic{
+    animation-delay: 1.4s!important;
+}
+.carousel .list .item:nth-child(1) .content .des{
+    animation-delay: 1.6s!important;
+}
+.carousel .list .item:nth-child(1) .content .buttons{
+    animation-delay: 1.8s!important;
+}
+
+/* Animação ao clicar no próximo item do carrossel */
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+
+/* Definição da animação showImage */
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+/* Animação para o último item da miniatura ao clicar em próximo */
+.carousel.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+/* Definição da animação showThumbnail */
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+
+/* Animação para a miniatura ao clicar em próximo */
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+/* Definição da animação effectNext */
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* Estilo para o tempo de execução do carrossel */
+.carousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    left: 0;
+    top: 0;
+}
+
+/* Animação do tempo ao clicar em próximo ou anterior */
+.carousel.next .time,
+.carousel.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+
+/* Definição da animação runningTime */
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+/* Estilo para o segundo item da lista ao clicar em anterior */
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+/* Animação para a imagem do segundo item ao clicar em anterior */
+.carousel.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Definição da animação outFrame */
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+/* Animação para o primeiro item da miniatura ao clicar em anterior */
+.carousel.prev .thumbnail .item:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+/* Desabilita eventos de ponteiro para botões ao clicar em próximo ou anterior */
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+
+/* Animação para o conteúdo do segundo item ao clicar em anterior */
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttons{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+/* Definição da animação contentOut */
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+/* Estilos responsivos para telas menores que 678px */
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+}
+
+.aaa{
+    /* Container geral da navbar */
+.aaa {
+    background-color: #333;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+/* Container interno para alinhamento do conteúdo */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo do logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Lista de links da navbar */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilo dos itens de link */
+.nav-links li {
+    margin: 0;
+}
+
+/* Estilo dos links */
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de hover para os links */
+.nav-links a:hover {
+    color: #f0a500;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .navbar {
+        text-align: center;
+    }
+}
+
+}
