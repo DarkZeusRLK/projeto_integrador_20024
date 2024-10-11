@@ -1,54 +1,5 @@
 /*VARIÁVEIS------DE------CORES------DO-------SISTEMA*/
 :root{
-<<<<<<< HEAD
-    /*Cor azul Principal*/
-    --azul: #34495e;
-  
-  --azule:  #ffffff;
-
-    /*Cor amarela Secundária*/
-    --amarelo: #ffde59;
-
-
-    /*Cor amarela Secundária*/
-    --azulescuro: #07323e;
-
-    
-
-  }
-  /*FIM DE VARIAVEIS-------^-----DE---^-----CORES------------^--------------*/
-  
-  
-  /* Define o tamanho da fonte baseado no valor salvo */
-  html {
-    font-size: var(--font-size, 16px); /* 16px é o valor padrão */
-  }
-  
-
-  
-
-
-  body {
-    font-size: var(--font-size, 16px);
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  main {
-    flex: 1;
-  }
-  
-  /* Estilos da Sidebar */
-=======
   /*Cor azul Principal*/
   --azul: #34495e;
 
@@ -504,7 +455,6 @@ input[type="password"]:focus {
 }
 /* Responsividade */
 @media (max-width: 768px) {
->>>>>>> João
   .sidebar {
     width: 80px;
     height: 100vh;
@@ -640,9 +590,6 @@ input[type="password"]:focus {
   }
   
   .sidebar.expanded ~ .content {
-<<<<<<< HEAD
-    margin-left: 250px;
-=======
     margin-left: 200px;
   }
   .card {
@@ -1413,7 +1360,6 @@ body.dark-mode .sidebar .menu-btn{
   .profile-picture {
       width: 200px;
       height: 200px;
->>>>>>> João
   }
   
   /* Outras Estilizações */
@@ -1427,11 +1373,6 @@ body.dark-mode .sidebar .menu-btn{
     padding: 0;
     position: relative;
   }
-<<<<<<< HEAD
-  
-  .inputGroup:last-of-type {
-    margin-bottom: 0;
-=======
 }
 
 /*INÍCIO DESIGN EDITACONTA*/
@@ -1596,7 +1537,6 @@ text-decoration: none;
       display: flex;
       flex-direction: column;
       align-items: center;
->>>>>>> João
   }
   
   label {
@@ -1654,7 +1594,7 @@ text-decoration: none;
   .aboutMe:active {
     background-color: #217093;
   }
-  
+}
   /* Responsividade */
   @media (max-width: 768px) {
     .form,
@@ -2682,20 +2622,11 @@ text-decoration: none;
   /*INÍCIO DESIGN EDITACONTA*/
   
   .form-container {
-<<<<<<< HEAD
-    max-width: 700px;
-    margin-left: 22%;
-    margin-top: 100px;
-    background-color: var(--azul);
-    padding: 30px;
-    border-left: 5px solid var(--amarelo);
-=======
     max-width: 70rem;
     margin-left: 22%;
     background-color: var(--azul);
     padding: 50px;
     border-left: 5px solid #e2cd13;
->>>>>>> João
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
   }
   
@@ -2776,42 +2707,6 @@ text-decoration: none;
     margin-top: 20px; 
   }
   
-<<<<<<< HEAD
-  .form-container .button-container .send-button {
-  
-    flex-basis: 20%;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-    background: var(--azulescuro);
-    padding: 10px;
-    color: var(--amarelo);
-    text-align: center;
-    font-weight: bold;
-    border: 2px solid transparent;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .form-container .button-container .send-button:hover {
-    background: var(--amarelo);
-    border: 1px solid var(--azulescuro);
-    color: var(--azulescuro);
-  }
-  
-  .save-button-container {
-    width: 100%;
-  }
-  
-  .save-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    width: 100%;
-  }
-  
-  .form-container .button-container .save-button-container {
-    filter: drop-shadow(1px 1px 0px var(--amarelo));
-    flex-basis: 100%;
-  }
-=======
->>>>>>> João
   
   .form-container .button-container .save-button-container .save-button {
     position: relative;
@@ -2832,203 +2727,6 @@ text-decoration: none;
     background: var(--azulescuro);
     color: var(--amarelo);
   }
-<<<<<<< HEAD
-  
-  /*RESPONSIVIDADE----------DA--------PÁGINA---------------EDITACONTA*/
-  /* Ajustes para telas menores que 768px */
-  @media (max-width: 768px) {
-    /* Ajusta o layout do formulário e da imagem de perfil */
-    #form-ctt {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    .profile-picture-container {
-        width: 10px;
-        height: 10px;
-        margin-bottom: 40px;
-    }
-  
-    /* Ajusta o botão de enviar para ficar abaixo da imagem */
-    .button-send {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-  
-    .send-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        width: 100%;
-    }
-  
-    /* Campos de texto mais largos */
-    .input {
-        width: 100%;
-        margin-bottom: 15px;
-        font-size: 1rem;
-    }
-  
-    /* Ajusta o botão de salvar para ocupar toda a largura */
-    .save-button-container {
-        width: 100%;
-    }
-  
-    .save-button {
-        padding: 10px 20px;
-        font-size: 1rem;
-        width: 100%;
-    }
-  }
-  
-  /* Para telas menores que 576px */
-  @media (max-width: 576px) {
-    /* Tamanhos menores para imagem de perfil */
-    .profile-picture-container {
-        width: 100px;
-        height: 100px;
-    }
-  
-    .form-container #form-ctt .input {
-      padding: 6px;
-      font-size: 10px;
-    }
-  
-    /* Ícone de edição menor */
-    .edit-icon {
-        font-size: 1rem;
-        bottom: -50px;
-        right: -10px;
-    }
-  
-    /* Botão de enviar ajustado */
-    .send-button {
-      width: 500px;
-        margin-top: 20px;
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
-  
-    /* Botão de salvar ajustado */
-    .save-button {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
-  }
-  /* FIM DESIGN EDITACONTA*/
-  .divo {
-    background-color: #fae797;
-    max-width: 700px;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  
-  }
-    /*INÍCIO DESIGN CONTATO*/
-    
-    .form-container {
-      max-width: 1000px;
-      margin-left: 15%;
-      margin-top: 150px;
-      background-color: var(--azul);
-      padding: 50px;
-      border-left: 5px solid var(--amarelo);
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-    }
-    
-    .heading {
-      display: block;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-    
-    .form-container .input {
-      color: #87a4b6;
-      width: 100%;
-      background-color: var(--azulescuro);
-      border: none;
-      outline: none;
-      padding: 10px;
-      margin-bottom: 20px;
-      font-weight: bold;
-      font-size: 15px;
-      transition: all 0.2s ease-in-out;
-      border-left: 1px solid transparent;
-    }
-    
-    .form-container .input:focus {
-      border-left: 5px solid var(--amarelo);
-    }
-    
-    .form-container .textarea {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      outline: none;
-      background-color: #013747;
-      color: var(--amarelo);
-      font-weight: bold;
-      resize: none;
-      max-height: 150px;
-      margin-bottom: 20px;
-      border-left: 1px solid transparent;
-      transition: all 0.2s ease-in-out;
-    }
-    
-    .form-container .textarea:focus {
-      border-left: 5px solid var(--amarelo);
-    }
-    
-    .form-container .button-container {
-      display: flex;
-      gap: 10px;
-    }
-    
-    .form-container .button-container .send-button {
-      flex-basis: 70%;
-      background: var(--amarelo);
-      padding: 10px;
-      color: var(--azulescuro);
-      text-align: center;
-      font-weight: bold;
-      border: 1px solid transparent;
-      transition: all 0.2s ease-in-out;
-    }
-    
-    .form-container .button-container .send-button:hover {
-      background: transparent;
-      border: 1px solid var(--amarelo);
-      color: var(--amarelo);
-    }
-    
-    .form-container .button-container .reset-button-container {
-      filter: drop-shadow(1px 1px 0px var(--amarelo));
-      flex-basis: 100%;
-    }
-    
-    .form-container .button-container .reset-button-container .reset-button {
-      position: relative;
-      text-align: center;
-      padding: 10px;
-      color: var(--azulescuro);
-      font-weight: bold;
-      background: var(--amarelo);
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-      transition: all 0.2s ease-in-out;
-      display: flex;
-      justify-content: center;
-  text-decoration: none;
-  
-    }
-    
-    .form-container .button-container .reset-button-container .reset-button:hover {
-      background: var(--azulescuro);
-      color: var(--amarelo);
-    }
-  
-    /* FIM DESIGN CONTATO */
-=======
 
   /* FIM DESIGN CONTATO */
 
@@ -3241,4 +2939,3 @@ text-decoration: none;
   height: 53rem;
   width: 55rem;
 }
->>>>>>> João
