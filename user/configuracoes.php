@@ -61,7 +61,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
   <span id="admin-badge">ADM</span>
   <?php endif; ?>
   <a href="user/conta.php" class="user-avatar-link">
-                        <img src="../ Imagens/<?php echo $foto; ?>" alt="Avatar" class="avatar">
+                        <img src="<?php echo $foto; ?>" alt="Avatar" class="avatar">
                 </div>
 <?php
                 }

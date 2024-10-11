@@ -65,7 +65,7 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                 // Verifica se a variável $user['arquivo_foto'] existe e não está vazia, senão exibe a imagem padrão
                 $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '/Imagens/foto_padrao.png';
                 ?>
-                <img id="imagem" src="../<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
+                <img id="imagem" src="<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
             </td>
             <td><?php echo $user['tipo_usuario']; ?> 
             <td><i class="fas fa-cog"> </i><span> Editar</span></td>   </td>

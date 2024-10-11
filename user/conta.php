@@ -100,7 +100,7 @@ if ($id_usuario) {
                 <div id="form-ctt">
                     <div class="text-center mb-4">
                         <div class="profile-picture-container">
-                            <img class='profile-picture' src='../<?php echo $foto; ?>' alt='Foto de perfil'>
+                            <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
                         </div>
                     </div>
                     <span class="heading"><?php echo $nome_usuario; ?></span>
