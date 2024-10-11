@@ -8,7 +8,7 @@ if (!isset($_SESSION)) {
 // Verifique se as variáveis de sessão estão definidas
 $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
 $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
-$foto = isset($_SESSION['arquivo_caminho']) ? $_SESSION['arquivo_caminho'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
 
 $consultar_banco = "SELECT * FROM cadastro";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
@@ -42,39 +42,11 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid2">
     
-    <nav class="col-md-3 col-lg-2 sidebar">
-      <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-      <div class="profile">
-        <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-        <h1 class="text-title">IvaíTour</h1>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-        <?php if (isset($_SESSION['nome'])): ?>
-          <li><a href="minha_conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-        <?php endif; ?>
-        <?php if (!isset($_SESSION['nome'])): ?>
-          <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-        <?php endif; ?>
-        <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-        <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-          <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
-        <?php endif; ?>
-        <?php if (isset($_SESSION['nome'])): ?>
-          <li class="nav-item logout">
-            <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-          </li>
-        <?php endif; ?>
-        <li class="nav-item">
-          <a href="configuracoes.php" class="nav-link" id="settings-icon">
-            <i class="fas fa-cog"></i><span>Configurações</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+  <?php
+        include('../static/menu.php');
+       ?>
 
     <!-- Conteúdo da Página -->
     <div class="container-fluid">
@@ -88,7 +60,9 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
   <?php if ($tipo_usuario === 'administrador'): ?>
   <span id="admin-badge">ADM</span>
   <?php endif; ?>
-</div>
+  <a href="user/conta.php" class="user-avatar-link">
+                        <img src="../ Imagens/<?php echo $foto; ?>" alt="Avatar" class="avatar">
+                </div>
 <?php
                 }
 ?>

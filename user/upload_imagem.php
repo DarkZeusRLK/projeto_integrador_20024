@@ -41,11 +41,16 @@ if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] === UPLOAD_ERR_OK) {
     if (!move_uploaded_file($_FILES["foto"]["tmp_name"], $caminhoFinal)) {
         die("Ocorreu um erro ao fazer o upload da imagem.");
     }
+    // Após o upload bem-sucedido
+if (move_uploaded_file($_FILES['foto']['tmp_name'], $caminho_final)) {
+    $_SESSION['arquivo_foto'] = $caminho_final; // Armazenar o caminho correto na sessão
+}
+
 
     // Atualize o caminho da imagem no banco de dados
-    $stmt = $mysqli->prepare("UPDATE cadastro SET foto_perfil_caminho = ? WHERE id_usuario = ?");
+    $stmt = $conexao->prepare("UPDATE cadastro SET arquivo_foto = ? WHERE id_usuario = ?");
     if ($stmt === false) {
-        die("Erro na preparação da consulta: " . $mysqli->error);
+        die("Erro na preparação da consulta: " . $conexao->error);
     }
 
     // Vincular os parâmetros e executar a consulta

@@ -13,6 +13,7 @@ if (!isset($_SESSION['nome'])) {
     exit();
 }
 
+
 // Verificar o tipo de usuário e incluir o arquivo de proteção correto
 if (isset($_SESSION['tipo_usuario'])) {
     if ($_SESSION['tipo_usuario'] === 'administrador') {
@@ -28,7 +29,6 @@ $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
 $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
-$foto = $_SESSION['arquivo_foto'];
 
 // Atualizar informações do usuário
 if (isset($_POST['bt_email'])) {
@@ -64,7 +64,7 @@ if ($id_usuario) {
             $email_usuario = $consultar['email'];
             $cpf_usuario = $consultar['cpf'];
             $telefone_usuario = $consultar['telefone'];
-            $foto = $_SESSION['arquivo_foto'];
+            $foto = $consultar['arquivo_foto'];
         }
         $stmt->close();
     } else {
@@ -84,41 +84,16 @@ if ($id_usuario) {
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="../javascript/script_navbar.js"></script>
+    <script defer src="../javascript/alternar_modos.js"></script>
+    <script defer src="../javascript/cookie.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png">
 </head>
 
 <body>
     <div class="container-fluid">
-        <nav class="col-md-3 col-lg-2 sidebar">
-            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-            <div class="profile">
-                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-                <h1 class="text-title">IvaíTour</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li><a href="conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php else: ?>
-                    <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php endif; ?>
-                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-                <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li class="nav-item logout">
-                        <a href="../static/logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                    </li>
-                <?php endif; ?>
-                <li class="nav-item">
-                    <a href="configuracoes.php" class="nav-link" id="settings-icon">
-                        <i class="fas fa-cog"></i><span>Configurações</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <?php
+        include('../static/menu.php');
+       ?>
 
         <div class="container">
             <div id="form-container-ctt" class="form-container">
