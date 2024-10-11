@@ -1,9 +1,4 @@
 /* From Uiverse.io by zanina-yassine */
-#form-container-ctt {
-  margin-left: 22%;
-}
-
-
 .form {
   display: flex;
   flex-direction: column;
@@ -75,11 +70,9 @@
 .input_label {
   font-size: 13px;
   color: #8B8E98;
-  font-weight: 600;
 }
 
 .aviso {
-  font-size: large;
   font-family: Arial, Helvetica, sans-serif;
   color: #8B8E98;
 }

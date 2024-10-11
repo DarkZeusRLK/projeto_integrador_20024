@@ -192,7 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                 </div>
 
-                <input class="btn btn-warning" type="submit" value="Cadastrar">
+                <input class="button-submit" type="submit" value="Cadastrar">
             </form>
             <script>
           // Manipule o evento de envio do formulário
