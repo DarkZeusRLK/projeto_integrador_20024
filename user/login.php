@@ -62,43 +62,24 @@ $conexao->close();
 <head>
     <meta charset="utf-8" />
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../javascript/script_navbar.js"></script>
     <script defer src="../javascript/alternar_modos.js"></script>
     <script defer src="https://apis.google.com/js/platform.js" async defer></script>
     <script defer src="../javascript/google.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
     <title>Login - IvaíTour</title>
-    <style>
-        /* Estilo para a notificação */
-        .notification {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            width: 300px;
-            border-radius: 5px;
-            z-index: 1000;
-        }
-    </style>
 </head>
 
 <body>
 
     <body>
-    <div class="container-fluid">
+    <div class="container-fluid2">
        <?php
         include('../static/menu.php');
        ?>
-            <div class="container d-flex justify-content-center">
+            <div class="container">
                 <form class="form" method="POST">
                     <div class="flex-column">
                         <label>Email </label>
@@ -173,10 +154,8 @@ $conexao->close();
             </div>
             <br>
             <br>
-            <div class="borda">
-
-            </div>
-            <?php
+    </div>
+    <?php
             include("../static/footer.php");
             ?>
     </body>

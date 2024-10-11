@@ -5,6 +5,12 @@
 
   /*Cor amarela Secundária*/
   --amarelo: #ffde59;
+
+  /*Cor azul escuro*/
+  --azulescuro: #001925 ;
+
+  /*Cor amarelo escuro*/
+  --yellow: #e2cd13;
 }
 /*FIM DE VARIAVEIS-------^-----DE---^-----CORES------------^--------------*/
 
@@ -35,7 +41,7 @@ main {
 
 /* Estilos da Sidebar */
 .sidebar {
-  width: 10vh;
+  width: 5rem;
   height: 100rem;
   background-color: var(--azul);
   position: fixed;
@@ -601,12 +607,13 @@ input[type="password"]:focus {
   background-color: var(--azul);
   padding: 1.5rem 0;
   color: white;
+ 
   text-decoration: none;
   margin-top: 16rem;
 }
 .footer a {
   text-decoration: none;
-  color: #e2cd13;
+  color: var(--yellow);
 }
 main {
   display: flex;
@@ -621,7 +628,7 @@ main {
   flex-direction:row;
   justify-content: center;
   align-items: center;
-  text-align: center;
+
 }
 .container-fluid2{
   display: flex;
@@ -776,7 +783,7 @@ body.dark-mode {
 }
 
 .sidebar.dark-mode {
-  background-color: #e2cd13;
+  background-color: var(--yellow);
 }
 
 .nav-links li a.dark-mode {
@@ -994,7 +1001,7 @@ body.dark-mode .sidebar .menu-btn{
   margin-top: 150px;
   background-color: var(--azul);
   padding: 30px;
-  border-left: 5px solid #e2cd13;
+  border-left: 5px solid var(--yellow);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
@@ -1021,7 +1028,7 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .form-container #form-ctt .input:focus {
-  border-left: 5px solid #e2cd13;
+  border-left: 5px solid var(--yellow);
 }
 
 .form-container #form-ctt .textarea {
@@ -1030,7 +1037,7 @@ body.dark-mode .sidebar .menu-btn{
   border: none;
   outline: none;
   background-color: #013747;
-  color: #e2cd13;
+  color: var(--yellow);
   font-weight: bold;
   resize: none;
   max-height: 150px;
@@ -1040,7 +1047,7 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .form-container #form-ctt .textarea:focus {
-  border-left: 5px solid #e2cd13;
+  border-left: 5px solid var(--yellow);
 }
 
 .form-container #form-ctt .button-container {
@@ -1050,13 +1057,13 @@ body.dark-mode .sidebar .menu-btn{
 
 
 .form-container #form-ctt .button-container .send-button:hover {
-  background: #001925;
-  border: 1px solid #e2cd13;
-  color: #e2cd13;
+  background: var(--azulescuro);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
 }
 
 .form-container #form-ctt .button-container .reset-button-container {
-  filter: drop-shadow(1px 1px 0px #e2cd13);
+  filter: drop-shadow(1px 1px 0px var(--yellow));
 }
 
 .form-container #form-ctt .button-container .reset-button-container .reset-button {
@@ -1069,8 +1076,8 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .form-container #form-ctt .button-container .reset-button-container .reset-button:hover {
-  background: #001925;
-  color: #e2cd13;
+  background: var(--azulescuro);
+  color: var(--yellow);
 }
 /* FIM DESIGN CONTATO */
 #link_adm_table:hover {
@@ -1247,17 +1254,6 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 /*INÍCIO DESIGN EDITACONTA*/
-
-.form-container {
-  max-width: 700px;
-  margin-left: 22%;
-  margin-top: 100px;
-  background-color: var(--azul);
-  padding: 30px;
-  border-left: 5px solid #e2cd13;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-}
-
 .heading {
   display: block;
   color: white;
@@ -1281,26 +1277,11 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .form-container .input:focus {
-  border-left: 5px solid #e2cd13;
-}
-
-.form-container .textarea {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  outline: none;
-  background-color: #013747;
-  color: #e2cd13;
-  font-weight: bold;
-  resize: none;
-  max-height: 150px;
-  margin-bottom: 20px;
-  border-left: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
+  border-left: 5px solid var(--yellow);
 }
 
 .form-container .textarea:focus {
-  border-left: 5px solid #e2cd13;
+  border-left: 5px solid var(--yellow);
 }
 
 
@@ -1308,18 +1289,18 @@ body.dark-mode .sidebar .menu-btn{
 .button-send .send-button{
   flex-basis: 20%;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-  background: #001925;
+  background: var(--azulescuro);
   padding: 10px;
-  color: #e2cd13;
+  color: var(--yellow);
   text-align: center;
   font-weight: bold;
   border: 2px solid transparent;
   transition: all 0.2s ease-in-out;
 }
 .form-container .button-send .send-button:hover {
-  background: #e2cd13;
-  border: 2px solid #001925;
-  color: #001925;
+  background: var(--yellow);
+  border: 2px solid var(--azulescuro);
+  color: var(--azulescuro);
 }
 
 .form-container .button-send {
@@ -1332,9 +1313,9 @@ body.dark-mode .sidebar .menu-btn{
 /*-----------BOTÃO---------------------DE---------RESETAR----------------------*/
 .form-container .button-container .reset-button {
   flex-basis: 40%;
-  background: #001925;
+  background: var(--azulescuro);
   padding: 10px;
-  color: #e2cd13;
+  color: var(--yellow);
   text-align: center;
   font-weight: bold;
   border: 2px solid transparent;
@@ -1343,16 +1324,16 @@ body.dark-mode .sidebar .menu-btn{
   
 }
 .form-container .button-container .reset-button:hover {
-  background: #001925;
-  border: 1px solid #e2cd13;
-  color: #e2cd13;
+  background: var(--azulescuro);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
 }
 /*--------FIM-------------DO-----------------BOTÃO--------RESETAR------------------*/
 .form-container .button-container .send-button {
   flex-basis: 70%;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-  background: #e2cd13;
-  color: #001925;
+  background: var(--yellow);
+  color: var(--azulescuro);
   text-align: center;
   font-weight: bold;
   border: 2px solid transparent;
@@ -1360,9 +1341,9 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .form-container .button-container .send-button:hover {
-  background: #e2cd13;
-  border: 1px solid #001925;
-  color: #001925;
+  background: var(--yellow);
+  border: 1px solid var(--azulescuro);
+  color: var(--azulescuro);
 }
 
 .save-button-container {
@@ -1376,7 +1357,7 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .form-container .button-container .save-button-container {
-  filter: drop-shadow(1px 1px 0px #e2cd13);
+  filter: drop-shadow(1px 1px 0px var(--yellow));
   flex-basis: 100%;
 }
 
@@ -1384,9 +1365,9 @@ body.dark-mode .sidebar .menu-btn{
   position: relative;
   text-align: center;
   padding: 10px;
-  color: #001925;
+  color: var(--azulescuro);
   font-weight: bold;
-  background: #e2cd13;
+  background: var(--yellow);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
   transition: all 0.2s ease-in-out;
   display: flex;
@@ -1396,8 +1377,8 @@ text-decoration: none;
 }
 
 .form-container .button-container .save-button-container .save-button:hover {
-  background: #001925;
-  color: #e2cd13;
+  background: var(--azulescuro);
+  color: var(--yellow);
 }
 
 /*RESPONSIVIDADE----------DA--------PÁGINA---------------EDITACONTA*/
@@ -1459,6 +1440,10 @@ text-decoration: none;
     padding: 6px;
     font-size: 10px;
   }
+  .form-container #form-ctt .textarea {
+    padding: 6px;
+    font-size: 10px;
+  }
 
   /* Ícone de edição menor */
   .edit-icon {
@@ -1469,8 +1454,6 @@ text-decoration: none;
 
   /* Botão de enviar ajustado */
   .send-button {
-    width: 500px;
-      margin-top: 20px;
       padding: 8px 16px;
       font-size: 0.85rem;
   }
@@ -1496,7 +1479,7 @@ text-decoration: none;
     margin-left: 22%;
     background-color: var(--azul);
     padding: 50px;
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--yellow);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
   }
   
@@ -1506,6 +1489,7 @@ text-decoration: none;
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 20px;
+    text-align: center;
   }
   
   .form-container .input {
@@ -1523,26 +1507,11 @@ text-decoration: none;
   }
   
   .form-container .input:focus {
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--yellow);
   }
-  
-  .form-container .textarea {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    outline: none;
-    background-color: #013747;
-    color: #e2cd13;
-    font-weight: bold;
-    resize: none;
-    max-height: 150px;
-    margin-bottom: 20px;
-    border-left: 1px solid transparent;
-    transition: all 0.2s ease-in-out;
-  }
-  
+
   .form-container .textarea:focus {
-    border-left: 5px solid #e2cd13;
+    border-left: 5px solid var(--yellow);
   }
   
   .form-container .button-container {
@@ -1555,9 +1524,9 @@ text-decoration: none;
     position: relative;
     text-align: center;
     padding: 10px;
-    color: #001925;
+    color: var(--azulescuro);
     font-weight: bold;
-    background: #e2cd13;
+    background: var(--yellow);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
     transition: all 0.2s ease-in-out;
     display: flex;
@@ -1567,8 +1536,8 @@ text-decoration: none;
   }
   
   .form-container .button-container .reset-button-container .reset-button:hover {
-    background: #001925;
-    color: #e2cd13;
+    background: var(--azulescuro);
+    color: var(--yellow);
   }
 
   /* FIM DESIGN CONTATO */
