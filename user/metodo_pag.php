@@ -59,7 +59,6 @@
                    
                     </a>
 
-
                 </div>
                 <p class="aviso">ou pague usando cartão de crédito</p>
                 <div class="credit-card-info--form">
@@ -91,6 +90,6 @@
         include('../static/footer.php');
         ?>
 </body>
-<script src="javascript/zere.js"></script>
+<script src="../javascript/zere.js"></script>
 
 </html>
