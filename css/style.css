@@ -1439,6 +1439,10 @@ text-decoration: none;
     padding: 6px;
     font-size: 10px;
   }
+  .form-container #form-ctt .textarea {
+    padding: 6px;
+    font-size: 10px;
+  }
 
   /* Ícone de edição menor */
   .edit-icon {
