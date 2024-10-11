@@ -15,6 +15,7 @@ if (isset($_SESSION['tipo_usuario'])) {
     $tipo_usuario = 'cliente'; // Defina um valor padrão se necessário
 }
 
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
 
 // Verifique se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($deucerto) {
             // Insira os dados no banco de dados
-            $conexao->query("INSERT INTO hoteis_aracaju (nome, valor_diaria, descricao, arquivo_caminho) 
+            $conexao->query("INSERT INTO hoteis_gramado (nome, valor_diaria, descricao, arquivo_caminho) 
                 VALUES ('$nome', '$valor_diaria', '$descricao','$caminho_relativo')") or die($conexao->error);
 
             // Defina uma mensagem de sucesso
@@ -140,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <span id="admin-badge">ADM</span>
   <?php endif; ?>
   <a href="user/conta.php" class="user-avatar-link">
-  <img src=".." alt="Avatar" class="avatar">
+  <img src="../<?php echo $foto;?>" alt="Avatar" class="avatar">
   </a>
 </div>
 <?php
