@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 03-Out-2024 às 13:30
+-- Tempo de geração: 11-Out-2024 às 11:28
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -41,17 +41,18 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `tipo_usuario` varchar(200) NOT NULL,
   `arquivo_foto` varchar(200) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf32;
 
 --
 -- Extraindo dados da tabela `cadastro`
 --
 
 INSERT INTO `cadastro` (`id_usuario`, `nome`, `email`, `senha`, `telefone`, `cpf`, `genero`, `tipo_usuario`, `arquivo_foto`) VALUES
-(8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', 'Imagens/foto_padrao.png'),
-(9, 'Matheus', 'zeres@gmail.com', '$2y$10$2tM8cxPmTW79Z3ObuGIRUO99p.V74cBJmIJILTd9zR2ZS38PNPh.6', '(43)99433432542352', '123.123.123-12', 'Feminino', 'cliente', 'Imagens/a733d129bf370f5085507c89b6f3272c.gif'),
+(8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', 'Imagens/ftperfil/6707bccf1c9b3.png'),
+(9, 'Matheus', 'zeres@gmail.com', '$2y$10$2tM8cxPmTW79Z3ObuGIRUO99p.V74cBJmIJILTd9zR2ZS38PNPh.6', '(43)99433432542352', '123.123.123-12', 'Feminino', 'cliente', 'Imagens/ftperfil/6707bfe8bfb69.jpg'),
 (10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', 'Imagens/foto_padrao.png'),
-(11, 'Zere', 'teste@gmail.com', '$2y$10$B3fwmIJGlnNyVrAKC/wwSORL//SAtfz4wGZYz1U5zLpWjQrPfTG4m', '43999745207', '141414341242141', 'Feminino', 'cliente', 'Imagens/avatar2.png');
+(11, 'Zere', 'teste@gmail.com', '$2y$10$B3fwmIJGlnNyVrAKC/wwSORL//SAtfz4wGZYz1U5zLpWjQrPfTG4m', '43999745207', '141414341242141', 'Feminino', 'cliente', 'Imagens/avatar2.png'),
+(12, 'Matheus', 'fernandesjoaopedro622@gmail.com', '$2y$10$4LU.3NE4IhPkyelYJNT.0e1ueYoCNfMmg8eZTfKEHrRJLdmF8IaCW', '(43) 99433-4325', '123.123.123-12', 'Masculino', 'cliente', 'Imagens/avatar2.png');
 
 -- --------------------------------------------------------
 
@@ -125,6 +126,31 @@ INSERT INTO `hoteis_aracaju` (`id_hotel`, `nome`, `valor_diaria`, `descricao`, `
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `hoteis_gramado`
+--
+
+DROP TABLE IF EXISTS `hoteis_gramado`;
+CREATE TABLE IF NOT EXISTS `hoteis_gramado` (
+  `id_hotel` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `valor_diaria` varchar(200) NOT NULL,
+  `descricao` varchar(200) NOT NULL,
+  `arquivo_caminho` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_hotel`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf32;
+
+--
+-- Extraindo dados da tabela `hoteis_gramado`
+--
+
+INSERT INTO `hoteis_gramado` (`id_hotel`, `nome`, `valor_diaria`, `descricao`, `arquivo_caminho`) VALUES
+(2, 'Matheus12', 'R$ 1.200,00 a DiÃ¡ria', 'Uma elegante bebida destilada para degustacao.', 'recebidos/67090b520696b.png'),
+(3, 'Matheus12', 'R$ 1.200,00 a DiÃ¡ria', 'Uma elegante bebida destilada para degustacao.', 'recebidos/67090b60efcc1.png'),
+(4, 'Matheus12', 'R$ 1.200,00 a DiÃ¡ria', 'Uma elegante bebida destilada para degustacao.', 'recebidos/67090b77b8974.png');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `hoteis_rj`
 --
 
@@ -169,7 +195,21 @@ CREATE TABLE IF NOT EXISTS `mensagem_contato` (
   `email` varchar(200) NOT NULL,
   `mensagem` varchar(200) NOT NULL,
   PRIMARY KEY (`id_mensagem`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf32;
+
+--
+-- Extraindo dados da tabela `mensagem_contato`
+--
+
+INSERT INTO `mensagem_contato` (`id_mensagem`, `nome`, `email`, `mensagem`) VALUES
+(34, 'Dieimes', 'jp@gmail.com', 'Teste 10/10/2024'),
+(33, 'Joaquim', 'zeres@gmail.com', 'Mensagem teste 123'),
+(32, 'adadada', 'zeres@gmail.com', '07/10/2024'),
+(31, 'Dieimes', 'zere@gmail.com', '1313'),
+(30, 'adadada', '12@gmail.com', '13131'),
+(29, 'adadada', '12@gmail.com', '13131'),
+(28, 'Dieimes', 'zere@gmail.com', '12341'),
+(27, 'Dieimes', 'zere@gmail.com', 'Dieimes, mensagem Teste.');
 
 -- --------------------------------------------------------
 

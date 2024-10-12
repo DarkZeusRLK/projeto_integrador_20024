@@ -1,3 +1,13 @@
+<?php
+    if(!isset($_SESSION)){
+        session_start();
+    }
+
+// Verifique se as variáveis de sessão estão definidas
+$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
+$nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
+$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -146,7 +156,7 @@
             <h1>Créditos dos Desenvolvedores</h1>
             <p>Agradecimentos especiais a todos que contribuíram para este projeto!</p>
         </header>
-        <img id="imagem_do_grupo_todo" src="../Imagens/Grupo Todo.jpg.jpg" alt="">
+        <img id="imagem_do_grupo_todo" src="../Imagens/Foto_grupo.png.png" alt="">
         <main>
             <div class="developer">
                 <div class="photo-container">

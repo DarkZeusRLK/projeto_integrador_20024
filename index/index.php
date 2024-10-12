@@ -8,17 +8,22 @@ if (!isset($_SESSION)) {
 // Verifique se as variáveis de sessão estão definidas
 $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
 $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
-$foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/para/avatar/padrao.png'; // Caminho para um avatar padrão
+
+// Defina um caminho padrão para a imagem
+$foto = 'caminho/para/avatar/padrao.png';
 
 // Conecte-se ao banco de dados normal para obter informações do usuário
-$sql_user = "SELECT * FROM cadastro WHERE nome = ?";
+$sql_user = "SELECT arquivo_foto FROM cadastro WHERE nome = ?";
 $stmt = $conexao->prepare($sql_user);
 $stmt->bind_param('s', $nome_usuario);
 $stmt->execute();
 $result_user = $stmt->get_result();
+
+// Verifique se há um resultado
 if ($result_user->num_rows > 0) {
     $row_user = $result_user->fetch_assoc();
     if (!empty($row_user['arquivo_foto'])) {
+        // Defina o novo caminho da imagem do banco de dados
         $foto = $row_user['arquivo_foto'];
     }
 }
@@ -200,7 +205,8 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                         <span id="admin-badge">ADM</span>
                     <?php endif; ?>
                     <a href="../user/conta.php" class="user-avatar-link">
-                        <img src="../<?php echo $foto; ?>" alt="Avatar" class="avatar">
+                    <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
+
                 </div>
             <?php
             }
