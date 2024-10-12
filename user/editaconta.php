@@ -112,12 +112,12 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
 </head>
 
 <body>
-    <div class="container-fluid">
+    
         <?php
         include('../static/menu.php');
         ?>
 
-        <div class="container">
+        <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
                     <div class="profile-picture-container">

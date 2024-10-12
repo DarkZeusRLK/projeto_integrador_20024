@@ -997,7 +997,7 @@ body.dark-mode .sidebar .menu-btn{
   
 .form-container {
   margin-left: 7rem;
-  margin-top: 150px;
+  margin-top: 100px;
   background-color: var(--azul);
   border-left: 5px solid var(--yellow);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
@@ -1066,14 +1066,7 @@ body.dark-mode .sidebar .menu-btn{
   filter: drop-shadow(1px 1px 0px var(--yellow));
 }
 
-.form-container #form-ctt .button-container .reset-button-container .reset-button {
-  position: relative;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-  transition: all 0.2s ease-in-out;
-}
+
 
 .form-container #form-ctt .button-container .reset-button-container .reset-button:hover {
   background: var(--azulescuro);
@@ -1105,12 +1098,12 @@ body.dark-mode .sidebar .menu-btn{
 .edit-icon {
   font-size: 1rem;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 2rem;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
+  margin-left: 12rem;
 }
 
 .edit-icon i {
@@ -1215,6 +1208,8 @@ body.dark-mode .sidebar .menu-btn{
       height: 110px;
       object-fit: cover;
       border-radius: 50%;
+      margin-top: -3rem;
+      
   }
 
   .button-group {
@@ -1262,19 +1257,7 @@ body.dark-mode .sidebar .menu-btn{
   margin-bottom: 20px;
 }
 
-.form-container .input {
-  color: #87a4b6;
-  width: 100%;
-  background-color: #002733;
-  border: none;
-  outline: none;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  font-size: 13px;
-  transition: all 0.2s ease-in-out;
-  border-left: 1px solid transparent;
-}
+
 
 .form-container .input:focus {
   border-left: 5px solid var(--yellow);
@@ -1386,7 +1369,7 @@ text-decoration: none;
 @media (max-width: 768px) {
   /* Ajusta o layout do formulário e da imagem de perfil */
   #form-ctt {
-      display: flex;
+     
       flex-direction: column;
       align-items: center;
   }
@@ -1432,13 +1415,28 @@ text-decoration: none;
 @media (max-width: 576px) {
   /* Tamanhos menores para imagem de perfil */
   .profile-picture-container {
+    display: block;
+    margin-bottom: -1rem;
       width: 100px;
       height: 100px;
   }
 
+body{
+  background-color: #48627c;
+}
+
+.form-container{
+display: contents;  
+}
+.mobile{
+  margin-top: 4rem;
+  margin-left: 5rem;
+}
+
+
   .form-container #form-ctt .input {
-    padding: 6px;
-    font-size: 10px;
+    padding: 1rem;
+    font-size: 0.8rem;
   }
   .form-container #form-ctt .textarea {
     padding: 6px;
@@ -1446,7 +1444,7 @@ text-decoration: none;
   }
 
   /* Ícone de edição menor */
-  .edit-icon {
+  .edit-icon i {
       font-size: 1rem;
       bottom: -50px;
       right: -10px;
@@ -1481,21 +1479,10 @@ text-decoration: none;
     font-weight: 800;
     margin-bottom: 20px;
     text-align: center;
+    align-items: center;
   }
   
-  .form-container .input {
-    color: #87a4b6;
-    width: 100%;
-    background-color: #002733;
-    border: none;
-    outline: none;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 15px;
-    transition: all 0.2s ease-in-out;
-    border-left: 1px solid transparent;
-  }
+  
   
   .form-container .input:focus {
     border-left: 5px solid var(--yellow);

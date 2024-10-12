@@ -101,7 +101,8 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/
         </div>
     <?php endif; ?>
          <!-- Formulário de contato -->
-        <form id="form-container-ctt" method="POST" class="form-container">
+          <div class="mobile">
+          <form id="form-container-ctt" method="POST" class="form-container">
             <div id="form-ctt">
                 <span class="heading">Contato</span>
                 <input name="nome" placeholder="Nome" type="text" class="input" required>
@@ -115,6 +116,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/
                 </div>
             </div>
         </form>
+          </div>
   <!-- Alerta de sucesso -->
 <?php if ($status === 'success'): ?>
     <div class="overlay" id="overlay"></div>

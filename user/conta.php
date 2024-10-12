@@ -91,18 +91,18 @@ if ($id_usuario) {
 
 <body>
     <div class="container-fluid">
-    <?php
+        <?php
         include('../static/menu.php');
-       ?>
+        ?>
 
-        <div class="container">
+        <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
-                    <div class="text-center mb-4">
-                        <div class="profile-picture-container">
-                            <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
-                        </div>
+                    <center>
+                    <div class="profile-picture-container">
+                        <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
                     </div>
+                    </center>
                     <span class="heading"><?php echo $nome_usuario; ?></span>
                     <input placeholder=" Nome: <?php echo $nome_usuario; ?>" type="text" class="input" readonly maxlength="40">
                     <input placeholder="Email: <?php echo $email_usuario; ?>" id="mail" type="email" class="input" readonly maxlength="40">
@@ -111,7 +111,7 @@ if ($id_usuario) {
 
                     <div class="button-container">
                         <div class="reset-button-container">
-                        <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="reset-button">Editar conta</a>
+                            <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="reset-button">Editar conta</a>
                         </div>
                     </div>
                 </div>

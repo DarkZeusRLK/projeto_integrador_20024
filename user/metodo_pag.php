@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+    <div class="mobile">
     <div class="container-fluid">
         <nav class="col-md-3 col-lg-2 sidebar">
             <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
@@ -49,14 +49,14 @@
                 <p class="aviso">Use essas formas de metodo de pagamento</p>
                 <div class="payment--options">
                     <a class="botoes" name="boleto" href="boleto.php">
-                        
-                            <img src="../Imagens/boleto.png" alt="" width="150rem">
+
+                        <img src="../Imagens/boleto.png" alt="" width="150rem">
                     </a>
 
                     <a class="botoes" name="pix" href="pix.php">
-                
-                            <img src="../Imagens/pix.svg" alt="" width="120rem">
-                   
+
+                        <img src="../Imagens/pix.svg" alt="" width="120rem">
+
                     </a>
 
                 </div>
@@ -86,9 +86,13 @@
 
             </div>
         </div>
-        <?php
-        include('../static/footer.php');
-        ?>
+    </div>
+    </div>
+    
+    <?php
+    include('../static/footer.php');
+    ?>
+
 </body>
 <script src="../javascript/zere.js"></script>
 
