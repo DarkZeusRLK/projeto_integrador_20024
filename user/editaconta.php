@@ -120,6 +120,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
         <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
+                   
                     <div class="profile-picture-container">
                         <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
                         <br>
@@ -129,6 +130,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                             </div>
                         </label>
                     </div>
+               
 
 
                     <form action="upload_imagem.php" method="POST" enctype="multipart/form-data">

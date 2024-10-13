@@ -996,7 +996,8 @@ body.dark-mode .sidebar .menu-btn{
 /*INÍCIO DESIGN CONTATO*/
   
 .form-container {
-  margin-left: 7rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 100px;
   background-color: var(--azul);
   border-left: 5px solid var(--yellow);
@@ -1103,7 +1104,7 @@ body.dark-mode .sidebar .menu-btn{
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
-  margin-left: 12rem;
+  margin-left: 4rem;
 }
 
 .edit-icon i {
@@ -1190,6 +1191,8 @@ body.dark-mode .sidebar .menu-btn{
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {
@@ -1198,18 +1201,11 @@ body.dark-mode .sidebar .menu-btn{
       padding: 3px;
   }
 
-  .profile-picture-container {
-      display: flex;
-      justify-content: center;
-  }
-
   .profile-picture {
       width: 110px;
       height: 110px;
       object-fit: cover;
-      border-radius: 50%;
-      margin-top: -3rem;
-      
+      border-radius: 50%;   
   }
 
   .button-group {
@@ -1375,9 +1371,10 @@ text-decoration: none;
   }
 
   .profile-picture-container {
-      width: 10px;
-      height: 10px;
-      margin-bottom: 40px;
+      width: 10rem;
+      height: 10rem;
+      margin-left: auto;
+      margin-right: auto;
   }
 
   /* Ajusta o botão de enviar para ficar abaixo da imagem */
@@ -1415,10 +1412,12 @@ text-decoration: none;
 @media (max-width: 576px) {
   /* Tamanhos menores para imagem de perfil */
   .profile-picture-container {
-    display: block;
-    margin-bottom: -1rem;
       width: 100px;
       height: 100px;
+      display: flex;
+      margin-bottom: 3rem;
+      margin-left: auto;
+      margin-right: auto;
   }
 
 body{
