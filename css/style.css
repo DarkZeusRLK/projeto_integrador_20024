@@ -2,6 +2,8 @@
 :root{
   /*Cor azul Principal*/
   --azul: #34495e;
+/*Cor azul mobile*/
+  --azulmobile: #5b7c9c;
 
   /*Cor amarela Secundária*/
   --amarelo: #ffde59;
@@ -32,6 +34,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+
 }
 
 
@@ -524,7 +527,6 @@ input[type="password"]:focus {
 }
 
 .input {
-  margin-left: 10px;
   border-radius: 10px;
   border: none;
   width: 85%;
@@ -996,8 +998,7 @@ body.dark-mode .sidebar .menu-btn{
 /*INÍCIO DESIGN CONTATO*/
   
 .form-container {
-  margin-left: auto;
-  margin-right: auto;
+margin-left: 22rem;
   margin-top: 100px;
   background-color: var(--azul);
   border-left: 5px solid var(--yellow);
@@ -1015,13 +1016,13 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .form-container #form-ctt .input {
-  color: #87a4b6;
+  color: #fff;
   width: 100%;
   background-color: #002733;
   border: none;
   outline: none;
-  padding: 12px;
-  margin-bottom: 20px;
+  padding: 1rem;
+  margin-bottom: 2rem;
   font-weight: bold;
   font-size: 18px;
   transition: all 0.2s ease-in-out;
@@ -1089,8 +1090,17 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .profile-picture-container {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* ajuste o valor conforme necessário */
+  width: 100%;
+}
+
+.profile-picture {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%; /* Se você quiser que a imagem seja redonda */
 }
 
 #foto {
@@ -1290,8 +1300,11 @@ body.dark-mode .sidebar .menu-btn{
   margin-top: 20px; 
 }
 /*-----------BOTÃO---------------------DE---------RESETAR----------------------*/
-.form-container .button-container .reset-button {
-  flex-basis: 40%;
+
+
+
+.form-container .button-container  .reset-button {
+  width: 30%;
   background: var(--azulescuro);
   padding: 10px;
   color: var(--yellow);
@@ -1299,8 +1312,7 @@ body.dark-mode .sidebar .menu-btn{
   font-weight: bold;
   border: 2px solid transparent;
   transition: all 0.2s ease-in-out;
-
-  
+  text-decoration: none;
 }
 .form-container .button-container .reset-button:hover {
   background: var(--azulescuro);
@@ -1421,7 +1433,7 @@ text-decoration: none;
   }
 
 body{
-  background-color: #48627c;
+  background-color: var(--azulmobile);
 }
 
 .form-container{
@@ -1499,16 +1511,16 @@ display: contents;
   
   .form-container .button-container .reset-button-container .reset-button {
     position: relative;
-    text-align: center;
-    padding: 10px;
-    color: var(--azulescuro);
-    font-weight: bold;
-    background: var(--yellow);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-    transition: all 0.2s ease-in-out;
-    display: flex;
-    justify-content: center;
-text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  color: var(--azulescuro);
+  font-weight: bold;
+  background: var(--yellow);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+ text-decoration: none;
 
   }
   

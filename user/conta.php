@@ -98,11 +98,9 @@ if ($id_usuario) {
         <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
-                    <center>
                     <div class="profile-picture-container">
                         <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
                     </div>
-                    </center>
                     <span class="heading"><?php echo $nome_usuario; ?></span>
                     <input placeholder=" Nome: <?php echo $nome_usuario; ?>" type="text" class="input" readonly maxlength="40">
                     <input placeholder="Email: <?php echo $email_usuario; ?>" id="mail" type="email" class="input" readonly maxlength="40">
@@ -110,9 +108,8 @@ if ($id_usuario) {
                     <input placeholder="Telefone: <?php echo $telefone_usuario; ?>" id="telefone" type="text" class="input" readonly maxlength="">
 
                     <div class="button-container">
-                        <div class="reset-button-container">
-                            <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="reset-button">Editar conta</a>
-                        </div>
+                        <div class="save-button-container">
+                            <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="save-button">Editar conta</a>
                     </div>
                 </div>
             </div>

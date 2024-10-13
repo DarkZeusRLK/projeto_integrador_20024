@@ -130,9 +130,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                             </div>
                         </label>
                     </div>
-               
-
-
+                    <span class="heading"><?php echo $nome_usuario; ?></span>
                     <form action="upload_imagem.php" method="POST" enctype="multipart/form-data">
                         <!-- Campo hidden com o id do usuário -->
                         <input type="hidden" name="bt_id_alterar" value="<?php echo $id_usuario; ?>">
