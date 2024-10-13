@@ -998,12 +998,12 @@ body.dark-mode .sidebar .menu-btn{
 /*INÍCIO DESIGN CONTATO*/
   
 .form-container {
-margin-left: 22rem;
+  max-width: 90rem; /* Aumenta o limite máximo de largura */
+  margin-left: 15%;
   margin-top: 100px;
   background-color: var(--azul);
   border-left: 5px solid var(--yellow);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-  max-width: 70rem;
   padding: 50px;
 }
 
@@ -1012,7 +1012,7 @@ margin-left: 22rem;
   color: white;
   font-size: 1.5rem;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .form-container #form-ctt .input {
@@ -1255,16 +1255,6 @@ margin-left: 22rem;
 }
 
 /*INÍCIO DESIGN EDITACONTA*/
-.heading {
-  display: block;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-
-
 .form-container .input:focus {
   border-left: 5px solid var(--yellow);
 }
@@ -1427,9 +1417,7 @@ text-decoration: none;
       width: 100px;
       height: 100px;
       display: flex;
-      margin-bottom: 3rem;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 1rem;
   }
 
 body{
@@ -1484,11 +1472,6 @@ display: contents;
   /*INÍCIO DESIGN CONTATO*/
   
   .heading {
-    display: block;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
     text-align: center;
     align-items: center;
   }
