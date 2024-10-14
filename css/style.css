@@ -257,10 +257,9 @@ input[type="password"]:focus {
 @media (max-width: 768px) {
   .form,
   #contactForm {
-    width: 90%;
     max-width: 90%;
     margin-top: 10%;
-    padding: 1em;
+    margin-right: 15%;
   }
 
   .navbar .account {
@@ -527,10 +526,7 @@ input[type="password"]:focus {
 }
 
 .input {
-  border-radius: 10px;
   border: none;
-  width: 85%;
-  height: 100%;
 }
 
 .input:focus {
