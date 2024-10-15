@@ -430,8 +430,8 @@ input[type="password"]:focus {
 }
 
 .card-img-top {
-  width: 100rem;
-  height: 200rem; /* Define uma altura fixa para todas as imagens */
+  width: 25rem;
+  height: 25rem; /* Define uma altura fixa para todas as imagens */
   object-fit: cover; /* Assegura que as imagens mantenham a proporção sem distorcer */
 }
 .card-body {
