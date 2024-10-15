@@ -1086,17 +1086,13 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .profile-picture-container {
+  position: relative;
   display: flex;
+ 
   justify-content: center;
   align-items: center;
   height: 200px; /* ajuste o valor conforme necessário */
   width: 100%;
-}
-
-.profile-picture {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%; /* Se você quiser que a imagem seja redonda */
 }
 
 #foto {
@@ -1112,10 +1108,13 @@ body.dark-mode .sidebar .menu-btn{
   cursor: pointer;
   margin-left: 4rem;
 }
-
-.edit-icon i {
-  font-size: 22px;
-  color: var(--corletrapreta);
+ 
+.lapis{
+    background-color: rgb(255, 255, 255); /* Cor de fundo */
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 #but1 {
@@ -1193,8 +1192,6 @@ body.dark-mode .sidebar .menu-btn{
 
 
 .profile-picture {
-  width: 50px;
-  height: 50px;
   object-fit: cover;
   border-radius: 50%;
   margin-left: auto;
@@ -1349,7 +1346,7 @@ body.dark-mode .sidebar .menu-btn{
   transition: all 0.2s ease-in-out;
   display: flex;
   justify-content: center;
-text-decoration: none;
+  text-decoration: none;
 
 }
 
@@ -1374,6 +1371,13 @@ text-decoration: none;
       margin-left: auto;
       margin-right: auto;
   }
+
+  .lapis{
+    position: relative;
+    margin-left: -2rem;
+    margin-top: 6rem;
+    
+    } 
 
   /* Ajusta o botão de enviar para ficar abaixo da imagem */
   .button-send {
@@ -1409,12 +1413,18 @@ text-decoration: none;
 /* Para telas menores que 576px */
 @media (max-width: 576px) {
   /* Tamanhos menores para imagem de perfil */
-  .profile-picture-container {
+  .profile-picture-container  {
       width: 100px;
       height: 100px;
       display: flex;
       margin-bottom: 1rem;
   }
+.lapis{
+position: relative;
+margin-left: -1rem;
+margin-top: 6rem;
+
+}  
 
 body{
   background-color: var(--azulmobile);
@@ -1439,11 +1449,6 @@ display: contents;
   }
 
   /* Ícone de edição menor */
-  .edit-icon i {
-      font-size: 1rem;
-      bottom: -50px;
-      right: -10px;
-  }
 
   /* Botão de enviar ajustado */
   .send-button {

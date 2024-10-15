@@ -112,21 +112,19 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
 </head>
 
 <body>
-    
-        <?php
-        include('../static/menu.php');
-        ?>
 
+    <?php
+    include('../static/menu.php');
+    ?>
+    <div class="container-fluid">
         <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
-                   
                     <div class="profile-picture-container">
                         <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
-                        <br>
-                        <label for="foto">
-                            <div class="edit-icon">
-                                <i class="fas fa-pencil-alt"></i>
+                        <label for="foto">    
+                            <div class="lapis">
+                                <img  src="../Imagens/lapis.png" alt="" width="30rem">
                             </div>
                         </label>
                     </div>
@@ -182,7 +180,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
             </div>
         </div>
     </div>
-
+    </div>
     <!-- Scripts de acessibilidade e rodapé -->
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
