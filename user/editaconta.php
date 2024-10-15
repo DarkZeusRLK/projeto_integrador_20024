@@ -121,13 +121,15 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
                     <div class="profile-picture-container">
-                        <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
-                        <label for="foto">    
-                            <div class="lapis">
-                                <img  src="../Imagens/lapis.png" alt="" width="30rem">
-                            </div>
-                        </label>
+                        <div class="editarfoto">
+                            <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
+                        </div>  
                     </div>
+                
+                    <label class="escfoto" for="foto"> 
+                            <a id="editar">Escolher foto</a>
+                        </label>
+                  
                     <span class="heading"><?php echo $nome_usuario; ?></span>
                     <form action="upload_imagem.php" method="POST" enctype="multipart/form-data">
                         <!-- Campo hidden com o id do usuário -->

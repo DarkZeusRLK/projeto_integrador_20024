@@ -449,14 +449,14 @@ input[type="password"]:focus {
   display: inline-block;
   font-size: 1rem;
   width: 100%;
+  transition: 0.5s;
 }
 .custom-btn:hover {
   background-color: var(--amarelo);
   text-decoration: none;
-  animation: both;
+  transform: scale(0.9);
   transition: 0.5s;
   color: black;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .text-center {
   text-align: center;
@@ -600,14 +600,15 @@ input[type="password"]:focus {
 .btn:hover {
   border: 1px solid var(--azul);
 }
-.footer {
-  justify-content: center;
+.footer  {
+  width: 100%;
   background-color: var(--azul);
   padding: 1.5rem 0;
   color: white;
- 
+  font-size: 0.8rem;
   text-decoration: none;
-  margin-top: 16rem;
+  margin-top: 20vh;
+  height: 20vh;
 }
 .footer a {
   text-decoration: none;
@@ -1088,7 +1089,6 @@ body.dark-mode .sidebar .menu-btn{
 .profile-picture-container {
   position: relative;
   display: flex;
- 
   justify-content: center;
   align-items: center;
   height: 200px; /* ajuste o valor conforme necessário */
@@ -1107,14 +1107,6 @@ body.dark-mode .sidebar .menu-btn{
   padding: 5px;
   cursor: pointer;
   margin-left: 4rem;
-}
- 
-.lapis{
-    background-color: rgb(255, 255, 255); /* Cor de fundo */
-    border: none;
-    padding: 5px;
-    border-radius: 50%;
-    cursor: pointer;
 }
 
 #but1 {
@@ -1140,7 +1132,6 @@ body.dark-mode .sidebar .menu-btn{
 }
 
 .dive {
-
   padding: 20px;
   margin-top: 3px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
@@ -1190,8 +1181,32 @@ body.dark-mode .sidebar .menu-btn{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
-.profile-picture {
+.editarfoto{
+  border-radius: 50%;
+  opacity: 45%;
+}
+.escfoto{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+#editar{
+  margin-top: 1rem;
+  width: 7rem;
+  background: var(--azulescuro);
+  padding: 0.5rem;
+  color: var(--yellow);
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+#editar:hover{
+  background: var(--yellow);
+  color: var(--azulescuro);
+}
+.profile-picture {  
   object-fit: cover;
   border-radius: 50%;
   margin-left: auto;
@@ -1205,8 +1220,8 @@ body.dark-mode .sidebar .menu-btn{
   }
 
   .profile-picture {
-      width: 110px;
-      height: 110px;
+      width: 10rem;
+      height: 10rem;
       object-fit: cover;
       border-radius: 50%;   
   }
@@ -1234,8 +1249,8 @@ body.dark-mode .sidebar .menu-btn{
 /* Ajustes para telas maiores */
 @media (min-width: 769px) {
   .profile-picture {
-      width: 200px;
-      height: 200px;
+      width: 12rem;
+      height: 12rem;
   }
   
   .button-group {
@@ -1372,12 +1387,7 @@ body.dark-mode .sidebar .menu-btn{
       margin-right: auto;
   }
 
-  .lapis{
-    position: relative;
-    margin-left: -2rem;
-    margin-top: 6rem;
-    
-    } 
+
 
   /* Ajusta o botão de enviar para ficar abaixo da imagem */
   .button-send {
@@ -1419,13 +1429,7 @@ body.dark-mode .sidebar .menu-btn{
       display: flex;
       margin-bottom: 1rem;
   }
-.lapis{
-position: relative;
-margin-left: -1rem;
-margin-top: 6rem;
-
-}  
-
+ 
 body{
   background-color: var(--azulmobile);
 }

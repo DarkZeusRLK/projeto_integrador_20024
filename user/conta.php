@@ -114,11 +114,13 @@ if ($id_usuario) {
                 </div>
             </div>
 
-            <div vw class="enabled">
-                <div vw-access-button class="active"></div>
-                <div vw-plugin-wrapper>
-                    <div class="vw-plugin-top-wrapper"></div>
-                </div>
+            
+    </div>
+    <!-- Plugin VLibras -->
+    <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
             </div>
         </div>
         <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
@@ -126,9 +128,7 @@ if ($id_usuario) {
             new window.VLibras.Widget('https://vlibras.gov.br/app');
         </script>
     </div>
-
     <?php include('../static/footer.php'); ?>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>

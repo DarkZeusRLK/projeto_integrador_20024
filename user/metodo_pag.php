@@ -27,16 +27,11 @@
                     <p class="aviso">Use essas formas de metodo de pagamento</p>
                     <div class="payment--options">
                         <a class="botoes" name="boleto" href="boleto.php">
-
                             <img src="../Imagens/boleto.png" alt="" width="150rem">
                         </a>
-
                         <a class="botoes" name="pix" href="pix.php">
-
                             <img src="../Imagens/pix.svg" alt="" width="120rem">
-
                         </a>
-
                     </div>
                     <p class="aviso">ou pague usando cartão de crédito</p>
                         <div class="input">
@@ -68,7 +63,6 @@
         <?php
         include('../static/footer.php');
         ?>
-    
+    <script src="../javascript/zere.js"></script>
 </body>
-
 </html>
