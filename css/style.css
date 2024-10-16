@@ -601,19 +601,22 @@ input[type="password"]:focus {
   border: 1px solid var(--azul);
 }
 .footer  {
-  width: 100%;
-  background-color: var(--azul);
-  padding: 1.5rem 0;
-  color: white;
-  font-size: 0.8rem;
-  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--azul); /* Cor de fundo neutra */
+  padding: 20px;
+  font-size: 16px; 
+  height: 25vh;
   margin-top: 20vh;
-  height: 20vh;
 }
 .footer a {
   text-decoration: none;
   color: var(--yellow);
 }
+
 main {
   display: flex;
   flex-direction: column;
@@ -1220,8 +1223,8 @@ body.dark-mode .sidebar .menu-btn{
   }
 
   .profile-picture {
-      width: 10rem;
-      height: 10rem;
+      width: 8rem;
+      height: 8rem;
       object-fit: cover;
       border-radius: 50%;   
   }

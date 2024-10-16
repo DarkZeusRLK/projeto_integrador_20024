@@ -110,14 +110,13 @@ if ($id_usuario) {
                     <div class="button-container">
                         <div class="save-button-container">
                             <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="save-button">Editar conta</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            
-    </div>
-    <!-- Plugin VLibras -->
-    <div vw class="enabled">
+        </div>
+        <!-- Plugin VLibras -->
+        <div vw class="enabled">
             <div vw-access-button class="active"></div>
             <div vw-plugin-wrapper>
                 <div class="vw-plugin-top-wrapper"></div>
