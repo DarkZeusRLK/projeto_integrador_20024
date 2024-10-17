@@ -179,6 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 
                     <input class="button-submit" type="submit" value="Cadastrar">
+                    <p class="p">Já possui uma conta? <a href="login.php">Faça Login</a></p>
                 </form>
 
                 <script>

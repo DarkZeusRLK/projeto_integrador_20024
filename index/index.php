@@ -115,12 +115,12 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="300">
-                <img class="img-fluid" src="../Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro.png" class="d-block w-100" alt="...">
+                <img class="img-fluid" src="../Imagens/Banner avião.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="300">
-                <img class="img-fluid" src="../Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuroo.png" class="d-block w-100" alt="...">
+                <img class="img-fluid" src="../Imagens/Banner Turismo.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
