@@ -57,9 +57,12 @@ if (isset($_SESSION['tipo_usuario'])) {
         $_SESSION['arquivo_foto'] = $foto;
 
         // Manter a foto de perfil existente
-if (!isset($_SESSION['arquivo_foto']) || empty($_SESSION['arquivo_foto'])) {
-    $_SESSION['arquivo_foto'] = $foto; // Caso exista uma nova foto, esta variável será atualizada
-}
+        if (!isset($_SESSION['arquivo_foto']) || empty($_SESSION['arquivo_foto'])) {
+            $_SESSION['arquivo_foto'] = $foto; // Caso exista uma nova foto, esta variável será atualizada
+        }
+        if (isset($_SESSION['arquivo_foto'])) {
+            $_SESSION['arquivo_foto'] = $foto; // Caso exista uma nova foto, esta variável será atualizada
+        }
 
 
 
@@ -77,7 +80,7 @@ if (!isset($_SESSION['arquivo_foto']) || empty($_SESSION['arquivo_foto'])) {
         $resultado = $stmt->get_result();
         $consultar = $resultado->fetch_assoc();
 
-        // Fechar a declaração
+        // Fechar a declaração  
         $stmt->close();
     }
 }
@@ -89,9 +92,6 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
 $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_da_imagem_padrao.jpg';
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -112,37 +112,33 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
 </head>
 
 <body>
-    <div class="container-fluid">
-     <?php
-        include('../static/menu.php');
-     ?>
 
-        <div class="container">
+    <?php
+    include('../static/menu.php');
+    ?>
+    <div class="container-fluid">
+        <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
                     <div class="profile-picture-container">
-                    <img class='profile-picture' src='../<?php echo $foto; ?>' alt='Foto de perfil'>
-                        <label for="foto">
-                            <div class="edit-icon">
-                                <i class="fas fa-pencil-alt"></i>
-                            </div>
-                        </label>
+                        <div class="editarfoto">
+                            <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
+                        </div>  
                     </div>
-
-                    <!-- Formulário de atualização -->
-                    <form action="upload_imagem.php" method="post" enctype="multipart/form-data" class="mb-4" id="uploadForm">
-                        <input type="file" name="foto" id="foto" class="form-control" placeholder="Mudar foto de perfil" required>
-                        <div class="button-send">
-                            <button type="submit" class="send-button">Enviar foto</button>
-                        </div>
-                    </form>
-
-                    <form action="editaconta.php" method="POST">
+                
+                    <label class="escfoto" for="foto"> 
+                            <a id="editar">Escolher foto</a>
+                        </label>
+                  
+                    <span class="heading"><?php echo $nome_usuario; ?></span>
+                    <form action="upload_imagem.php" method="POST" enctype="multipart/form-data">
                         <!-- Campo hidden com o id do usuário -->
                         <input type="hidden" name="bt_id_alterar" value="<?php echo $id_usuario; ?>">
 
-                        <!-- Preenchendo os campos diretamente com as variáveis da sessão -->
-                        <span class="heading"><?php echo $nome_usuario; ?></span>
+                        <!-- Upload da imagem de perfil -->
+                        <input type="file" name="foto" id="foto" class="form-control" placeholder="Mudar foto de perfil">
+
+                        <!-- Campos de texto -->
                         <input type="text" name="bt_nome" class="input" value="<?php echo $nome_usuario; ?>" placeholder="Nome" required>
                         <input type="email" name="bt_email" class="input" value="<?php echo $email_usuario; ?>" placeholder="Email" required>
                         <input type="text" name="bt_cpf" class="input" value="<?php echo $_SESSION['cpf']; ?>" placeholder="CPF" required>
@@ -154,6 +150,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                             </div>
                         </div>
                     </form>
+
                     <?php if (isset($_GET['atualizado']) && $_GET['atualizado'] == 'true'): ?>
                         <div class="overlay"></div> <!-- Fundo escurecido -->
 
@@ -185,7 +182,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
             </div>
         </div>
     </div>
-
+    </div>
     <!-- Scripts de acessibilidade e rodapé -->
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>

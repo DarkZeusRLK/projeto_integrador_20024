@@ -1,7 +1,8 @@
 <?php
 include('../static/conexao.php'); // Certifique-se de que o caminho está correto
 
-$mensagem = ''; // Inicializa a variável de mensagem
+// Inicialize a variável para armazenar o status da mensagem
+$status = '';
 
 // Função para sanitizar dados
 function sanitize_input($data) {
@@ -32,18 +33,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $stmt_verificar->bind_param("s", $email);
-        $stmt_verificar->execute();
+        $stmt_verificar->execute(); 
         $result = $stmt_verificar->get_result();
 
         if ($result->num_rows > 0) {
             // Email já cadastrado, retorne uma mensagem de erro específica
-            $mensagem = "Email já cadastrado!";
+            $status= "Email já cadastrado!";
         } else {
             // Criptografa a senha
             $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
 
             // Insira os dados no banco de dados
-            $query = "INSERT INTO cadastro (nome, email, senha, telefone, cpf, genero, tipo_usuario,    _foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO cadastro (nome, email, senha, telefone, cpf, genero, tipo_usuario,  arquivo_foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conexao->prepare($query);
 
             // Verifica se a preparação foi bem-sucedida
@@ -52,23 +53,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             $stmt->bind_param("ssssssss", $nome, $email, $senha_hashed, $telefone, $cpf, $genero, $tipo_usuario, $caminho_imagem);
-
-            if ($stmt->execute()) {
-                // Cadastro bem-sucedido, retorne uma mensagem de sucesso
-                $mensagem = "Cadastro realizado com sucesso!";
-            } else {
-                // Cadastro falhou, retorne uma mensagem de erro
-                $mensagem = "Erro ao realizar o cadastro. Tente novamente.";
+        
+                if ($stmt->execute()) {
+                    // A inserção no banco de dados foi bem-sucedida
+                    $status = 'success';
+                } else {
+                    // Ocorreu um erro ao inserir no banco de dados
+                    $status = 'error';
+                }
+        
+                $stmt->close(); // Feche a instrução preparada
             }
         }
-    } else {
-        $mensagem = "Erro de conexão com o banco de dados.";
     }
-}
 ?>
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -79,58 +79,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script defer src="../javascript/script_navbar.js"></script>
   <script defer src="../javascript/configuracoes.js"></script>
   <script defer src="../javascript/alternar_modos.js"></script>
-    <style>
-        /* Estilo para a notificação */
-        .notification {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            width: 300px;
-            border-radius: 5px;
-            z-index: 1000;
-        }
-    </style>
+  <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
+  <title> Cadastro - IvaíTour</title>
 </head>
 
 <body>
 
 <body>
     <div class="container-fluid">
-        <nav class="col-md-3 col-lg-2 sidebar">
-            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-            <div class="profile">
-                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-                <h1 class="text-title">IvaíTour</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                <li><a href="user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-                <?php
-                if (isset($_SESSION['id_login'])) {
-                ?>
-                    <li class="nav-item logout">
-                        <a href="#logout" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                    </li>
-                <?php
-                }
-                ?>
-                 <li class="nav-item">
-                    <a href="configuracoes.php" class="nav-link" id="settings-icon">
-                        <i class="fas fa-cog"></i><span>Configurações</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+      <?php
+        include('../static/menu.php');  
+      ?>
         <div class="container d-flex justify-content-center">
             <form class="form" action="" method="post">
+            <h1>Crie sua conta em nosso Site</h1>
                 <div class="flex-column">
                     <label>Email </label>
                 </div>
@@ -163,7 +125,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </svg>
                     <input type="text" name="bt_nome" class="input" placeholder="Insira seu Nome">
                 </div>
-
+          <!-- Alerta de sucesso -->
+          <?php if ($status === 'success'): ?>
+    <div class="overlay" id="overlay"></div>
+    <div class="container text-center mt-4">
+        <div class="card2 mx-auto" style="max-width: 400px;" id="alert-container">
+            <svg class="wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,256L11.4,240C22.9,224,46,192,69,192C91.4,192,114,224,137,234.7C160,245,183,235,206,213.3C228.6,192,251,160,274,149.3C297.1,139,320,149,343,181.3C365.7,213,389,267,411,282.7C434.3,299,457,277,480,250.7C502.9,224,526,192,549,181.3C571.4,171,594,181,617,208C640,235,663,277,686,256C708.6,235,731,149,754,122.7C777.1,96,800,128,823,165.3C845.7,203,869,245,891,224C914.3,203,937,117,960,112C982.9,107,1006,181,1029,197.3C1051.4,213,1074,171,1097,144C1120,117,1143,107,1166,133.3C1188.6,160,1211,224,1234,218.7C1257.1,213,1280,139,1303,133.3C1325.7,128,1349,192,1371,192C1394.3,192,1417,128,1429,96L1440,64L1440,320L1428.6,320C1417.1,320,1394,320,1371,320C1348.6,320,1326,320,1303,320C1280,320,1257,320,1234,320C1211.4,320,1189,320,1166,320C1142.9,320,1120,320,1097,320C1074.3,320,1051,320,1029,320C1005.7,320,983,320,960,320C937.1,320,914,320,891,320C868.6,320,846,320,823,320C800,320,777,320,754,320C731.4,320,709,320,686,320C662.9,320,640,320,617,320C594.3,320,571,320,549,320C525.7,320,503,320,480,320C457.1,320,434,320,411,320C388.6,320,366,320,343,320C320,320,297,320,274,320C251.4,320,229,320,206,320C182.9,320,160,320,137,320C114.3,320,91,320,69,320C45.7,320,23,320,11,320L0,320Z" fill-opacity="1"></path>
+            </svg>
+            <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
+                    <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"></path>
+                </svg>
+            </div>
+            <div class="message-text-container">
+                <p class="message-text">Cadastro Criado com Sucesso!</p>
+                <p class="sub-text">Você será redirecionado para página de login em breve.</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" stroke-width="0" fill="none" stroke="currentColor" class="cross-icon">
+                <path fill="currentColor" d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z" clip-rule="evenodd" fill-rule="evenodd"></path>
+            </svg>
+        </div>
+    </div>
+<?php endif; ?>
                 <div class="flex-column">
                     <label>Telefone </label>
                 </div>
@@ -194,64 +178,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <input class="button-submit" type="submit" value="Cadastrar">
             </form>
+
             <script>
-          // Manipule o evento de envio do formulário
-$('#cadastro').on('submit', function (e) {
-    e.preventDefault(); // Impede o envio padrão do formulário
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verifique o status da mensagem e exiba o alerta se for sucesso
+        const status = "<?php echo $status; ?>"; // Obtenha o status do PHP
 
-    // Coleta os dados do formulário
-    var formData = $(this).serialize();
+        if (status === 'success') {
+            const alertContainer = document.getElementById('alert-container');
+            const overlay = document.getElementById('overlay');
 
-    // Faça uma solicitação AJAX para enviar os dados ao servidor
-    $.ajax({
-        type: 'POST',
-        url: 'cadastro.php',
-        data: formData,
-        success: function (response) {
-            if (response.trim() === 'success') { // Use trim para remover espaços em branco adicionais
-                // Redirecione para a página de login após o cadastro bem-sucedido
-                Swal.fire({
-                    title: 'Sucesso',
-                    text: 'Cadastro criado com sucesso!',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = 'login.php';
-                    }
-                });
-            } else if (response.trim() === 'error_email_exists') {
-                // Exiba uma notificação de erro específica para e-mail duplicado
-                Swal.fire({
-                    title: 'Erro',
-                    text: 'E-mail já cadastrado. Por favor, use outro e-mail.',
-                    icon: 'error',
-                    confirmButtonText: 'OK'
-                });
-            } else {
-                // Exiba uma notificação de erro padrão
-                Swal.fire({
-                    title: 'Erro',
-                    text: 'Erro no cadastro!',
-                    icon: 'error',
-                    confirmButtonText: 'OK'
-                });
-            }
-        },
-        error: function () {
-            Swal.fire({
-                title: 'Erro',
-                text: 'Erro na comunicação com o servidor.',
-                icon: 'error',
-                confirmButtonText: 'OK'
-            });
+            // Exibir o alerta
+            alertContainer.style.display = 'block';
+            overlay.style.display = 'block';
+
+            // Redirecionar após 5 segundos
+            setTimeout(function() {
+                window.location.href = 'login.php';
+            }, 5000);
         }
     });
-});
-            </script>
-              <div id="notification" class="notification">
-                <?php echo $mensagem; ?>
-            </div>
+</script>
         </div>
             <br>
             <br>
