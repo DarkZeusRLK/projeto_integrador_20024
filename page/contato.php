@@ -176,7 +176,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho/
         </script>
     </div>
     
-    <?php include('../rod.php');
+    <?php include('../static/footer.php');
     
     ?>
 </body>

@@ -3,7 +3,7 @@
   /*Cor azul Principal*/
   --azul: #34495e;
 /*Cor azul mobile*/
-  --azulmobile: #5b7c9c;
+  --azulmobile: #34495e;
 
   /*Cor amarela Secundária*/
   --amarelo: #ffde59;
@@ -45,7 +45,7 @@ main {
 /* Estilos da Sidebar */
 .sidebar {
   width: 5rem;
-  height: 100rem;
+  height: 100vh;
   background-color: var(--azul);
   position: fixed;
   top: 0;
@@ -53,7 +53,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 5px rgba(0.7, 0.7, 0.7, 0.7);
   transition: width 0.3s;
   z-index: 1000;
 }
@@ -606,6 +606,7 @@ input[type="password"]:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 2px 0 5px rgba(0.8, 0.8, 0.8, 0.8); 
   background-color: var(--azul); /* Cor de fundo neutra */
   padding: 20px;
   font-size: 16px; 
@@ -1305,7 +1306,7 @@ body.dark-mode .sidebar .menu-btn{
 
 
 .form-container .button-container  .reset-button {
-  width: 30%;
+  width: 30rem;
   background: var(--azulescuro);
   padding: 10px;
   color: var(--yellow);
@@ -1322,7 +1323,7 @@ body.dark-mode .sidebar .menu-btn{
 }
 /*--------FIM-------------DO-----------------BOTÃO--------RESETAR------------------*/
 .form-container .button-container .send-button {
-  flex-basis: 70%;
+  flex-basis: 70rem;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
   background: var(--yellow);
   color: var(--azulescuro);
@@ -1338,13 +1339,7 @@ body.dark-mode .sidebar .menu-btn{
   color: var(--azulescuro);
 }
 
-.save-button-container {
-  width: 100%;
-}
-
 .save-button {
-  padding: 10px 20px;
-  font-size: 1rem;
   width: 100%;
 }
 
@@ -1410,17 +1405,6 @@ body.dark-mode .sidebar .menu-btn{
       margin-bottom: 15px;
       font-size: 1rem;
   }
-
-  /* Ajusta o botão de salvar para ocupar toda a largura */
-  .save-button-container {
-      width: 100%;
-  }
-
-  .save-button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      width: 100%;
-  }
 }
 
 /* Para telas menores que 576px */
@@ -1463,11 +1447,6 @@ display: contents;
       font-size: 0.85rem;
   }
 
-  /* Botão de salvar ajustado */
-  .save-button {
-      padding: 8px 16px;
-      font-size: 0.85rem;
-  }
 }
 /* FIM DESIGN EDITACONTA*/
 .divo {
