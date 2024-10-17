@@ -108,10 +108,10 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                 </div>
             </section>
         </main>
-    </div>
-    <?php
+        <?php
         include('../static/footer.php');
     ?>
+    </div>
 
     <script src="../javascript/script.js"></script>
 </body>

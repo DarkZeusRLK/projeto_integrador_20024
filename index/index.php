@@ -37,6 +37,9 @@ if (isset($_SESSION['nome']) && !isset($_COOKIE['firstLogin'])) {
 // Conecte-se ao banco de dados de hotéis para exibir as informações
 $consultar_banco = "SELECT * FROM cadastro_hoteis";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
+
+$consultar_banco2 = "SELECT * FROM pacotes_viagens";
+$retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -59,7 +62,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             background-color: #fff;
             background-image: url("../Imagens/Vegetação2.gif");
             background-repeat: no-repeat;
-        
+
             background-size: 100%;
             background-position-y: 40%;
             text-align: center;
@@ -139,7 +142,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <span class="visually-hidden">Próximo</span>
         </button>
     </div>
-    <div class="container-fluid2">
+    <div class="container-fluid">
         <!-- Mensagem de cookies -->
         <div id="cookie-message" class="card-cookie">
             <svg xml:space="preserve" viewBox="0 0 122.88 122.25" y="0px" x="0px" id="cookieSvg" version="1.1">
@@ -166,7 +169,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 <li><a href="index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
                 <li><a href="#"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
                 <?php if (isset($_SESSION['nome'])): ?>
-                    <li><a href="../user/conta.php?id=<?php echo $_SESSION['id_usuario'];?>"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                    <li><a href="../user/conta.php?id=<?php echo $_SESSION['id_usuario']; ?>"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
                 <?php if (!isset($_SESSION['nome'])): ?>
                     <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
@@ -205,7 +208,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                         <span id="admin-badge">ADM</span>
                     <?php endif; ?>
                     <a href="../user/conta.php" class="user-avatar-link">
-                    <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
+                        <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
 
                 </div>
             <?php
@@ -215,6 +218,8 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <a class="passagem" href="../passagem.php">Reserve sua Passagem</a>
 
             <div class="row mt-4">
+
+                <h1 id="text-index2">Pacotes em Destaque</h1>
 
                 <h1 id="text-index2">Hotéis em Destaque</h1>
                 <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
@@ -233,14 +238,11 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                     </div>
                 <?php endwhile; ?>
             </div>
-
         </main>
-
     </div>
-
     <?php
-    include('../static/footer.php');
-    ?>
-</body>
+        include('../static/footer.php');
+        ?>
+        </body>
 
 </html>
