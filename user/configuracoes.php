@@ -115,6 +115,9 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
       </div>
     </div>
   </div>
+  <?php
+    include('../static/footer.php');
+  ?>
 </body>
 
 </html>

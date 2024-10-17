@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 11-Out-2024 às 11:28
+-- Tempo de geração: 17-Out-2024 às 10:44
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -41,18 +41,19 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `tipo_usuario` varchar(200) NOT NULL,
   `arquivo_foto` varchar(200) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf32;
 
 --
 -- Extraindo dados da tabela `cadastro`
 --
 
 INSERT INTO `cadastro` (`id_usuario`, `nome`, `email`, `senha`, `telefone`, `cpf`, `genero`, `tipo_usuario`, `arquivo_foto`) VALUES
-(8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', 'Imagens/ftperfil/6707bccf1c9b3.png'),
-(9, 'Matheus', 'zeres@gmail.com', '$2y$10$2tM8cxPmTW79Z3ObuGIRUO99p.V74cBJmIJILTd9zR2ZS38PNPh.6', '(43)99433432542352', '123.123.123-12', 'Feminino', 'cliente', 'Imagens/ftperfil/6707bfe8bfb69.jpg'),
-(10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', 'Imagens/foto_padrao.png'),
-(11, 'Zere', 'teste@gmail.com', '$2y$10$B3fwmIJGlnNyVrAKC/wwSORL//SAtfz4wGZYz1U5zLpWjQrPfTG4m', '43999745207', '141414341242141', 'Feminino', 'cliente', 'Imagens/avatar2.png'),
-(12, 'Matheus', 'fernandesjoaopedro622@gmail.com', '$2y$10$4LU.3NE4IhPkyelYJNT.0e1ueYoCNfMmg8eZTfKEHrRJLdmF8IaCW', '(43) 99433-4325', '123.123.123-12', 'Masculino', 'cliente', 'Imagens/avatar2.png');
+(8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', '../Imagens/ftperfil/670929e87d6aa.jpg'),
+(9, 'Matheus', 'zeres@gmail.com', '$2y$10$2tM8cxPmTW79Z3ObuGIRUO99p.V74cBJmIJILTd9zR2ZS38PNPh.6', '(43)99433432542352', '123.123.123-12', 'Feminino', 'cliente', '../Imagens/ftperfil/6707bfe8bfb69.jpg'),
+(10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', '../Imagens/foto_padrao.png'),
+(11, 'Zere', 'teste@gmail.com', '$2y$10$B3fwmIJGlnNyVrAKC/wwSORL//SAtfz4wGZYz1U5zLpWjQrPfTG4m', '43999745207', '141414341242141', 'Feminino', 'cliente', '../Imagens/avatar2.png'),
+(12, 'Matheus', 'fernandesjoaopedro622@gmail.com', '$2y$10$4LU.3NE4IhPkyelYJNT.0e1ueYoCNfMmg8eZTfKEHrRJLdmF8IaCW', '(43) 99433-4325', '123.123.123-12', 'Masculino', 'cliente', '../Imagens/avatar2.png'),
+(13, 'jose da silva', 'zere01010@gmail.com', '$2y$10$gDDbH6QZjvqg/MepTSxjmu7lOmSCiuYAjbEjO.2WPP2E0CY2FyIzW', '(43) 99433-4325', '235.424.542-52', 'Masculino', 'cliente', '../Imagens/avatar2.png');
 
 -- --------------------------------------------------------
 
