@@ -38,8 +38,8 @@ if (isset($_SESSION['nome']) && !isset($_COOKIE['firstLogin'])) {
 $consultar_banco = "SELECT * FROM cadastro_hoteis";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 
-$consultar_banco2 = "SELECT * FROM pacotes_viagens";
-$retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
+// $consultar_banco2 = "SELECT * FROM pacotes_viagens";
+// $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -72,11 +72,6 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
             border: 1px solid #ddd;
             border-radius: 0.5rem;
             overflow: hidden;
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
         }
 
         .passagem {
@@ -142,7 +137,7 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
             <span class="visually-hidden">Próximo</span>
         </button>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid2">
         <!-- Mensagem de cookies -->
         <div id="cookie-message" class="card-cookie">
             <svg xml:space="preserve" viewBox="0 0 122.88 122.25" y="0px" x="0px" id="cookieSvg" version="1.1">
@@ -201,7 +196,7 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
             <?php
             if (isset($_SESSION['nome'])) {
 
-            ?>
+                ?>
                 <div class="user-profile">
                     <span class="username"><b><?php echo $nome_usuario; ?></b></span>
                     <?php if ($tipo_usuario === 'administrador'): ?>
@@ -211,7 +206,7 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                         <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
 
                 </div>
-            <?php
+                <?php
             }
             ?>
 
@@ -240,9 +235,9 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
             </div>
         </main>
     </div>
-    <?php
-        include('../static/footer.php');
-        ?>
-        </body>
+    <?php include('../static/footer.php');
+
+    ?>
+</body>
 
 </html>
