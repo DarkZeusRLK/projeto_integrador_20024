@@ -38,8 +38,34 @@ if (isset($_SESSION['nome']) && !isset($_COOKIE['firstLogin'])) {
 $consultar_banco = "SELECT * FROM cadastro_hoteis";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 
-// $consultar_banco2 = "SELECT * FROM pacotes_viagens";
-// $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
+ $consultar_banco2 = "SELECT * FROM pacotes_viagens";
+  $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
+
+$status = '';
+
+if (isset($_POST['email'])) {
+    $email = $_POST['email'];
+    $nome = $_POST['nome'];
+    $mensagem = $_POST['mensagem'];
+
+
+    $query = "INSERT INTO mensagem_contato (nome, email, mensagem) VALUES (?, ?, ?)";
+    $stmt = $conexao->prepare($query);
+
+    if ($stmt) {
+        $stmt->bind_param("sss",  $nome, $email, $mensagem);
+
+        if ($stmt->execute()) {
+            // A inserção no banco de dados foi bem-sucedida
+            $status = 'success';
+        } else {
+            // Ocorreu um erro ao inserir no banco de dados
+            $status = 'error';
+        }
+
+        $stmt->close(); // Feche a instrução preparada
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -238,7 +264,29 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <div class="row mt-4">
 
                 <h1 id="text-index2">Pacotes em Destaque</h1>
-
+                <?php while ($pacotes = $retorno_consulta2->fetch_assoc()): ?>
+                <div class="col">
+                    <div class="card h-100">
+                            <img src="../<?php echo $pacotes['foto_pacote']; ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?php echo $pacotes['nome']; ?>
+                                </h5>
+                                <p class="card-text">
+                                    <?php echo $pacotes['descricao']; ?>
+                                </p>
+                                <h5 class="card-text">R$
+                                    <?php echo $pacotes['valor']; ?>
+                                </h5>
+                                <div class="text-center mt-4">
+                                    <a href="../user/comprar.php?id=<?php echo $pacotes['id_pacote']; ?>"
+                                        class="custom-btn">Comprar Pacote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <?php endwhile; ?>
                 <h1 id="text-index2">Hotéis em Destaque</h1>
                 <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
                 <div class="col">
@@ -267,7 +315,26 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <?php
         include('../static/footer.php');
     ?>
-        
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verifique o status da mensagem e exiba o alerta se for sucesso
+        const status = "<?php echo $status; ?>"; // Obtenha o status do PHP
+
+        if (status === 'success') {
+            const alertContainer = document.getElementById('alert-container');
+            const overlay = document.getElementById('overlay');
+
+            // Exibir o alerta
+            alertContainer.style.display = 'block';
+            overlay.style.display = 'block';
+
+            // Redirecionar após 5 segundos
+            setTimeout(function() {
+                window.location.href = 'contato.php';
+            }, 5000);
+        }
+    });
+</script>
     </div>
 </body>
 

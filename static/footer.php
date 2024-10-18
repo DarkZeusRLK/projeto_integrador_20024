@@ -1,8 +1,8 @@
 <footer>
-        <div id="footer_content">
-            <div id="footer_contacts">
-                <a href="../index/index.php"><img src="../Imagens/logo (1).png" alt="" width="100rem" height="90rem"></a>
-                <p>Agência de Viagens e Turismo</p>
+    <div id="footer_content">
+        <div id="footer_contacts">
+            <a href="../index/index.php"><img src="../Imagens/logo (1).png" alt="" width="100rem" height="90rem"></a>
+            <p>Agência de Viagens e Turismo</p>
 
             <div id="footer_social_media">
                 <a href="#" class="footer-link" id="instagram">
@@ -50,18 +50,27 @@
         </ul>
 
         <div id="footer_subscribe">
-            <h3>Contate-nos</h3>
+            <form action="" method="POST">
+                <h3>Contate-nos</h3>
 
-            <p>
-                Envie uma mensagem
-            </p>
+                <p>
+                    Envie uma mensagem
+                </p>
 
-            <div id="input_group">
-                <input type="email" id="email">
-                <button>
-                    <i id="envelope" class="fa-regular fa-envelope"></i>
-                </button>
-            </div>
+                <div id="input_group">
+                    <input name="email" type="email" id="email" placeholder="Seu Email">
+                    </div>
+                    <br>
+                    <div id="input_group">
+                    <input name="nome" type="text" id="email" placeholder="Seu Nome">
+                    </div>
+                    <br>
+                    <div id="input_group">
+                    <input name="mensagem" type="text" id="email" placeholder="Sua Mensagem">
+                    <button type="submit">
+                        <i id="envelope" class="fa-regular fa-envelope"></i>
+                        </button>
+                    </div>
+            </form>
         </div>
-    </footer>
-      
+</footer>

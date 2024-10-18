@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 17-Out-2024 às 10:44
+-- Tempo de geração: 18-Out-2024 às 15:13
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `cpf` varchar(200) NOT NULL,
   `genero` varchar(200) NOT NULL,
   `tipo_usuario` varchar(200) NOT NULL,
-  `arquivo_foto` varchar(200) NOT NULL,
+  `arquivo_foto` varchar(300) NOT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf32;
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
 INSERT INTO `cadastro` (`id_usuario`, `nome`, `email`, `senha`, `telefone`, `cpf`, `genero`, `tipo_usuario`, `arquivo_foto`) VALUES
 (8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', '../Imagens/ftperfil/670929e87d6aa.jpg'),
 (9, 'Matheus', 'zeres@gmail.com', '$2y$10$2tM8cxPmTW79Z3ObuGIRUO99p.V74cBJmIJILTd9zR2ZS38PNPh.6', '(43)99433432542352', '123.123.123-12', 'Feminino', 'cliente', '../Imagens/ftperfil/6707bfe8bfb69.jpg'),
-(10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', '../Imagens/foto_padrao.png'),
+(10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', '../Imagens/avatar2.png'),
 (11, 'Zere', 'teste@gmail.com', '$2y$10$B3fwmIJGlnNyVrAKC/wwSORL//SAtfz4wGZYz1U5zLpWjQrPfTG4m', '43999745207', '141414341242141', 'Feminino', 'cliente', '../Imagens/avatar2.png'),
 (12, 'Matheus', 'fernandesjoaopedro622@gmail.com', '$2y$10$4LU.3NE4IhPkyelYJNT.0e1ueYoCNfMmg8eZTfKEHrRJLdmF8IaCW', '(43) 99433-4325', '123.123.123-12', 'Masculino', 'cliente', '../Imagens/avatar2.png'),
 (13, 'jose da silva', 'zere01010@gmail.com', '$2y$10$gDDbH6QZjvqg/MepTSxjmu7lOmSCiuYAjbEjO.2WPP2E0CY2FyIzW', '(43) 99433-4325', '235.424.542-52', 'Masculino', 'cliente', '../Imagens/avatar2.png');
@@ -196,13 +196,16 @@ CREATE TABLE IF NOT EXISTS `mensagem_contato` (
   `email` varchar(200) NOT NULL,
   `mensagem` varchar(200) NOT NULL,
   PRIMARY KEY (`id_mensagem`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf32;
 
 --
 -- Extraindo dados da tabela `mensagem_contato`
 --
 
 INSERT INTO `mensagem_contato` (`id_mensagem`, `nome`, `email`, `mensagem`) VALUES
+(37, 'Luiz', 'matzere@gmail.com', '3132312321'),
+(36, 'DIRSEL123', 'dirsel@gmail', 'TESTE 18/10/24'),
+(35, 'DIRSEL123', 'dirsel@gmail', 'TESTE 18/10/24'),
 (34, 'Dieimes', 'jp@gmail.com', 'Teste 10/10/2024'),
 (33, 'Joaquim', 'zeres@gmail.com', 'Mensagem teste 123'),
 (32, 'adadada', 'zeres@gmail.com', '07/10/2024'),
@@ -211,6 +214,31 @@ INSERT INTO `mensagem_contato` (`id_mensagem`, `nome`, `email`, `mensagem`) VALU
 (29, 'adadada', '12@gmail.com', '13131'),
 (28, 'Dieimes', 'zere@gmail.com', '12341'),
 (27, 'Dieimes', 'zere@gmail.com', 'Dieimes, mensagem Teste.');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pacotes_viagens`
+--
+
+DROP TABLE IF EXISTS `pacotes_viagens`;
+CREATE TABLE IF NOT EXISTS `pacotes_viagens` (
+  `id_pacote` int(200) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `valor` varchar(200) NOT NULL,
+  `descricao` varchar(200) NOT NULL,
+  `foto_pacote` varchar(300) NOT NULL,
+  PRIMARY KEY (`id_pacote`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf32;
+
+--
+-- Extraindo dados da tabela `pacotes_viagens`
+--
+
+INSERT INTO `pacotes_viagens` (`id_pacote`, `nome`, `valor`, `descricao`, `foto_pacote`) VALUES
+(1, 'Pacote TESTE 1', 'R$ 100000', '313231313', 'SEM FOTO'),
+(2, 'PACOTE TESTE 2', '2000000', 'PACOTE TESTE 2 23132', 'SEM FOTO'),
+(3, 'PACOTE TESTE 3', '30000000', '3132312321', 'SEM FOTO');
 
 -- --------------------------------------------------------
 
