@@ -2089,3 +2089,54 @@ footer {
         max-width: 20%;
     }
 }
+@media (min-width: 430px) and (max-width:600px){
+.card {
+  width: 17rem;
+  height: 25rem;
+  background: #e8e8e8;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: #212121;
+  border: 2px solid #e2cd13;
+  transition: all 0.5s ease;
+  margin-left: 5rem;
+}
+}
+@media (min-width: 300px) and (max-width:400px){
+  .card {
+    width: 17rem;
+    height: 25rem;
+    background: #e8e8e8;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    color: #212121;
+    border: 2px solid #e2cd13;
+    transition: all 0.5s ease;
+    margin-left: 5rem;
+  }
+  }
+  @media (min-width: 631px) and (max-width:840px){
+    .card {
+      width: 17rem;
+      height: 25rem;
+      background: #e8e8e8;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      color: #212121;
+      border: 2px solid #e2cd13;
+      transition: all 0.5s ease;
+      margin-left: 13rem;
+    }
+    }
