@@ -263,13 +263,13 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                     </div>
                 </div>
                 <?php endwhile; ?>
-                
             </div>
-            
-        </main>
-        <?php
+            <?php
         include('../static/footer.php');
     ?>
+        </main>
+        
+    </div>
 </body>
 
 </html>

@@ -1,18 +1,8 @@
-<<<<<<< HEAD
 <footer>
         <div id="footer_content">
             <div id="footer_contacts">
                 <a href="../index/index.php"><img src="../Imagens/logo (1).png" alt="" width="100rem" height="90rem"></a>
                 <p>Agência de Viagens e Turismo</p>
-=======
-
-<footer>
-    <div id="footer_content">
-        <div id="footer_contacts">
-            <a href="../index/index.php"><img src="../Imagens/logo (1).png" alt="" width="100rem"
-                    height="90rem"></a>
-            <p>Agência de Viagens e Turismo</p>
->>>>>>> 053ae5305ee99ced7c9b30f3158bfa90f2862433
 
             <div id="footer_social_media">
                 <a href="#" class="footer-link" id="instagram">
@@ -73,10 +63,5 @@
                 </button>
             </div>
         </div>
-    </div>
-
-    <div id="footer_copyright">
-        IvaíTour &#169
-        2024 Todos os Direitos Reservados
-    </div>
-</footer>
+    </footer>
+      

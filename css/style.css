@@ -1843,8 +1843,6 @@ footer {
   color: var(--color-neutral-40);
   z-index: 999;
   text-align: center;
-  position: relative; /* Mantém na parte inferior do conteúdo */
-  /*margin-top: -20rem; */ /* Para empurrar o footer para o final */
 }
 #footer_content {
   width: 100%; /* Ocupar toda a largura da página */
@@ -1855,6 +1853,7 @@ footer {
   grid-template-columns: repeat(4, 1fr);
   padding: 3rem 3.5rem; /* Ajuste de padding */
 }
+
 .footer-link {
   text-decoration: none;
 }
@@ -1887,7 +1886,6 @@ footer {
 #footer_social_media .footer-link:hover {
   opacity: 0.8;
 }
-
 #instagram {
   background: linear-gradient(#7f37c9, #ff2992, #ff9807);
 }
@@ -2089,4 +2087,3 @@ footer {
         max-width: 20%;
     }
 }
-
