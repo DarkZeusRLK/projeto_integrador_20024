@@ -1844,13 +1844,14 @@ footer {
   text-align: center;
 }
 #footer_content {
-  width: 100%; /* Ocupar toda a largura da página */
   color: var(--color-neutral-40);
   text-align: center;
   background-color: var(--color-neutral-10); /* Cor de fundo do footer */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 3rem 3.5rem; /* Ajuste de padding */
+  position: relative;
+  top: 3.9rem;
 }
 
 .footer-link {
@@ -1994,7 +1995,8 @@ footer {
 }
 }
   #cards {
-    margin-left: 0;
+    justify-content: start;
+    position: relative;
     /* AQUI ESTÁ O ERRO PARA CONSERTAR O RODAPÉ, OS CARDS ESTÃO PARA A DIREITA DO SITE FAZENDO COM QUE FIQUE UMA SOBRA BRANCA NO RODAPÉ, BASTA AJUSTAR OS CADS PARA ESQUERDA QUE TUDO FICA CERTO */
   }
 /* Media queries ajustadas */

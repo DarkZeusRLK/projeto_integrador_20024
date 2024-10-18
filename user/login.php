@@ -73,9 +73,6 @@ $conexao->close();
 </head>
 
 <body>
-<div class="container">
-    
-</div>
     <div class="container-fluid2">
         <?php
         include('../static/menu.php');
@@ -153,6 +150,7 @@ $conexao->close();
         </form>
         <br>
         <br>
+        
     </div>
     <?php
     include("../static/footer.php");
