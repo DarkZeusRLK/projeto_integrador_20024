@@ -1846,7 +1846,7 @@ footer {
   z-index: 999;
   text-align: center;
   position: relative; /* Mantém na parte inferior do conteúdo */
-  margin-top: -20rem; /* Para empurrar o footer para o final */
+  /*margin-top: -20rem; */ /* Para empurrar o footer para o final */
 }
 
 #footer_content {
