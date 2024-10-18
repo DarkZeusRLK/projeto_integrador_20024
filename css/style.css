@@ -1781,7 +1781,7 @@ body.dark-mode .sidebar .menu-btn {
   width: 80px;
   fill: #04e4003a;
 }
-
+/* ATÉ AQUI ESTÁ CERTO*/
 .icon-container {
   width: 40px; /* Aumente um pouco para dar mais espaço */
   height: 40px; /* Aumente a altura para melhor proporção */
@@ -1836,8 +1836,6 @@ body.dark-mode .sidebar .menu-btn {
 #footer_wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Alinha o conteúdo na parte inferior */
-  min-height: 100vh; /* Garantir que o wrapper ocupe toda a altura da tela */
 }
 
 footer {
@@ -1846,9 +1844,7 @@ footer {
   z-index: 999;
   text-align: center;
   position: relative; /* Mantém na parte inferior do conteúdo */
-  margin-top: -20rem; /* Para empurrar o footer para o final */
 }
-
 #footer_content {
   width: 100%; /* Ocupar toda a largura da página */
   color: var(--color-neutral-40);
@@ -1858,7 +1854,6 @@ footer {
   grid-template-columns: repeat(4, 1fr);
   padding: 3rem 3.5rem; /* Ajuste de padding */
 }
-
 .footer-link {
   text-decoration: none;
 }
@@ -2093,3 +2088,4 @@ footer {
         max-width: 20%;
     }
 }
+

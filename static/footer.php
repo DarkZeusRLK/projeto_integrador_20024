@@ -1,7 +1,4 @@
-<div class="borda"> <main>
-
-</main>
-    <footer>
+<footer>
         <div id="footer_content">
             <div id="footer_contacts">
                 <a href="../index/index.php"><img src="../Imagens/logo (1).png" alt="" width="100rem" height="90rem"></a>
@@ -73,5 +70,4 @@
             2024 Todos os Direitos Reservados
         </div>
     </footer>
-    </div>
-   
+      
