@@ -241,26 +241,27 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 
                 <h1 id="text-index2">Hotéis em Destaque</h1>
                 <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
-                <div id="cards" class="col-md-3 mb-2">
+                <div class="col">
                     <div class="card h-100">
-                        <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <?php echo $hoteis['nome']; ?>
-                            </h5>
-                            <p class="card-text">
-                                <?php echo $hoteis['descricao']; ?>
-                            </p>
-                            <h5 class="card-text">R$
-                                <?php echo $hoteis['valor_diaria']; ?>
-                            </h5>
-                            <div class="text-center mt-4">
-                                <a href="../user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>"
-                                    class="custom-btn">Reservar Agora</a>
+                            <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?php echo $hoteis['nome']; ?>
+                                </h5>
+                                <p class="card-text">
+                                    <?php echo $hoteis['descricao']; ?>
+                                </p>
+                                <h5 class="card-text">R$
+                                    <?php echo $hoteis['valor_diaria']; ?>
+                                </h5>
+                                <div class="text-center mt-4">
+                                    <a href="../user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>"
+                                        class="custom-btn">Reservar Agora</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                
                 <?php endwhile; ?>
             </div>
             <?php
