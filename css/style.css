@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100%;
+  width: 100%;  
   height: 100%;
   margin: 0;
   padding: 0;
@@ -63,7 +63,7 @@ main {
   align-items: center;
   box-shadow: 2px 0 5px rgba(0.7, 0.7, 0.7, 0.7);
   transition: width 0.3s;
-  z-index: 998;
+  z-index: 99;
 }
 
 .sidebar.expanded {
@@ -1201,7 +1201,6 @@ body.dark-mode .sidebar .menu-btn {
 }
 #cards2 {
   margin-top: 3rem;
-  margin-left: 2rem;
   padding: 10px;
   width: 40%;
 }
@@ -1841,7 +1840,7 @@ body.dark-mode .sidebar .menu-btn {
 footer {
   width: 100%; /* Ocupar toda a largura da página */
   color: var(--color-neutral-40);
-  z-index: 999;
+  z-index: 9999;
   text-align: center;
 }
 #footer_content {
@@ -1866,6 +1865,7 @@ footer {
   display: flex;
   gap: 2rem;
   margin-top: 1.5rem;
+  justify-content: center;
 }
 
 #footer_social_media .footer-link {
@@ -1994,7 +1994,7 @@ footer {
 }
 }
   #cards {
-    margin-left: 3rem;
+    margin-left: 0;
     /* AQUI ESTÁ O ERRO PARA CONSERTAR O RODAPÉ, OS CARDS ESTÃO PARA A DIREITA DO SITE FAZENDO COM QUE FIQUE UMA SOBRA BRANCA NO RODAPÉ, BASTA AJUSTAR OS CADS PARA ESQUERDA QUE TUDO FICA CERTO */
   }
 /* Media queries ajustadas */
@@ -2032,7 +2032,7 @@ footer {
 /* Estilos para os cards */
 .col-md-3 {
   flex: 1 1 22%;
-  max-width: 22%;
+  max-width: 100%;
   box-sizing: border-box;
 }
   /* Responsividade personalizada */

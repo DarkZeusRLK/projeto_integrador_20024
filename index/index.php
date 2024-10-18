@@ -214,7 +214,6 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                 </li>
             </ul>
         </nav>
-        <main class="col-md-10 col-lg-10     main-content">
             <?php
             if (isset($_SESSION['nome'])) {
 
@@ -267,7 +266,6 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <?php
         include('../static/footer.php');
     ?>
-        </main>
         
     </div>
 </body>
