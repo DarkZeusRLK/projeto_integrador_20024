@@ -74,6 +74,11 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             overflow: hidden;
         }
 
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
         .passagem {
             display: block;
             margin: 20px auto;
@@ -137,7 +142,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <span class="visually-hidden">Próximo</span>
         </button>
     </div>
-    <div class="container-fluid2">
+    <div class="container-fluid">
         <!-- Mensagem de cookies -->
         <div id="cookie-message" class="card-cookie">
             <svg xml:space="preserve" viewBox="0 0 122.88 122.25" y="0px" x="0px" id="cookieSvg" version="1.1">
@@ -196,7 +201,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
             <?php
             if (isset($_SESSION['nome'])) {
 
-                ?>
+            ?>
                 <div class="user-profile">
                     <span class="username"><b><?php echo $nome_usuario; ?></b></span>
                     <?php if ($tipo_usuario === 'administrador'): ?>
@@ -206,7 +211,7 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                         <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
 
                 </div>
-                <?php
+            <?php
             }
             ?>
 
@@ -232,12 +237,14 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
                         </div>
                     </div>
                 <?php endwhile; ?>
+                
             </div>
+            
         </main>
+        <?php
+        include('../static/footer.php');
+        ?>
     </div>
-    <?php include('../static/footer.php');
-
-    ?>
-</body>
+        </body>
 
 </html>

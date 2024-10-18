@@ -744,6 +744,7 @@ input[type="password"]:focus {
   align-items: center;
   text-align: center;
   z-index: 9;
+  margin-left: 7rem;
 }
 .logos {
   width: 10rem;
@@ -1845,7 +1846,7 @@ footer {
   z-index: 999;
   text-align: center;
   position: relative; /* Mantém na parte inferior do conteúdo */
-  margin-top: 10rem; /* Para empurrar o footer para o final */
+  margin-top: -20rem; /* Para empurrar o footer para o final */
 }
 
 #footer_content {
@@ -1993,11 +1994,15 @@ footer {
     width: 100%;
     margin-top: 20rem;
   }
+  .col-md-3 {
+    flex: 1 1 45%;  /* 2 cards por linha */
+    max-width: 45%;
+}
+}
   #cards {
-    margin-right: auto;
+    margin-left: 3rem;
     /* AQUI ESTÁ O ERRO PARA CONSERTAR O RODAPÉ, OS CARDS ESTÃO PARA A DIREITA DO SITE FAZENDO COM QUE FIQUE UMA SOBRA BRANCA NO RODAPÉ, BASTA AJUSTAR OS CADS PARA ESQUERDA QUE TUDO FICA CERTO */
   }
-}
 /* Media queries ajustadas */
 @media screen and (max-width: 768px) {
   #footer_content {
@@ -2022,4 +2027,69 @@ footer {
   footer {
     max-width: 100%;
   }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilos para os cards */
+.col-md-3 {
+  flex: 1 1 22%;
+  max-width: 22%;
+  box-sizing: border-box;
+}
+  /* Responsividade personalizada */
+  @media (max-width: 1600px) {
+    .col-md-3 {
+        flex: 1 1 30%;  /* 3 cards por linha */
+        max-width: 30%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .col-md-3 {
+        flex: 1 1 35%;  /* 2 cards por linha */
+        max-width: 35%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .col-md-3 {
+        flex: 1 1 45%;  /* 2 cards por linha */
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 992px) {
+    .col-md-3 {
+        flex: 1 1 35%; /* 1 card por linha */
+        max-width: 35%;
+    }
+}
+@media (max-width: 982px) {
+  .col-md-3 {
+      flex: 1 1 35%; /* 1 card por linha */
+      max-width: 100%;
+  }
+}
+@media (max-width: 823px) {
+  .col-md-3 {
+      flex: 1 1 100%; /* 1 card por linha */
+      max-width: 100%;
+      margin-left: auto;
+  }
+  #cards{
+    margin-left: 10rem;
+  }
+}
+
+
+@media (min-width: 1920px) {
+    .col-md-3 {
+        flex: 1 1 20%; /* 4 cards por linha */
+        max-width: 20%;
+    }
 }

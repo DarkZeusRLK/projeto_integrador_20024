@@ -4,7 +4,7 @@
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
-                <img src="../Imagens/logo (1).png" alt="" width="100rem" height="90rem">
+                <a href="../index/index.php"><img src="../Imagens/logo (1).png" alt="" width="100rem" height="90rem"></a>
                 <p>Agência de Viagens e Turismo</p>
 
                 <div id="footer_social_media">
@@ -27,13 +27,13 @@
                     <h3>Blog</h3>
                 </li>
                 <li>
-                    <a href="#" class="footer-link">Tecnologia</a>
+                    <a href="https://blog.runrun.it/avanco-da-tecnologia/" class="footer-link">Tecnologia</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link">Turismo no Brasil</a>
+                    <a href="https://www.almadeviajante.com/viagens/brasil/" class="footer-link">Turismo no Brasil</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link">Desenvolvimento Web</a>
+                    <a href="https://blog.betrybe.com/desenvolvimento-web/" class="footer-link">Desenvolvimento Web</a>
                 </li>
             </ul>
 
