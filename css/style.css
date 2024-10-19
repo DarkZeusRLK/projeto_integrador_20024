@@ -16,7 +16,6 @@
   --yellow: #e2cd13;
 
   --color-neutral-0: #16212c;
-  --color-neutral-10: #34495e;
   --color-neutral-30: #a8a29e;
   --color-neutral-40: #f5f5f5;
 }
@@ -1338,8 +1337,8 @@ body.dark-mode .sidebar .menu-btn {
   }
 
   .profile-picture {
-    width: 8rem;
-    height: 5rem;
+    width: 10rem;
+    height: 10rem;
     object-fit: cover;
     border-radius: 50%;
   }
@@ -1538,8 +1537,8 @@ body.dark-mode .sidebar .menu-btn {
 @media (max-width: 576px) {
   /* Tamanhos menores para imagem de perfil */
   .profile-picture-container {
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
     display: flex;
     margin-bottom: 1rem;
   }
@@ -1846,10 +1845,11 @@ footer {
 #footer_content {
   color: var(--color-neutral-40);
   text-align: center;
-  background-color: var(--color-neutral-10); /* Cor de fundo do footer */
+  background-color: var(--azul); /* Cor de fundo do footer */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 3rem 3.5rem; /* Ajuste de padding */
+  box-shadow: 2px 0 5px rgba(0.8, 0.8, 0.8, 0.8);
   position: relative;
   top: 3.9rem;
 }
