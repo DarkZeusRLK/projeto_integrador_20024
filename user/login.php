@@ -58,7 +58,6 @@ $conexao->close();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,6 +73,9 @@ $conexao->close();
 </head>
 
 <body>
+<div class="container">
+    
+</div>
     <div class="container-fluid2">
         <?php
         include('../static/menu.php');
@@ -151,9 +153,10 @@ $conexao->close();
         </form>
         <br>
         <br>
-
     </div>
-    <?php include("../static/footer.php"); ?>
+    <?php
+    include("../static/footer.php");
+    ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
