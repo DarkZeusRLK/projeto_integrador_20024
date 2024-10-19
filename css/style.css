@@ -742,7 +742,6 @@ input[type="password"]:focus {
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 9;
   margin-left: 7rem;
 }
 .logos {
