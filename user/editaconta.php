@@ -112,25 +112,25 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
 </head>
 
 <body>
-    <div class="container-fluid">
-        <?php
-        include('../static/menu.php');
-        ?>
 
-        <div class="container">
+    <?php
+    include('../static/menu.php');
+    ?>
+    <div class="container-fluid">
+        <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
                     <div class="profile-picture-container">
-                        <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
-                        <br>
-                        <label for="foto">
-                            <div class="edit-icon">
-                                <i class="fas fa-pencil-alt"></i>
-                            </div>
-                        </label>
+                        <div class="editarfoto">
+                            <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
+                        </div>  
                     </div>
-
-
+                
+                    <label class="escfoto" for="foto"> 
+                            <a id="editar">Escolher foto</a>
+                        </label>
+                  
+                    <span class="heading"><?php echo $nome_usuario; ?></span>
                     <form action="upload_imagem.php" method="POST" enctype="multipart/form-data">
                         <!-- Campo hidden com o id do usuário -->
                         <input type="hidden" name="bt_id_alterar" value="<?php echo $id_usuario; ?>">
@@ -182,7 +182,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
             </div>
         </div>
     </div>
-
+    </div>
     <!-- Scripts de acessibilidade e rodapé -->
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>

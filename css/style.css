@@ -1339,7 +1339,7 @@ body.dark-mode .sidebar .menu-btn {
 
   .profile-picture {
     width: 8rem;
-    height: 8rem;
+    height: 5rem;
     object-fit: cover;
     border-radius: 50%;
   }
