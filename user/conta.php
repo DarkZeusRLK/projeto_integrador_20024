@@ -91,50 +91,44 @@ if ($id_usuario) {
 
 <body>
     <div class="container-fluid">
-    <?php
+        <?php
         include('../static/menu.php');
-       ?>
+        ?>
 
-        <div class="container">
+        <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
-                    <div class="text-center mb-4">
-                        <div class="profile-picture-container">
-                            <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
-                        </div>
+                    <div class="profile-picture-container">
+                        <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
                     </div>
                     <span class="heading"><?php echo $nome_usuario; ?></span>
-                    <input placeholder=" Nome: <?php echo $nome_usuario; ?>" type="text" class="input" readonly>
-                    <input placeholder="Email: <?php echo $email_usuario; ?>" id="mail" type="email" class="input" readonly>
-                    <input placeholder="CPF: <?php echo $cpf_usuario; ?>" id="cpf" type="text" class="input" readonly>
-                    <input placeholder="Telefone: <?php echo $telefone_usuario; ?>" id="telefone" type="text" class="input" readonly>
+                    <input placeholder=" Nome: <?php echo $nome_usuario; ?>" type="text" class="input" readonly maxlength="40">
+                    <input placeholder="Email: <?php echo $email_usuario; ?>" id="mail" type="email" class="input" readonly maxlength="40">
+                    <input placeholder="CPF: <?php echo $cpf_usuario; ?>" id="cpf" type="text" class="input" readonly maxlength="15">
+                    <input placeholder="Telefone: <?php echo $telefone_usuario; ?>" id="telefone" type="text" class="input" readonly maxlength="">
 
                     <div class="button-container">
-                        <div class="reset-button-container">
-                        <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="reset-button">Editar conta</a>
+                        <div class="save-button-container">
+                            <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="save-button">Editar conta</a>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div vw class="enabled">
-                <div vw-access-button class="active"></div>
-                <div vw-plugin-wrapper>
-                    <div class="vw-plugin-top-wrapper"></div>
                 </div>
             </div>
         </div>
-
+        <!-- Plugin VLibras -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
         <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
         <script>
             new window.VLibras.Widget('https://vlibras.gov.br/app');
         </script>
     </div>
-
     <?php include('../static/footer.php'); ?>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
-
 </html>
