@@ -30,7 +30,89 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
     <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
     <title>Dashboard Admin</title>
 </head>
+<style>
+    /* Definições gerais para manter a tabela responsiva */
+.my-custom-table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    margin-bottom: 20px;
+}
 
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Ajustes de layout em diferentes larguras de tela */
+@media (max-width: 768px) {
+.footer{
+    margin-top: 40vh;
+}
+    table th, table td {
+        font-size: 14px;
+        padding: 2px;
+    }
+
+    img#imagem {
+        width: 80px;
+        height: 80px;
+    }
+
+    .imagem-dashboard-adm {
+        width: 100px;
+        height: auto;
+    }
+
+    .custom-btn2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer{
+        margin-top: 45vh;
+    }
+    table th, table td {
+        font-size: 12px;
+        padding: 5px;
+        color: #ddd;
+    }
+.dashboard-content{
+display: contents;
+}
+    img#imagem {
+        width: 60px;
+        height: 60px;
+    }
+
+    .imagem-dashboard-adm {
+        width: 8px;
+    }
+
+    /* Exibição das tabelas em blocos verticais no celular */
+    .my-custom-table, .table-container {
+        overflow-x: scroll;
+    }
+
+    .custom-btn2 {
+        width: 100%;
+    }
+}
+
+</style>
 <body>
 
     <div class="container-fluid">
@@ -52,7 +134,6 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                                 <th>ID</th>
                                 <th>Nome</th>
                                 <th>Email</th>
-                                <th>Imagem</th>
                                 <th>Função</th>
                                 <th>Config. Adicional</th>
                             </tr>
@@ -63,13 +144,6 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
             <td><?php echo $user['id_usuario']; ?></td>
             <td><?php echo $user['nome']; ?></td>
             <td><?php echo $user['email']; ?></td>
-            <td>
-                <?php
-                // Verifica se a variável $user['arquivo_foto'] existe e não está vazia, senão exibe a imagem padrão
-                $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '/Imagens/foto_padrao.png';
-                ?>
-                <img id="imagem" src="<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
-            </td>
             <td><?php echo $user['tipo_usuario']; ?> 
             <td><i class="fas fa-cog"> </i><span> Editar</span></td>   </td>
         </tr>
