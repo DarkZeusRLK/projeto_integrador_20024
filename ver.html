@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Mais</title>
+    <link rel="stylesheet" href="zere.css">
+</head>
+<body>
+
+<div class="content">
+    <p>
+        Este é o conteúdo inicial que é mostrado antes do clique. 
+        <span class="more-text">Aqui está o conteúdo extra que será mostrado quando o botão for clicado.</span>
+    </p>
+    <a class="ver-mais" onclick="toggleText()">Ver Mais</a>
+</div>
+
+<script>
+    function toggleText() {
+        var moreText = document.querySelector(".more-text");
+        var button = document.querySelector(".ver-mais");
+
+        if (moreText.style.display === "none" || moreText.style.display === "") {
+            moreText.style.display = "inline";
+            button.textContent = "Ver Menos";
+        } else {
+            moreText.style.display = "none";
+            button.textContent = "Ver Mais";
+        }
+    }
+</script>
+
+</body>
+</html>
