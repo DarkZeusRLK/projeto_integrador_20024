@@ -1002,9 +1002,6 @@ body.dark-mode .card-title{
   border-radius: 50%; /* Faz com que o avatar seja redondo */
   object-fit: cover; /* Garante que a imagem do avatar se ajuste corretamente */
 }
-#save-font-size{
-  width: 22rem;
-}
 #admin-badge {
   background-color: var(--amarelo);
   color: var(--azul);
@@ -1558,7 +1555,22 @@ body.dark-mode .card-title{
   body {
     background-color: var(--azulmobile);
   }
-
+  .username{
+    color: #ffff;
+  }
+h3{
+  color: #ffffff;
+}
+.custom-btn{
+  background-color: var(--amarelo);
+  color: var(--azulescuro);
+}
+label{
+  color: #fff;
+}
+body.dark-mode .form-container #form-ctt .input{
+  background-color: var(--azulescuro);
+}
   .form-container {
     display: contents;
   }
