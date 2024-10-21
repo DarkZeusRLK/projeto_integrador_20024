@@ -38,8 +38,8 @@ if (isset($_SESSION['nome']) && !isset($_COOKIE['firstLogin'])) {
 $consultar_banco = "SELECT * FROM cadastro_hoteis";
 $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 
- $consultar_banco2 = "SELECT * FROM pacotes_viagens";
-  $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
+$consultar_banco2 = "SELECT * FROM pacotes_viagens";
+$retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
 
 $status = '';
 
@@ -75,11 +75,11 @@ if (isset($_POST['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    
-    
+
+
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -88,6 +88,14 @@ if (isset($_POST['email'])) {
     <script defer src="../javascript/cookie.js"></script>
     <script src="../javascript/configuracoes.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+
     <title>Início - IvaíTour</title>
     <style>
         body {
@@ -209,22 +217,22 @@ if (isset($_POST['email'])) {
                 <li><a href="index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
                 <li><a href="#"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
                 <?php if (isset($_SESSION['nome'])): ?>
-                <li><a href="../user/conta.php?id=<?php echo $_SESSION['id_usuario']; ?>"><i
-                            class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                    <li><a href="../user/conta.php?id=<?php echo $_SESSION['id_usuario']; ?>"><i
+                                class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
                 <?php if (!isset($_SESSION['nome'])): ?>
-                <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
+                    <li><a href="../user/login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
                 <?php endif; ?>
                 <li><a href="../page/contato.php"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
                 <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-                <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a>
-                </li>
+                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a>
+                    </li>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['nome'])): ?>
-                <li class="nav-item logout">
-                    <a href="../static/logout.php" class="nav-link"><i
-                            class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                </li>
+                    <li class="nav-item logout">
+                        <a href="../static/logout.php" class="nav-link"><i
+                                class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
+                    </li>
                 <?php endif; ?>
                 <li class="nav-item">
                     <a href="../page/desenvolvedores.php" class="nav-link" id="settings-icon">
@@ -240,102 +248,236 @@ if (isset($_POST['email'])) {
                 </li>
             </ul>
         </nav>
-            <?php
-            if (isset($_SESSION['nome'])) {
+        <?php
+        if (isset($_SESSION['nome'])) {
 
-            ?>
+        ?>
             <div class="user-profile">
                 <span class="username"><b>
                         <?php echo $nome_usuario; ?>
                     </b></span>
                 <?php if ($tipo_usuario === 'administrador'): ?>
-                <span id="admin-badge">ADM</span>
+                    <span id="admin-badge">ADM</span>
                 <?php endif; ?>
                 <a href="../user/conta.php" class="user-avatar-link">
                     <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
 
             </div>
-            <?php
-            }
-            ?>
-
-            <a class="passagem" href="../passagem.php">Reserve sua Passagem</a>
-
-            <div class="row mt-4">
-
-                <h1 id="text-index2">Pacotes em Destaque</h1>
-                <?php while ($pacotes = $retorno_consulta2->fetch_assoc()): ?>
-                <div class="col">
-                    <div class="card h-100">
-                            <img src="../<?php echo $pacotes['foto_pacote']; ?>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <?php echo $pacotes['nome']; ?>
-                                </h5>
-                                <p class="card-text">
-                                    <?php echo $pacotes['descricao']; ?>
-                                </p>
-                                <h5 class="card-text">R$
-                                    <?php echo $pacotes['valor']; ?>
-                                </h5>
-                                <div class="text-center mt-4">
-                                    <a href="../user/comprar.php?id=<?php echo $pacotes['id_pacote']; ?>"
-                                        class="custom-btn">Comprar Pacote</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                <?php endwhile; ?>
-                <h1 id="text-index2">Hotéis em Destaque</h1>
-                <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
-                <div class="col">
-                    <div class="card h-100">
-                            <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <?php echo $hoteis['nome']; ?>
-                                </h5>
-                                <p class="card-text">
-                                    <?php echo $hoteis['descricao']; ?>
-                                </p>
-                                <h5 class="card-text">R$
-                                    <?php echo $hoteis['valor_diaria']; ?>
-                                </h5>
-                                <div class="text-center mt-4">
-                                    <a href="../user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>"
-                                        class="custom-btn">Reservar Agora</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                <?php endwhile; ?>
-            </div>
-            <?php
-        include('../static/footer.php');
-    ?>
-        <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Verifique o status da mensagem e exiba o alerta se for sucesso
-        const status = "<?php echo $status; ?>"; // Obtenha o status do PHP
-
-        if (status === 'success') {
-            const alertContainer = document.getElementById('alert-container');
-            const overlay = document.getElementById('overlay');
-
-            // Exibir o alerta
-            alertContainer.style.display = 'block';
-            overlay.style.display = 'block';
-
-            // Redirecionar após 5 segundos
-            setTimeout(function() {
-                window.location.href = 'contato.php';
-            }, 5000);
+        <?php
         }
-    });
-</script>
+        ?>
+
+        <a class="passagem" href="../passagem.php">Reserve sua Passagem</a>
+
+        <div class="row mt-4">
+
+            <h1 id="text-index2">Pacotes em Destaque</h1>
+            <?php
+            // Inicialize a variável de contagem
+            $contador = 0;
+
+            // Loop pelos pacotes
+            while ($pacotes = $retorno_consulta2->fetch_assoc()):
+                // Aumente a contagem
+                $contador++;
+                // Defina a imagem de fundo com base na cidade
+                $imagem_fundo = strtolower($pacotes['foto_pacote']) . ".jpg"; // ajuste o caminho e a extensão da imagem conforme necessário
+            ?>
+                <div class="col">
+                    <div id="card_pacote_<?php echo $contador; ?>" class="card custom-card" style="background-image: url('<?php echo $imagem_fundo; ?>');" data-bg="<?php echo $imagem_fundo; ?>">
+                        <h2 id="titulo_pacote_<?php echo $contador; ?>"><?php echo $pacotes['nome']; ?></h2>
+                        <div id="card_body2_<?php echo $contador; ?>">
+                            <h5 id="card_title_<?php echo $contador; ?>">
+                                <?php echo $pacotes['nome']; ?>
+                            </h5>
+                            <p id="card_text_<?php echo $contador; ?>">
+                                <?php echo $pacotes['descricao']; ?>
+                            </p>
+                            <h5 id="card_text_value_<?php echo $contador; ?>">
+                                <?php echo $pacotes['valor']; ?>
+                            </h5>
+                            <div class="text-center mt-4">
+                                <a id="btn_comprar_<?php echo $contador; ?>" href="../user/comprar.php?id=<?php echo $pacotes['id_pacote']; ?>">
+                                    Comprar Pacote
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+
+
+
+
+
+            <h1 id="text-index2">Hotéis em Destaque</h1>
+            <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?php echo $hoteis['nome']; ?>
+                            </h5>
+                            <p class="card-text">
+                                <?php echo $hoteis['descricao']; ?>
+                            </p>
+                            <h5 class="card-text">R$
+                                <?php echo $hoteis['valor_diaria']; ?>
+                            </h5>
+                            <div class="text-center mt-4">
+                                <a href="../user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>"
+                                    class="custom-btn">Reservar Agora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
+            <br>
+            <br>
+            <img class="img-fluid" src="../Imagens/Design sem nome (1).png" alt="">
+        </div>
+        <div class="final_index">
+            <h1 id="text-index2">Viva <span id="animated-text"></span></h1>
+            <!-- Seção de Cruzeiros -->
+            <div class="final_index">
+                <!-- Seção de Cruzeiros -->
+                <br>
+                <h1 id="text_cruise">Faça excursões de cruzeiro por todo o <span class="brasil">Brasil!</span></h1>
+                <div id="cruises">
+
+                    <!-- Cruise Card 1 -->
+                    <div class="cruise-card" style="background-image: url('../recebidos/11.10.22cruzeiros.png');">
+                        <div class="cruise-overlay">
+                            <h2 class="cruise-title">Cruzeiro dos Sonhos</h2>
+                            <p class="cruise-description">Descubra o melhor do Caribe em uma experiência inesquecível.</p>
+                            <a href="cruise1-link.html" class="cruise-button">Ver Mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Cruise Card 2 -->
+                    <div class="cruise-card" style="background-image: url('../recebidos/cruzeiro_2.jpg');">
+                        <div class="cruise-overlay">
+                            <h2 class="cruise-title">Exploração Mediterrânea</h2>
+                            <p class="cruise-description">Navegue pelas águas cristalinas do Mediterrâneo.</p>
+                            <a href="cruise2-link.html" class="cruise-button">Ver Mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Cruise Card 3 -->
+                    <div class="cruise-card" style="background-image: url('../recebidos/cruzeiro_3.jpg');">
+                        <div class="cruise-overlay">
+                            <h2 class="cruise-title">Aventura no Alasca</h2>
+                            <p class="cruise-description">Desfrute de paisagens deslumbrantes e aventuras geladas.</p>
+                            <a href="cruise3-link.html" class="cruise-button">Ver Mais</a>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <!-- Seção de Blogs -->
+        <div id="blogs">
+            <!-- Blog Card 1 -->
+            <div class="blog-card">
+                <img src="../Imagens/banner_programacao_desenvolvimento.png" alt="Blog 1" class="blog-image">
+                <div class="blog-content">
+                    <h2 class="blog-title">Tecnologia nos Dias Atuais</h2>
+                    <p class="blog-description">Uma análise das inovações e tendências tecnológicas que moldam nossa vida cotidiana.</p>
+                    <a href="blog1-link.html" class="blog-button">Leia mais</a>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="blog-card">
+                <img src="../Imagens/unnamed.jpg" alt="Blog 2" class="blog-image">
+                <div class="blog-content">
+                    <h2 class="blog-title">Programação Web</h2>
+                    <p class="blog-description"> Dicas e tutoriais sobre desenvolvimento web, desde HTML até frameworks modernos.</p>
+                    <a href="blog2-link.html" class="blog-button">Leia mais</a>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="blog-card">
+                <img src="../Imagens/iet-cientistas-criam-ferramenta-que-vincula-manuscritos-aos-codigos-de-programacao.png" alt="Blog 3" class="blog-image">
+                <div class="blog-content">
+                    <h2 class="blog-title">Carreira de Programador</h2>
+                    <p class="blog-description"> Orientações sobre como construir uma carreira sólida na área de programação e tecnologia.</p>
+                    <a href="blog3-link.html" class="blog-button">Leia mais</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="../Imagens/mulheres-na-tecnologia-blog-v02.webp" alt="Blog 4" class="blog-image">
+                <div class="blog-content">
+                    <h2 class="blog-title">Mulheres na Tecnologia</h2>
+                    <p class="blog-description"> Histórias inspiradoras de mulheres que estão fazendo a diferença no setor de tecnologia.</p>
+                    <a href="blog3-link.html" class="blog-button">Leia mais</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="../Imagens/img-HrbeWi4G1eNRZU0EDOdwPQ4m-min.jpg" alt="Blog 3" class="blog-image">
+                <div class="blog-content">
+                    <h2 class="blog-title">Uso de I.A na Programação</h2>
+                    <p class="blog-description">Explorando como a inteligência artificial está transformando práticas e processos de programação</p>
+                    <a href="blog3-link.html" class="blog-button">Leia mais</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="../Imagens/1610286864152.jfif" alt="Blog 3" class="blog-image">
+                <div class="blog-content">
+                    <h2 class="blog-title">Evolução das Inteligências Artificiais</h2>
+                    <p class="blog-description">Um olhar sobre a história e o progresso das IAs, desde suas origens até os avanços atuais.</p>
+                    <a href="blog3-link.html" class="blog-button">Leia mais</a>
+                </div>
+            </div>
+            <br>
+        </div>
     </div>
+
+
+    <?php
+    include('../static/footer.php');
+    ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verifique o status da mensagem e exiba o alerta se for sucesso
+            const status = "<?php echo $status; ?>"; // Obtenha o status do PHP
+
+            if (status === 'success') {
+                const alertContainer = document.getElementById('alert-container');
+                const overlay = document.getElementById('overlay');
+
+                // Exibir o alerta
+                alertContainer.style.display = 'block';
+                overlay.style.display = 'block';
+
+                // Redirecionar após 5 segundos
+                setTimeout(function() {
+                    window.location.href = 'contato.php';
+                }, 5000);
+            }
+        });
+    </script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed('#animated-text', {
+            strings: ['as Melhores experiências', 'as Aventuras inesquecíveis', 'os Momentos incríveis'], // Palavras que vão aparecer
+            typeSpeed: 50, // Velocidade para digitar as palavras
+            backSpeed: 30, // Velocidade para apagar as palavras
+            loop: true, // Faz o efeito repetir
+            showCursor: true, // Mostra o cursor piscando
+            cursorChar: '|', // Personaliza o caractere do cursor
+            startDelay: 500, // Delay antes de começar a digitar
+            backDelay: 1500, // Tempo que o texto permanece antes de apagar
+        });
+    </script>
+
+
 </body>
 
 </html>

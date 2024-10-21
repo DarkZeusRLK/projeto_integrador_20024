@@ -28,43 +28,40 @@ if (isset($_SESSION['tipo_usuario'])) {
         $nome = $_POST['bt_nome'];
         $telefone = $_POST['bt_telefone'];
         $cpf = $_POST['bt_cpf'];
+        $foto_atual = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_da_imagem_padrao.jpg';
 
-        // Atualizar informações do usuário
+        // Se o usuário enviar uma nova foto, faz o upload; caso contrário, mantém a foto atual
+        if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
+            // Processo de upload da nova imagem
+            $nome_arquivo = $_FILES['foto']['name'];
+            $caminho_temp = $_FILES['foto']['tmp_name'];
+            $caminho_destino = '../recebidos/' . $nome_arquivo;
+            move_uploaded_file($caminho_temp, $caminho_destino);
 
-
+            // Atualiza a foto na sessão e na variável
+            $_SESSION['arquivo_foto'] = $caminho_destino;
+        } else {
+            // Mantém a foto atual
+            $caminho_destino = $foto_atual;
+        }
 
         // Usar prepared statements para evitar SQL Injection
-        $stmt = $conexao->prepare("UPDATE cadastro SET email = ?, nome = ?, cpf = ?, telefone = ? WHERE id_usuario = ?");
-        $stmt->bind_param("sssss", $email, $nome, $cpf, $telefone, $id_cadastro_alterar);
+        $stmt = $conexao->prepare("UPDATE cadastro SET email = ?, nome = ?, cpf = ?, telefone = ?, arquivo_foto = ? WHERE id_usuario = ?");
+        
+        // Verifica se a preparação da query foi bem-sucedida
+        if (!$stmt) {
+            die("Erro na preparação da consulta SQL: " . $conexao->error);
+        }
+
+        $stmt->bind_param("sssssi", $email, $nome, $cpf, $telefone, $caminho_destino, $id_cadastro_alterar);
         $stmt->execute();
-
-        $sql_alterar = "UPDATE cadastro
-        SET email = '$email',
-        nome = '$nome',
-        cpf = '$cpf'
-        telefone = '$telefone'
-        WHERE id_usuario = '$id_cadastro_alterar'";
-
-        // Fechar a declaração
         $stmt->close();
-
 
         // Atualizar os dados da sessão para refletir as mudanças
         $_SESSION['nome'] = $nome;
         $_SESSION['email'] = $email;
         $_SESSION['cpf'] = $cpf;
         $_SESSION['telefone'] = $telefone;
-        $_SESSION['arquivo_foto'] = $foto;
-
-        // Manter a foto de perfil existente
-        if (!isset($_SESSION['arquivo_foto']) || empty($_SESSION['arquivo_foto'])) {
-            $_SESSION['arquivo_foto'] = $foto; // Caso exista uma nova foto, esta variável será atualizada
-        }
-        if (isset($_SESSION['arquivo_foto'])) {
-            $_SESSION['arquivo_foto'] = $foto; // Caso exista uma nova foto, esta variável será atualizada
-        }
-
-
 
         // Redirecionar para a página com o parâmetro 'atualizado=true'
         header("Location: editaconta.php?atualizado=true");
@@ -74,13 +71,11 @@ if (isset($_SESSION['tipo_usuario'])) {
     // Consultar os dados do usuário
     if (isset($_POST['bt_id'])) {
         $id_cadastro = $_POST['bt_id'];
-        $stmt = $mysqli->prepare("SELECT * FROM cadastro WHERE id_usuario = ?");
+        $stmt = $conexao->prepare("SELECT * FROM cadastro WHERE id_usuario = ?");
         $stmt->bind_param("i", $id_cadastro);
         $stmt->execute();
         $resultado = $stmt->get_result();
         $consultar = $resultado->fetch_assoc();
-
-        // Fechar a declaração  
         $stmt->close();
     }
 }
@@ -93,6 +88,7 @@ $cpf_usuario = isset($_SESSION['cpf']) ? $_SESSION['cpf'] : 'Não disponível';
 $telefone_usuario = isset($_SESSION['telefone']) ? $_SESSION['telefone'] : 'Não disponível';
 $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_da_imagem_padrao.jpg';
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -128,10 +124,10 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                 
                     <label class="escfoto" for="foto"> 
                             <a id="editar">Escolher foto</a>
-                        </label>
+                    </label>
                   
                     <span class="heading"><?php echo $nome_usuario; ?></span>
-                    <form action="upload_imagem.php" method="POST" enctype="multipart/form-data">
+                    <form action="editaconta.php" method="POST" enctype="multipart/form-data">
                         <!-- Campo hidden com o id do usuário -->
                         <input type="hidden" name="bt_id_alterar" value="<?php echo $id_usuario; ?>">
 
@@ -176,20 +172,18 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                         </script>
                     <?php endif; ?>
 
-
-
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
     <!-- Scripts de acessibilidade e rodapé -->
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <?php include('../static/footer.php'); ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-Qg4pyS/B0iGf7A29Hhs6eSYZZFpb77BJPf3CwEYfqLSfdHgfsELaI9HtWw5ERgAc" crossorigin="anonymous"></script>
 </body>
 
 </html>

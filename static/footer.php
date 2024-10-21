@@ -21,7 +21,7 @@
 
         <ul class="footer-list">
             <li>
-                <h3>Blog</h3>
+                <h3><a class="footer-link" href="../index/index.php#blogs">Blogs</a></h3>
             </li>
             <li>
                 <a href="https://blog.runrun.it/avanco-da-tecnologia/" class="footer-link">Tecnologia</a>
@@ -39,13 +39,13 @@
                 <h3>Serviços</h3>
             </li>
             <li>
-                <a href="../index/index.php" class="footer-link">Hotéis</a>
+                <a href="../index/index.php#hoteis" class="footer-link">Hotéis</a>
             </li>
             <li>
                 <a href="../user/login.php" class="footer-link">Login</a>
             </li>
             <li>
-                <a href="../index/index.php" class="footer-link">Pacotes de Viagens</a>
+                <a href="../index/index.php#card_pacote" class="footer-link">Pacotes de Viagens</a>
             </li>
         </ul>
 
