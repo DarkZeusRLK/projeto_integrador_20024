@@ -891,7 +891,6 @@ body.dark-mode {
 .sidebar.dark-mode {
   background-color: var(--yellow);
 }
-
 .nav-links li a.dark-mode {
   color: #ffffff;
 }
@@ -985,12 +984,26 @@ body.dark-mode .sidebar .menu-btn {
   font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
   color: #333; /* Cor do texto do nome do usuário, ajuste conforme o tema */
 }
-
+body.dark-mode .username{
+  color: white;
+}
+body.dark-mode .card{
+  background-color: var(--azulescuro);
+}
+body.dark-mode .card-text{
+  color: white;
+}
+body.dark-mode .card-title{
+  color: white;
+}
 .avatar {
   width: 40px; /* Ajuste o tamanho conforme necessário */
   height: 40px; /* Ajuste o tamanho conforme necessário */
   border-radius: 50%; /* Faz com que o avatar seja redondo */
   object-fit: cover; /* Garante que a imagem do avatar se ajuste corretamente */
+}
+#save-font-size{
+  width: 22rem;
 }
 #admin-badge {
   background-color: var(--amarelo);
