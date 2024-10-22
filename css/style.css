@@ -832,10 +832,10 @@ table td {
 
 .dashboard-content {
   background-color: whitesmoke;
-  padding: 20px;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 80%;
 }
 
 .custom-btn2 {
@@ -849,7 +849,6 @@ table td {
   display: inline-block;
   font-size: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: 12%;
 }
 
 .custom-btn2:hover {
@@ -2133,22 +2132,15 @@ footer {
 /* Media queries ajustadas */
 @media screen and (max-width: 1400px) {
   #footer_content {
-    grid-template-columns: repeat(4, 2fr);
     padding: 3rem;
     /* Reduzir padding em telas menores */
-    width: 100%;
   }
 
-  footer {
-    max-width: 110%;
-    margin-top: 20rem;
-  }
+
 }
-
 /* Media queries ajustadas */
 @media screen and (max-width: 1200px) {
   #footer_content {
-    grid-template-columns: repeat(4, 2fr);
     padding: 3rem;
     /* Reduzir padding em telas menores */
   }
@@ -2175,7 +2167,6 @@ footer {
 @media screen and (max-width: 768px) {
   #footer_content {
     grid-template-columns: repeat(2, 1fr);
-    padding: 2rem;
     /* Reduzir padding em telas menores */
   }
 

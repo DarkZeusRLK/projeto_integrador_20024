@@ -20,9 +20,6 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-
-
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../javascript/dashboard_adm.js"></script>
     <script defer src="../javascript/script_navbar.js"></script>
     <script defer src="../javascript/alternar_modos.js"></script>
@@ -61,7 +58,6 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
        
 
         table td {
-            font-size: 13px;
             padding: 10px;
         }
         .dashboard-content {
@@ -76,7 +72,7 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
 
     @media (max-width: 576px) {
         table td {
-            font-size: 11px;
+            font-size: 12px;
             padding: 10px;
             color: #000;
         }
@@ -111,7 +107,7 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                 </div>
 
                 <div id="usuariosTable" class="my-custom-table">
-                    <h3 class="titulo-dashboard-adm">Usuários Cadastrados</h3>
+                    <h3 class="titulo-dashboard-adm"><- Usuários Cadastrados -></h3>
                     <table class="table custom-bg">
                         <thead class="my-custom-bg">
                             <tr>
@@ -138,13 +134,12 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                 </div>
 
                 <div id="hoteisTable" class="table-container" style="display:none;">
-                    <h3 class="titulo-dashboard-adm">Hotéis Cadastrados</h3>
+                    <h3 class="titulo-dashboard-adm"><- Hotéis Cadastrados -></h3>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
-                                <th>Descrição</th>
                                 <th>Imagem</th>
                                 <th>Função</th>
                                 <th>Config. Adicional</th>
@@ -155,7 +150,6 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                                 <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php?codigo_cadastro=<?php echo $hotel['id_hotel']; ?>'" style="cursor: pointer;">
                                     <td><?php echo $hotel['id_hotel']; ?></td>
                                     <td><?php echo $hotel['nome']; ?></td>
-                                    <td><?php echo $hotel['descricao']; ?></td>
                                     <td><img src="../<?php echo $hotel['arquivo_caminho']; ?>" alt="Imagem do hotel" class="imagem-dashboard-adm"></td>
                                     <td>Hotel</td>
                                     <td><i class="fas fa-cog"> </i><span> Editar</span></td>
@@ -171,11 +165,9 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                 </div>
             </section>
         </main>
-    <?php
-    include('../static/footer.php');
-    ?>
-
-    <script src="../javascript/script.js"></script>
+        
+            <?php include('../static/footer.php');?>
+     
 </body>
 
 </html>
