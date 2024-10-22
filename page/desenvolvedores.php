@@ -32,8 +32,9 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
             margin: 0;
             padding: 0;
         }
+
         #imagem_do_grupo_todo{
-            width: 90%;
+            width: 80%;
             margin-left: 11%;
         }
         .container {
@@ -59,6 +60,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            width: 100%;
         }
 
         main {
@@ -200,7 +202,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                 </div>
                 <div class="developer">
                     <div class="photo-container">
-                        <img src="developer4.jpg" alt="Desenvolvedor 4" class="photo">
+                        <img src="../Imagens/jraffis.jpg.jpg" alt="Desenvolvedor 4" class="photo">
                     </div>
                     <div class="info">
                         <h2>João Rafael de Carvalho Bissoloti</h2>
