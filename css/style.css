@@ -966,7 +966,7 @@ h3.dark-mode {
 
 /* Estilo para o modo escuro */
 body.dark-mode .sidebar {
-  background-color: var(--amarelo);
+  background-color: var(--azulescuro);
   /* Cor da navbar no modo escuro */
   color: black;
   /* Cor do texto no modo escuro */
@@ -992,7 +992,7 @@ body.dark-mode .custom-btn:hover {
 
 /* Estilos para ícones no modo escuro */
 body.dark-mode .sidebar i {
-  color: black;
+  color: var(--amarelo);
   /* Cor dos ícones no modo escuro */
 }
 
@@ -1037,7 +1037,16 @@ body.dark-mode .sidebar .text-title {
 }
 
 body.dark-mode .sidebar .menu-btn {
-  color: black;
+  color: var(--amarelo);
+}
+body #footer_content{
+  background-color: var(--azulescuro);
+}
+body .dashboard-content {
+  background-color: var(--azulescuro);
+}
+body table td{
+  color: #fff;
 }
 
 /* CSS para o perfil do usuário */
