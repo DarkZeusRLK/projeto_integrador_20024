@@ -112,6 +112,15 @@ if (isset($_POST['email'])) {
             width: 100%;
             height: auto;
         }
+
+        .passagem {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -246,7 +255,7 @@ if (isset($_POST['email'])) {
                 <?php endif; ?>
                 <a href="../user/conta.php" class="user-avatar-link">
                     <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
-
+                </a>
             </div>
         <?php
         }
@@ -274,10 +283,10 @@ if (isset($_POST['email'])) {
                             $imagem_fundo = strtolower($pacotes['foto_pacote']) . ".jpg"; // ajuste o caminho e a extensão da imagem conforme necessário
                         ?>
                             <!-- Cruise Card 1 -->
-                            <div class="cruise-card" style="background-image: url('<?php echo $pacotes['foto_pacote']; ?>');">
+                            <div class="cruise-card" style="background-image: url('<?php echo $pacotes['foto_pacote'];?>');">
                                 <div class="cruise-overlay">
-                                    <h2 class="cruise-title"><?php echo $pacotes['nome']; ?></h2>
-                                    <p class="cruise-description"><?php echo $pacotes['descricao']; ?></p>
+                                    <h2 class="cruise-title"><?php echo $pacotes['nome'];?></h2>
+                                    <p class="cruise-description"><?php echo $pacotes['descricao'];?></p>
                                     <a href="cruise1-link.html" class="cruise-button">Ver Mais</a>
                                 </div>
                             </div>
@@ -457,7 +466,7 @@ if (isset($_POST['email'])) {
         });
     </script>
 
-    <script>
+<script>
         var typed2 = new Typed('#animated-text2', {
             strings: ['os Melhores Pacotes', 'os Momentos Perfeitos', 'os Dias Incríveis'], // Palavras que vão aparecer
             typeSpeed: 50, // Velocidade para digitar as palavras

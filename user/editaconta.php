@@ -47,7 +47,7 @@ if (isset($_SESSION['tipo_usuario'])) {
 
         // Usar prepared statements para evitar SQL Injection
         $stmt = $conexao->prepare("UPDATE cadastro SET email = ?, nome = ?, cpf = ?, telefone = ?, arquivo_foto = ? WHERE id_usuario = ?");
-        
+
         // Verifica se a preparação da query foi bem-sucedida
         if (!$stmt) {
             die("Erro na preparação da consulta SQL: " . $conexao->error);
@@ -108,6 +108,27 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
 </head>
 
 <body>
+    <!-- Modal de Confirmação de Exclusão -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Deletar Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Você tem certeza de que deseja deletar sua conta? Esta ação não pode ser desfeita.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <form action="deletar_conta.php" method="POST">
+                        <input type="hidden" name="bt_id_deletar" value="<?php echo $id_usuario; ?>">
+                        <button type="submit" class="btn btn-danger">Deletar Conta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php
     include('../static/menu.php');
@@ -119,13 +140,13 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                     <div class="profile-picture-container">
                         <div class="editarfoto">
                             <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
-                        </div>  
+                        </div>
                     </div>
-                
-                    <label class="escfoto" for="foto"> 
-                            <a id="editar">Escolher foto</a>
+
+                    <label class="escfoto" for="foto">
+                        <a id="editar">Escolher foto</a>
                     </label>
-                  
+
                     <span class="heading"><?php echo $nome_usuario; ?></span>
                     <form action="editaconta.php" method="POST" enctype="multipart/form-data">
                         <!-- Campo hidden com o id do usuário -->
@@ -139,42 +160,55 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                         <input type="email" name="bt_email" class="input" value="<?php echo $email_usuario; ?>" placeholder="Email" required>
                         <input type="text" name="bt_cpf" class="input" value="<?php echo $_SESSION['cpf']; ?>" placeholder="CPF" required>
                         <input type="text" name="bt_telefone" class="input" value="<?php echo $_SESSION['telefone']; ?>" placeholder="Telefone" required>
-
                         <div class="button-container">
+                            <button type="button" class="reset-button" onclick="openDeleteModal()">Deletar Conta</button>
+                            <script>
+                                function openDeleteModal() {
+                                    const deleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+                                    deleteModal.show();
+                                }
+                            </script>
+                            <!-- Botão de salvar -->
                             <div class="save-button-container">
                                 <button type="submit" class="save-button">Salvar</button>
                             </div>
                         </div>
-                    </form>
-
-                    <?php if (isset($_GET['atualizado']) && $_GET['atualizado'] == 'true'): ?>
-                        <div class="overlay"></div> <!-- Fundo escurecido -->
-
-                        <div class="card1">
-                            <div class="header">
-                                <div class="image">
-                                    <svg aria-hidden="true" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
-                                        <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" stroke-linejoin="round" stroke-linecap="round"></path>
-                                    </svg>
-                                </div>
-                                <div class="content">
-                                    <span class="title">Seus dados foram alterados!</span>
-                                    <p class="message">Você será redirecionado para a página de conta em breve.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <script>
-                            // Redirecionar após 10 segundos
-                            setTimeout(function() {
-                                window.location.href = "conta.php";
-                            }, 5000); // 10000 milissegundos = 10 segundos
-                        </script>
-                    <?php endif; ?>
 
                 </div>
+
+
+
+
+                </form>
+
+                <?php if (isset($_GET['atualizado']) && $_GET['atualizado'] == 'true'): ?>
+                    <div class="overlay"></div> <!-- Fundo escurecido -->
+
+                    <div class="card1">
+                        <div class="header">
+                            <div class="image">
+                                <svg aria-hidden="true" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" stroke-linejoin="round" stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                            <div class="content">
+                                <span class="title">Seus dados foram alterados!</span>
+                                <p class="message">Você será redirecionado para a página de conta em breve.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        // Redirecionar após 10 segundos
+                        setTimeout(function() {
+                            window.location.href = "conta.php";
+                        }, 5000); // 10000 milissegundos = 10 segundos
+                    </script>
+                <?php endif; ?>
+
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Scripts de acessibilidade e rodapé -->
@@ -184,6 +218,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-Qg4pyS/B0iGf7A29Hhs6eSYZZFpb77BJPf3CwEYfqLSfdHgfsELaI9HtWw5ERgAc" crossorigin="anonymous"></script>
+    </script>
 </body>
 
 </html>

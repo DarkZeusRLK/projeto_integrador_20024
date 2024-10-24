@@ -786,7 +786,7 @@ input[type="password"]:focus {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 99%;
 }
 
 table {
@@ -939,6 +939,9 @@ input:checked+.slider:before {
 body.dark-mode {
   background-color: #002733;
   color: #ffffff;
+}
+body.dark-mode #text-index3{
+  color:#ffff
 }
 
 .sidebar.dark-mode {
@@ -2635,4 +2638,16 @@ footer {
 }
 .brasil:hover{
   transition: 0.6s ease;
+}
+.modal-content {
+  border-radius: 8px;
+}
+
+.modal-header {
+  background-color: #dc3545; /* Vermelho do Bootstrap */
+  color: white;
+}
+
+.modal-footer .btn-danger {
+  background-color: #dc3545; /* Vermelho do Bootstrap */
 }
