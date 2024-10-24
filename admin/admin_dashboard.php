@@ -20,6 +20,7 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../estilo.css">
     <script defer src="../javascript/dashboard_adm.js"></script>
     <script defer src="../javascript/script_navbar.js"></script>
     <script defer src="../javascript/alternar_modos.js"></script>
@@ -166,8 +167,8 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
             </section>
         </main>
         
-            <?php include('../static/footer.php');?>
-     
-</body>
+        
+        <?php include('../static/footer.php');?>
+    </body>
 
 </html>

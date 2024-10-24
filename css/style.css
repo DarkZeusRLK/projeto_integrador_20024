@@ -1039,7 +1039,7 @@ body.dark-mode .sidebar .text-title {
 body.dark-mode .sidebar .menu-btn {
   color: var(--amarelo);
 }
-body #footer_content{
+body.dark-mode #footer_content{
   background-color: var(--azulescuro);
 }
 body .dashboard-content {
@@ -1230,6 +1230,7 @@ body.dark-mode .card-title {
       calc(100% - 20px) 100%,
       0 100%);
   padding: 50px;
+  margin-bottom: 2rem;
 }
 
 .heading {
@@ -2008,19 +2009,6 @@ footer {
   text-align: center;
 }
 
-#footer_content {
-  color: var(--color-neutral-40);
-  text-align: center;
-  background-color: var(--azul);
-  /* Cor de fundo do footer */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 3rem 3.5rem;
-  /* Ajuste de padding */
-  box-shadow: 2px 0 5px rgba(0.8, 0.8, 0.8, 0.8);
-  position: relative;
-  top: 3.9rem;
-}
 
 .footer-link {
   text-decoration: none;

@@ -30,6 +30,7 @@ footer {
 }
 
 #footer_content {
+    box-shadow: 2px 0 5px rgba(0.7, 0.7, 0.7, 0.7);
     background-color: var(--color-neutral-10);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
