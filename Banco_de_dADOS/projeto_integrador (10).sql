@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 18-Out-2024 às 15:13
+-- Tempo de geração: 24-Out-2024 às 12:04
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
 --
 
 INSERT INTO `cadastro` (`id_usuario`, `nome`, `email`, `senha`, `telefone`, `cpf`, `genero`, `tipo_usuario`, `arquivo_foto`) VALUES
-(8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', '../Imagens/ftperfil/670929e87d6aa.jpg'),
+(8, 'Matheus', 'josefino@gmail.com', '$2y$10$Uk1eE6EwJi6LlsGCaIRfBuwkWVI2QwAwdgSFrQLj5lJqe4pBFOkkK', '(43)99433432542352', '123.123.123-12', 'Masculino', 'administrador', '../recebidos/Banner Turismo (2).png'),
 (9, 'Matheus', 'zeres@gmail.com', '$2y$10$2tM8cxPmTW79Z3ObuGIRUO99p.V74cBJmIJILTd9zR2ZS38PNPh.6', '(43)99433432542352', '123.123.123-12', 'Feminino', 'cliente', '../Imagens/ftperfil/6707bfe8bfb69.jpg'),
 (10, 'Dieimes', 'dieimes@dieimes', '$2y$10$YU6Y2YQR6VDAB0k737m8C.ihVoQtTvKVCMAr8z5XIhdlK3nXjEJ4e', '12351515', '12345678914', 'Masculino', 'administrador', '../Imagens/avatar2.png'),
 (11, 'Zere', 'teste@gmail.com', '$2y$10$B3fwmIJGlnNyVrAKC/wwSORL//SAtfz4wGZYz1U5zLpWjQrPfTG4m', '43999745207', '141414341242141', 'Feminino', 'cliente', '../Imagens/avatar2.png'),
@@ -226,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `pacotes_viagens` (
   `id_pacote` int(200) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
   `valor` varchar(200) NOT NULL,
-  `descricao` varchar(200) NOT NULL,
+  `descricao` varchar(300) NOT NULL,
   `foto_pacote` varchar(300) NOT NULL,
   PRIMARY KEY (`id_pacote`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf32;
@@ -236,9 +236,9 @@ CREATE TABLE IF NOT EXISTS `pacotes_viagens` (
 --
 
 INSERT INTO `pacotes_viagens` (`id_pacote`, `nome`, `valor`, `descricao`, `foto_pacote`) VALUES
-(1, 'Pacote TESTE 1', 'R$ 100000', '313231313', 'SEM FOTO'),
-(2, 'PACOTE TESTE 2', '2000000', 'PACOTE TESTE 2 23132', 'SEM FOTO'),
-(3, 'PACOTE TESTE 3', '30000000', '3132312321', 'SEM FOTO');
+(1, 'Pacote Aventura e Magia - Hopi Hari + Hospedagem em Campinas (SP)', 'R$ 1.200,00 a R$ 2.000,00 por pessoa', 'Explore o universo magico do Hopi Hari com seus brinquedos emocionantes, como montanhas-russas, simuladores e shows teatrais. Ideal para quem busca aventura e entretenimento! O pacote tambem oferece hospedagem em Campinas.\r\n\r\n', '../recebidos/1.png'),
+(2, 'Pacote Diversao Total - Beto Carrero World + Hospedagem em Penha (SC)\r\n', 'R$ 1.500,00 a R$ 2.500,00 por pessoa', 'Viva momentos inesqueciveis no maior parque tematico da America Latina, o Beto Carrero World! Aproveite as emocionantes montanhas-russas, shows tematicos e areas interativas para todas as idades. O pacote inclui hospedagem em Penha.', '../recebidos/2.png'),
+(3, 'Pacote Fantasia em Familia - Beach Park + Hospedagem em Fortaleza (CE)\r\n', 'R$ 2.000,00 a R$ 3.500,00 por pessoa', 'Mergulhe na diversao do Beach Park, um dos maiores parques aquaticos do Brasil, com toboaguas radicais, rios tranquilos e areas infantis. Perfeito para curtir em familia! O pacote inclui hospedagem em Fortaleza.\r\n\r\n', '../recebidos/3.png');
 
 -- --------------------------------------------------------
 
