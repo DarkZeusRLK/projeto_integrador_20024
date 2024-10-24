@@ -99,12 +99,6 @@ if (isset($_POST['email'])) {
     <title>Início - IvaíTour</title>
     <style>
         body {
-            background-color: #fff;
-            background-image: url("../Imagens/Vegetação2.gif");
-            background-repeat: no-repeat;
-
-            background-size: 100%;
-            background-position-y: 40%;
             text-align: center;
         }
 
@@ -266,51 +260,46 @@ if (isset($_POST['email'])) {
         <?php
         }
         ?>
-
-        <a class="passagem" href="../passagem.php">Reserve sua Passagem</a>
-
         <div class="row mt-4">
 
-            <h1 id="text-index2">Pacotes em Destaque</h1>
-            <?php
-            // Inicialize a variável de contagem
-            $contador = 0;
+            <h1 id="text-index3">Pacotes em Destaque</h1>
+            <div class="final_index">
+                <h1 id="text-index2">Adquira <span id="animated-text2"></span></h1>
+                <!-- Seção de Cruzeiros -->
+                <div class="final_index">
+                    <!-- Seção de Cruzeiros -->
+                    <br>
+                    <h1 id="text_cruise">Experimente as melhores viagens do <span class="brasil">Brasil!</span></h1>
+                    <div id="cruises">
+                        <?php
+                        // Inicialize a variável de contagem
+                        $contador = 0;
 
-            // Loop pelos pacotes
-            while ($pacotes = $retorno_consulta2->fetch_assoc()):
-                // Aumente a contagem
-                $contador++;
-                // Defina a imagem de fundo com base na cidade
-                $imagem_fundo = strtolower($pacotes['foto_pacote']) . ".jpg"; // ajuste o caminho e a extensão da imagem conforme necessário
-            ?>
-                <div class="col">
-                    <div id="card_pacote_<?php echo $contador; ?>" class="card custom-card" style="background-image: url('<?php echo $imagem_fundo; ?>');" data-bg="<?php echo $imagem_fundo; ?>">
-                        <h2 id="titulo_pacote_<?php echo $contador; ?>"><?php echo $pacotes['nome']; ?></h2>
-                        <div id="card_body2_<?php echo $contador; ?>">
-                            <h5 id="card_title_<?php echo $contador; ?>">
-                                <?php echo $pacotes['nome']; ?>
-                            </h5>
-                            <p id="card_text_<?php echo $contador; ?>">
-                                <?php echo $pacotes['descricao']; ?>
-                            </p>
-                            <h5 id="card_text_value_<?php echo $contador; ?>">
-                                <?php echo $pacotes['valor']; ?>
-                            </h5>
-                            <div class="text-center mt-4">
-                                <a id="btn_comprar_<?php echo $contador; ?>" href="../user/comprar.php?id=<?php echo $pacotes['id_pacote']; ?>">
-                                    Comprar Pacote
-                                </a>
+                        // Loop pelos pacotes
+                        while ($pacotes = $retorno_consulta2->fetch_assoc()):
+                            // Aumente a contagem
+                            $contador++;
+                            // Defina a imagem de fundo com base na cidade
+                            $imagem_fundo = strtolower($pacotes['foto_pacote']) . ".jpg"; // ajuste o caminho e a extensão da imagem conforme necessário
+                        ?>
+                            <!-- Cruise Card 1 -->
+                            <div class="cruise-card" style="background-image: url('<?php echo $pacotes['foto_pacote'];?>');">
+                                <div class="cruise-overlay">
+                                    <h2 class="cruise-title"><?php echo $pacotes['nome'];?></h2>
+                                    <p class="cruise-description"><?php echo $pacotes['descricao'];?></p>
+                                    <a href="cruise1-link.html" class="cruise-button">Ver Mais</a>
+                                </div>
                             </div>
-                        </div>
+                        <?php endwhile; ?>
                     </div>
+                    <br>
                 </div>
-            <?php endwhile; ?>
+            </div>
 
 
 
 
-
-            <h1 id="text-index2">Hotéis em Destaque</h1>
+            <h1 id="text-index3">Hotéis em Destaque</h1>
             <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
                 <div class="col">
                     <div class="card h-100">
@@ -387,7 +376,7 @@ if (isset($_POST['email'])) {
                 <div class="blog-content">
                     <h2 class="blog-title">Tecnologia nos Dias Atuais</h2>
                     <p class="blog-description">Uma análise das inovações e tendências tecnológicas que moldam nossa vida cotidiana.</p>
-                    <a href="blog1-link.html" class="blog-button">Leia mais</a>
+                    <a href="https://g1.globo.com/tecnologia/" class="blog-button">Leia mais</a>
                 </div>
             </div>
 
@@ -397,7 +386,7 @@ if (isset($_POST['email'])) {
                 <div class="blog-content">
                     <h2 class="blog-title">Programação Web</h2>
                     <p class="blog-description"> Dicas e tutoriais sobre desenvolvimento web, desde HTML até frameworks modernos.</p>
-                    <a href="blog2-link.html" class="blog-button">Leia mais</a>
+                    <a href="https://www.tecmundo.com.br/desenvolvimento/noticias" class="blog-button">Leia mais</a>
                 </div>
             </div>
 
@@ -407,7 +396,7 @@ if (isset($_POST['email'])) {
                 <div class="blog-content">
                     <h2 class="blog-title">Carreira de Programador</h2>
                     <p class="blog-description"> Orientações sobre como construir uma carreira sólida na área de programação e tecnologia.</p>
-                    <a href="blog3-link.html" class="blog-button">Leia mais</a>
+                    <a href="https://g1.globo.com/tecnologia/noticia/2023/05/09/entenda-se-programacao-ainda-vale-a-pena-profissionais-contam-como-esta-o-setor.ghtml" class="blog-button">Leia mais</a>
                 </div>
             </div>
             <div class="blog-card">
@@ -415,7 +404,7 @@ if (isset($_POST['email'])) {
                 <div class="blog-content">
                     <h2 class="blog-title">Mulheres na Tecnologia</h2>
                     <p class="blog-description"> Histórias inspiradoras de mulheres que estão fazendo a diferença no setor de tecnologia.</p>
-                    <a href="blog3-link.html" class="blog-button">Leia mais</a>
+                    <a href="https://www.cnnbrasil.com.br/tecnologia/mulheres-na-tecnologia/" class="blog-button">Leia mais</a>
                 </div>
             </div>
             <div class="blog-card">
@@ -423,7 +412,7 @@ if (isset($_POST['email'])) {
                 <div class="blog-content">
                     <h2 class="blog-title">Uso de I.A na Programação</h2>
                     <p class="blog-description">Explorando como a inteligência artificial está transformando práticas e processos de programação</p>
-                    <a href="blog3-link.html" class="blog-button">Leia mais</a>
+                    <a href="https://www.cnnbrasil.com.br/economia/negocios/uso-de-inteligencia-artificial-aumenta-e-alcanca-72-das-empresas-diz-pesquisa/#:~:text=O%20interesse%20no%20uso%20da,comparado%20aos%2055%25%20em%202023." class="blog-button">Leia mais</a>
                 </div>
             </div>
             <div class="blog-card">
@@ -431,7 +420,7 @@ if (isset($_POST['email'])) {
                 <div class="blog-content">
                     <h2 class="blog-title">Evolução das Inteligências Artificiais</h2>
                     <p class="blog-description">Um olhar sobre a história e o progresso das IAs, desde suas origens até os avanços atuais.</p>
-                    <a href="blog3-link.html" class="blog-button">Leia mais</a>
+                    <a href="https://jornal.usp.br/ciencias/evolucao-da-inteligencia-artificial-tem-limitado-a-compreensao-sobre-a-humana-alerta-pesquisa/" class="blog-button">Leia mais</a>
                 </div>
             </div>
             <br>
@@ -467,6 +456,19 @@ if (isset($_POST['email'])) {
     <script>
         var typed = new Typed('#animated-text', {
             strings: ['as Melhores experiências', 'as Aventuras inesquecíveis', 'os Momentos incríveis'], // Palavras que vão aparecer
+            typeSpeed: 50, // Velocidade para digitar as palavras
+            backSpeed: 30, // Velocidade para apagar as palavras
+            loop: true, // Faz o efeito repetir
+            showCursor: true, // Mostra o cursor piscando
+            cursorChar: '|', // Personaliza o caractere do cursor
+            startDelay: 500, // Delay antes de começar a digitar
+            backDelay: 1500, // Tempo que o texto permanece antes de apagar
+        });
+    </script>
+
+<script>
+        var typed2 = new Typed('#animated-text2', {
+            strings: ['os Melhores Pacotes', 'os Momentos Perfeitos', 'os Dias Incríveis'], // Palavras que vão aparecer
             typeSpeed: 50, // Velocidade para digitar as palavras
             backSpeed: 30, // Velocidade para apagar as palavras
             loop: true, // Faz o efeito repetir

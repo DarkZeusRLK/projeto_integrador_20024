@@ -786,6 +786,7 @@ input[type="password"]:focus {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 table {
@@ -967,9 +968,9 @@ h3.dark-mode {
 
 /* Estilo para o modo escuro */
 body.dark-mode .sidebar {
-  background-color: var(--amarelo);
+  background-color: var(--azulescuro);
   /* Cor da navbar no modo escuro */
-  color: black;
+  color: var(--amarelo);
   /* Cor do texto no modo escuro */
 }
 
@@ -993,7 +994,7 @@ body.dark-mode .custom-btn:hover {
 
 /* Estilos para ícones no modo escuro */
 body.dark-mode .sidebar i {
-  color: black;
+  color: var(--amarelo);
   /* Cor dos ícones no modo escuro */
 }
 
@@ -1018,7 +1019,7 @@ body.dark-mode #form-container-ctt {
 }
 
 body.dark-mode #form-container-ctt .textarea {
-  background-color: #002733;
+  background-color: var(--azulescuro);
 }
 
 body.dark-mode .heading {
@@ -1030,15 +1031,17 @@ body.dark-mode #message {
 }
 
 body.dark-mode .sidebar span {
-  color: black;
+  color: #ffff;
 }
-
+body.dark-mode #footer_content{
+  background-color: var(--azulescuro);
+}
 body.dark-mode .sidebar .text-title {
-  color: black;
+  color: #ffff;
 }
 
 body.dark-mode .sidebar .menu-btn {
-  color: black;
+  color: var(--amarelo);
 }
 
 /* CSS para o perfil do usuário */
@@ -2429,8 +2432,19 @@ footer {
   text-align: center; /* Centralizar o texto */
   margin-top: 50px; /* Espaçamento superior */
 }
+#text-index3 {
+  font-family: 'Poppins', sans-serif; /* Exemplo de fonte moderna */
+  font-size: 4.5rem; /* Tamanho do título */
+  color: black; /* Cor do texto */
+  text-align: center; /* Centralizar o texto */
+  margin-top: 50px; /* Espaçamento superior */
+}
 
 #animated-text {
+  color: var(--amarelo);/* Cor diferente para o texto animado */
+  font-weight: bold;
+}
+#animated-text2 {
   color: var(--amarelo);/* Cor diferente para o texto animado */
   font-weight: bold;
 }
