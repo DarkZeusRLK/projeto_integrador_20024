@@ -283,10 +283,10 @@ if (isset($_POST['email'])) {
                             $imagem_fundo = strtolower($pacotes['foto_pacote']) . ".jpg"; // ajuste o caminho e a extensão da imagem conforme necessário
                         ?>
                             <!-- Cruise Card 1 -->
-                            <div class="cruise-card" style="background-image: url('<?php echo $pacotes['foto_pacote'];?>');">
+                            <div class="cruise-card" style="background-image: url('<?php echo $pacotes['foto_pacote']; ?>');">
                                 <div class="cruise-overlay">
-                                    <h2 class="cruise-title"><?php echo $pacotes['nome'];?></h2>
-                                    <p class="cruise-description"><?php echo $pacotes['descricao'];?></p>
+                                    <h2 class="cruise-title"><?php echo $pacotes['nome']; ?></h2>
+                                    <p class="cruise-description"><?php echo $pacotes['descricao']; ?></p>
                                     <a href="cruise1-link.html" class="cruise-button">Ver Mais</a>
                                 </div>
                             </div>
@@ -308,12 +308,18 @@ if (isset($_POST['email'])) {
                             <h5 class="card-title">
                                 <?php echo $hoteis['nome']; ?>
                             </h5>
-                            <p class="card-text">
-                                <?php echo $hoteis['descricao']; ?>
-                            </p>
+                            <p class="card-text limited-text" id="text">
+<?php echo $hoteis['descricao'];?>                            </p>
+                            <div class="collapse" id="collapseText">
+                                <p class="card-text mt-3">
+                                    <?php echo $hoteis['descricao']; ?> </p>
+                            </div>
                             <h5 class="card-text">R$
                                 <?php echo $hoteis['valor_diaria']; ?>
                             </h5>
+                            <a class="custom-btn" data-bs-toggle="collapse" href="#collapseText" role="button" aria-expanded="false" aria-controls="collapseText">
+                                Ler mais
+                            </a>
                             <div class="text-center mt-4">
                                 <a href="../user/hotel.php?id=<?php echo $hoteis['id_hotel']; ?>"
                                     class="custom-btn">Reservar Agora</a>
@@ -369,7 +375,7 @@ if (isset($_POST['email'])) {
         </div>
 
         <!-- Seção de Blogs -->
-         <h1 text-index2>Confira as Notícias</h1>
+        <h1 text-index2>Confira as Notícias</h1>
         <div id="blogs">
             <!-- Blog Card 1 -->
             <div class="blog-card">
@@ -467,7 +473,7 @@ if (isset($_POST['email'])) {
         });
     </script>
 
-<script>
+    <script>
         var typed2 = new Typed('#animated-text2', {
             strings: ['os Melhores Pacotes', 'os Momentos Perfeitos', 'os Dias Incríveis'], // Palavras que vão aparecer
             typeSpeed: 50, // Velocidade para digitar as palavras

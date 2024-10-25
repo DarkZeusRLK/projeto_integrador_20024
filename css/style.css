@@ -2718,3 +2718,10 @@ footer {
       max-width: none;
   }
 }
+   /* Estilo para limitar o texto a três linhas */
+   .limited-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Limita a três linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
