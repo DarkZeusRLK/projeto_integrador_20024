@@ -315,7 +315,7 @@ if (isset($_POST['email'])) {
                                 <?php echo $hoteis['valor_diaria']; ?>
                             </h5>
                             <div class="text-center mt-4">
-                                <a href="../user/comprar.php?id=<?php echo $hoteis['id_hotel']; ?>"
+                                <a href="../user/hotel.php?id=<?php echo $hoteis['id_hotel']; ?>"
                                     class="custom-btn">Reservar Agora</a>
                             </div>
                         </div>
@@ -369,6 +369,7 @@ if (isset($_POST['email'])) {
         </div>
 
         <!-- Seção de Blogs -->
+         <h1 text-index2>Confira as Notícias</h1>
         <div id="blogs">
             <!-- Blog Card 1 -->
             <div class="blog-card">
