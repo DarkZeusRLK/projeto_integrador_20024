@@ -12,14 +12,10 @@ if (!isset($_SESSION['nome'])) {
     exit();
 }
 
-// Verificar se o botão de deletar foi pressionado
-if (isset($_POST['bt_id_deletar'])) {
-    $id_usuario_deletar = $_POST['bt_id_deletar'];
-
-    // Exibir o ID recebido para debug (remover após confirmar)
-    echo "ID para deletar: " . $id_usuario_deletar;
-    exit();
-
+// Verificar se o ID do usuário a ser deletado foi passado via GET
+if (isset($_GET['deletar_conta'])) {
+    $id_usuario_deletar = $_GET['deletar_conta'];
+    
     // Usar prepared statement para evitar SQL Injection
     $stmt = $conexao->prepare("DELETE FROM cadastro WHERE id_usuario = ?");
 

@@ -8,7 +8,6 @@ if (!isset($_SESSION)) {
 
 // Verificar se o usuário está logado
 if (!isset($_SESSION['nome'])) {
-    // Se a sessão do usuário não estiver ativa, redireciona para a página de login
     header("Location: login.php");
     exit();
 }
@@ -29,6 +28,7 @@ if (isset($_SESSION['tipo_usuario'])) {
         $telefone = $_POST['bt_telefone'];
         $cpf = $_POST['bt_cpf'];
         $foto_atual = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_da_imagem_padrao.jpg';
+        $informacoes_alteradas = false; // Para controlar se as informações foram alteradas
 
         // Se o usuário enviar uma nova foto, faz o upload; caso contrário, mantém a foto atual
         if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
@@ -37,9 +37,8 @@ if (isset($_SESSION['tipo_usuario'])) {
             $caminho_temp = $_FILES['foto']['tmp_name'];
             $caminho_destino = '../recebidos/' . $nome_arquivo;
             move_uploaded_file($caminho_temp, $caminho_destino);
-
-            // Atualiza a foto na sessão e na variável
-            $_SESSION['arquivo_foto'] = $caminho_destino;
+            $_SESSION['arquivo_foto'] = $caminho_destino; // Atualiza a foto na sessão
+            $informacoes_alteradas = true; // Indica que houve alteração
         } else {
             // Mantém a foto atual
             $caminho_destino = $foto_atual;
@@ -63,9 +62,11 @@ if (isset($_SESSION['tipo_usuario'])) {
         $_SESSION['cpf'] = $cpf;
         $_SESSION['telefone'] = $telefone;
 
-        // Redirecionar para a página com o parâmetro 'atualizado=true'
-        header("Location: editaconta.php?atualizado=true");
-        exit();
+        // Redirecionar para a página com o parâmetro 'atualizado=true' apenas se houver alterações
+        if ($informacoes_alteradas) {
+            header("Location: editaconta.php?atualizado=true");
+            exit();
+        }
     }
 
     // Consultar os dados do usuário
@@ -105,34 +106,45 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
     <script defer src="../javascript/script_navbar.js"></script>
     <script defer src="../javascript/alternar_modos.js"></script>
     <script defer src="../javascript/cookie.js"></script>
+    <style>
+        /* Estilo do Modal */
+        #confirmModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        #confirmModal div {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        #confirmModal h3 {
+            margin-bottom: 15px;
+        }
+
+        #confirmModal button {
+            margin: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Modal de Confirmação de Exclusão -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmDeleteModalLabel">Deletar Conta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Você tem certeza de que deseja deletar sua conta? Esta ação não pode ser desfeita.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <form action="deletar_conta.php" method="POST">
-                        <input type="hidden" name="bt_id_deletar" value="<?php echo $id_usuario; ?>">
-                        <button type="submit" class="btn btn-danger">Deletar Conta</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include('../static/menu.php'); ?>
 
-    <?php
-    include('../static/menu.php');
-    ?>
+    
     <div class="container-fluid">
         <div class="mobile">
             <div id="form-container-ctt" class="form-container">
@@ -161,64 +173,53 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                         <input type="text" name="bt_cpf" class="input" value="<?php echo $_SESSION['cpf']; ?>" placeholder="CPF" required>
                         <input type="text" name="bt_telefone" class="input" value="<?php echo $_SESSION['telefone']; ?>" placeholder="Telefone" required>
                         <div class="button-container">
-                            <button type="button" class="reset-button" onclick="openDeleteModal()">Deletar Conta</button>
+                            <button type="button" class="reset-button" onclick="confirmDelete(<?php echo $_SESSION['id_usuario']; ?>)">Deletar Conta</button>
+
+                            <!-- Modal de Confirmação -->
+                            <div id="confirmModal" style="display:none;">
+                                <div>
+                                    <h3>Confirmar Exclusão</h3>
+                                    <p>Você realmente deseja deletar sua conta? Esta ação é irreversível.</p>
+                                    <button class="custom-btn2" id="confirmButton">Confirmar</button>
+                                    <button class="custom-btn2" onclick="closeModal()">Cancelar</button>
+                                </div>
+                            </div>
+
                             <script>
-                                function openDeleteModal() {
-                                    const deleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-                                    deleteModal.show();
+                                function confirmDelete(id) {
+                                    const modal = document.getElementById('confirmModal');
+                                    modal.style.display = 'flex'; // Exibe o modal
+                                    document.getElementById('confirmButton').onclick = function() {
+                                        window.location.href = 'deletar_conta.php?id=' + id; // Redireciona para a página de exclusão
+                                    };
+
+                                }
+
+                                function closeModal() {
+                                    const modal = document.getElementById('confirmModal');
+                                    modal.style.display = 'none'; // Fecha o modal
                                 }
                             </script>
-                            <!-- Botão de salvar -->
                             <div class="save-button-container">
-                                <button type="submit" class="save-button">Salvar</button>
+                                <button type="submit" class="save-button">Salvar Alterações</button>
                             </div>
-                        </div>
 
+                        </div>
+                    </form>
                 </div>
-
-
-
-
-                </form>
-
-                <?php if (isset($_GET['atualizado']) && $_GET['atualizado'] == 'true'): ?>
-                    <div class="overlay"></div> <!-- Fundo escurecido -->
-
-                    <div class="card1">
-                        <div class="header">
-                            <div class="image">
-                                <svg aria-hidden="true" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" stroke-linejoin="round" stroke-linecap="round"></path>
-                                </svg>
-                            </div>
-                            <div class="content">
-                                <span class="title">Seus dados foram alterados!</span>
-                                <p class="message">Você será redirecionado para a página de conta em breve.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        // Redirecionar após 10 segundos
-                        setTimeout(function() {
-                            window.location.href = "conta.php";
-                        }, 5000); // 10000 milissegundos = 10 segundos
-                    </script>
-                <?php endif; ?>
-
             </div>
         </div>
     </div>
-    </div>
 
-    <!-- Scripts de acessibilidade e rodapé -->
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-FTy4U2l0fF5uK4GLUUtQJcE1Q9SgIzOBnP5pD7nmlSYXySBrOBvvoL3N3bg01Btf" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-Qg4pyS/B0iGf7A29Hhs6eSYZZFpb77BJPf3CwEYfqLSfdHgfsELaI9HtWw5ERgAc" crossorigin="anonymous"></script>
-    </script>
+    <?php if (isset($_GET['atualizado']) && $_GET['atualizado'] == 'true'): ?>
+        <script>
+            setTimeout(function() {
+                alert("As informações foram atualizadas com sucesso!");
+            }, 100);
+        </script>
+    <?php endif; ?>
 </body>
 
 </html>
