@@ -9,7 +9,8 @@ $retorno_consulta = $conexao->query($consultar_banco) or die($conexao->error);
 $consultar_banco2 = "SELECT * FROM cadastro_hoteis";
 $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
 
-
+$consultar_banco3 = "SELECT * FROM mensagem_contato";
+$retorno_consulta3 = $conexao->query($consultar_banco3) or die($conexao->error);
 ?>
 
 <!DOCTYPE html>
@@ -31,14 +32,13 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
 <body>
 
     <div class="container-fluid">
-    <?php
-        include('../static/menu.php');
-       ?>
+        <?php include('../static/menu.php'); ?>
         <main class="col-md-10 col-lg-10 main-content">
             <section class="dashboard-content">
                 <div class="options">
                     <button class="custom-btn2" onclick="showUsers()">Usuários</button>
                     <button class="custom-btn2" onclick="showHotels()">Hotéis</button>
+                    <button class="custom-btn2" onclick="showMensagens()">Mensagens Contato</button>
                 </div>
 
                 <div id="usuariosTable" class="table-container">
@@ -55,22 +55,21 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                             </tr>
                         </thead>
                         <tbody>
-                        <?php while ($user = $retorno_consulta->fetch_assoc()) : ?>
-        <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php?codigo_cadastro=<?php echo $user['id_usuario'];?>'" style="cursor: pointer;">
-            <td><?php echo $user['id_usuario']; ?></td>
-            <td><?php echo $user['nome']; ?></td>
-            <td><?php echo $user['email']; ?></td>
-            <td>
-                <?php
-                // Verifica se a variável $user['arquivo_foto'] existe e não está vazia, senão exibe a imagem padrão
-                $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '/Imagens/foto_padrao.png';
-                ?>
-                <img id="imagem" src="<?php echo $foto; ?>"  alt="Imagem do usuário" width="100px" height="100px">
-            </td>
-            <td><?php echo $user['tipo_usuario']; ?> 
-            <td><i class="fas fa-cog"> </i><span> Editar</span></td>   </td>
-        </tr>
-    <?php endwhile; ?>
+                            <?php while ($user = $retorno_consulta->fetch_assoc()) : ?>
+                                <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php?codigo_cadastro=<?php echo $user['id_usuario']; ?>'" style="cursor: pointer;">
+                                    <td><?php echo $user['id_usuario']; ?></td>
+                                    <td><?php echo $user['nome']; ?></td>
+                                    <td><?php echo $user['email']; ?></td>
+                                    <td>
+                                        <?php
+                                        $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '/Imagens/foto_padrao.png';
+                                        ?>
+                                        <img id="imagem" src="<?php echo $foto; ?>" alt="Imagem do usuário" width="100px" height="100px">
+                                    </td>
+                                    <td><?php echo $user['tipo_usuario']; ?></td>
+                                    <td><i class="fas fa-cog"> </i><span> Editar</span></td>
+                                </tr>
+                            <?php endwhile; ?>
                         </tbody>
                     </table>
                 </div>
@@ -89,31 +88,49 @@ $retorno_consulta2 = $conexao->query($consultar_banco2) or die($conexao->error);
                             </tr>
                         </thead>
                         <tbody>
-                        <?php while ($hotel = $retorno_consulta2->fetch_assoc()) : ?>
-                            <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar.php?codigo_cadastro=<?php echo $hotel['id_hotel'];?>'" style="cursor: pointer;">
-                                <td><?php echo $hotel['id_hotel'];?></td>
-                                <td><?php echo $hotel['nome'];?></td>
-                                <td><?php echo $hotel['descricao'];?></td>
-                                <td><img src="../<?php echo $hotel['arquivo_caminho'];?>" alt="Imagem do hotel" class="imagem-dashboard-adm"></td>
-                                <td>Hotel</td>
-                                <td><i class="fas fa-cog"> </i><span> Editar</span></td>   </td>
-
-                                </td>
-                            </tr>
+                            <?php while ($hotel = $retorno_consulta2->fetch_assoc()) : ?>
+                                <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar_3.php?codigo_hotel=<?php echo $hotel['id_hotel']; ?>'" style="cursor: pointer;">
+                                    <td><?php echo $hotel['id_hotel']; ?></td>
+                                    <td><?php echo $hotel['nome']; ?></td>
+                                    <td><img src="../<?php echo $hotel['arquivo_caminho']; ?>" alt="Imagem do hotel" class="imagem-dashboard-adm"></td>
+                                    <td>Hotel</td>
+                                    <td><i class="fas fa-cog"> </i><span> Editar</span></td>
+                                </tr>
                             <?php endwhile; ?>
-
                         </tbody>
                     </table>
-                  <a class="custom-btn2" href="../user/cadastrar_hoteis_gramado.php">Cadastrar Hotéis Gramado</a>
                 </div>
+
+                <div id="mensagensTable" class="table-container" style="display:none;">
+                    <h3 class="titulo-dashboard-adm">Mensagens Cadastradas</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Mensagem</th>
+                                <th>Config. Adicional</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while ($mensagem = $retorno_consulta3->fetch_assoc()) : ?>
+                                <tr id="link_adm_table" onclick="window.location.href='alterar_ou_deletar_2.php?codigo_mensagem=<?php echo $mensagem['id_mensagem']; ?>'" style="cursor: pointer;">
+                                    <td><?php echo $mensagem['id_mensagem']; ?></td>
+                                    <td><?php echo $mensagem['nome']; ?></td>
+                                    <td><?php echo $mensagem['email']; ?></td>
+                                    <td><?php echo $mensagem['mensagem']; ?></td>
+                                    <td><i class="fas fa-cog"> </i><span> Editar</span></td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
+
             </section>
         </main>
-        <?php
-        include('../static/footer.php');
-    ?>
+        <?php include('../static/footer.php'); ?>
     </div>
-
-    <script src="../javascript/script.js"></script>
 </body>
 
 </html>

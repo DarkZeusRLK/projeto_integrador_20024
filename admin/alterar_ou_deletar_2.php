@@ -7,11 +7,11 @@ if (!isset($_SESSION)) {
 }
 
 // Verifica se o ID foi passado via GET
-if (isset($_GET['codigo_cadastro'])) {
-    $id = $_GET['codigo_cadastro'];
+if (isset($_GET['codigo_mensagem'])) {
+    $id = $_GET['codigo_mensagem'];
 
     // Consulta o usuário no banco de dados
-    $consulta = "SELECT * FROM cadastro WHERE id_usuario = ?";
+    $consulta = "SELECT * FROM mensagem_contato WHERE id_mensagem = ?";
     $stmt = $conexao->prepare($consulta);
     $stmt->bind_param('i', $id);
     $stmt->execute();
@@ -29,28 +29,13 @@ if (isset($_GET['codigo_cadastro'])) {
 
 // Função de deletar conta
 if (isset($_POST['btn_deletar'])) {
-    $sql_deletar = "DELETE FROM cadastro WHERE id_usuario = ?";
+    $sql_deletar = "DELETE FROM mensagem_usuario WHERE id_mensagem = ?";
     $stmt_del = $conexao->prepare($sql_deletar);
     $stmt_del->bind_param('i', $id);
     $stmt_del->execute();
     
     header("Location: ../index/index.php");
     exit();
-}
-
-// Função de alterar informações
-if (isset($_POST['btn_alterar'])) {
-    $novo_nome = $_POST['nome'];
-    $novo_email = $_POST['email'];
-
-    $sql_alterar = "UPDATE cadastro SET nome = ?, email = ? WHERE id_usuario = ?";
-    $stmt_upd = $conexao->prepare($sql_alterar);
-    $stmt_upd->bind_param('ssi', $novo_nome, $novo_email, $id);
-    $stmt_upd->execute();
-
-    echo "<script>alert('Informações atualizadas com sucesso!');</script>";
-    $usuario['nome'] = $novo_nome;
-    $usuario['email'] = $novo_email;
 }
 ?>
 
@@ -79,28 +64,15 @@ if (isset($_POST['btn_alterar'])) {
     <div id="gerenciar-container" class="container mt-5">
         <h1 id="gerenciar-titulo">Gerenciar Item</h1>
         
-        <h3 id="info-titulo">Informações do Usuário</h3>
+        <h3 id="info-titulo">Informações da Mensagem de Contato</h3>
         <?php if ($usuario): ?>
             <p id="usuario-nome"><strong>Nome:</strong> <?php echo htmlspecialchars($usuario['nome']); ?></p>
             <p id="usuario-email"><strong>Email:</strong> <?php echo htmlspecialchars($usuario['email']); ?></p>
-            
-            <!-- Formulário para Alterar Informações -->
-            <h4 id="alterar-titulo">Alterar Informações</h4>
-            <form method="POST" id="form-alterar">
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome:</label>
-                    <input type="text" id="alterar-nome" name="nome" class="form-control" value="<?php echo htmlspecialchars($usuario['nome']); ?>" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" id="alterar-email" name="email" class="form-control" value="<?php echo htmlspecialchars($usuario['email']); ?>" required>
-                </div>
-                <button type="submit" name="btn_alterar" id="btn-alterar" class="btn btn-primary">Salvar Alterações</button>
-            </form>
+            <p id="usuario-mensagem"><strong>Mensagem:</strong> <?php echo htmlspecialchars($usuario['mensagem']); ?></p>
 
             <!-- Formulário para Deletar Conta -->
             <form method="POST" id="form-deletar" onsubmit="return confirmarDelecao();" class="mt-4">
-                <button type="submit" name="btn_deletar" id="btn-deletar" class="btn btn-danger">Deletar Conta</button>
+                <button type="submit" name="btn_deletar" id="btn-deletar" class="btn btn-danger">Deletar Mensagem</button>
             </form>
         <?php else: ?>
             <p>Informações do usuário não disponíveis.</p>
