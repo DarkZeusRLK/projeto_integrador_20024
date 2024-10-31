@@ -309,7 +309,7 @@ if (isset($_POST['email'])) {
                                 <?php echo $hoteis['nome']; ?>
                             </h5>
                             <p class="card-text limited-text" id="text">
-<?php echo $hoteis['descricao'];?>                            </p>
+<?php echo $hoteis['descricao'];?>                            </p>                  
                             <div class="collapse" id="collapseText">
                                 <p class="card-text mt-3">
                                     <?php echo $hoteis['descricao']; ?> </p>
