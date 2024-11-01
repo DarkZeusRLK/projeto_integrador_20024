@@ -65,7 +65,6 @@ if ($id_usuario) {
             $cpf_usuario = $consultar['cpf'];
             $telefone_usuario = $consultar['telefone'];
             $foto = $consultar['arquivo_foto'];
-            $tipo_usuario = $consultar['tipo_usuario'];
         }
         $stmt->close();
     } else {
@@ -91,78 +90,45 @@ if ($id_usuario) {
 </head>
 
 <body>
-    <div class="container-fluid">   
-        <nav class="col-md-3 col-lg-2 sidebar">
-            <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
-            <div class="profile">
-                <img id="logo" src="../Imagens/logo (1).png" alt="Logo">
-                <h1 class="text-title">IvaíTour</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#services"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li><a href="conta.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php else: ?>
-                    <li><a href="login.php"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
-                <?php endif; ?>
-                <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contato</span></a></li>
-                <?php if (isset($_SESSION['nome']) && $_SESSION["tipo_usuario"] === 'administrador'): ?>
-                    <li><a href="../admin/admin_dashboard.php"><i class="fas fa-tablet-alt"></i><span>Painel Adm</span></a></li>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['nome'])): ?>
-                    <li class="nav-item logout">
-                        <a href="logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Desconectar</span></a>
-                    </li>
-                <?php endif; ?>
-                <li class="nav-item">
-                    <a href="configuracoes.php" class="nav-link" id="settings-icon">
-                        <i class="fas fa-cog"></i><span>Configurações</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="container-fluid">
+        <?php
+        include('../static/menu.php');
+        ?>
 
-        <div class="container">
+        <div class="mobile">
             <div id="form-container-ctt" class="form-container">
                 <div id="form-ctt">
-                    <div class="text-center mb-4">
-                        <div class="profile-picture-container">
-                            <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
-                        </div>
+                    <div class="profile-picture-container">
+                        <img class='profile-picture' src='<?php echo $foto; ?>' alt='Foto de perfil'>
                     </div>
                     <span class="heading"><?php echo $nome_usuario; ?></span>
-                    <input placeholder=" Nome: <?php echo $nome_usuario; ?>" type="text" class="input" readonly>
-                    <input placeholder="Email: <?php echo $email_usuario; ?>" id="mail" type="email" class="input" readonly>
-                    <input placeholder="CPF: <?php echo $cpf_usuario; ?>" id="cpf" type="text" class="input" readonly>
-                    <input placeholder="Telefone: <?php echo $telefone_usuario; ?>" id="telefone" type="text" class="input" readonly>
+                    <input placeholder=" Nome: <?php echo $nome_usuario; ?>" type="text" class="input" readonly maxlength="40">
+                    <input placeholder="Email: <?php echo $email_usuario; ?>" id="mail" type="email" class="input" readonly maxlength="40">
+                    <input placeholder="CPF: <?php echo $cpf_usuario; ?>" id="cpf" type="text" class="input" readonly maxlength="15">
+                    <input placeholder="Telefone: <?php echo $telefone_usuario; ?>" id="telefone" type="text" class="input" readonly maxlength="">
 
                     <div class="button-container">
-                        <div class="reset-button-container">
-                        <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="reset-button">Editar conta</a>
+                        <div class="save-button-container">
+                            <a href="editaconta.php?id=<?php echo $id_usuario; ?>" class="save-button">Editar conta</a>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div vw class="enabled">
-                <div vw-access-button class="active"></div>
-                <div vw-plugin-wrapper>
-                    <div class="vw-plugin-top-wrapper"></div>
                 </div>
             </div>
         </div>
-
+        <!-- Plugin VLibras -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
         <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
         <script>
             new window.VLibras.Widget('https://vlibras.gov.br/app');
         </script>
     </div>
-
     <?php include('../static/footer.php'); ?>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
-
 </html>

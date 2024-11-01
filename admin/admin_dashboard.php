@@ -27,11 +27,78 @@ $retorno_consulta3 = $conexao->query($consultar_banco3) or die($conexao->error);
     <script defer src="../javascript/cookie.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
     <title>Dashboard Admin</title>
+    <style>
+    /* Definições gerais para manter a tabela responsiva */
+    .my-custom-table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    /* Ajustes de layout em diferentes larguras de tela */
+    @media (max-width: 768px) {
+       
+
+        table td {
+            padding: 10px;
+        }
+        .dashboard-content {
+            width: 70%;
+            margin-left: 5%;
+        }
+        .custom-btn2 {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        table td {
+            font-size: 12px;
+            padding: 10px;
+            color: #000;
+        }
+
+        .dashboard-content {
+            width: 70%;
+            margin-left: 14%;
+        }
+
+
+        /* Exibição das tabelas em blocos verticais no celular */
+        .my-custom-table,
+        .table-container {
+            overflow-x: scroll;
+        }
+
+        .custom-btn2 {
+            width: 100%;
+        }
+    }
+</style>
 </head>
 
 <body>
-
     <div class="container-fluid">
+    <h1 class="titulo-dashboard-adm">Painel Administrativo</h1>
         <?php include('../static/menu.php'); ?>
         <main class="col-md-10 col-lg-10 main-content">
             <section class="dashboard-content">
@@ -49,7 +116,6 @@ $retorno_consulta3 = $conexao->query($consultar_banco3) or die($conexao->error);
                                 <th>ID</th>
                                 <th>Nome</th>
                                 <th>Email</th>
-                                <th>Imagem</th>
                                 <th>Função</th>
                                 <th>Config. Adicional</th>
                             </tr>
@@ -60,12 +126,6 @@ $retorno_consulta3 = $conexao->query($consultar_banco3) or die($conexao->error);
                                     <td><?php echo $user['id_usuario']; ?></td>
                                     <td><?php echo $user['nome']; ?></td>
                                     <td><?php echo $user['email']; ?></td>
-                                    <td>
-                                        <?php
-                                        $foto = !empty($user['arquivo_foto']) ? $user['arquivo_foto'] : '/Imagens/foto_padrao.png';
-                                        ?>
-                                        <img id="imagem" src="<?php echo $foto; ?>" alt="Imagem do usuário" width="100px" height="100px">
-                                    </td>
                                     <td><?php echo $user['tipo_usuario']; ?></td>
                                     <td><i class="fas fa-cog"> </i><span> Editar</span></td>
                                 </tr>
@@ -81,7 +141,6 @@ $retorno_consulta3 = $conexao->query($consultar_banco3) or die($conexao->error);
                             <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
-                                <th>Descrição</th>
                                 <th>Imagem</th>
                                 <th>Função</th>
                                 <th>Config. Adicional</th>

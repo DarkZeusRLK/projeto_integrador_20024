@@ -61,6 +61,7 @@ if (isset($_POST['btn_deletar'])) {
 <body>
     <?php include('../static/menu.php'); ?>
 
+    <div class="container-fluid2">
     <div id="gerenciar-container" class="container mt-5">
         <h1 id="gerenciar-titulo">Gerenciar Item</h1>
         
@@ -78,7 +79,7 @@ if (isset($_POST['btn_deletar'])) {
             <p>Informações do usuário não disponíveis.</p>
         <?php endif; ?>
     </div>
-
+    </div>
     <?php include('../static/footer.php'); ?>
 </body>
 </html>

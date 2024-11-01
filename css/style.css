@@ -1298,15 +1298,12 @@ body.dark-mode .card-title {
 
 /* FIM DESIGN CONTATO */
 #link_adm_table:hover {
-  background-color: #f0f0f0;
   /* Altera a cor de fundo */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px rgba(9, 9, 9, 9);
   /* Adiciona uma leve sombra */
-  transform: scale(1.02);
   /* Aumenta ligeiramente o tamanho */
   transition: all 0.3s ease;
-  /* Suaviza as transições */
-  opacity: 60%;
+  opacity: 40%;
 }
 
 #cards2 {
@@ -2113,7 +2110,7 @@ footer {
   background-color: #ffe711;
   border: none;
   color: var(--color-neutral-40);
-  padding: 0px 1.25rem;
+  padding: 10px 1.25rem;
   font-size: 1.125rem;
   height: 100%;
   border-radius: 0px 4px 4px 0px;

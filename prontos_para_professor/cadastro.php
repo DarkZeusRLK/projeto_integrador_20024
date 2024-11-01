@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpf = sanitize_input($_POST['bt_cpf']);
     $genero = sanitize_input($_POST['bt_genero']);
 
-    $caminho_imagem = "Imagens/avatar2.png";
+    $caminho_imagem = "../Imagens/avatar2.png";
     $tipo_usuario = "cliente"; // Definindo o tipo de usuário como "cliente"
 
     // Verifique se a variável $conexao está definida
@@ -179,6 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 
                     <input class="button-submit" type="submit" value="Cadastrar">
+                    <p class="p">Já possui uma conta? <a href="login.php">Faça Login</a></p>
                 </form>
 
                 <script>
