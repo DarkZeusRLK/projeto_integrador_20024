@@ -237,6 +237,7 @@ input[type="password"] {
   font-family: inherit;
   transition: box-shadow 0.2s linear, border-color 0.25s ease-out;
   width: 100%;
+  background-color: var(--azulescuro);
 }
 
 input[type="email"]:focus,
@@ -1307,7 +1308,7 @@ body.dark-mode .card-title {
   /* Adiciona uma leve sombra */
   /* Aumenta ligeiramente o tamanho */
   transition: all 0.3s ease;
-  opacity: 40%;
+  opacity: 70%;
 }
 
 #cards2 {
