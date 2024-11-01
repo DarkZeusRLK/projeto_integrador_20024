@@ -109,7 +109,6 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
     <style>
         /* Estilo do Modal */
         #confirmModal {
-            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -144,7 +143,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
 <body>
     <?php include('../static/menu.php'); ?>
 
-    
+
     <div class="container-fluid">
         <div class="mobile">
             <div id="form-container-ctt" class="form-container">
@@ -160,7 +159,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                     </label>
 
                     <span class="heading"><?php echo $nome_usuario; ?></span>
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="deletar_conta.php" method="POST" enctype="multipart/form-data">
                         <!-- Campo hidden com o id do usuário -->
                         <input type="hidden" name="bt_id_alterar" value="<?php echo $id_usuario; ?>">
 
@@ -176,7 +175,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                             <button type="button" class="reset-button" onclick="confirmDelete(<?php echo $_SESSION['id_usuario']; ?>)">Deletar Conta</button>
 
                             <!-- Modal de Confirmação -->
-                            <div id="confirmModal" style="display:none;">
+                            <div id="confirmModal" style="display:none">
                                 <div>
                                     <h3>Confirmar Exclusão</h3>
                                     <p>Você realmente deseja deletar sua conta? Esta ação é irreversível.</p>
@@ -190,9 +189,22 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                                     const modal = document.getElementById('confirmModal');
                                     modal.style.display = 'flex'; // Exibe o modal
                                     document.getElementById('confirmButton').onclick = function() {
-                                        window.location.href = 'deletar_conta.php?id=' + id; // Redireciona para a página de exclusão
+                                        // Envia requisição AJAX para deletar a conta
+                                        fetch('deletar_conta.php', {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/x-www-form-urlencoded'
+                                            },
+                                            body: 'id_usuario=' + id
+                                        }).then(response => {
+                                            if (response.ok) {
+                                                alert("Conta deletada com sucesso.");
+                                                window.location.href = '../static/logout.php'; // Redireciona para o logout
+                                            } else {
+                                                alert("Erro ao deletar a conta.");
+                                            }
+                                        });
                                     };
-
                                 }
 
                                 function closeModal() {
@@ -200,6 +212,8 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : 'caminho_
                                     modal.style.display = 'none'; // Fecha o modal
                                 }
                             </script>
+
+
                             <div class="save-button-container">
                                 <button type="submit" class="save-button">Salvar Alterações</button>
                             </div>

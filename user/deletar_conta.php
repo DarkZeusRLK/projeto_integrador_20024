@@ -6,15 +6,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-// Verificar se o usuário está logado
-if (!isset($_SESSION['nome'])) {
-    header("Location: login.php");
-    exit();
-}
-
-// Verificar se o ID do usuário a ser deletado foi passado via GET
-if (isset($_GET['deletar_conta'])) {
-    $id_usuario_deletar = $_GET['deletar_conta'];
+// Verificar se o ID do usuário a ser deletado foi passado via POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_usuario'])) {
+    $id_usuario_deletar = $_POST['id_usuario'];
     
     // Usar prepared statement para evitar SQL Injection
     $stmt = $conexao->prepare("DELETE FROM cadastro WHERE id_usuario = ?");
