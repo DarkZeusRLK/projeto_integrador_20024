@@ -318,7 +318,7 @@ setInterval(() => {
             <ul>
                 <li><strong>Endereço:</strong> <?php echo htmlspecialchars($pacote['endereco'] ?? 'Endereço não disponível'); ?></li>
                 <li><strong>Acomodações:</strong> Wi-Fi gratuito, TV a cabo, Ar-condicionado, Café da manhã incluso</li>
-                <li><strong>Comodidades:</strong> Academia, Piscina, Restaurante</li>
+          gli><strong>Comodidades:</strong> Academia, Piscina, Restaurante</li>
                 <li><strong>Check-in:</strong> 14:00 do dia 01/12/2024</li>
                 <li><strong>Check-out:</strong> 12:00 do dia 02/12/2024</li>
             </ul>
