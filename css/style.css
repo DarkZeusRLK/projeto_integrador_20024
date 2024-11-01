@@ -2136,6 +2136,37 @@ footer {
   width: 100%;
   /* Garantir que ocupe toda a largura */
 }
+.dropdown {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o padding */
+  margin: 0; /* Remove a margem */
+  position: absolute; /* Necessário para posicionar corretamente o dropdown */
+  background-color: var(--azulescuro); /* Cor de fundo do dropdown */
+  z-index: 1; /* Garante que o dropdown fique acima de outros elementos */
+  display: none; /* Esconder por padrão */
+}
+
+.nav-links li {
+  position: relative; /* Necessário para o dropdown */
+}
+
+.nav-links li:hover .dropdown {
+  display: block; /* Exibir ao passar o mouse */
+}
+
+.dropdown li a {
+  padding: 10px; /* Espaçamento interno */
+  display: block; /* Fazer links ocuparem a linha inteira */
+  color: #ffff; /* Cor do texto */
+  text-decoration: none; /* Sem sublinhado */
+  background-color: var(--azulescuro);
+}
+
+.dropdown li a:hover {
+  background-color: var(--amarelo); /* Cor de fundo ao passar o mouse */
+  color: black;
+}
+
 
 /* Media queries ajustadas */
 @media screen and (max-width: 1400px) {

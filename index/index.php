@@ -209,7 +209,14 @@ if (isset($_POST['email'])) {
             </div>
             <ul class="nav-links">
                 <li><a href="index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="#"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a></li>
+                <li>
+                    <a href="#" onclick="toggleDropdown(event)"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a>
+                    <ul class="dropdown" style="display: none;"> <!-- Adicione display: none aqui -->
+                        <li><a href="../page/hotel_rj.php">Rio De Janeiro</a></li>
+                        <li><a href="../page/hoteis_aracaju.php">Aracaju</a></li>
+                        <li><a href="../page/hoteis_gramado.php">Gramado</a></li>
+                    </ul>
+                </li>
                 <?php if (isset($_SESSION['nome'])): ?>
                     <li><a href="../user/conta.php?id=<?php echo $_SESSION['id_usuario']; ?>"><i
                                 class="fas fa-users"></i><span>Minha Conta</span></a></li>
@@ -309,7 +316,7 @@ if (isset($_POST['email'])) {
                                 <?php echo $hoteis['nome']; ?>
                             </h5>
                             <p class="card-text limited-text" id="text">
-<?php echo $hoteis['descricao'];?>                            </p>                  
+                                <?php echo $hoteis['descricao']; ?> </p>
                             <div class="collapse" id="collapseText">
                                 <p class="card-text mt-3">
                                     <?php echo $hoteis['descricao']; ?> </p>
@@ -486,7 +493,13 @@ if (isset($_POST['email'])) {
         });
     </script>
 
-
+    <script>
+        function toggleDropdown(event) {
+            event.preventDefault(); // Impedir o comportamento padrão do link
+            const dropdown = event.currentTarget.nextElementSibling; // Obter o próximo elemento (dropdown)
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block"; // Alternar a exibição
+        }
+    </script>
 </body>
 
 </html>
