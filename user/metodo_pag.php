@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/depay.css">
+    <link rel="stylesheet" href="../estilo.css">
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="../javascript/script_navbar.js"></script>
@@ -15,7 +16,61 @@
     <script defer src="../javascript/cookie.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png">
 </head>
+<style>
+    .payment--options a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.payment--options {
+  display: flex;
+  gap: 60px;
+  /* Espaçamento entre as imagens, ajuste conforme necessário */
+  max-width: 30rem;
+  display: grid;
+  grid-template-columns: 33% 33%;
+  padding: 10px;
+}
+
+.payment--options img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.botoes {
+  align-items: center;
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  transition: 0.2s;
+}
+
+.botoes:hover {
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+
+.input_label {
+  font-size: 13px;
+  color: #8B8E98;
+}
+
+.aviso {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #8B8E98;
+}
+</style>
 <body>
     <?php
     include('../static/menu.php');
