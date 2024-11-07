@@ -267,7 +267,7 @@ if (isset($_POST['email'])) {
         <?php
         }
         ?>
-        <div class="row mt-4">
+        <div id="viagens" class="row mt-4">
 
             <h1 id="text-index3">Pacotes em Destaque</h1>
             <div class="final_index">
@@ -308,7 +308,7 @@ if (isset($_POST['email'])) {
 
             <h1 id="text-index3">Hotéis em Destaque</h1>
             <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
-                <div class="col">
+                <div id="hoteis" class="col">
                     <div class="card h-100">
                         <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -386,11 +386,11 @@ if (isset($_POST['email'])) {
         <div id="blogs">
             <!-- Blog Card 1 -->
             <div class="blog-card">
-                <img src="../Imagens/banner_programacao_desenvolvimento.png" alt="Blog 1" class="blog-image">
+                <img src="../Imagens/turistas-na-praia-de-ipanema-no-rio-de-janeiro-um-dos-principais-focos-do-turismo-no-brasil.webp" alt="Blog 1" class="blog-image">
                 <div class="blog-content">
-                    <h2 class="blog-title">Tecnologia nos Dias Atuais</h2>
-                    <p class="blog-description">Uma análise das inovações e tendências tecnológicas que moldam nossa vida cotidiana.</p>
-                    <a href="https://g1.globo.com/tecnologia/" class="blog-button">Leia mais</a>
+                    <h2 class="blog-title">Destinos Emergentes de 2024</h2>
+                    <p class="blog-description">Conheça as cidades e regiões que estão se tornando os novos queridinhos dos turistas.</p>
+                    <a href="https://www.cnnbrasil.com.br/tudo-sobre/turismo/" class="blog-button">Leia mais</a>
                 </div>
             </div>
 
@@ -398,43 +398,43 @@ if (isset($_POST['email'])) {
             <div class="blog-card">
                 <img src="../Imagens/unnamed.jpg" alt="Blog 2" class="blog-image">
                 <div class="blog-content">
-                    <h2 class="blog-title">Programação Web</h2>
-                    <p class="blog-description"> Dicas e tutoriais sobre desenvolvimento web, desde HTML até frameworks modernos.</p>
-                    <a href="https://www.tecmundo.com.br/desenvolvimento/noticias" class="blog-button">Leia mais</a>
+                    <h2 class="blog-title">G1 Turismo</h2>
+                    <p class="blog-description"> Acompanhe todas as notícias de Turismo pelo G1</p>
+                    <a href="https://g1.globo.com/turismo-e-viagem/" class="blog-button">Leia mais</a>
                 </div>
             </div>
 
             <!-- Blog Card 3 -->
             <div class="blog-card">
-                <img src="../Imagens/iet-cientistas-criam-ferramenta-que-vincula-manuscritos-aos-codigos-de-programacao.png" alt="Blog 3" class="blog-image">
+                <img src="../Imagens/turismo.png" alt="Blog 3" class="blog-image">
                 <div class="blog-content">
-                    <h2 class="blog-title">Carreira de Programador</h2>
+                    <h2 class="blog-title">Como o Turismo é relevante?</h2>
                     <p class="blog-description"> Orientações sobre como construir uma carreira sólida na área de programação e tecnologia.</p>
-                    <a href="https://g1.globo.com/tecnologia/noticia/2023/05/09/entenda-se-programacao-ainda-vale-a-pena-profissionais-contam-como-esta-o-setor.ghtml" class="blog-button">Leia mais</a>
+                    <a href="https://agenciagov.ebc.com.br/noticias/202404/revista-tendencias-turismo-viagens-2024  " class="blog-button">Leia mais</a>
                 </div>
             </div>
             <div class="blog-card">
                 <img src="../Imagens/mulheres-na-tecnologia-blog-v02.webp" alt="Blog 4" class="blog-image">
                 <div class="blog-content">
-                    <h2 class="blog-title">Mulheres na Tecnologia</h2>
-                    <p class="blog-description"> Histórias inspiradoras de mulheres que estão fazendo a diferença no setor de tecnologia.</p>
-                    <a href="https://www.cnnbrasil.com.br/tecnologia/mulheres-na-tecnologia/" class="blog-button">Leia mais</a>
+                    <h2 class="blog-title">Aumento do Turismo Internacional</h2>
+                    <p class="blog-description"> O setor turístico registra crescimento recorde, impulsionado pela reabertura de fronteiras.</p>
+                    <a href="https://brasilturis.com.br/2024/10/15/turismo-internacional-em-alta-no-brasil-resultados-e-expectativas-para-2024/#:~:text=O%20turismo%20internacional%20no%20Brasil,milh%C3%B5es%20registrados%20no%20ano%20anterior." class="blog-button">Leia mais</a>
                 </div>
             </div>
             <div class="blog-card">
                 <img src="../Imagens/img-HrbeWi4G1eNRZU0EDOdwPQ4m-min.jpg" alt="Blog 3" class="blog-image">
                 <div class="blog-content">
-                    <h2 class="blog-title">Uso de I.A na Programação</h2>
-                    <p class="blog-description">Explorando como a inteligência artificial está transformando práticas e processos de programação</p>
-                    <a href="https://www.cnnbrasil.com.br/economia/negocios/uso-de-inteligencia-artificial-aumenta-e-alcanca-72-das-empresas-diz-pesquisa/#:~:text=O%20interesse%20no%20uso%20da,comparado%20aos%2055%25%20em%202023." class="blog-button">Leia mais</a>
+                    <h2 class="blog-title">Tendências Sustentáveis no Turismo</h2>
+                    <p class="blog-description">Viagens eco-friendly ganham popularidade, com destinos adotando práticas sustentáveis.</p>
+                    <a href="https://www.cnnbrasil.com.br/viagemegastronomia/viagem/turismo-regenerativo-nova-forma-de-viajar-oferece-plantio-de-corais-no-brasil/#:~:text=Uma%20dessas%20novidades%20%C3%A9%20o,plantio%20de%20corais%20no%20mar." class="blog-button">Leia mais</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="../Imagens/1610286864152.jfif" alt="Blog 3" class="blog-image">
+                <img src="../Imagens/destacado_turismo_y_ocio.jpg   " alt="Blog 3" class="blog-image">
                 <div class="blog-content">
-                    <h2 class="blog-title">Evolução das Inteligências Artificiais</h2>
-                    <p class="blog-description">Um olhar sobre a história e o progresso das IAs, desde suas origens até os avanços atuais.</p>
-                    <a href="https://jornal.usp.br/ciencias/evolucao-da-inteligencia-artificial-tem-limitado-a-compreensao-sobre-a-humana-alerta-pesquisa/" class="blog-button">Leia mais</a>
+                    <h2 class="blog-title">Tecnologia e Turismo</h2>
+                    <p class="blog-description">Aplicativos e realidade aumentada transformam experiências em destinos populares.</p>
+                    <a href="https://www.panrotas.com.br/noticias/tecnologia-e-turismo/" class="blog-button">Leia mais</a>
                 </div>
             </div>
             <br>

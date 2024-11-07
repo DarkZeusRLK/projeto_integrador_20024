@@ -27,51 +27,6 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
 
 <body>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            /* Mude para 'cover' para cobrir a área do corpo */
-            text-align: center;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            /* Para permitir posicionamento de elementos internos */
-            z-index: 1;
-            /* Mantém o conteúdo acima da imagem de fundo */
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(52, 73, 94, 0.8);
-            /* Cor de fundo do cabeçalho com transparência */
-            color: white;
-            border-radius: 8px;
-            /* Arredondar os cantos do cabeçalho */
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-        }
 
         .developer {
             display: flex;
@@ -128,17 +83,16 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
             color: #34495e;
             /* Cor do nome do desenvolvedor */
         }
-
-        footer {
+        header{
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             background-color: rgba(52, 73, 94, 0.8);
-            /* Cor de fundo do rodapé com transparência */
+            /* Cor de fundo do cabeçalho com transparência */
             color: white;
-            position: relative;
+            border-radius: 8px;
+            /* Arredondar os cantos do cabeçalho */
         }
     </style>
-    <div class="container">
         <div class="container-fluid">
             <!-- Mensagem de cookies -->
             <div id="cookie-message" class="card-cookie">
@@ -175,7 +129,9 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                 <h1>Créditos dos Desenvolvedores</h1>
                 <p>Agradecimentos especiais a todos que contribuíram para este projeto!</p>
             </header>
+            <center>
             <img id="imagem_do_grupo_todo" src="../Imagens/Foto_grupo.png.png" alt="">
+            </center>
             <main>
                 <div class="developer">
                     <div class="photo-container">
@@ -206,11 +162,11 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                 </div>
                 <div class="developer">
                     <div class="photo-container">
-                        <img src="developer4.jpg" alt="Desenvolvedor 4" class="photo">
+                        <img src="../Imagens/Screenshot_20241018-085409_Gallery.jpg" alt="Desenvolvedor 4" class="photo">
                     </div>
                     <div class="info">
                         <h2>João Rafael de Carvalho Bissoloti</h2>
-                        <p>Breve descrição sobre o desenvolvedor 4. Destaque suas habilidades ou contribuições ao projeto.</p>
+                        <p>João Rafael foi um dos principais responsáveis  membros da pesquisa e estética do sistema web.</p>
                     </div>
                 </div>
                 <div class="developer">
@@ -223,8 +179,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     </div>
                 </div>
             </main>
-        </div>
-        <?php
+                    <?php
         include('../static/footer.php');
         ?>
 </body>

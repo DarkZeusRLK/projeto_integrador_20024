@@ -45,7 +45,7 @@
                 <a href="../user/login.php" class="footer-link">Login</a>
             </li>
             <li>
-                <a href="../index/index.php#card_pacote" class="footer-link">Pacotes de Viagens</a>
+                <a href="../index/index.php#viagens" class="footer-link">Pacotes de Viagens</a>
             </li>
         </ul>
 
