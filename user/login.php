@@ -1,4 +1,8 @@
 <?php
+session_start();
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 include('../static/conexao.php');
 
 $mensagem = ''; // Inicializa a variável de mensagem
@@ -7,7 +11,7 @@ if (isset($_POST['bt_email'])) {
     $email = $_POST['bt_email'];
     $senha = $_POST['bt_senha'];
 
-    // Verifique se o email está cadastrado
+    // Verifica se o email está cadastrado
     $verificar_email = "SELECT * FROM cadastro WHERE email = ?";
     if ($stmt_verificar = $conexao->prepare($verificar_email)) {
         $stmt_verificar->bind_param("s", $email);
@@ -15,7 +19,7 @@ if (isset($_POST['bt_email'])) {
         $result = $stmt_verificar->get_result();
 
         if ($result->num_rows > 0) {
-            // Email encontrado, verifique a senha
+            // Email encontrado, verifica a senha
             $usuario = $result->fetch_assoc();
             if (password_verify($senha, $usuario['senha'])) {
                 // Senha correta, login bem-sucedido
@@ -23,31 +27,25 @@ if (isset($_POST['bt_email'])) {
                 $_SESSION['id_usuario'] = $usuario['id_usuario'];
                 $_SESSION['nome'] = $usuario['nome'];
                 $_SESSION['email'] = $usuario['email'];
-                $_SESSION['tipo_usuario'] = $usuario['tipo_usuario']; // Salva o tipo de usuário na sessão
+                $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
                 $_SESSION['telefone'] = $usuario['telefone'];
                 $_SESSION['cpf'] = $usuario['cpf'];
                 $_SESSION['arquivo_foto'] = $usuario['arquivo_foto'];
 
-
-
-                // Verifica se o usuário é administrador
+                // Redireciona com base no tipo de usuário
                 if ($usuario['tipo_usuario'] == 'administrador') {
-                    $_SESSION['is_admin'] = true; // Define uma sessão para administrador
-                    include("../static/protect_adm.php"); // Redireciona para a página de proteção do administrador
-                    header('Location: ../index/index.php');
+                    $_SESSION['is_admin'] = true;
+                    header('Location: ../index/index.php'); // Redireciona para a página do admin
                 } else {
-                    $_SESSION['is_admin'] = false; // Define como falso se não for administrador
-                    include("../static/protect.php"); // Redireciona para a página de proteção do cliente
-                    header('Location: ../index/index.php');
+                    $_SESSION['is_admin'] = false;
+                    header('Location: ../index/index.php'); // Redireciona para a página do cliente
                 }
-                exit(); // Certifique-se de chamar exit após redirecionamento
+                exit(); // Encerra o script após redirecionamento
             } else {
-                // Senha incorreta
-                echo "error_invalid_password";
+                $mensagem = "Senha incorreta. Tente novamente.";
             }
         } else {
-            // Email não encontrado
-            echo "error_email_not_found";
+            $mensagem = "Email não encontrado.";
         }
         $stmt_verificar->close();
     } else {
@@ -70,6 +68,22 @@ $conexao->close();
     <script defer src="../javascript/google.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
     <title>Login - IvaíTour</title>
+    <style>
+        .alerta-erro {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>    
 </head>
 
 <body>
@@ -157,6 +171,16 @@ $conexao->close();
     <?php
     include("../static/footer.php");
     ?>
+      <?php if ($mensagem): ?>
+            <div id="alerta-erro" class="alerta-erro">
+                <span><?php echo $mensagem; ?></span>
+            </div>
+            <script>
+                setTimeout(() => {
+                    document.getElementById("alerta-erro").style.display = "none";
+                }, 5000);
+            </script>
+        <?php endif; ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 

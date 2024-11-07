@@ -1,3 +1,6 @@
+<?php
+    $versao = "1.0";
+?>
 <footer>
     <div id="footer_content">
         <div id="footer_contacts">
@@ -37,6 +40,9 @@
         <ul class="footer-list">
             <li>
                 <h3>Serviços</h3>
+                <?php
+                    echo "Versão" . $versao;
+                ?>
             </li>
             <li>
                 <a href="../index/index.php#hoteis" class="footer-link">Hotéis</a>
