@@ -7,6 +7,13 @@ function formatarNDC() {
     ndc = ndc.replace(/(\d{4})(\d)/, "$1  $2"); // Insere um espaco antes dos últimos 4 dígitos
     input.value = ndc;
   }
+  function formatarCartao() {
+    var input = document.getElementById("cartaoInput");
+    var cartao = input.value.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
+    cartao = cartao.replace(/(\d{4})(?=\d)/g, "$1 ");
+    input.value = cartao;
+  }
+
   function formatarVAL() {
     var input = document.getElementById("valInput");
     var val = input.value.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
