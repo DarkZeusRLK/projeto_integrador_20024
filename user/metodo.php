@@ -9,6 +9,7 @@
     <link rel="icon" href="../Imagens/icon.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/zere.css">
+    <link rel="stylesheet" href="../estilo.css">
     <title>Minha Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="../javascript/script_navbar.js"></script>
@@ -96,10 +97,10 @@
                         <input type="file" name="foto" id="foto" class="form-control" placeholder="Mudar foto de perfil">
 
                         <!-- Campos de texto -->
-                        <input type="text" name="bt_nome" class="input"  placeholder="Nome do Titular" required>
-                        <input type="email" name="bt_email" class="input"  placeholder="Número do Cartão " required>
-                        <input type="text" name="bt_cpf" class="input"  placeholder="Data de vencimento" required>
-                        <input type="text" name="bt_telefone" class="input"  placeholder="CVV" required>
+                        <input type="text" name="bt_nome" class="input"  placeholder="Nome do Titular" maxlength="85" required>
+                        <input id="cartaoInput" type="email" oninput="formatarCartao()" name="bt_email" class="input"  placeholder="Número do Cartão " maxlength="19" required>
+                        <input id="valInput" oninput="formatarVAL()" type="text" name="bt_cpf" class="input"  placeholder="Data de vencimento" maxlength="5" required>
+                        <input id="cvvInput" oninput="formatarCVV()" type="text" name="bt_telefone" class="input"  placeholder="CVV" maxlength="3" required>
 
                         <div class="button-container">
                             <div class="save-button-container">
