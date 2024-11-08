@@ -9,13 +9,10 @@
         <li>
             <a href="#" onclick="toggleDropdown(event)"><i class="fas fa-concierge-bell"></i><span>Serviços</span></a>
             <ul class="dropdown" style="display: none;"> <!-- Adicione display: none aqui -->
-                <li><a href="#">Cidade 1</a></li>
-                <li><a href="#">Cidade 2</a></li>
-                <li><a href="#">Cidade 3</a></li>
-                <li><a href="#">Cidade 4</a></li>
-                <li><a href="#">Cidade 5</a></li>
-                <li><a href="#">Cidade 6</a></li>
-            </ul>
+                        <li><a href="../page/hotel_rj.php">Rio De Janeiro</a></li>
+                        <li><a href="../page/hoteis_aracaju.php">Aracaju</a></li>
+                        <li><a href="../page/hoteis_gramado.php">Gramado</a></li>
+                    </ul>
         </li>
         <?php if (isset($_SESSION['nome'])): ?>
             <li><a href="../user/conta.php?id=<?php echo $_SESSION['id_usuario'];?>"><i class="fas fa-users"></i><span>Minha Conta</span></a></li>
