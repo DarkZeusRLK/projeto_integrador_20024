@@ -2174,7 +2174,7 @@ footer {
     grid-template-columns: repeat(4, 2fr);
     padding: 3rem;
     /* Reduzir padding em telas menores */
-    width: 100%;
+   
   }
 
   footer {
