@@ -250,6 +250,7 @@ $foto = $_SESSION['arquivo_foto'] ?? 'caminho_da_imagem_padrao.jpg';
             </div>
         </div>
     </div>
+    <?php include('../static/footer.php'); ?>
 
     <script>
         // Função para mostrar o modal de confirmação
