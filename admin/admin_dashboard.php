@@ -188,8 +188,8 @@ $retorno_consulta3 = $conexao->query($consultar_banco3) or die($conexao->error);
 
             </section>
         </main>
-        <?php include('../static/footer.php'); ?>
     </div>
+    <?php include('../static/footer.php'); ?>
 </body>
 
 </html>

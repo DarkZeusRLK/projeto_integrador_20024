@@ -180,6 +180,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                 </div>
             </div>
         </main>
+    </div>
         <?php include('../static/footer.php');?>
 </body>
 </html>
