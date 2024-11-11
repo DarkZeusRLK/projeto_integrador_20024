@@ -33,7 +33,6 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
             margin-top: -30px;
             margin-bottom: 10px;
         }
-
         .developer {
             align-items: center;
             background-color: white;

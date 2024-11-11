@@ -801,8 +801,9 @@ table thead {
   color: white;
 }
 
-table th,
+
 table td {
+  color: var(--azulescuro);
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -852,7 +853,6 @@ table td {
   display: inline-block;
   font-size: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: 12%;
 }
 
 .custom-btn2:hover {
@@ -2792,8 +2792,9 @@ footer {
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px 40px;
-  max-width: 600px;
+  width: 50%;
   margin: 50px auto;
+  margin-left: 22%;
 }
 
 #gerenciar-titulo {
