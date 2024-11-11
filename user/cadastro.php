@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
             <div class="container d-flex justify-content-center">
                 <form class="form2" action="" method="post">
-                    <h1>Crie sua conta em nosso Site</h1>
+                    <h1 style="color: black;">Crie sua conta em nosso Site</h1>
                     <div class="flex-column">
                         <label>Email </label>
                     </div>

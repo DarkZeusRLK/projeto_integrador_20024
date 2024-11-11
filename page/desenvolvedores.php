@@ -27,16 +27,23 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
 
 <body>
     <style>
-        .developer {
+        #imagem_do_grupo_todo {
+            width: 70%;
+            margin-left: 3rem;
+            margin-top: -30px;
+            margin-bottom: 10px;
+        }
 
-            display: flex;
+        .developer {
             align-items: center;
             background-color: white;
             border-radius: 8px;
+            width: 70%;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            position: relative;
-            /* Adiciona um contexto para o triângulo */
+            padding:3px;
+            margin-bottom: 15px;
+            margin-top: -10px;
+            margin-left: 15%;
         }
 
         .photo-container {
@@ -81,10 +88,10 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
 
         .info h2 {
             color: #34495e;
-            /* Cor do nome do desenvolvedor */
         }
 
         header {
+            margin-left: 6em;
             text-align: center;
             padding: 20px;
             background-color: rgba(52, 73, 94, 0.8);
@@ -139,7 +146,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/JP.jpg.jpg" alt="Desenvolvedor 1" class="photo">
                 </div>
                 <div class="info">
-                    <h2>João Pedro Fernandes de Almeida</h2>
+                    <h5>João Pedro Fernandes de Almeida</h5>
                     <p>Líder e Programador Full-Stack do Projeto, responsável pelo PHP e funcionalidades do sistema.</p>
                 </div>
             </div>
@@ -148,7 +155,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/Luiz1.jpg.jpg" alt="Desenvolvedor 2" class="photo">
                 </div>
                 <div class="info">
-                    <h2>Luiz Eduardo Rosaeski Bonfim</h2>
+                    <h5>Luiz Eduardo Rosaeski Bonfim</h5>
                     <p>Programador Front-End, Resp.design slides e responsável por pesquisar conteúdo das páginas.</p>
                 </div>
             </div>
@@ -157,7 +164,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/Zere1.jpg.jpg" alt="Desenvolvedor 3" class="photo">
                 </div>
                 <div class="info">
-                    <h2>Matheus Henrique Vital</h2>
+                    <h5>Matheus Henrique Vital</h5>
                     <p>Responsável por Design do projeto,um dos maiores colaboradores por tornar o projeto responsivel.</p>
                 </div>
             </div>
@@ -166,7 +173,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/Screenshot_20241018-085409_Gallery.jpg" alt="Desenvolvedor 4" class="photo">
                 </div>
                 <div class="info">
-                    <h2>João Rafael de Carvalho Bissoloti</h2>
+                    <h5>João Rafael de Carvalho Bissoloti</h5>
                     <p>João Rafael foi um dos principais responsáveis membros da pesquisa e estética do sistema web.</p>
                 </div>
             </div>
@@ -175,12 +182,13 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/Joaquim2.jpg.jpg" alt="Desenvolvedor 5" class="photo">
                 </div>
                 <div class="info">
-                    <h2>Joaquim Pedro Klima Sagioneti</h2>
+                    <h5>Joaquim Pedro Klima Sagioneti</h5>
                     <p>Maior pesquisador do projeto, ficou responsável por maior parte do conteúdo dos slides e das páginas.</p>
                 </div>
             </div>
         </main>
     </div>
-        <?php include('../static/footer.php');?>
+    <?php include('../static/footer.php'); ?>
 </body>
+
 </html>
