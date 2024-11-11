@@ -817,7 +817,7 @@ table td {
 }
 
 .titulo-dashboard-adm {
-  margin-top: 30px;
+  color: var(--azulescuro);
   margin-bottom: 30px;
   text-align: center;
   justify-content: center;
@@ -2924,4 +2924,7 @@ footer {
 .aviso2{
   color: #ffff;
   font-size: 22px;
+}
+#imagem_do_grupo_todo{
+  width: 60%;
 }
