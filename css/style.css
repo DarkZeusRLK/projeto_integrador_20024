@@ -787,7 +787,7 @@ input[type="password"]:focus {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
-  width: 99%;
+  width: 100%;
 }
 
 table {
@@ -2853,4 +2853,75 @@ footer {
 #btn-deletar:hover {
   background-color: var(--yellow);
   color: black;
+}
+.payment--options a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment--options {
+  display: flex;
+  gap: 60px;
+  /* Espaçamento entre as imagens, ajuste conforme necessário */
+  max-width: 30rem;
+  display: grid;
+  grid-template-columns: 33% 33%;
+  padding: 10px;
+}
+
+.payment--options img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.botoes {
+  align-items: center;
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  transition: 0.2s;
+}
+
+.botoes:hover {
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+
+.input_label {
+  font-size: 13px;
+  color: #8B8E98;
+}
+
+.aviso {
+  display: inline-block;
+  background-color: var(--azulescuro); /* Cor do botão */
+  color: #fff; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  text-decoration: none; /* Remove sublinhado do link */
+}
+
+/* Efeito ao passar o mouse */
+.aviso:hover {
+  background-color: var(--amarelo); /* Cor ao passar o mouse */
+  color: black;
+}
+.aviso2{
+  color: #ffff;
+  font-size: 22px;
 }

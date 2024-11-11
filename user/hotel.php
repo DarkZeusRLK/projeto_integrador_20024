@@ -5,12 +5,25 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+
 // Verifique se as variáveis de sessão estão definidas
 $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : null;
 $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Visitante';
 
 // Defina um caminho padrão para a imagem
 $foto = 'caminho/para/avatar/padrao.png';
+
+if(!isset($_SESSION['tipo_usuario'])){
+    require('../static/protect.php');
+}
+// Verificar o tipo de usuário e incluir o arquivo de proteção correto
+if (isset($_SESSION['tipo_usuario'])) {
+    if ($_SESSION['tipo_usuario'] === 'administrador') {
+        require('../static/protect_adm.php'); // Proteção para administradores
+    } elseif ($_SESSION['tipo_usuario'] === 'cliente') {
+        require('../static/protect.php'); // Proteção para clientes
+    }
+}
 
 // Conecte-se ao banco de dados normal para obter informações do usuário
 $sql_user = "SELECT arquivo_foto FROM cadastro WHERE nome = ?";
@@ -270,13 +283,7 @@ $valor_diaria = isset($pacote['valor_diaria']) ? floatval($pacote['valor_diaria'
     <div class="carousel">
         <div class="carousel-images">
             <img src="../<?php echo $pacote['arquivo_caminho']; ?>" alt="Imagem do hotel" class="active">
-            <img src="../Imagens/foto2.jpg" alt="Foto 2 do hotel">
-            <img src="../Imagens/foto3.jpg" alt="Foto 3 do hotel">
-            <img src="../Imagens/foto4.jpg" alt="Foto 4 do hotel">
-            <img src="../Imagens/foto5.jpg" alt="Foto 5 do hotel">
         </div>
-        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 </div>
 <script>
@@ -323,6 +330,7 @@ setInterval(() => {
                 <li><strong>Check-out:</strong> 12:00 do dia 02/12/2024</li>
             </ul>
         </section>
+        <a class="custom-btn" href="metodo.php">Reservar Hotel</a>
 
         <!-- Avaliações dos Usuários -->
         <section id="reviews">
