@@ -2927,3 +2927,12 @@ footer {
   color: #ffff;
   font-size: 22px;
 }
+.dark-mode .title-dev{
+  color: #ffff;
+}
+.dark-mode .text-dev{
+  color: #ffff;
+}
+.dark-mode .developer{
+  background-color: var(--azulescuro);
+}

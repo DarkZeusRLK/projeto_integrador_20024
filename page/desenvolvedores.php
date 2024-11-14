@@ -19,6 +19,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../javascript/script_navbar.js"></script>
+    <script defer src="../javascript/alternar_modos.js"></script>
 
     <script defer src="../javascript/cookie.js"></script>
     <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
@@ -145,8 +146,8 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/JP.jpg.jpg" alt="Desenvolvedor 1" class="photo">
                 </div>
                 <div class="info">
-                    <h5>João Pedro Fernandes de Almeida</h5>
-                    <p>Líder e Programador Full-Stack do Projeto, responsável pelo PHP e funcionalidades do sistema.</p>
+                    <h5 class="title-dev">João Pedro Fernandes de Almeida</h5>
+                    <p class="text-dev">Líder e Programador Full-Stack do Projeto, responsável pelo PHP e funcionalidades do sistema.</p>
                 </div>
             </div>
             <div class="developer">
@@ -154,8 +155,8 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/Luiz1.jpg.jpg" alt="Desenvolvedor 2" class="photo">
                 </div>
                 <div class="info">
-                    <h5>Luiz Eduardo Rosaeski Bonfim</h5>
-                    <p>Programador Front-End, Resp.design slides e responsável por pesquisar conteúdo das páginas.</p>
+                    <h5 class="title-dev">Luiz Eduardo Rosaeski Bonfim</h5>
+                    <p class="text-dev">Programador Front-End, Resp.design slides e responsável por pesquisar conteúdo das páginas.</p>
                 </div>
             </div>
             <div class="developer">
@@ -163,8 +164,8 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/Zere1.jpg.jpg" alt="Desenvolvedor 3" class="photo">
                 </div>
                 <div class="info">
-                    <h5>Matheus Henrique Vital</h5>
-                    <p>Responsável por Design do projeto,um dos maiores colaboradores por tornar o projeto responsivel.</p>
+                    <h5 class="title-dev">Matheus Henrique Vital</h5>
+                    <p class="text-dev">Responsável por Design do projeto,um dos maiores colaboradores por tornar o projeto responsivel.</p>
                 </div>
             </div>
             <div class="developer">
@@ -172,8 +173,8 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/Screenshot_20241018-085409_Gallery.jpg" alt="Desenvolvedor 4" class="photo">
                 </div>
                 <div class="info">
-                    <h5>João Rafael de Carvalho Bissoloti</h5>
-                    <p>João Rafael foi um dos principais responsáveis membros da pesquisa e estética do sistema web.</p>
+                    <h5 class="title-dev">João Rafael de Carvalho Bissoloti</h5>
+                    <p class="text-dev">João Rafael foi um dos principais responsáveis membros da pesquisa e estética do sistema web.</p>
                 </div>
             </div>
             <div class="developer">
@@ -181,12 +182,14 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
                     <img src="../Imagens/Joaquim2.jpg.jpg" alt="Desenvolvedor 5" class="photo">
                 </div>
                 <div class="info">
-                    <h5>Joaquim Pedro Klima Sagioneti</h5>
-                    <p>Maior pesquisador do projeto, ficou responsável por maior parte do conteúdo dos slides e das páginas.</p>
+                    <h5 class="title-dev">Joaquim Pedro Klima Sagioneti</h5>
+                    <p class="text-dev">Maior pesquisador do projeto, ficou responsável por maior parte do conteúdo dos slides e das páginas.</p>
                 </div>
             </div>
         </main>
     </div>
+    <br>
+    <br>
     <?php include('../static/footer.php'); ?>
 </body>
 
