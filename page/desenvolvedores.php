@@ -32,20 +32,18 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
             width: 70%;
             margin-left: 3rem;
             margin-top: -30px;
-            margin-bottom: 10px;
+            margin-bottom: 10px;    
         }
         .developer {
             align-items: center;
             background-color: white;
             border-radius: 8px;
-            width: 70%;
+            width: 90%;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding:3px;
             margin-bottom: 15px;
             margin-top: -10px;
-            margin-left: 15%;
         }
-
         .photo-container {
             position: relative;
             margin-right: 20px;
@@ -91,7 +89,8 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
         }
 
         header {
-            margin-left: 6em;
+            width: 100%;
+            margin-left: 2rem;
             text-align: center;
             padding: 20px;
             background-color: rgba(52, 73, 94, 0.8);
@@ -170,7 +169,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
             </div>
             <div class="developer">
                 <div class="photo-container">
-                    <img src="../Imagens/Screenshot_20241018-085409_Gallery.jpg" alt="Desenvolvedor 4" class="photo">
+                    <img src="../Imagens/jraffis.jpg.jpg" alt="Desenvolvedor 4" class="photo">
                 </div>
                 <div class="info">
                     <h5 class="title-dev">João Rafael de Carvalho Bissoloti</h5>

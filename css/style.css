@@ -819,6 +819,7 @@ table td {
 }
 
 .titulo-dashboard-adm {
+  margin-left: 10%;
   color: var(--azulescuro);
   margin-bottom: 30px;
   text-align: center;
@@ -2657,6 +2658,9 @@ footer {
   .cruise-description {
     font-size: 1rem;
   }
+  .developer{
+    margin-left: 15%;
+  }
 }
 #text_cruise{
   color: #ffff;
@@ -2735,6 +2739,7 @@ footer {
   border-radius: 8px;
   overflow: hidden;
 }
+
 
 /* Responsividade */
 @media (min-width: 768px) {
