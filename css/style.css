@@ -841,6 +841,7 @@ table td {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 90%;
+  margin-left: 5%;
 }
 
 .custom-btn2 {
@@ -1086,6 +1087,16 @@ body.dark-mode .card-text {
 
 body.dark-mode .card-title {
   color: white;
+}
+.dark-mode .dashboard-content{
+background-color: var(--azulescuro);
+
+}
+.dark-mode .titulo-dashboard-adm{
+  color: #ffff;
+}
+.dark-mode table td{
+  color: #fff;
 }
 
 .avatar {

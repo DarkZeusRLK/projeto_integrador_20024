@@ -98,7 +98,8 @@ $retorno_consulta3 = $conexao->query($consultar_banco3) or die($conexao->error);
 
 <body>
     <div class="container-fluid">
-    <h1 class="titulo-dashboard-adm">Painel Administrativo</h1>
+    <h1 class="titulo-dashboard-adm">Painel Administrativo</h1
+    >
         <?php include('../static/menu.php'); ?>
         <main class="col-md-10 col-lg-10 main-content">
             <section class="dashboard-content">
