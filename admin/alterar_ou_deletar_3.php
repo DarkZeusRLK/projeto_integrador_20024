@@ -50,14 +50,14 @@ if (isset($_POST['btn_deletar'])) {
 // Função de alterar informações
 if (isset($_POST['btn_alterar'])) {
     $novo_nome = $_POST['nome'];
-    $novo_email = $_POST['valor_diaria'];
+    $novo_valor= $_POST['valor_diaria'];
     $nova_breve_descricao = $_POST['breve_descricao'];
     $nova_descricao = $_POST['descricao'];
-    $nova_cidade = $_POST['cidades'];
+    $nova_cidade = $_POST['cidade'];
 
     $sql_alterar = "UPDATE cadastro_hoteis SET nome = ?, valor_diaria = ?, breve_descricao = ?, descricao = ?, cidade = ? WHERE id_hotel = ?";
     $stmt_upd = $conexao->prepare($sql_alterar);
-    $stmt_upd->bind_param('sssssi', $novo_nome, $novo_email, $nova_breve_descricao, $nova_descricao, $nova_cidade, $id);
+    $stmt_upd->bind_param('sssssi', $novo_nome, $novo_valor, $nova_breve_descricao, $nova_descricao, $nova_cidade, $id); // CORRIGIR AQUI, ESTÁ DANDO ERRO //
     $stmt_upd->execute();
 
     echo "<script>alert('Informações atualizadas com sucesso!');</script>";
@@ -76,6 +76,7 @@ if (isset($_POST['btn_alterar'])) {
     <script defer src="../javascript/script_navbar.js"></script>
     <script defer src="../javascript/alternar_modos.js"></script>
     <script defer src="../javascript/cookie.js"></script>
+    <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
 
     <script>
         function confirmarDelecao() {
@@ -113,8 +114,8 @@ if (isset($_POST['btn_alterar'])) {
                     <input type="text" id="alterar-cidade" name="cidade" class="form-control" value="<?php echo htmlspecialchars($hoteis['cidades']); ?>" required>
                 </div>
                 <div class="mb-3">
-                    <label for="cidade" class="form-label">Valor Diária:</label>
-                    <input type="text" id="alterar-cidade" name="cidade" class="form-control" value="<?php echo htmlspecialchars($hoteis['valor_diaria']); ?>" required>
+                    <label for="valor_diaria" class="form-label">Valor Diária:</label>
+                    <input type="text" id="alterar-valor" name="valor_diaria" class="form-control" value="<?php echo htmlspecialchars($hoteis['valor_diaria']); ?>" required>
                 </div>
                 <button type="submit" name="btn_alterar" id="btn-alterar" class="btn btn-primary">Salvar Alterações</button>
             </form>

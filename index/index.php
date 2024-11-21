@@ -276,7 +276,7 @@ if (isset($_POST['email'])) {
                 <div class="final_index">
                     <!-- Seção de Cruzeiros -->
                     <br>
-                    <h1 id="text_cruise">Experimente as melhores viagens do <span class="brasil">Brasil!</span></h1>
+                        <h1 id="text_cruise">Experimente as melhores viagens do <span class="brasil">Brasil!</span></h1>
                     <div id="cruises">
                         <?php
                         // Inicialize a variável de contagem

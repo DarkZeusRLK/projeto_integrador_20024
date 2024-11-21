@@ -43,6 +43,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
             padding:3px;
             margin-bottom: 15px;
             margin-top: -10px;
+            margin-left: 5%;
         }
         .photo-container {
             position: relative;
