@@ -11,7 +11,6 @@
             <ul class="dropdown" style="display: none;"> <!-- Adicione display: none aqui -->
                         <li><a href="../page/hotel_rj.php">Rio De Janeiro</a></li>
                         <li><a href="../page/hoteis_aracaju.php">Aracaju</a></li>
-                        <li><a href="../page/hoteis_gramado.php">Gramado</a></li>
                     </ul>
         </li>
         <?php if (isset($_SESSION['nome'])): ?>

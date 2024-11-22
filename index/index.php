@@ -214,7 +214,6 @@ if (isset($_POST['email'])) {
                     <ul class="dropdown" style="display: none;"> <!-- Adicione display: none aqui -->
                         <li><a href="../page/hotel_rj.php">Rio De Janeiro</a></li>
                         <li><a href="../page/hoteis_aracaju.php">Aracaju</a></li>
-                        <li><a href="../page/hoteis_gramado.php">Gramado</a></li>
                     </ul>
                 </li>
                 <?php if (isset($_SESSION['nome'])): ?>
@@ -319,7 +318,7 @@ if (isset($_POST['email'])) {
                                 <?php echo $hoteis['descricao']; ?> </p>
                             <div class="collapse" id="collapseText">
                                 <p class="card-text mt-3">
-                                    <?php echo $hoteis['descricao']; ?> </p>
+                                    <?php echo $hoteis['breve_descricao']; ?> </p>
                             </div>
                             <h5 class="card-text">R$
                                 <?php echo $hoteis['valor_diaria']; ?>
