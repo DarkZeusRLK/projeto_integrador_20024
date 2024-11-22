@@ -47,21 +47,29 @@ if (isset($_POST['btn_deletar'])) {
     exit();
 }
 
-// Função de alterar informações
 if (isset($_POST['btn_alterar'])) {
     $novo_nome = $_POST['nome'];
-    $novo_valor= $_POST['valor_diaria'];
+    $novo_valor = $_POST['valor_diaria'];
     $nova_breve_descricao = $_POST['breve_descricao'];
     $nova_descricao = $_POST['descricao'];
-    $nova_cidade = $_POST['cidade'];
+    $nova_cidade = $_POST['cidades'];
 
-    $sql_alterar = "UPDATE cadastro_hoteis SET nome = ?, valor_diaria = ?, breve_descricao = ?, descricao = ?, cidade = ? WHERE id_hotel = ?";
+    // Atualizar informações no banco
+    $sql_alterar = "UPDATE cadastro_hoteis 
+                    SET nome = ?, valor_diaria = ?, breve_descricao = ?, descricao = ?, cidades = ? 
+                    WHERE id_hotel = ?";
     $stmt_upd = $conexao->prepare($sql_alterar);
-    $stmt_upd->bind_param('sssssi', $novo_nome, $novo_valor, $nova_breve_descricao, $nova_descricao, $nova_cidade, $id); // CORRIGIR AQUI, ESTÁ DANDO ERRO //
+
+    if (!$stmt_upd) {
+        die("Erro na preparação da consulta: " . $conexao->error);
+    }
+
+    $stmt_upd->bind_param('sdsssi', $novo_nome, $novo_valor, $nova_breve_descricao, $nova_descricao, $nova_cidade, $id);
     $stmt_upd->execute();
 
     echo "<script>alert('Informações atualizadas com sucesso!');</script>";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -110,8 +118,8 @@ if (isset($_POST['btn_alterar'])) {
                     <input type="text" id="alterar-descricao" name="descricao" class="form-control" value="<?php echo htmlspecialchars($hoteis['descricao']); ?>" required>
                 </div>
                 <div class="mb-3">
-                    <label for="cidade" class="form-label">Cidade:</label>
-                    <input type="text" id="alterar-cidade" name="cidade" class="form-control" value="<?php echo htmlspecialchars($hoteis['cidades']); ?>" required>
+                    <label for="cidades" class="form-label">Cidade:</label>
+                    <input type="text" id="alterar-cidade" name="cidades" class="form-control" value="<?php echo htmlspecialchars($hoteis['cidades']); ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="valor_diaria" class="form-label">Valor Diária:</label>
