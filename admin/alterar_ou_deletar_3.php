@@ -68,6 +68,7 @@ if (isset($_POST['btn_alterar'])) {
     $stmt_upd->execute();
 
     echo "<script>alert('Informações atualizadas com sucesso!');</script>";
+    header('Location: admin_dashboard.php');
 }
 
 ?>
@@ -136,7 +137,9 @@ if (isset($_POST['btn_alterar'])) {
             <p>Informações do usuário não disponíveis.</p>
         <?php endif; ?>
     </div>
-
+<br>
+<br>
+<br>
     <?php include('../static/footer.php'); ?>
 </body>
 </html>

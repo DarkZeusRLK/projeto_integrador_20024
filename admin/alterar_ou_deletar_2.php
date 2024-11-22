@@ -80,6 +80,21 @@ if (isset($_POST['btn_deletar'])) {
         <?php endif; ?>
     </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <?php include('../static/footer.php'); ?>
 </body>
 </html>

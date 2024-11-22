@@ -86,22 +86,7 @@ A<?php
         </div>
 
         <!-- Alterar imagem de fundo do index -->
-        <div class="mt-4">
-          <h3>Alterar Imagem de Fundo</h3>
-          <form id="background-form">
-            <div class="form-group">
-              <label for="background-select">Selecione a Imagem/GIF de Fundo:</label>
-              <select class="form-control" id="background-select">
-                <option value="Imagens/Vegetação2.gif">Avião GIF</option>
-                <option value="Imagens/a733d129bf370f5085507c89b6f3272c.gif">Praia GIF</option>
-                <option value="Imagens/pngtree-8-best-free-mountain-background-images-4k-wallpapers-image_2670051.jpg">Montanha</option>
-                <option value="Imagens/penhasco.gif">Penhasco GIF</option>
-              </select>
-            </div>
-            <br>
-            <button type="submit" class="custom-btn">Salvar Alterações</button>
-          </form>
-        </div>
+       
 
         <!-- Alterar tamanho da fonte -->
         <div class="mt-4">
@@ -121,9 +106,16 @@ A<?php
       </div>
     </div>
   </div>
-  <?php
-  include('../static/footer.php');
-  ?>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <?php include('../static/footer.php'); ?>
 </body>
 
 </html>

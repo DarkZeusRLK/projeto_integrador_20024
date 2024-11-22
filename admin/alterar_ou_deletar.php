@@ -106,7 +106,10 @@ if (isset($_POST['btn_alterar'])) {
             <p>Informações do usuário não disponíveis.</p>
         <?php endif; ?>
     </div>
-
+<br>
+<br>
+<br>
+<br>
     <?php include('../static/footer.php'); ?>
 </body>
 </html>
