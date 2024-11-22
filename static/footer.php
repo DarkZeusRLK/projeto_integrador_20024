@@ -1,5 +1,5 @@
 <?php
-$versao = "1.0";
+    $versao = " 1.7";
 ?>
 <footer>
     <div id="footer_content">
@@ -41,7 +41,7 @@ $versao = "1.0";
             <li>
                 <h3>Serviços</h3>
                 <?php
-                echo "Versão" . $versao;
+                    echo "Versão" . $versao;
                 ?>
             </li>
             <li>
@@ -63,37 +63,37 @@ $versao = "1.0";
                     Envie uma mensagem
                 </p>
                 <?php
-                if (!isset($_SESSION['email'])) {
-                ?>
-                    <div id="input_group">
-                        <input name="email" type="email" id="email" placeholder="Seu Email">
-                    </div>
-                <?php
-                }
-                ?>
-                <?php
-                if(isset($_SESSION['email'])) {
-                ?>
-                    <div id="input_group">
-                        <input name="email" type="email" id="email"
-                            placeholder="Seu Email"
-                            value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>"
-                            readonly>
-                    </div>
-                <?php
-                }
-                ?>
-                <br>
+                        if(!isset($_SESSION)){
+                    ?>
                 <div id="input_group">
+                    <input name="email" type="email" id="email" placeholder="Seu Email">
+                    </div>
+                    <?php
+                        }
+                    ?>
+                    <?php
+                        if(isset($_SESSION)){
+                    ?>
+<div id="input_group">
+    <input name="email" type="email" id="email" 
+           placeholder="Seu Email" 
+           value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>" 
+           readonly>
+</div>
+                    <?php
+                        }
+                    ?>
+                    <br>
+                    <div id="input_group">
                     <input name="nome" type="text" id="email" placeholder="Seu Nome">
-                </div>
-                <br>
-                <div id="input_group">
+                    </div>
+                    <br>
+                    <div id="input_group">
                     <input name="mensagem" type="text" id="email" placeholder="Sua Mensagem">
                     <button type="submit">
                         <i id="envelope" class="fa-regular fa-envelope"></i>
-                    </button>
-                </div>
+                        </button>
+                    </div>
             </form>
         </div>
 </footer>

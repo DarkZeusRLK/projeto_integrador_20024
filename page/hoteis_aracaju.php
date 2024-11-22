@@ -177,7 +177,7 @@ if (isset($_POST['email'])) {
                                 <p class="card-text mt-3">
                                     <?php echo $hoteis['descricao']; ?> </p>
                             </div>
-                            <h5 class="card-text">R$
+                            <h5 class="card-text">
                                 <?php echo $hoteis['valor_diaria']; ?>
                             </h5>
                             <a class="custom-btn" data-bs-toggle="collapse" href="#collapseText" role="button" aria-expanded="false" aria-controls="collapseText">
