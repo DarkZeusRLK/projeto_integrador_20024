@@ -54,6 +54,11 @@ main {
 }
 
 /* Estilos da Sidebar */
+.respon{
+  padding-left: 3.5em;
+}
+
+
 .sidebar {
   width: 3.5rem;
   height: 100rem;
@@ -68,6 +73,7 @@ main {
   transition: width 0.3s;
   z-index: 99;
 }
+
 
 .sidebar.expanded {
   width: 250px;
@@ -817,8 +823,8 @@ table td {
 #hoteisTable {
   display: block;
 }
-
 .titulo-dashboard-adm {
+  padding-left: 1.5rem;
   margin-left: 10%;
   color: var(--azulescuro);
   margin-bottom: 30px;
@@ -2037,7 +2043,7 @@ footer {
   /* Ajuste de padding */
   box-shadow: 2px 0 5px rgba(0.8, 0.8, 0.8, 0.8);
   position: relative;
-  top: 3.9rem;
+  top: 25rem;
 }
 
 .footer-link {
@@ -2484,7 +2490,7 @@ footer {
   margin-top: 50px; /* Espaçamento superior */
 }
 #text-index3 {
-  font-size: 3.5rem; /* Tamanho do título */
+  font-size: 3.50rem; /* Tamanho do título */
   color: black; /* Cor do texto */
   text-align: center; /* Centralizar o texto */
   margin-top: 50px; /* Espaçamento superior */
@@ -2597,6 +2603,7 @@ footer {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
+  
 }
 
 .cruise-card:hover {
@@ -2796,6 +2803,9 @@ footer {
 
 #card-deletar-usuario .card-body {
   text-align: center;
+}
+
+.aa{
 }
 
 #card-deletar-usuario .card-img-top {

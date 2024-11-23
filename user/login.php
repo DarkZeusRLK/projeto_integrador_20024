@@ -166,6 +166,13 @@ $conexao->close();
             </div>
         </form>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <?php include("../static/footer.php");?>
     <?php if ($mensagem): ?>
         <div id="alerta-erro" class="alerta-erro">

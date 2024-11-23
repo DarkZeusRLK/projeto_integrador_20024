@@ -94,8 +94,6 @@ if (isset($_POST['email'])) {
 
     <script defer src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-
-
     <title>Início - IvaíTour</title>
     <style>
         body {
@@ -142,65 +140,7 @@ if (isset($_POST['email'])) {
 </head>
 
 <body>
-
-
-    <div id="carouselExampleDark" class="carousel carousel-dark slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="300">
-                <img class="img-fluid" src="../Imagens/Banner avião.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="300">
-                <img class="img-fluid" src="../Imagens/Banner Turismo.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="300">
-                <img class="img-fluid"
-                    src="../Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro (1).png"
-                    class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-        </button>
-    </div>
-    <div class="container-fluid">
-        <!-- Mensagem de cookies -->
-        <div id="cookie-message" class="card-cookie">
-            <svg xml:space="preserve" viewBox="0 0 122.88 122.25" y="0px" x="0px" id="cookieSvg" version="1.1">
-                <g>
-                    <path
-                        d="M101.77,49.38c2.09,3.1,4.37,5.11,6.86,5.78c2.45,0.66,5.32,0.06,8.7-2.01c1.36-0.84,3.14-0.41,3.97,0.95 c0.28,0.46,0.42,0.96,0.43,1.47c0.13,1.4,0.21,2.82,0.24,4.26c0.03,1.46,0.02,2.91-0.05,4.35h0v0c0,0.13-0.01,0.26-0.03,0.38 c-0.91,16.72-8.47,31.51-20,41.93c-11.55,10.44-27.06,16.49-43.82,15.69v0.01h0c-0.13,0-0.26-0.01-0.38-0.03 c-16.72-0.91-31.51-8.47-41.93-20C5.31,90.61-0.73,75.1,0.07,58.34H0.07v0c0-0.13,0.01-0.26,0.03-0.38 C1,41.22,8.81,26.35,20.57,15.87C32.34,5.37,48.09-0.73,64.85,0.07V0.07h0c1.6,0,2.89,1.29,2.89,2.89c0,0.4-0.08,0.78-0.23,1.12 c-1.17,3.81-1.25,7.34-0.27,10.14c0.89,2.54,2.7,4.51,5.41,5.52c1.44,0.54,2.2,2.1,1.74,3.55l0.01,0 c-1.83,5.89-1.87,11.08-0.52,15.26c0.82,2.53,2.14,4.69,3.88,6.4c1.74,1.72,3.9,3,6.39,3.78c4.04,1.26,8.94,1.18,14.31-0.55 C99.73,47.78,101.08,48.3,101.77,49.38L101.77,49.38z M59.28,57.86c2.77,0,5.01,2.24,5.01,5.01c0,2.77-2.24,5.01-5.01,5.01 c-2.77,0-5.01-2.24-5.01-5.01C54.27,60.1,56.51,57.86,59.28,57.86L59.28,57.86z M34.53,49.32c2.77,0,5.01,2.24,5.01,5.01c0,2.77-2.24,5.01-5.01,5.01c-2.77,0-5.01-2.24-5.01-5.01C29.52,51.56,31.76,49.32,34.53,49.32L34.53,49.32z">
-                    </path>
-                </g>
-            </svg>
-            <div class="cookieHeading">Este site usa cookies</div>
-            <div class="cookieDescription">
-                Para uma melhor experiência, usamos cookies em nosso site. Para saber mais, leia nossa <a
-                    href="#">Política de Cookies</a>.
-            </div>
-            <div class="buttonContainer">
-                <button id="accept-cookies" class="acceptButton">Aceitar</button>
-                <button id="decline-cookies" class="declineButton">Rejeitar</button>
-            </div>
-        </div>
+    <div class="respon">
         <nav class="col-md-3 col-lg-2 sidebar">
             <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
             <div class="profile">
@@ -248,199 +188,251 @@ if (isset($_POST['email'])) {
                 </li>
             </ul>
         </nav>
-        <?php
-        if (isset($_SESSION['nome'])) {
-
-        ?>
-            <div class="user-profile">
-                <span class="username"><b>
-                        <?php echo $nome_usuario; ?>
-                    </b></span>
-                <?php if ($tipo_usuario === 'administrador'): ?>
-                    <span id="admin-badge">ADM</span>
-                <?php endif; ?>
-                <a href="../user/conta.php" class="user-avatar-link">
-                    <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
-                </a>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-        <?php
-        }
-        ?>
-        <div id="viagens" class="row mt-4">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="300">
+                    <img class="img-fluid" src="../Imagens/Banner avião.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="300">
+                    <img class="img-fluid" src="../Imagens/Banner Turismo.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="300">
+                    <img class="img-fluid"
+                        src="../Imagens/Banner para Site Mês dos Pais com Descontos Fotográfico Azul Escuro (1).png"
+                        class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+        <div class="container-fluid">
+            <!-- Mensagem de cookies -->
+            <div id="cookie-message" class="card-cookie">
+                <svg xml:space="preserve" viewBox="0 0 122.88 122.25" y="0px" x="0px" id="cookieSvg" version="1.1">
+                    <g>
+                        <path
+                            d="M101.77,49.38c2.09,3.1,4.37,5.11,6.86,5.78c2.45,0.66,5.32,0.06,8.7-2.01c1.36-0.84,3.14-0.41,3.97,0.95 c0.28,0.46,0.42,0.96,0.43,1.47c0.13,1.4,0.21,2.82,0.24,4.26c0.03,1.46,0.02,2.91-0.05,4.35h0v0c0,0.13-0.01,0.26-0.03,0.38 c-0.91,16.72-8.47,31.51-20,41.93c-11.55,10.44-27.06,16.49-43.82,15.69v0.01h0c-0.13,0-0.26-0.01-0.38-0.03 c-16.72-0.91-31.51-8.47-41.93-20C5.31,90.61-0.73,75.1,0.07,58.34H0.07v0c0-0.13,0.01-0.26,0.03-0.38 C1,41.22,8.81,26.35,20.57,15.87C32.34,5.37,48.09-0.73,64.85,0.07V0.07h0c1.6,0,2.89,1.29,2.89,2.89c0,0.4-0.08,0.78-0.23,1.12 c-1.17,3.81-1.25,7.34-0.27,10.14c0.89,2.54,2.7,4.51,5.41,5.52c1.44,0.54,2.2,2.1,1.74,3.55l0.01,0 c-1.83,5.89-1.87,11.08-0.52,15.26c0.82,2.53,2.14,4.69,3.88,6.4c1.74,1.72,3.9,3,6.39,3.78c4.04,1.26,8.94,1.18,14.31-0.55 C99.73,47.78,101.08,48.3,101.77,49.38L101.77,49.38z M59.28,57.86c2.77,0,5.01,2.24,5.01,5.01c0,2.77-2.24,5.01-5.01,5.01 c-2.77,0-5.01-2.24-5.01-5.01C54.27,60.1,56.51,57.86,59.28,57.86L59.28,57.86z M34.53,49.32c2.77,0,5.01,2.24,5.01,5.01c0,2.77-2.24,5.01-5.01,5.01c-2.77,0-5.01-2.24-5.01-5.01C29.52,51.56,31.76,49.32,34.53,49.32L34.53,49.32z">
+                        </path>
+                    </g>
+                </svg>
+                <div class="cookieHeading">Este site usa cookies</div>
+                <div class="cookieDescription">
+                    Para uma melhor experiência, usamos cookies em nosso site. Para saber mais, leia nossa <a
+                        href="#">Política de Cookies</a>.
+                </div>
+                <div class="buttonContainer">
+                    <button id="accept-cookies" class="acceptButton">Aceitar</button>
+                    <button id="decline-cookies" class="declineButton">Rejeitar</button>
+                </div>
+            </div>
 
-            <h1 id="text-index3">Pacotes em Destaque</h1>
+            <?php
+            if (isset($_SESSION['nome'])) {
+
+            ?>
+                <div class="user-profile">
+                    <span class="username"><b>
+                            <?php echo $nome_usuario; ?>
+                        </b></span>
+                    <?php if ($tipo_usuario === 'administrador'): ?>
+                        <span id="admin-badge">ADM</span>
+                    <?php endif; ?>
+                    <a href="../user/conta.php" class="user-avatar-link">
+                        <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
+                    </a>
+                </div>
+            <?php
+            }
+            ?>
+            <div id="viagens" class="row mt-4">
+                <h1 id="text-index3">Pacotes em Destaque</h1>
+                <div class="final_index">
+                    <h1 id="text-index2">Adquira <span id="animated-text2"></span></h1>
+                    <!-- Seção de Cruzeiros -->
+                    <div class="final_index">
+                        <!-- Seção de Cruzeiros -->
+                        <br>
+                        <h3 id="text_cruise">Experimente as melhores viagens do <span class="brasil">Brasil!</span></h3>
+                        <div id="cruises">
+                            <?php
+                            // Inicialize a variável de contagem
+                            $contador = 0;
+
+                            // Loop pelos pacotes
+                            while ($pacotes = $retorno_consulta2->fetch_assoc()):
+                                // Aumente a contagem
+                                $contador++;
+                                // Defina a imagem de fundo com base na cidade
+                                $imagem_fundo = strtolower($pacotes['foto_pacote']) . ".jpg"; // ajuste o caminho e a extensão da imagem conforme necessário
+                            ?>
+                                <!-- Cruise Card 1 -->
+                                <div class="cruise-card" style="background-image: url('<?php echo $pacotes['foto_pacote']; ?>');">
+                                    <div class="cruise-overlay">
+                                        <h2 class="cruise-title"><?php echo $pacotes['nome']; ?></h2>
+                                        <p class="cruise-description"><?php echo $pacotes['descricao']; ?></p>
+                                        <a href="cruise1-link.html" class="cruise-button">Ver Mais</a>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <h1 id="text-index3">Hotéis em Destaque</h1>
+                <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
+                    <div id="hoteis" class="col">
+                        <div class="card h-100">
+                            <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <?php echo $hoteis['nome']; ?>
+                                </h5>
+                                <p class="card-text limited-text" id="text">
+                                    <?php echo $hoteis['descricao']; ?> </p>
+                                <div class="collapse" id="collapseText">
+                                    <p class="card-text ">
+                                        <?php echo $hoteis['breve_descricao']; ?> </p>
+                                </div>
+                                <h5 class="card-text">R$
+                                    <?php echo $hoteis['valor_diaria']; ?>
+                                </h5>
+                                <a class="custom-btn mb-2" data-bs-toggle="collapse" href="#collapseText" role="button" aria-expanded="false" aria-controls="collapseText">
+                                    Ler mais
+                                </a>
+                                <div class="text-center">
+                                    <a href="../user/hotel.php?id=<?php echo $hoteis['id_hotel']; ?>"
+                                        class="custom-btn">Reservar Agora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php endwhile; ?>
+                <br>
+                <br>
+                <img class="img-fluid" src="../Imagens/Design sem nome (1).png" alt="">
+            </div>
             <div class="final_index">
-                <h1 id="text-index2">Adquira <span id="animated-text2"></span></h1>
+                <h1 id="text-index2">Viva <span id="animated-text"></span></h1>
                 <!-- Seção de Cruzeiros -->
                 <div class="final_index">
                     <!-- Seção de Cruzeiros -->
                     <br>
-                        <h3 id="text_cruise">Experimente as melhores viagens do <span class="brasil">Brasil!</span></h3>
+                    <h1 id="text_cruise">Faça excursões de cruzeiro por todo o <span class="brasil">Brasil!</span></h1>
                     <div id="cruises">
-                        <?php
-                        // Inicialize a variável de contagem
-                        $contador = 0;
 
-                        // Loop pelos pacotes
-                        while ($pacotes = $retorno_consulta2->fetch_assoc()):
-                            // Aumente a contagem
-                            $contador++;
-                            // Defina a imagem de fundo com base na cidade
-                            $imagem_fundo = strtolower($pacotes['foto_pacote']) . ".jpg"; // ajuste o caminho e a extensão da imagem conforme necessário
-                        ?>
-                            <!-- Cruise Card 1 -->
-                            <div class="cruise-card" style="background-image: url('<?php echo $pacotes['foto_pacote']; ?>');">
-                                <div class="cruise-overlay">
-                                    <h2 class="cruise-title"><?php echo $pacotes['nome']; ?></h2>
-                                    <p class="cruise-description"><?php echo $pacotes['descricao']; ?></p>
-                                    <a href="cruise1-link.html" class="cruise-button">Ver Mais</a>
-                                </div>
+                        <!-- Cruise Card 1 -->
+                        <div class="cruise-card" style="background-image: url('../recebidos/11.10.22cruzeiros.png');">
+                            <div class="cruise-overlay">
+                                <h2 class="cruise-title">Cruzeiro dos Sonhos</h2>
+                                <p class="cruise-description">Descubra o melhor do Caribe em uma experiência inesquecível.</p>
+                                <a href="cruise1-link.html" class="cruise-button">Ver Mais</a>
                             </div>
-                        <?php endwhile; ?>
+                        </div>
+
+                        <!-- Cruise Card 2 -->
+                        <div class="cruise-card" style="background-image: url('../recebidos/cruzeiro_2.jpg');">
+                            <div class="cruise-overlay">
+                                <h2 class="cruise-title">Exploração Mediterrânea</h2>
+                                <p class="cruise-description">Navegue pelas águas cristalinas do Mediterrâneo.</p>
+                                <a href="cruise2-link.html" class="cruise-button">Ver Mais</a>
+                            </div>
+                        </div>
+
+                        <!-- Cruise Card 3 -->
+                        <div class="cruise-card" style="background-image: url('../recebidos/cruzeiro_3.jpg');">
+                            <div class="cruise-overlay">
+                                <h2 class="cruise-title">Aventura no Alasca</h2>
+                                <p class="cruise-description">Desfrute de paisagens deslumbrantes e aventuras geladas.</p>
+                                <a href="cruise3-link.html" class="cruise-button">Ver Mais</a>
+                            </div>
+                        </div>
+
                     </div>
                     <br>
                 </div>
             </div>
 
-
-
-
-            <h1 id="text-index3">Hotéis em Destaque</h1>
-            <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
-                <div id="hoteis" class="col">
-                    <div class="card h-100">
-                        <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <?php echo $hoteis['nome']; ?>
-                            </h5>
-                            <p class="card-text limited-text" id="text">
-                                <?php echo $hoteis['descricao']; ?> </p>
-                            <div class="collapse" id="collapseText">
-                                <p class="card-text mt-3">
-                                    <?php echo $hoteis['breve_descricao']; ?> </p>
-                            </div>
-                            <h5 class="card-text">R$
-                                <?php echo $hoteis['valor_diaria']; ?>
-                            </h5>
-                            <a class="custom-btn" data-bs-toggle="collapse" href="#collapseText" role="button" aria-expanded="false" aria-controls="collapseText">
-                                Ler mais
-                            </a>
-                            <div class="text-center mt-4">
-                                <a href="../user/hotel.php?id=<?php echo $hoteis['id_hotel']; ?>"
-                                    class="custom-btn">Reservar Agora</a>
-                            </div>
-                        </div>
+            <!-- Seção de Blogs -->
+            <h1 text-index2>Confira as Notícias</h1>
+            <div id="blogs">
+                <!-- Blog Card 1 -->
+                <div class="blog-card">
+                    <img src="../Imagens/turistas-na-praia-de-ipanema-no-rio-de-janeiro-um-dos-principais-focos-do-turismo-no-brasil.webp" alt="Blog 1" class="blog-image">
+                    <div class="blog-content">
+                        <h2 class="blog-title">Destinos Emergentes de 2024</h2>
+                        <p class="blog-description">Conheça as cidades e regiões que estão se tornando os novos queridinhos dos turistas.</p>
+                        <a href="https://www.cnnbrasil.com.br/tudo-sobre/turismo/" class="blog-button">Leia mais</a>
                     </div>
                 </div>
 
-            <?php endwhile; ?>
-            <br>
-            <br>
-            <img class="img-fluid" src="../Imagens/Design sem nome (1).png" alt="">
-        </div>
-        <div class="final_index">
-            <h1 id="text-index2">Viva <span id="animated-text"></span></h1>
-            <!-- Seção de Cruzeiros -->
-            <div class="final_index">
-                <!-- Seção de Cruzeiros -->
-                <br>
-                <h1 id="text_cruise">Faça excursões de cruzeiro por todo o <span class="brasil">Brasil!</span></h1>
-                <div id="cruises">
-
-                    <!-- Cruise Card 1 -->
-                    <div class="cruise-card" style="background-image: url('../recebidos/11.10.22cruzeiros.png');">
-                        <div class="cruise-overlay">
-                            <h2 class="cruise-title">Cruzeiro dos Sonhos</h2>
-                            <p class="cruise-description">Descubra o melhor do Caribe em uma experiência inesquecível.</p>
-                            <a href="cruise1-link.html" class="cruise-button">Ver Mais</a>
-                        </div>
+                <!-- Blog Card 2 -->
+                <div class="blog-card">
+                    <img src="../Imagens/unnamed.jpg" alt="Blog 2" class="blog-image">
+                    <div class="blog-content">
+                        <h2 class="blog-title">G1 Turismo</h2>
+                        <p class="blog-description"> Acompanhe todas as notícias de Turismo pelo G1</p>
+                        <a href="https://g1.globo.com/turismo-e-viagem/" class="blog-button">Leia mais</a>
                     </div>
+                </div>
 
-                    <!-- Cruise Card 2 -->
-                    <div class="cruise-card" style="background-image: url('../recebidos/cruzeiro_2.jpg');">
-                        <div class="cruise-overlay">
-                            <h2 class="cruise-title">Exploração Mediterrânea</h2>
-                            <p class="cruise-description">Navegue pelas águas cristalinas do Mediterrâneo.</p>
-                            <a href="cruise2-link.html" class="cruise-button">Ver Mais</a>
-                        </div>
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <img src="../Imagens/turismo.png" alt="Blog 3" class="blog-image">
+                    <div class="blog-content">
+                        <h2 class="blog-title">Como o Turismo é relevante?</h2>
+                        <p class="blog-description"> Orientações sobre como construir uma carreira sólida na área de programação e tecnologia.</p>
+                        <a href="https://agenciagov.ebc.com.br/noticias/202404/revista-tendencias-turismo-viagens-2024  " class="blog-button">Leia mais</a>
                     </div>
-
-                    <!-- Cruise Card 3 -->
-                    <div class="cruise-card" style="background-image: url('../recebidos/cruzeiro_3.jpg');">
-                        <div class="cruise-overlay">
-                            <h2 class="cruise-title">Aventura no Alasca</h2>
-                            <p class="cruise-description">Desfrute de paisagens deslumbrantes e aventuras geladas.</p>
-                            <a href="cruise3-link.html" class="cruise-button">Ver Mais</a>
-                        </div>
+                </div>
+                <div class="blog-card">
+                    <img src="../Imagens/mulheres-na-tecnologia-blog-v02.webp" alt="Blog 4" class="blog-image">
+                    <div class="blog-content">
+                        <h2 class="blog-title">Aumento do Turismo Internacional</h2>
+                        <p class="blog-description"> O setor turístico registra crescimento recorde, impulsionado pela reabertura de fronteiras.</p>
+                        <a href="https://brasilturis.com.br/2024/10/15/turismo-internacional-em-alta-no-brasil-resultados-e-expectativas-para-2024/#:~:text=O%20turismo%20internacional%20no%20Brasil,milh%C3%B5es%20registrados%20no%20ano%20anterior." class="blog-button">Leia mais</a>
                     </div>
-
+                </div>
+                <div class="blog-card">
+                    <img src="../Imagens/img-HrbeWi4G1eNRZU0EDOdwPQ4m-min.jpg" alt="Blog 3" class="blog-image">
+                    <div class="blog-content">
+                        <h2 class="blog-title">Tendências Sustentáveis no Turismo</h2>
+                        <p class="blog-description">Viagens eco-friendly ganham popularidade, com destinos adotando práticas sustentáveis.</p>
+                        <a href="https://www.cnnbrasil.com.br/viagemegastronomia/viagem/turismo-regenerativo-nova-forma-de-viajar-oferece-plantio-de-corais-no-brasil/#:~:text=Uma%20dessas%20novidades%20%C3%A9%20o,plantio%20de%20corais%20no%20mar." class="blog-button">Leia mais</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="../Imagens/destacado_turismo_y_ocio.jpg   " alt="Blog 3" class="blog-image">
+                    <div class="blog-content">
+                        <h2 class="blog-title">Tecnologia e Turismo</h2>
+                        <p class="blog-description">Aplicativos e realidade aumentada transformam experiências em destinos populares.</p>
+                        <a href="https://www.panrotas.com.br/noticias/tecnologia-e-turismo/" class="blog-button">Leia mais</a>
+                    </div>
                 </div>
                 <br>
             </div>
-        </div>
-
-        <!-- Seção de Blogs -->
-        <h1 text-index2>Confira as Notícias</h1>
-        <div id="blogs">
-            <!-- Blog Card 1 -->
-            <div class="blog-card">
-                <img src="../Imagens/turistas-na-praia-de-ipanema-no-rio-de-janeiro-um-dos-principais-focos-do-turismo-no-brasil.webp" alt="Blog 1" class="blog-image">
-                <div class="blog-content">
-                    <h2 class="blog-title">Destinos Emergentes de 2024</h2>
-                    <p class="blog-description">Conheça as cidades e regiões que estão se tornando os novos queridinhos dos turistas.</p>
-                    <a href="https://www.cnnbrasil.com.br/tudo-sobre/turismo/" class="blog-button">Leia mais</a>
-                </div>
-            </div>
-
-            <!-- Blog Card 2 -->
-            <div class="blog-card">
-                <img src="../Imagens/unnamed.jpg" alt="Blog 2" class="blog-image">
-                <div class="blog-content">
-                    <h2 class="blog-title">G1 Turismo</h2>
-                    <p class="blog-description"> Acompanhe todas as notícias de Turismo pelo G1</p>
-                    <a href="https://g1.globo.com/turismo-e-viagem/" class="blog-button">Leia mais</a>
-                </div>
-            </div>
-
-            <!-- Blog Card 3 -->
-            <div class="blog-card">
-                <img src="../Imagens/turismo.png" alt="Blog 3" class="blog-image">
-                <div class="blog-content">
-                    <h2 class="blog-title">Como o Turismo é relevante?</h2>
-                    <p class="blog-description"> Orientações sobre como construir uma carreira sólida na área de programação e tecnologia.</p>
-                    <a href="https://agenciagov.ebc.com.br/noticias/202404/revista-tendencias-turismo-viagens-2024  " class="blog-button">Leia mais</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="../Imagens/mulheres-na-tecnologia-blog-v02.webp" alt="Blog 4" class="blog-image">
-                <div class="blog-content">
-                    <h2 class="blog-title">Aumento do Turismo Internacional</h2>
-                    <p class="blog-description"> O setor turístico registra crescimento recorde, impulsionado pela reabertura de fronteiras.</p>
-                    <a href="https://brasilturis.com.br/2024/10/15/turismo-internacional-em-alta-no-brasil-resultados-e-expectativas-para-2024/#:~:text=O%20turismo%20internacional%20no%20Brasil,milh%C3%B5es%20registrados%20no%20ano%20anterior." class="blog-button">Leia mais</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="../Imagens/img-HrbeWi4G1eNRZU0EDOdwPQ4m-min.jpg" alt="Blog 3" class="blog-image">
-                <div class="blog-content">
-                    <h2 class="blog-title">Tendências Sustentáveis no Turismo</h2>
-                    <p class="blog-description">Viagens eco-friendly ganham popularidade, com destinos adotando práticas sustentáveis.</p>
-                    <a href="https://www.cnnbrasil.com.br/viagemegastronomia/viagem/turismo-regenerativo-nova-forma-de-viajar-oferece-plantio-de-corais-no-brasil/#:~:text=Uma%20dessas%20novidades%20%C3%A9%20o,plantio%20de%20corais%20no%20mar." class="blog-button">Leia mais</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="../Imagens/destacado_turismo_y_ocio.jpg   " alt="Blog 3" class="blog-image">
-                <div class="blog-content">
-                    <h2 class="blog-title">Tecnologia e Turismo</h2>
-                    <p class="blog-description">Aplicativos e realidade aumentada transformam experiências em destinos populares.</p>
-                    <a href="https://www.panrotas.com.br/noticias/tecnologia-e-turismo/" class="blog-button">Leia mais</a>
-                </div>
-            </div>
-            <br>
         </div>
     </div>
-
-
     <?php
     include('../static/footer.php');
     ?>

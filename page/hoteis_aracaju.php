@@ -161,8 +161,8 @@ if (isset($_POST['email'])) {
         <?php
         }
         ?>
-        <div id="viagens" class="row mt-4">
-            <h1 id="text-index3">Hotéis em Destaque</h1>
+        <h1 id="text-index3">Hotéis em Destaque</h1>
+        <div id="viagens" class="row row-cols-md-3 mt-4">
             <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
                 <div id="hoteis" class="col">
                     <div class="card h-100">

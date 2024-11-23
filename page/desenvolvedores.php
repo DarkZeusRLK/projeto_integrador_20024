@@ -32,19 +32,21 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
             width: 70%;
             margin-left: 3rem;
             margin-top: -30px;
-            margin-bottom: 10px;    
+            margin-bottom: 10px;
         }
+
         .developer {
             align-items: center;
             background-color: white;
             border-radius: 8px;
             width: 90%;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding:3px;
+            padding: 3px;
             margin-bottom: 15px;
             margin-top: -10px;
             margin-left: 5%;
         }
+
         .photo-container {
             position: relative;
             margin-right: 20px;
@@ -68,7 +70,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
 
         .photo {
             width: 80px;
-            height: 80px;
+            height: 85px;
             border-radius: 50%;
             /* Bordas arredondadas na imagem */
             border: 4px solid #ffde59;
@@ -91,7 +93,7 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
 
         header {
             width: 100%;
-            margin-left: 2rem;
+
             text-align: center;
             padding: 20px;
             background-color: rgba(52, 73, 94, 0.8);
@@ -133,63 +135,63 @@ $foto = isset($_SESSION['arquivo_foto']) ? $_SESSION['arquivo_foto'] : null;
             </div>
         <?php endif; ?>
 
-        <header>
-            <h1>Créditos dos Desenvolvedores</h1>
-            <p>Agradecimentos especiais a todos que contribuíram para este projeto!</p>
-        </header>
-        <center>
-            <img id="imagem_do_grupo_todo" src="../Imagens/Foto_grupo.png.png" alt="">
-        </center>
-        <main>
-            <div class="developer">
-                <div class="photo-container">
-                    <img src="../Imagens/JP.jpg.jpg" alt="Desenvolvedor 1" class="photo">
+        <div class="respon">
+            <header>
+                <h1>Créditos dos Desenvolvedores</h1>
+                <p>Agradecimentos especiais a todos que contribuíram para este projeto!</p>
+            </header>
+            <center>
+                <img id="imagem_do_grupo_todo" src="../Imagens/Foto_grupo.png.png" alt="">
+            </center>
+            <main>
+                <div class="developer">
+                    <div class="photo-container">
+                        <img src="../Imagens/JP.jpg.jpg" alt="Desenvolvedor 1" class="photo">
+                    </div>
+                    <div class="info">
+                        <h5 class="title-dev">João Pedro Fernandes de Almeida</h5>
+                        <p class="text-dev">Líder e Programador Full-Stack do Projeto, responsável pelo PHP e funcionalidades do sistema.</p>
+                    </div>
                 </div>
-                <div class="info">
-                    <h5 class="title-dev">João Pedro Fernandes de Almeida</h5>
-                    <p class="text-dev">Líder e Programador Full-Stack do Projeto, responsável pelo PHP e funcionalidades do sistema.</p>
+                <div class="developer">
+                    <div class="photo-container">
+                        <img src="../Imagens/Luiz1.jpg.jpg" alt="Desenvolvedor 2" class="photo">
+                    </div>
+                    <div class="info">
+                        <h5 class="title-dev">Luiz Eduardo Rosaeski Bonfim</h5>
+                        <p class="text-dev">Programador Front-End, Resp.design slides e responsável por pesquisar conteúdo das páginas.</p>
+                    </div>
+                </div>
+                <div class="developer">
+                    <div class="photo-container">
+                        <img src="../Imagens/Zere1.jpg.jpg" alt="Desenvolvedor 3" class="photo">
+                    </div>
+                    <div class="info">
+                        <h5 class="title-dev">Matheus Henrique Vital</h5>
+                        <p class="text-dev">Responsável por Design do projeto,um dos maiores colaboradores por tornar o projeto responsivel.</p>
+                    </div>
+                </div>
+                <div class="developer">
+                    <div class="photo-container">
+                        <img src="../Imagens/jraffis.jpg.jpg" alt="Desenvolvedor 4" class="photo">
+                    </div>
+                    <div class="info">
+                        <h5 class="title-dev">João Rafael de Carvalho Bissoloti</h5>
+                        <p class="text-dev">João Rafael foi um dos principais responsáveis membros da pesquisa e estética do sistema web.</p>
+                    </div>
+                </div>
+                <div class="developer">
+                    <div class="photo-container">
+                        <img src="../Imagens/Joaquim2.jpg.jpg" alt="Desenvolvedor 5" class="photo">
+                    </div>
+                    <div class="info">
+                        <h5 class="title-dev">Joaquim Pedro Klima Sagioneti</h5>
+                        <p class="text-dev">Maior pesquisador do projeto, ficou responsável por maior parte do conteúdo dos slides e das páginas.</p>
+                    </div>
                 </div>
             </div>
-            <div class="developer">
-                <div class="photo-container">
-                    <img src="../Imagens/Luiz1.jpg.jpg" alt="Desenvolvedor 2" class="photo">
-                </div>
-                <div class="info">
-                    <h5 class="title-dev">Luiz Eduardo Rosaeski Bonfim</h5>
-                    <p class="text-dev">Programador Front-End, Resp.design slides e responsável por pesquisar conteúdo das páginas.</p>
-                </div>
-            </div>
-            <div class="developer">
-                <div class="photo-container">
-                    <img src="../Imagens/Zere1.jpg.jpg" alt="Desenvolvedor 3" class="photo">
-                </div>
-                <div class="info">
-                    <h5 class="title-dev">Matheus Henrique Vital</h5>
-                    <p class="text-dev">Responsável por Design do projeto,um dos maiores colaboradores por tornar o projeto responsivel.</p>
-                </div>
-            </div>
-            <div class="developer">
-                <div class="photo-container">
-                    <img src="../Imagens/jraffis.jpg.jpg" alt="Desenvolvedor 4" class="photo">
-                </div>
-                <div class="info">
-                    <h5 class="title-dev">João Rafael de Carvalho Bissoloti</h5>
-                    <p class="text-dev">João Rafael foi um dos principais responsáveis membros da pesquisa e estética do sistema web.</p>
-                </div>
-            </div>
-            <div class="developer">
-                <div class="photo-container">
-                    <img src="../Imagens/Joaquim2.jpg.jpg" alt="Desenvolvedor 5" class="photo">
-                </div>
-                <div class="info">
-                    <h5 class="title-dev">Joaquim Pedro Klima Sagioneti</h5>
-                    <p class="text-dev">Maior pesquisador do projeto, ficou responsável por maior parte do conteúdo dos slides e das páginas.</p>
-                </div>
-            </div>
-        </main>
+            </main>
     </div>
-    <br>
-    <br>
     <?php include('../static/footer.php'); ?>
 </body>
 

@@ -28,78 +28,79 @@ $retorno_consulta3 = $conexao->query($consultar_banco3) or die($conexao->error);
     <link rel="shortcut icon" href="../Imagens/logo (1).png" type="image/x-icon">
     <title>Dashboard Admin</title>
     <style>
-    /* Definições gerais para manter a tabela responsiva */
-    .my-custom-table {
-        width: 100%;
-        overflow-x: auto;
-        display: block;
-        margin-bottom: 20px;
-    }
-
-    .table-container {
-        width: 100%;
-        overflow-x: auto;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: left;
-    }
-
-    table th,
-    table td {
-        padding: 10px;
-        border: 1px solid #ddd;
-    }
-
-    /* Ajustes de layout em diferentes larguras de tela */
-    @media (max-width: 768px) {
-       
-
-        table td {
-            padding: 10px;
-        }
-        .dashboard-content {
-            width: 70%;
-            margin-left: 5%;
-        }
-        .custom-btn2 {
+        /* Definições gerais para manter a tabela responsiva */
+        .my-custom-table {
             width: 100%;
-            margin-bottom: 10px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        table td {
-            font-size: 12px;
-            padding: 10px;
-            color: #000;
+            overflow-x: auto;
+            display: block;
+            margin-bottom: 20px;
         }
 
-        .dashboard-content {
-            width: 70%;
-            margin-left: 14%;
-        }
-
-
-        /* Exibição das tabelas em blocos verticais no celular */
-        .my-custom-table,
         .table-container {
-            overflow-x: scroll;
+            width: 100%;
+            overflow-x: auto;
         }
 
-        .custom-btn2 {
+        table {
             width: 100%;
+            border-collapse: collapse;
+            text-align: left;
         }
-    }
-</style>
+
+        table th,
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* Ajustes de layout em diferentes larguras de tela */
+        @media (max-width: 768px) {
+
+
+            table td {
+                padding: 10px;
+            }
+
+            .dashboard-content {
+                width: 70%;
+                margin-left: 5%;
+            }
+
+            .custom-btn2 {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            table td {
+                font-size: 12px;
+                padding: 10px;
+                color: #000;
+            }
+
+            .dashboard-content {
+                width: 70%;
+                margin-left: 14%;
+            }
+
+
+            /* Exibição das tabelas em blocos verticais no celular */
+            .my-custom-table,
+            .table-container {
+                overflow-x: scroll;
+            }
+
+            .custom-btn2 {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid">
-    <h1 class="titulo-dashboard-adm">Painel Administrativo</h1
-    >
+        <h1 class="titulo-dashboard-adm">Painel Administrativo</h1>
         <?php include('../static/menu.php'); ?>
         <main class="col-md-10 col-lg-10 main-content">
             <section class="dashboard-content">
