@@ -1,4 +1,3 @@
-
 <?php
 include('../static/conexao.php');
 
@@ -51,7 +50,7 @@ if (isset($_POST['email'])) {
     $stmt = $conexao->prepare($query);
 
     if ($stmt) {
-        $stmt->bind_param("sss",  $nome, $email, $mensagem);
+        $stmt->bind_param("sss", $nome, $email, $mensagem);
 
         if ($stmt->execute()) {
             // A inserção no banco de dados foi bem-sucedida
@@ -71,16 +70,13 @@ if (isset($_POST['email'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 
 
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../javascript/script_navbar.js"></script>
     <script defer src="../javascript/alternar_modos.js"></script>
     <script defer src="../javascript/cookie.js"></script>
@@ -141,58 +137,59 @@ if (isset($_POST['email'])) {
 
 <body>
     <?php
-        include('../static/menu.php');
+    include('../static/menu.php');
     ?>
-        <?php
-        if (isset($_SESSION['nome'])) {
+    <?php
+    if (isset($_SESSION['nome'])) {
 
         ?>
-            <div class="user-profile">
-                <span class="username"><b>
-                        <?php echo $nome_usuario; ?>
-                    </b></span>
-                <?php if ($tipo_usuario === 'administrador'): ?>
-                    <span id="admin-badge">ADM</span>
-                <?php endif; ?>
-                <a href="../user/conta.php" class="user-avatar-link">
-                    <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
-                </a>
-            </div>
+        <div class="user-profile">
+            <span class="username"><b>
+                    <?php echo $nome_usuario; ?>
+                </b></span>
+            <?php if ($tipo_usuario === 'administrador'): ?>
+                <span id="admin-badge">ADM</span>
+            <?php endif; ?>
+            <a href="../user/conta.php" class="user-avatar-link">
+                <img src="<?php echo $foto; ?>?<?php echo time(); ?>" alt="Avatar" class="avatar">
+            </a>
+        </div>
         <?php
-        }
-        ?>
-        <div id="viagens" class="row mt-4">
-            <h1 id="text-index3">Hotéis em Destaque</h1>
-            <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
-                <div id="hoteis" class="col">
-                    <div class="card h-100">
-                        <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <?php echo $hoteis['nome']; ?>
-                            </h5>
-                            <p class="card-text limited-text" id="text">
-                                <?php echo $hoteis['descricao']; ?> </p>
-                            <div class="collapse" id="collapseText">
-                                <p class="card-text mt-3">
-                                    <?php echo $hoteis['descricao']; ?> </p>
-                            </div>
-                            <h5 class="card-text">R$
-                                <?php echo $hoteis['valor_diaria']; ?>
-                            </h5>
-                            <a class="custom-btn" data-bs-toggle="collapse" href="#collapseText" role="button" aria-expanded="false" aria-controls="collapseText">
-                                Ler mais
-                            </a>
-                            <div class="text-center mt-4">
-                                <a href="../user/hotel.php?id=<?php echo $hoteis['id_hotel']; ?>"
-                                    class="custom-btn">Reservar Agora</a>
-                            </div>
+    }
+    ?>
+    <div id="viagens" class="row mt-4">
+        <h1 id="text-index3">Hotéis em Destaque</h1>
+        <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
+            <div id="hoteis" class="col">
+                <div class="card h-100">
+                    <img src="../<?php echo $hoteis['arquivo_caminho']; ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <?php echo $hoteis['nome']; ?>
+                        </h5>
+                        <p class="card-text limited-text" id="text">
+                            <?php echo $hoteis['descricao']; ?>
+                        </p>
+                        <div class="collapse" id="collapseText">
+                            <p class="card-text mt-3">
+                                <?php echo $hoteis['descricao']; ?>
+                            </p>
+                        </div>
+                        <h5 class="card-text">R$
+                            <?php echo $hoteis['valor_diaria']; ?>
+                        </h5>
+                        <a class="custom-btn" data-bs-toggle="collapse" href="#collapseText" role="button" aria-expanded="false" aria-controls="collapseText">
+                            Ler mais
+                        </a>
+                        <div class="text-center mt-4">
+                            <a href="../user/hotel_rj.php?id=<?php echo $hoteis['id_hotel']; ?>" class="custom-btn">Reservar Agora</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-            <?php endwhile; ?>
-        </div>  
+        <?php endwhile; ?>
+    </div>
     </div>
 
 
@@ -200,7 +197,7 @@ if (isset($_POST['email'])) {
     include('../static/footer.php');
     ?>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Verifique o status da mensagem e exiba o alerta se for sucesso
             const status = "<?php echo $status; ?>"; // Obtenha o status do PHP
 
@@ -213,7 +210,7 @@ if (isset($_POST['email'])) {
                 overlay.style.display = 'block';
 
                 // Redirecionar após 5 segundos
-                setTimeout(function() {
+                setTimeout(function () {
                     window.location.href = 'contato.php';
                 }, 5000);
             }

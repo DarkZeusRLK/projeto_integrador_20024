@@ -17,7 +17,7 @@ if (isset($_GET['codigo_mensagem'])) {
     $stmt->execute();
     $resultado = $stmt->get_result();
     $usuario = $resultado->fetch_assoc();
-    
+
     if (!$usuario) {
         echo "Usuário não encontrado.";
         exit();
@@ -29,11 +29,11 @@ if (isset($_GET['codigo_mensagem'])) {
 
 // Função de deletar conta
 if (isset($_POST['btn_deletar'])) {
-    $sql_deletar = "DELETE FROM mensagem_usuario WHERE id_mensagem = ?";
+    $sql_deletar = "DELETE FROM mensagem_contato WHERE id_mensagem = ?";
     $stmt_del = $conexao->prepare($sql_deletar);
     $stmt_del->bind_param('i', $id);
     $stmt_del->execute();
-    
+
     header("Location: ../index/index.php");
     exit();
 }
@@ -41,6 +41,7 @@ if (isset($_POST['btn_deletar'])) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,27 +59,28 @@ if (isset($_POST['btn_deletar'])) {
         }
     </script>
 </head>
+
 <body>
     <?php include('../static/menu.php'); ?>
 
     <div class="container-fluid2">
-    <div id="gerenciar-container" class="container mt-5">
-        <h1 id="gerenciar-titulo">Gerenciar Item</h1>
-        
-        <h3 id="info-titulo">Informações da Mensagem de Contato</h3>
-        <?php if ($usuario): ?>
-            <p id="usuario-nome"><strong>Nome:</strong> <?php echo htmlspecialchars($usuario['nome']); ?></p>
-            <p id="usuario-email"><strong>Email:</strong> <?php echo htmlspecialchars($usuario['email']); ?></p>
-            <p id="usuario-mensagem"><strong>Mensagem:</strong> <?php echo htmlspecialchars($usuario['mensagem']); ?></p>
+        <div id="gerenciar-container" class="container mt-5">
+            <h1 id="gerenciar-titulo">Gerenciar Item</h1>
 
-            <!-- Formulário para Deletar Conta -->
-            <form method="POST" id="form-deletar" onsubmit="return confirmarDelecao();" class="mt-4">
-                <button type="submit" name="btn_deletar" id="btn-deletar" class="btn btn-danger">Deletar Mensagem</button>
-            </form>
-        <?php else: ?>
-            <p>Informações do usuário não disponíveis.</p>
-        <?php endif; ?>
-    </div>
+            <h3 id="info-titulo">Informações da Mensagem de Contato</h3>
+            <?php if ($usuario): ?>
+                <p id="usuario-nome"><strong>Nome:</strong> <?php echo htmlspecialchars($usuario['nome']); ?></p>
+                <p id="usuario-email"><strong>Email:</strong> <?php echo htmlspecialchars($usuario['email']); ?></p>
+                <p id="usuario-mensagem"><strong>Mensagem:</strong> <?php echo htmlspecialchars($usuario['mensagem']); ?></p>
+
+                <!-- Formulário para Deletar Conta -->
+                <form method="POST" id="form-deletar" onsubmit="return confirmarDelecao();" class="mt-4">
+                    <button type="submit" name="btn_deletar" id="btn-deletar" class="btn btn-danger">Deletar Mensagem</button>
+                </form>
+            <?php else: ?>
+                <p>Informações do usuário não disponíveis.</p>
+            <?php endif; ?>
+        </div>
     </div>
     <br>
     <br>
@@ -97,4 +99,5 @@ if (isset($_POST['btn_deletar'])) {
     <br>
     <?php include('../static/footer.php'); ?>
 </body>
+
 </html>
