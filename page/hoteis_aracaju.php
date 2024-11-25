@@ -157,8 +157,8 @@ if (isset($_POST['email'])) {
         <?php
     }
     ?>
-    <h1 id="text-index3">Hotéis em Destaque</h1>
-    <div id="viagens" class="row row-cols-md-3 mt-4">
+    <div id="viagens" class="row mt-4">
+        <h1 id="text-index3">Hotéis em Destaque</h1>
         <?php while ($hoteis = $retorno_consulta->fetch_assoc()): ?>
             <div id="hoteis" class="col">
                 <div class="card h-100">
@@ -167,22 +167,14 @@ if (isset($_POST['email'])) {
                         <h5 class="card-title">
                             <?php echo $hoteis['nome']; ?>
                         </h5>
-                        <p class="card-text limited-text" id="text">
-                            <?php echo $hoteis['descricao']; ?>
-                        </p>
-                        <div class="collapse" id="collapseText">
                             <p class="card-text mt-3">
                                 <?php echo $hoteis['descricao']; ?>
                             </p>
-                        </div>
                         <h5 class="card-text">
                             <?php echo $hoteis['valor_diaria']; ?>
                         </h5>
-                        <a class="custom-btn" data-bs-toggle="collapse" href="#collapseText" role="button" aria-expanded="false" aria-controls="collapseText">
-                            Ler mais
-                        </a>
                         <div class="text-center mt-4">
-                            <a href="../user/hotel_aracaju.php?id=<?php echo $hoteis['id_hotel']; ?>" class="custom-btn">Reservar Agora</a>
+                            <a href="../user/hotel_rj.php?id=<?php echo $hoteis['id_hotel']; ?>" class="custom-btn">Reservar Agora</a>
                         </div>
                     </div>
                 </div>

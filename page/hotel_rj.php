@@ -167,20 +167,12 @@ if (isset($_POST['email'])) {
                         <h5 class="card-title">
                             <?php echo $hoteis['nome']; ?>
                         </h5>
-                        <p class="card-text limited-text" id="text">
-                            <?php echo $hoteis['descricao']; ?>
-                        </p>
-                        <div class="collapse" id="collapseText">
                             <p class="card-text mt-3">
                                 <?php echo $hoteis['descricao']; ?>
                             </p>
-                        </div>
                         <h5 class="card-text">R$
                             <?php echo $hoteis['valor_diaria']; ?>
                         </h5>
-                        <a class="custom-btn" data-bs-toggle="collapse" href="#collapseText" role="button" aria-expanded="false" aria-controls="collapseText">
-                            Ler mais
-                        </a>
                         <div class="text-center mt-4">
                             <a href="../user/hotel_rj.php?id=<?php echo $hoteis['id_hotel']; ?>" class="custom-btn">Reservar Agora</a>
                         </div>

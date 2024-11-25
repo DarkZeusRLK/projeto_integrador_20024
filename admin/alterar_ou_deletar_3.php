@@ -131,7 +131,7 @@ if (isset($_POST['btn_alterar'])) {
 
             <!-- Formulário para Deletar Conta -->
             <form method="POST" id="form-deletar" onsubmit="return confirmarDelecao();" class="mt-4">
-                <button type="submit" name="btn_deletar" id="btn-deletar" class="btn btn-danger">Deletar Conta</button>
+                <button type="submit" name="btn_deletar" id="btn-deletar" class="btn btn-danger">Deletar Hotel</button>
             </form>
         <?php else: ?>
             <p>Informações do usuário não disponíveis.</p>
