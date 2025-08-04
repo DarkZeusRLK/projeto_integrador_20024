@@ -245,7 +245,7 @@ if (isset($_POST['email'])) {
                     <button id="decline-cookies" class="declineButton">Rejeitar</button>
                 </div>
             </div>
-
+<h1>Ola</h1>
             <?php
             if (isset($_SESSION['nome'])) {
 
